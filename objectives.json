@@ -1,463 +1,504 @@
 {
-  "systemStatus": {
-    "threadLock": "STABLE"
-  },
-  "paths": [
-    {
-      "id": "chosen-one",
-      "title": "The Chosen One",
-      "tags": [
-        "prophecy",
-        "identity"
-      ],
-      "objectives": [
+    "paths":
+    [
         {
-          "text": "Learn and demonstrate the Ways",
-          "complete": false,
-          "children": [
-            {
-              "text": "Learn Basking Lizard tenets",
-              "complete": true
-            },
-            {
-              "text": "Demonstrate Basking Lizard tenets",
-              "complete": true
-            },
-            {
-              "text": "Learn Awesome Ape tenets",
-              "complete": true
-            },
-            {
-              "text": "Demonstrate Awesome Ape tenets",
-              "complete": false
-            },
-            {
-              "text": "Learn Vengeful Ram tenets",
-              "complete": true
-            },
-            {
-              "text": "Demonstrate Vengeful Ram tenets",
-              "complete": false
-            },
-            {
-              "text": "Learn Iron Python tenets",
-              "complete": false
-            },
-            {
-              "text": "Demonstrate Iron Python tenets",
-              "complete": false
-            },
-            {
-              "text": "Learn Flying Fish tenets",
-              "complete": false
-            },
-            {
-              "text": "Demonstrate Flying Fish tenets",
-              "complete": false
-            },
-            {
-              "text": "Learn Mystic Kitsune tenets",
-              "complete": false
-            },
-            {
-              "text": "Demonstrate Mystic Kitsune tenets",
-              "complete": false
-            }
-          ]
+            "icon": "icons/chosen-one.bmp",
+            "id": "chosen-one",
+            "integrity": 76,
+            "objectives":
+            [
+                {
+                    "children":
+                    [
+                        {
+                            "complete": true,
+                            "text": "Learn Basking Lizard tenets"
+                        },
+                        {
+                            "complete": true,
+                            "text": "Demonstrate Basking Lizard tenets"
+                        },
+                        {
+                            "complete": true,
+                            "text": "Learn Awesome Ape tenets"
+                        },
+                        {
+                            "complete": false,
+                            "text": "Demonstrate Awesome Ape tenets"
+                        },
+                        {
+                            "complete": true,
+                            "text": "Learn Vengeful Ram tenets"
+                        },
+                        {
+                            "complete": false,
+                            "text": "Demonstrate Vengeful Ram tenets"
+                        },
+                        {
+                            "complete": false,
+                            "text": "Learn Iron Python tenets"
+                        },
+                        {
+                            "complete": false,
+                            "text": "Demonstrate Iron Python tenets"
+                        },
+                        {
+                            "complete": false,
+                            "text": "Learn Flying Fish tenets"
+                        },
+                        {
+                            "complete": false,
+                            "text": "Demonstrate Flying Fish tenets"
+                        },
+                        {
+                            "complete": false,
+                            "text": "Learn Mystic Kitsune tenets"
+                        },
+                        {
+                            "complete": false,
+                            "text": "Demonstrate Mystic Kitsune tenets"
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Learn and demonstrate the Ways"
+                },
+                {
+                    "children":
+                    [
+                        {
+                            "complete": false,
+                            "text": "Meet with Rough Scale"
+                        },
+                        {
+                            "complete": false,
+                            "text": "???",
+                            "unknown": true
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Oust the bourgeoise"
+                },
+                {
+                    "complete": false,
+                    "text": "Inspire the people"
+                },
+                {
+                    "complete": false,
+                    "text": "Fulfill the prophecy"
+                },
+                {
+                    "complete": false,
+                    "text": "Become the chosen one"
+                }
+            ],
+            "tags":
+            [
+                "prophecy",
+                "identity"
+            ],
+            "title": "The Chosen One"
         },
         {
-          "text": "Oust the parasites",
-          "complete": false,
-          "children": [
-            {
-              "text": "Meet with Rough Scale",
-              "complete": false
-            },
-            {
-              "text": "???",
-              "complete": false,
-              "unknown": true
-            }
-          ]
+            "icon": "icons/old-grudges.bmp",
+            "id": "old-grudges",
+            "integrity": 52,
+            "objectives":
+            [
+                {
+                    "children":
+                    [
+                        {
+                            "complete": false,
+                            "text": "Accept Marchant's offer for sponsorship"
+                        },
+                        {
+                            "children":
+                            [
+                                {
+                                    "children":
+                                    [
+                                        {
+                                            "complete": true,
+                                            "flags":
+                                            [
+                                                "OPT"
+                                            ],
+                                            "text": "Convince Mei-Zarah to fight with you"
+                                        },
+                                        {
+                                            "complete": false,
+                                            "text": "???",
+                                            "unknown": true
+                                        }
+                                    ],
+                                    "complete": false,
+                                    "text": "Find a partner for the duo combat"
+                                },
+                                {
+                                    "complete": false,
+                                    "text": "Defeat your opponents"
+                                }
+                            ],
+                            "complete": false,
+                            "text": "Make it past the first round"
+                        },
+                        {
+                            "children":
+                            [
+                                {
+                                    "complete": false,
+                                    "text": "???",
+                                    "unknown": true
+                                },
+                                {
+                                    "complete": false,
+                                    "text": "Defeat your opponent"
+                                }
+                            ],
+                            "complete": false,
+                            "text": "Make it through the quarterfinals"
+                        },
+                        {
+                            "children":
+                            [
+                                {
+                                    "complete": false,
+                                    "text": "???",
+                                    "unknown": true
+                                },
+                                {
+                                    "complete": false,
+                                    "text": "Defeat your opponent"
+                                }
+                            ],
+                            "complete": false,
+                            "text": "Make it through the semifinals"
+                        },
+                        {
+                            "children":
+                            [
+                                {
+                                    "complete": false,
+                                    "text": "???",
+                                    "unknown": true
+                                },
+                                {
+                                    "complete": false,
+                                    "text": "Defeat your opponent"
+                                }
+                            ],
+                            "complete": false,
+                            "text": "Win the tournament"
+                        },
+                        {
+                            "complete": false,
+                            "text": "Attend victory ceremony as the Vengeful Rams' champion"
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Win the tournament for the Vengeful Rams"
+                },
+                {
+                    "children":
+                    [
+                        {
+                            "complete": false,
+                            "text": "Learn of Marchant's grudge"
+                        },
+                        {
+                            "complete": false,
+                            "text": "???",
+                            "unknown": true
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Make him pay"
+                },
+                {
+                    "children":
+                    [
+                        {
+                            "complete": false,
+                            "text": "???",
+                            "unknown": true
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Win her back"
+                }
+            ],
+            "tags":
+            [
+                "tournament",
+                "revenge"
+            ],
+            "title": "Old Grudges"
         },
         {
-          "text": "Inspire the people",
-          "complete": false
+            "icon": "icons/if-you-cant-beat-em.bmp",
+            "id": "if-you-cant-beat-em",
+            "integrity": 23,
+            "objectives":
+            [
+                {
+                    "children":
+                    [
+                        {
+                            "complete": false,
+                            "text": "Find Rough Scale"
+                        },
+                        {
+                            "complete": false,
+                            "text": "???",
+                            "unknown": true
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Enter into Rough Scale's employ"
+                },
+                {
+                    "children":
+                    [
+                        {
+                            "complete": false,
+                            "text": "???",
+                            "unknown": true
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Do as you're told"
+                },
+                {
+                    "children":
+                    [
+                        {
+                            "complete": false,
+                            "flags":
+                            [
+                                "OPT"
+                            ],
+                            "text": "Eliminate the Kitsune threat without Rough Scale finding out"
+                        },
+                        {
+                            "complete": false,
+                            "text": "???",
+                            "unknown": true
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Deal with the whole Kitsune thing"
+                }
+            ],
+            "tags":
+            [
+                "rough scale",
+                "betrayal"
+            ],
+            "title": "If You Can't Beat 'Em"
         },
         {
-          "text": "Fulfill the prophecy",
-          "complete": false
+            "icon": "icons/grand-champ.bmp",
+            "id": "grand-champ",
+            "integrity": 83,
+            "objectives":
+            [
+                {
+                    "children":
+                    [
+                        {
+                            "children":
+                            [
+                                {
+                                    "complete": true,
+                                    "flags":
+                                    [
+                                        "OPT"
+                                    ],
+                                    "text": "Convince Haji-Zen to sponsor you"
+                                },
+                                {
+                                    "complete": false,
+                                    "flags":
+                                    [
+                                        "OPT"
+                                    ],
+                                    "text": "Take Marchant up on his offer"
+                                }
+                            ],
+                            "complete": false,
+                            "text": "Obtain 250 shells"
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Secure entry into the tournament"
+                },
+                {
+                    "children":
+                    [
+                        {
+                            "children":
+                            [
+                                {
+                                    "complete": true,
+                                    "flags":
+                                    [
+                                        "OPT"
+                                    ],
+                                    "text": "Convince Mei-Zarah to fight with you"
+                                },
+                                {
+                                    "complete": false,
+                                    "text": "???",
+                                    "unknown": true
+                                }
+                            ],
+                            "complete": false,
+                            "text": "Find a partner for the duo combat"
+                        },
+                        {
+                            "complete": false,
+                            "text": "Defeat your opponents"
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Make it past the first round"
+                },
+                {
+                    "children":
+                    [
+                        {
+                            "complete": false,
+                            "text": "???",
+                            "unknown": true
+                        },
+                        {
+                            "complete": false,
+                            "text": "Defeat your opponent"
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Make it through the quarterfinals"
+                },
+                {
+                    "children":
+                    [
+                        {
+                            "complete": false,
+                            "text": "???",
+                            "unknown": true
+                        },
+                        {
+                            "complete": false,
+                            "text": "Defeat your opponent"
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Make it through the semifinals"
+                },
+                {
+                    "children":
+                    [
+                        {
+                            "complete": false,
+                            "text": "???",
+                            "unknown": true
+                        },
+                        {
+                            "complete": false,
+                            "text": "Defeat your opponent"
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Win the tournament"
+                },
+                {
+                    "complete": false,
+                    "text": "Attend victory ceremony"
+                }
+            ],
+            "tags":
+            [
+                "mainline",
+                "tournament"
+            ],
+            "title": "Grand Champ"
         },
         {
-          "text": "Become the chosen one",
-          "complete": false
+            "icon": "icons/kitsune-conspiracy.bmp",
+            "id": "kitsune-conspiracy",
+            "integrity": 89,
+            "objectives":
+            [
+                {
+                    "children":
+                    [
+                        {
+                            "complete": true,
+                            "text": "Use magical powers in Zhui Yang Cheng"
+                        },
+                        {
+                            "complete": true,
+                            "text": "Stand alone at night"
+                        },
+                        {
+                            "complete": true,
+                            "text": "SURVIVE!"
+                        }
+                    ],
+                    "complete": true,
+                    "text": "Clash with the Mystic Kitsune"
+                },
+                {
+                    "children":
+                    [
+                        {
+                            "complete": true,
+                            "flags":
+                            [
+                                "OPT"
+                            ],
+                            "text": "Learn what Will Mocked-For-Words knows"
+                        },
+                        {
+                            "children":
+                            [
+                                {
+                                    "complete": false,
+                                    "text": "Visit the market during the day"
+                                },
+                                {
+                                    "complete": false,
+                                    "text": "???",
+                                    "unknown": true
+                                }
+                            ],
+                            "complete": false,
+                            "text": "Investigate the Kitsune presence in Zhui Yang Cheng"
+                        },
+                        {
+                            "complete": false,
+                            "text": "???",
+                            "unknown": true
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Investigate the Mystic Kitsune"
+                },
+                {
+                    "complete": false,
+                    "text": "Neutralize the threat posed by the Mystic Kitsune"
+                }
+            ],
+            "tags":
+            [
+                "mystery",
+                "assassins"
+            ],
+            "title": "The Kitsune Conspiracy"
         }
-      ],
-      "integrity": 76,
-      "icon": "icons/chosen-one.bmp"
-    },
+    ],
+    "systemStatus":
     {
-      "id": "old-grudges",
-      "title": "Old Grudges",
-      "tags": [
-        "tournament",
-        "revenge"
-      ],
-      "objectives": [
-        {
-          "text": "Win the tournament for the Vengeful Rams",
-          "complete": false,
-          "children": [
-            {
-              "text": "Take Marchant's offer for sponsorship",
-              "complete": false
-            },
-            {
-              "text": "Make it past the first round",
-              "complete": false,
-              "children": [
-                {
-                  "text": "Find a partner for the duo combat",
-                  "complete": false,
-                  "children": [
-                    {
-                      "text": "Convince Mei-Zarah to fight with you",
-                      "complete": true,
-                      "flags": [
-                        "OPT"
-                      ]
-                    },
-                    {
-                      "text": "???",
-                      "complete": false,
-                      "unknown": true
-                    }
-                  ]
-                },
-                {
-                  "text": "Defeat your opponents",
-                  "complete": false
-                }
-              ]
-            },
-            {
-              "text": "Make it through the quarterfinals",
-              "complete": false,
-              "children": [
-                {
-                  "text": "???",
-                  "complete": false,
-                  "unknown": true
-                },
-                {
-                  "text": "Defeat your opponent",
-                  "complete": false
-                }
-              ]
-            },
-            {
-              "text": "Make it through the semifinals",
-              "complete": false,
-              "children": [
-                {
-                  "text": "???",
-                  "complete": false,
-                  "unknown": true
-                },
-                {
-                  "text": "Defeat your opponent",
-                  "complete": false
-                }
-              ]
-            },
-            {
-              "text": "Win the tournament",
-              "complete": false,
-              "children": [
-                {
-                  "text": "???",
-                  "complete": false,
-                  "unknown": true
-                },
-                {
-                  "text": "Defeat your opponent",
-                  "complete": false
-                }
-              ]
-            },
-            {
-              "text": "Attend victory ceremony as the Vengeful Rams' champion",
-              "complete": false
-            }
-          ]
-        },
-        {
-          "text": "Make him pay",
-          "complete": false,
-          "children": [
-            {
-              "text": "Learn of Marchant's grudge",
-              "complete": false
-            },
-            {
-              "text": "???",
-              "complete": false,
-              "unknown": true
-            }
-          ]
-        },
-        {
-          "text": "Win her back",
-          "complete": false,
-          "children": [
-            {
-              "text": "???",
-              "complete": false,
-              "unknown": true
-            }
-          ]
-        }
-      ],
-      "integrity": 52,
-      "icon": "icons/old-grudges.bmp"
-    },
-    {
-      "id": "if-you-cant-beat-em",
-      "title": "If You Can't Beat 'Em",
-      "tags": [
-        "rough scale",
-        "betrayal"
-      ],
-      "objectives": [
-        {
-          "text": "Enter into Rough Scale's employ",
-          "complete": false,
-          "children": [
-            {
-              "text": "Find Rough Scale",
-              "complete": false
-            },
-            {
-              "text": "???",
-              "complete": false,
-              "unknown": true
-            }
-          ]
-        },
-        {
-          "text": "Do as you're told",
-          "complete": false,
-          "children": [
-            {
-              "text": "???",
-              "complete": false,
-              "unknown": true
-            }
-          ]
-        },
-        {
-          "text": "Deal with the whole Kitsune thing",
-          "complete": false,
-          "children": [
-            {
-              "text": "Eliminate the Kitsune threat without Rough Scale finding out",
-              "complete": false,
-              "flags": [
-                "OPT"
-              ]
-            },
-            {
-              "text": "???",
-              "complete": false,
-              "unknown": true
-            }
-          ]
-        }
-      ],
-      "integrity": 23,
-      "icon": "icons/if-you-cant-beat-em.bmp"
-    },
-    {
-      "id": "grand-champ",
-      "title": "Grand Champ",
-      "tags": [
-        "mainline",
-        "tournament"
-      ],
-      "objectives": [
-        {
-          "text": "Secure entry into the tournament",
-          "complete": false,
-          "children": [
-            {
-              "text": "Obtain 250 shells",
-              "complete": false,
-              "children": [
-                {
-                  "text": "Convince Haji-Zen to sponsor you",
-                  "complete": true,
-                  "flags": [
-                    "OPT"
-                  ]
-                },
-                {
-                  "text": "Take Marchant up on his offer",
-                  "complete": false,
-                  "flags": [
-                    "OPT"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "text": "Make it past the first round",
-          "complete": false,
-          "children": [
-            {
-              "text": "Find a partner for the duo combat",
-              "complete": false,
-              "children": [
-                {
-                  "text": "Convince Mei-Zarah to fight with you",
-                  "complete": true,
-                  "flags": [
-                    "OPT"
-                  ]
-                },
-                {
-                  "text": "???",
-                  "complete": false,
-                  "unknown": true
-                }
-              ]
-            },
-            {
-              "text": "Defeat your opponents",
-              "complete": false
-            }
-          ]
-        },
-        {
-          "text": "Make it through the quarterfinals",
-          "complete": false,
-          "children": [
-            {
-              "text": "???",
-              "complete": false,
-              "unknown": true
-            },
-            {
-              "text": "Defeat your opponent",
-              "complete": false
-            }
-          ]
-        },
-        {
-          "text": "Make it through the semifinals",
-          "complete": false,
-          "children": [
-            {
-              "text": "???",
-              "complete": false,
-              "unknown": true
-            },
-            {
-              "text": "Defeat your opponent",
-              "complete": false
-            }
-          ]
-        },
-        {
-          "text": "Win the tournament",
-          "complete": false,
-          "children": [
-            {
-              "text": "???",
-              "complete": false,
-              "unknown": true
-            },
-            {
-              "text": "Defeat your opponent",
-              "complete": false
-            }
-          ]
-        },
-        {
-          "text": "Attend victory ceremony",
-          "complete": false
-        }
-      ],
-      "integrity": 83,
-      "icon": "icons/grand-champ.bmp"
-    },
-    {
-      "id": "kitsune-conspiracy",
-      "title": "The Kitsune Conspiracy",
-      "tags": [
-        "mystery",
-        "assassins"
-      ],
-      "objectives": [
-        {
-          "text": "Clash with the Mystic Kitsune",
-          "complete": true,
-          "children": [
-            {
-              "text": "Use magical powers in Zhui Yang Cheng",
-              "complete": true
-            },
-            {
-              "text": "Stand alone at night",
-              "complete": true
-            },
-            {
-              "text": "SURVIVE!",
-              "complete": true
-            }
-          ]
-        },
-        {
-          "text": "Investigate the Mystic Kitsune",
-          "complete": false,
-          "children": [
-            {
-              "text": "Learn what Will Mocked-For-Words knows",
-              "complete": true,
-              "flags": [
-                "OPT"
-              ]
-            },
-            {
-              "text": "Investigate the Kitsune presence in Zhui Yang Cheng",
-              "complete": false,
-              "children": [
-                {
-                  "text": "Visit the market during the day",
-                  "complete": false
-                },
-                {
-                  "text": "???",
-                  "complete": false,
-                  "unknown": true
-                }
-              ]
-            },
-            {
-              "text": "???",
-              "complete": false,
-              "unknown": true
-            }
-          ]
-        },
-        {
-          "text": "Neutralize the threat posed by the Mystic Kitsune",
-          "complete": false
-        }
-      ],
-      "integrity": 89,
-      "icon": "icons/kitsune-conspiracy.bmp"
+        "threadLock": "STABLE"
     }
-  ]
 }
