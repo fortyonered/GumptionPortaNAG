@@ -93,7 +93,7 @@
           "complete": false
         }
       ],
-      "integrity": 61,
+      "integrity": 76,
       "icon": "icons/chosen-one.bmp"
     },
     {
@@ -218,7 +218,7 @@
           ]
         }
       ],
-      "integrity": 48,
+      "integrity": 52,
       "icon": "icons/old-grudges.bmp"
     },
     {
@@ -274,7 +274,7 @@
           ]
         }
       ],
-      "integrity": 73,
+      "integrity": 23,
       "icon": "icons/if-you-cant-beat-em.bmp"
     },
     {
@@ -389,7 +389,7 @@
           "complete": false
         }
       ],
-      "integrity": 84,
+      "integrity": 83,
       "icon": "icons/grand-champ.bmp"
     },
     {
@@ -456,7 +456,7 @@
           "complete": false
         }
       ],
-      "integrity": 39,
+      "integrity": 89,
       "icon": "icons/kitsune-conspiracy.bmp"
     }
   ]
