@@ -536,7 +536,7 @@
     <main class="workspace">
       <aside class="panel sidebar">
         <div class="panel-title">PATH REGISTRY</div>
-        <div class="panel-subtitle">Select any number of productive routes for live guidance.</div>
+        <div class="panel-subtitle">Select productive paths for live guidance.</div>
         <div id="pathList" class="path-list"></div>
       </aside>
 
@@ -747,7 +747,7 @@
         const summary = document.createElement('div');
         summary.className = 'thread-summary';
         const counts = summarizePath(path.objectives);
-        summary.textContent = `${counts.complete}/${counts.total} SIGNALS RESOLVED`;
+        summary.textContent = `${counts.complete}/${counts.total} CHECKPOINTS PASSED`;
 
         titleWrap.append(title, summary);
         header.append(titleWrap);
@@ -965,7 +965,7 @@
 
       const label = document.createElement('span');
       label.className = 'integrity-label';
-      label.textContent = 'INT';
+      label.textContent = 'INTG';
 
       const bar = document.createElement('div');
       bar.className = 'integrity-bar';
