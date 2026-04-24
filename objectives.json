@@ -1,15 +1,12 @@
 {
-    "paths":
-    [
+    "paths": [
         {
             "icon": "icons/chosen-one.bmp",
             "id": "chosen-one",
             "integrity": 76,
-            "objectives":
-            [
+            "objectives": [
                 {
-                    "children":
-                    [
+                    "children": [
                         {
                             "complete": true,
                             "text": "Learn Basking Lizard tenets"
@@ -63,8 +60,7 @@
                     "text": "Learn and demonstrate the Ways"
                 },
                 {
-                    "children":
-                    [
+                    "children": [
                         {
                             "complete": false,
                             "text": "Meet with Rough Scale"
@@ -76,11 +72,18 @@
                         }
                     ],
                     "complete": false,
-                    "text": "Oust the bourgeoise"
+                    "text": "Oust the bourgeoisie"
                 },
                 {
                     "complete": false,
-                    "text": "Inspire the people"
+                    "text": "Inspire the people",
+                    "children": [
+                        {
+                            "complete": false,
+                            "text": "???",
+                            "unknown": true
+                        }
+                    ]
                 },
                 {
                     "complete": false,
@@ -91,8 +94,7 @@
                     "text": "Become the chosen one"
                 }
             ],
-            "tags":
-            [
+            "tags": [
                 "prophecy",
                 "identity"
             ],
@@ -102,25 +104,20 @@
             "icon": "icons/old-grudges.bmp",
             "id": "old-grudges",
             "integrity": 52,
-            "objectives":
-            [
+            "objectives": [
                 {
-                    "children":
-                    [
+                    "children": [
                         {
                             "complete": false,
                             "text": "Accept Marchant's offer for sponsorship"
                         },
                         {
-                            "children":
-                            [
+                            "children": [
                                 {
-                                    "children":
-                                    [
+                                    "children": [
                                         {
                                             "complete": true,
-                                            "flags":
-                                            [
+                                            "flags": [
                                                 "OPT"
                                             ],
                                             "text": "Convince Mei-Zarah to fight with you"
@@ -143,8 +140,7 @@
                             "text": "Make it past the first round"
                         },
                         {
-                            "children":
-                            [
+                            "children": [
                                 {
                                     "complete": false,
                                     "text": "???",
@@ -159,8 +155,7 @@
                             "text": "Make it through the quarterfinals"
                         },
                         {
-                            "children":
-                            [
+                            "children": [
                                 {
                                     "complete": false,
                                     "text": "???",
@@ -175,8 +170,7 @@
                             "text": "Make it through the semifinals"
                         },
                         {
-                            "children":
-                            [
+                            "children": [
                                 {
                                     "complete": false,
                                     "text": "???",
@@ -199,8 +193,7 @@
                     "text": "Win the tournament for the Vengeful Rams"
                 },
                 {
-                    "children":
-                    [
+                    "children": [
                         {
                             "complete": false,
                             "text": "Learn of Marchant's grudge"
@@ -215,8 +208,7 @@
                     "text": "Make him pay"
                 },
                 {
-                    "children":
-                    [
+                    "children": [
                         {
                             "complete": false,
                             "text": "???",
@@ -227,8 +219,7 @@
                     "text": "Win her back"
                 }
             ],
-            "tags":
-            [
+            "tags": [
                 "tournament",
                 "revenge"
             ],
@@ -238,27 +229,23 @@
             "icon": "icons/if-you-cant-beat-em.bmp",
             "id": "if-you-cant-beat-em",
             "integrity": 23,
-            "objectives":
-            [
+            "objectives": [
                 {
-                    "children":
-                    [
+                    "children": [
                         {
                             "complete": false,
                             "text": "Find Rough Scale"
                         },
                         {
                             "complete": false,
-                            "text": "???",
-                            "unknown": true
+                            "text": "Convince him to hire you"
                         }
                     ],
                     "complete": false,
                     "text": "Enter into Rough Scale's employ"
                 },
                 {
-                    "children":
-                    [
+                    "children": [
                         {
                             "complete": false,
                             "text": "???",
@@ -269,28 +256,13 @@
                     "text": "Do as you're told"
                 },
                 {
-                    "children":
-                    [
-                        {
-                            "complete": false,
-                            "flags":
-                            [
-                                "OPT"
-                            ],
-                            "text": "Eliminate the Kitsune threat without Rough Scale finding out"
-                        },
-                        {
-                            "complete": false,
-                            "text": "???",
-                            "unknown": true
-                        }
-                    ],
+                    "children": [],
                     "complete": false,
-                    "text": "Deal with the whole Kitsune thing"
+                    "text": "???",
+                    "unknown": true
                 }
             ],
-            "tags":
-            [
+            "tags": [
                 "rough scale",
                 "betrayal"
             ],
@@ -300,26 +272,21 @@
             "icon": "icons/grand-champ.bmp",
             "id": "grand-champ",
             "integrity": 83,
-            "objectives":
-            [
+            "objectives": [
                 {
-                    "children":
-                    [
+                    "children": [
                         {
-                            "children":
-                            [
+                            "children": [
                                 {
                                     "complete": true,
-                                    "flags":
-                                    [
+                                    "flags": [
                                         "OPT"
                                     ],
                                     "text": "Convince Haji-Zen to sponsor you"
                                 },
                                 {
                                     "complete": false,
-                                    "flags":
-                                    [
+                                    "flags": [
                                         "OPT"
                                     ],
                                     "text": "Take Marchant up on his offer"
@@ -333,15 +300,12 @@
                     "text": "Secure entry into the tournament"
                 },
                 {
-                    "children":
-                    [
+                    "children": [
                         {
-                            "children":
-                            [
+                            "children": [
                                 {
                                     "complete": true,
-                                    "flags":
-                                    [
+                                    "flags": [
                                         "OPT"
                                     ],
                                     "text": "Convince Mei-Zarah to fight with you"
@@ -364,8 +328,7 @@
                     "text": "Make it past the first round"
                 },
                 {
-                    "children":
-                    [
+                    "children": [
                         {
                             "complete": false,
                             "text": "???",
@@ -380,8 +343,7 @@
                     "text": "Make it through the quarterfinals"
                 },
                 {
-                    "children":
-                    [
+                    "children": [
                         {
                             "complete": false,
                             "text": "???",
@@ -396,8 +358,7 @@
                     "text": "Make it through the semifinals"
                 },
                 {
-                    "children":
-                    [
+                    "children": [
                         {
                             "complete": false,
                             "text": "???",
@@ -416,8 +377,7 @@
                     "text": "Attend victory ceremony"
                 }
             ],
-            "tags":
-            [
+            "tags": [
                 "mainline",
                 "tournament"
             ],
@@ -427,18 +387,16 @@
             "icon": "icons/kitsune-conspiracy.bmp",
             "id": "kitsune-conspiracy",
             "integrity": 89,
-            "objectives":
-            [
+            "objectives": [
                 {
-                    "children":
-                    [
+                    "children": [
                         {
                             "complete": true,
                             "text": "Use magical powers in Zhui Yang Cheng"
                         },
                         {
                             "complete": true,
-                            "text": "Stand alone at night"
+                            "text": "Get ambushed like chumps"
                         },
                         {
                             "complete": true,
@@ -449,22 +407,19 @@
                     "text": "Clash with the Mystic Kitsune"
                 },
                 {
-                    "children":
-                    [
+                    "children": [
                         {
-                            "complete": true,
-                            "flags":
-                            [
+                            "complete": false,
+                            "flags": [
                                 "OPT"
                             ],
                             "text": "Learn what Will Mocked-For-Words knows"
                         },
                         {
-                            "children":
-                            [
+                            "children": [
                                 {
                                     "complete": false,
-                                    "text": "Visit the market during the day"
+                                    "text": "Visit market during the day"
                                 },
                                 {
                                     "complete": false,
@@ -487,18 +442,21 @@
                 {
                     "complete": false,
                     "text": "Neutralize the threat posed by the Mystic Kitsune"
+                },
+                {
+                    "complete": false,
+                    "text": "???",
+                    "unknown": true
                 }
             ],
-            "tags":
-            [
+            "tags": [
                 "mystery",
                 "assassins"
             ],
             "title": "The Kitsune Conspiracy"
         }
     ],
-    "systemStatus":
-    {
+    "systemStatus": {
         "threadLock": "STABLE"
     }
 }
