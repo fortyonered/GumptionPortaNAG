@@ -32,4 +32,3 @@ echo.
 echo Sync complete.
 
 :end
-pause
