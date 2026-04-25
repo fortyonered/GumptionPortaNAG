@@ -427,6 +427,14 @@
                                 },
                                 {
                                     "complete": false,
+                                    "text": "Find an isolated Kitsune"
+                                },
+                                {
+                                    "complete": false,
+                                    "text": "Beat some answers out of 'em"
+                                },
+                                {
+                                    "complete": false,
                                     "text": "???",
                                     "unknown": true
                                 }
