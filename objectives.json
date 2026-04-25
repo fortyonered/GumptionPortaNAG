@@ -418,8 +418,12 @@
                         {
                             "children": [
                                 {
-                                    "complete": false,
+                                    "complete": true,
                                     "text": "Visit market during the day"
+                                },
+                                {
+                                    "complete": false,
+                                    "text": "Check out the Kitsune stall"
                                 },
                                 {
                                     "complete": false,
