@@ -422,7 +422,7 @@
                                     "text": "Visit market during the day"
                                 },
                                 {
-                                    "complete": false,
+                                    "complete": true,
                                     "text": "Check out the Kitsune stall"
                                 },
                                 {
