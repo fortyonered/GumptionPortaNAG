@@ -3,7 +3,7 @@
         {
             "icon": "icons/chosen-one.bmp",
             "id": "chosen-one",
-            "integrity": 76,
+            "integrity": 77,
             "objectives": [
                 {
                     "children": [
@@ -103,7 +103,7 @@
         {
             "icon": "icons/old-grudges.bmp",
             "id": "old-grudges",
-            "integrity": 52,
+            "integrity": 47,
             "objectives": [
                 {
                     "children": [
@@ -228,7 +228,7 @@
         {
             "icon": "icons/if-you-cant-beat-em.bmp",
             "id": "if-you-cant-beat-em",
-            "integrity": 23,
+            "integrity": 32,
             "objectives": [
                 {
                     "children": [
@@ -271,7 +271,7 @@
         {
             "icon": "icons/grand-champ.bmp",
             "id": "grand-champ",
-            "integrity": 83,
+            "integrity": 88,
             "objectives": [
                 {
                     "children": [
@@ -386,7 +386,7 @@
         {
             "icon": "icons/kitsune-conspiracy.bmp",
             "id": "kitsune-conspiracy",
-            "integrity": 89,
+            "integrity": 94,
             "objectives": [
                 {
                     "children": [
@@ -426,26 +426,30 @@
                                     "text": "Check out the Kitsune stall"
                                 },
                                 {
-                                    "complete": false,
+                                    "complete": true,
                                     "text": "Find an isolated Kitsune"
                                 },
                                 {
-                                    "complete": false,
+                                    "complete": true,
                                     "text": "Beat some answers out of 'em"
-                                },
-                                {
-                                    "complete": false,
-                                    "text": "???",
-                                    "unknown": true
                                 }
                             ],
-                            "complete": false,
+                            "complete": true,
                             "text": "Investigate the Kitsune presence in Zhui Yang Cheng"
                         },
                         {
                             "complete": false,
-                            "text": "???",
-                            "unknown": true
+                            "text": "Investigate the Southern Wetlands",
+                            "children": [
+                                {
+                                    "complete": false,
+                                    "text": "Travel to the Wetlands' edge"
+                                },
+                                {
+                                    "complete": false,
+                                    "text": "Find the sunken factory in the swamp"
+                                }
+                            ]
                         }
                     ],
                     "complete": false,
