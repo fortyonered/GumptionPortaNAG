@@ -30,6 +30,9 @@
       --text: #d7ffd9;
       --muted: #8ecb95;
       --danger: #ff8e70;
+      --danger-bright: #ff4f4f;
+      --danger-muted: #b55d5d;
+      --danger-bg: rgba(72, 16, 16, 0.68);
       --gold: #f2df88;
       --shadow: rgba(0, 0, 0, 0.45);
       --font-main: "EASVHS", "Segoe UI", sans-serif;
@@ -235,6 +238,49 @@
         0 0 0 2px rgba(101,194,123,0.14) inset,
         0 0 18px rgba(101,194,123,0.09);
     }
+    .path-card.failed {
+      border-color: rgba(255, 79, 79, 0.82);
+      background:
+        linear-gradient(180deg, rgba(74, 20, 20, 0.92), rgba(29, 10, 10, 0.96));
+      box-shadow:
+        0 0 0 2px rgba(255,79,79,0.12) inset,
+        0 0 18px rgba(255,79,79,0.10);
+    }
+    .path-card.failed.selected {
+      border-color: var(--danger-bright);
+      background:
+        linear-gradient(180deg, rgba(102, 28, 28, 0.96), rgba(48, 12, 12, 0.98));
+      box-shadow:
+        0 0 0 2px rgba(255,79,79,0.20) inset,
+        0 0 20px rgba(255,79,79,0.18);
+    }
+    .path-card.failed .path-icon-wrap {
+      border-color: rgba(255,79,79,0.72);
+      background: linear-gradient(180deg, rgba(26,8,8,0.96), rgba(54,16,16,0.96));
+    }
+    .path-card.failed .path-name,
+    .path-card.failed .path-meta,
+    .path-card.failed .integrity,
+    .path-card.failed .integrity-label,
+    .path-card.failed .integrity-value {
+      color: #ff9b9b;
+      text-shadow: 2px 0 rgba(255,0,0,0.32), -2px 0 rgba(0,255,255,0.20), 0 0 8px rgba(255,79,79,0.26);
+    }
+    .path-card.failed .integrity-bar {
+      border-color: rgba(255,79,79,0.68);
+      background: linear-gradient(180deg, rgba(18,5,5,0.96), rgba(38,9,9,0.96));
+    }
+    .path-card.failed .integrity-fill {
+      background:
+        repeating-linear-gradient(90deg, rgba(255,79,79,0.85) 0 8px, rgba(255,79,79,0.45) 8px 10px),
+        linear-gradient(180deg, rgba(255,170,170,0.72), rgba(146,34,34,0.78));
+      box-shadow: 0 0 10px rgba(255,79,79,0.28);
+    }
+    .path-fail-text.path-glitching {
+      animation: hiddenGlitch 340ms steps(2, end) 1;
+      filter: brightness(1.16);
+      text-shadow: 2px 0 rgba(255,0,0,0.45), -2px 0 rgba(0,255,255,0.34), 0 0 12px rgba(255,79,79,0.32) !important;
+    }
     .path-card-main {
       display: grid;
       grid-template-columns: 62px minmax(0, 1fr);
@@ -341,6 +387,21 @@
     }
     .thread-summary { color: var(--muted); font-size: 0.75rem; margin-top: 2px; }
     .thread-body { padding: 10px 12px 12px; }
+    .thread-card.failed {
+      border-color: rgba(255, 79, 79, 0.82);
+      background: rgba(28, 8, 8, 0.92);
+    }
+    
+    .thread-card.failed .thread-header {
+      border-bottom-color: rgba(255, 79, 79, 0.72);
+      background: linear-gradient(180deg, rgba(64, 18, 18, 0.95), rgba(28, 8, 8, 0.95));
+    }
+    
+    .thread-card.failed .thread-title,
+    .thread-card.failed .thread-summary {
+      color: #ff9b9b;
+      text-shadow: 2px 0 rgba(255,0,0,0.28), -2px 0 rgba(0,255,255,0.18), 0 0 9px rgba(255,79,79,0.25);
+    }
     .empty-state {
       padding: 28px; border: 2px dashed var(--line); color: var(--muted);
       text-align: center; line-height: 1.6;
@@ -374,6 +435,9 @@
     .checkbox::before { content: "☐"; }
     .checkbox.complete { color: var(--line-bright); }
     .checkbox.complete::before { content: "☑"; }
+    .checkbox.failed { color: var(--danger-bright); }
+    .checkbox.failed::before { content: "☒"; }
+
     .objective-text {
       flex: 1; line-height: 1.45; white-space: normal; word-break: break-word;
       position: relative;
@@ -383,6 +447,13 @@
       text-decoration: line-through;
       text-decoration-thickness: 1px;
     }
+    .objective-text.failed {
+      color: var(--danger-bright);
+      text-decoration: line-through;
+      text-decoration-thickness: 2px;
+      text-shadow: 2px 0 rgba(255,0,0,0.28), -2px 0 rgba(0,255,255,0.18), 0 0 9px rgba(255,79,79,0.25);
+    }
+
     .objective-text.unknown {
       color: var(--gold);
       font-style: italic;
@@ -480,7 +551,7 @@
       100% { transform: translateY(120%); }
     }
     @media (prefers-reduced-motion: reduce) {
-      body::before, body::after, .scanlines::before, .objective-text.unknown.glitching, .icon-button.spinning .icon, .shell, h1 { animation: none !important; }
+      body::before, body::after, .scanlines::before, .objective-text.unknown.glitching, .path-fail-text.path-glitching, .icon-button.spinning .icon, .shell, h1 { animation: none !important; }
     }
     @media (max-width: 980px) {
       body { overflow: auto; }
@@ -569,6 +640,7 @@
 
     const GLITCH_CHARS = '!@#$%&*?<>[]{}\/|+=-~';
     const unknownTextNodes = new Set();
+    const failedPathTextNodes = new Set();
     const bodyTextNodes = new Set();
     let glitchTimer = null;
     let bodyGlitchTimer = null;
@@ -649,6 +721,7 @@
     }
 
     function renderPathList() {
+      failedPathTextNodes.clear();
       elements.pathList.innerHTML = '';
 
       state.data.paths.forEach((path) => {
@@ -658,6 +731,7 @@
         card.setAttribute('role', 'button');
         card.setAttribute('aria-pressed', state.trackedPaths.has(path.id) ? 'true' : 'false');
         if (state.trackedPaths.has(path.id)) card.classList.add('selected');
+        if (path.failed) card.classList.add('failed');
 
         const togglePath = () => {
           if (state.trackedPaths.has(path.id)) state.trackedPaths.delete(path.id);
@@ -683,10 +757,14 @@
         const icon = document.createElement('img');
         icon.className = 'path-icon';
         icon.alt = '';
-        icon.src = path.icon || '';
+        icon.src = path.failed
+          ? (path.failedIcon || buildFailedFallbackIcon(path.title))
+          : (path.icon || buildFallbackIcon(path.title));
         icon.loading = 'lazy';
         icon.addEventListener('error', () => {
-          icon.src = buildFallbackIcon(path.title);
+          icon.src = path.failed
+            ? buildFailedFallbackIcon(path.title)
+            : buildFallbackIcon(path.title);
         });
         iconWrap.append(icon);
 
@@ -699,6 +777,11 @@
         const name = document.createElement('span');
         name.className = 'path-name';
         name.textContent = path.title;
+        name.dataset.baseText = path.title;
+        if (path.failed) {
+          name.classList.add('path-fail-text');
+          failedPathTextNodes.add(name);
+        }
 
         topLine.append(name);
 
@@ -710,8 +793,13 @@
         const meta = document.createElement('div');
         meta.className = 'path-meta';
         meta.textContent = `${counts.complete} OF ${counts.total} COMPLETE`;
+        meta.dataset.baseText = meta.textContent;
+        if (path.failed) {
+          meta.classList.add('path-fail-text');
+          failedPathTextNodes.add(meta);
+        }
 
-        const integrity = renderIntegrity(path.integrity);
+        const integrity = renderIntegrity(path.integrity, !!path.failed);
 
         metaRow.append(meta, integrity);
         content.append(topLine, metaRow);
@@ -735,6 +823,7 @@
       activePaths.forEach((path) => {
         const card = document.createElement('section');
         card.className = 'thread-card';
+        if (path.failed) card.classList.add('failed');
 
         const header = document.createElement('div');
         header.className = 'thread-header';
@@ -755,7 +844,7 @@
         const body = document.createElement('div');
         body.className = 'thread-body';
         path.objectives.forEach((objective, index) => {
-          body.append(renderObjectiveNode(objective, `${path.id}.${index}`));
+          body.append(renderObjectiveNode(objective, `${path.id}.${index}`, !!path.failed));
         });
 
         card.append(header, body);
@@ -763,7 +852,7 @@
       });
     }
 
-    function renderObjectiveNode(node, nodeId) {
+    function renderObjectiveNode(node, nodeId, pathFailed = false) {
       const fragment = elements.objectiveNodeTemplate.content.firstElementChild.cloneNode(true);
       const toggle = fragment.querySelector('.collapse-toggle');
       const checkbox = fragment.querySelector('.checkbox');
@@ -773,6 +862,7 @@
 
       const hasChildren = Array.isArray(node.children) && node.children.length > 0;
       const isCollapsed = state.collapsedNodes.has(nodeId);
+      const effectiveFailed = !!node.failed || (pathFailed && !node.complete);
 
       if (!hasChildren) {
         toggle.classList.add('no-children');
@@ -790,14 +880,16 @@
         });
       }
 
-      checkbox.classList.toggle('complete', !!node.complete);
+      checkbox.classList.toggle('complete', !!node.complete && !effectiveFailed);
+      checkbox.classList.toggle('failed', effectiveFailed);
       text.textContent = node.text;
       text.dataset.baseText = node.text;
-      text.classList.toggle('complete', !!node.complete);
-      text.classList.toggle('unknown', !!node.unknown);
+      text.classList.toggle('complete', !!node.complete && !effectiveFailed);
+      text.classList.toggle('failed', effectiveFailed);
+      text.classList.toggle('unknown', !!node.unknown && !effectiveFailed);
 
       bodyTextNodes.add(text);
-      if (node.unknown) unknownTextNodes.add(text);
+      if (node.unknown && !node.failed) unknownTextNodes.add(text);
 
       if (Array.isArray(node.flags) && node.flags.length) flags.textContent = node.flags.join(' ');
 
@@ -805,7 +897,7 @@
 
       if (hasChildren) {
         node.children.forEach((child, index) => {
-          childrenWrap.append(renderObjectiveNode(child, `${nodeId}.${index}`));
+          childrenWrap.append(renderObjectiveNode(child, `${nodeId}.${index}`, pathFailed));
         });
       }
 
@@ -827,7 +919,7 @@
     }
 
     function triggerUnknownGlitch() {
-      const nodes = [...unknownTextNodes].filter((node) => document.body.contains(node));
+      const nodes = [...unknownTextNodes, ...failedPathTextNodes].filter((node) => document.body.contains(node));
       if (!nodes.length) return;
 
       const target = nodes[Math.floor(Math.random() * nodes.length)];
@@ -836,7 +928,8 @@
 
       const glitched = corruptText(original);
       target.textContent = glitched;
-      target.classList.add('glitching');
+      if (target.classList.contains('path-fail-text')) target.classList.add('path-glitching');
+      else target.classList.add('glitching');
       target.setAttribute('aria-label', original);
 
       const restoreDelay = 220 + Math.random() * 260;
@@ -844,6 +937,7 @@
         if (!document.body.contains(target)) return;
         target.textContent = original;
         target.classList.remove('glitching');
+        target.classList.remove('path-glitching');
         target.removeAttribute('aria-label');
       }, restoreDelay);
     }
@@ -959,13 +1053,18 @@
       elements.activePathCount.textContent = String(state.trackedPaths.size);
     }
 
-    function renderIntegrity(value) {
+    function renderIntegrity(value, failed = false) {
       const wrap = document.createElement('div');
       wrap.className = 'integrity';
 
       const label = document.createElement('span');
       label.className = 'integrity-label';
       label.textContent = 'INTG';
+      label.dataset.baseText = label.textContent;
+      if (failed) {
+        label.classList.add('path-fail-text');
+        failedPathTextNodes.add(label);
+      }
 
       const bar = document.createElement('div');
       bar.className = 'integrity-bar';
@@ -979,10 +1078,24 @@
       const numeric = document.createElement('span');
       numeric.className = 'integrity-value';
       numeric.textContent = String(clamped);
+      numeric.dataset.baseText = numeric.textContent;
+      if (failed) {
+        numeric.classList.add('path-fail-text');
+        failedPathTextNodes.add(numeric);
+      }
 
       bar.append(fill);
       wrap.append(label, bar, numeric);
       return wrap;
+    }
+
+    function buildFailedFallbackIcon(title) {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+        <rect width="20" height="20" fill="#170606"/>
+        <rect x="1" y="1" width="18" height="18" fill="#2a0b0b" stroke="#ff4f4f" stroke-width="1"/>
+        <path d="M5 5 L15 15 M15 5 L5 15" stroke="#ff9b9b" stroke-width="2"/>
+      </svg>`;
+      return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
     }
 
     function buildFallbackIcon(title) {
@@ -1001,7 +1114,7 @@
       function walk(list) {
         list.forEach((node) => {
           total += 1;
-          if (node.complete) complete += 1;
+          if (node.complete && !node.failed) complete += 1;
           if (Array.isArray(node.children) && node.children.length) walk(node.children);
         });
       }

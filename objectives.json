@@ -13,66 +13,81 @@
                         },
                         {
                             "complete": true,
-                            "text": "Demonstrate Basking Lizard tenets"
+                            "text": "Demonstrate Basking Lizard tenets",
+                            "failed": false
                         },
                         {
                             "complete": true,
-                            "text": "Learn Awesome Ape tenets"
+                            "text": "Learn Awesome Ape tenets",
+                            "failed": false
                         },
                         {
                             "complete": false,
-                            "text": "Demonstrate Awesome Ape tenets"
+                            "text": "Demonstrate Awesome Ape tenets",
+                            "failed": false
                         },
                         {
                             "complete": true,
-                            "text": "Learn Vengeful Ram tenets"
+                            "text": "Learn Vengeful Ram tenets",
+                            "failed": false
                         },
                         {
                             "complete": false,
-                            "text": "Demonstrate Vengeful Ram tenets"
+                            "text": "Demonstrate Vengeful Ram tenets",
+                            "failed": false
                         },
                         {
                             "complete": false,
-                            "text": "Learn Iron Python tenets"
+                            "text": "Learn Iron Python tenets",
+                            "failed": false
                         },
                         {
                             "complete": false,
-                            "text": "Demonstrate Iron Python tenets"
+                            "text": "Demonstrate Iron Python tenets",
+                            "failed": false
                         },
                         {
                             "complete": false,
-                            "text": "Learn Flying Fish tenets"
+                            "text": "Learn Flying Fish tenets",
+                            "failed": false
                         },
                         {
                             "complete": false,
-                            "text": "Demonstrate Flying Fish tenets"
+                            "text": "Demonstrate Flying Fish tenets",
+                            "failed": false
                         },
                         {
                             "complete": false,
-                            "text": "Learn Mystic Kitsune tenets"
+                            "text": "Learn Mystic Kitsune tenets",
+                            "failed": false
                         },
                         {
                             "complete": false,
-                            "text": "Demonstrate Mystic Kitsune tenets"
+                            "text": "Demonstrate Mystic Kitsune tenets",
+                            "failed": false
                         }
                     ],
                     "complete": false,
-                    "text": "Learn and demonstrate the Ways"
+                    "text": "Learn and demonstrate the Ways",
+                    "failed": false
                 },
                 {
                     "children": [
                         {
                             "complete": false,
-                            "text": "Meet with Rough Scale"
+                            "text": "Meet with Rough Scale",
+                            "failed": false
                         },
                         {
                             "complete": false,
                             "text": "???",
-                            "unknown": true
+                            "unknown": true,
+                            "failed": false
                         }
                     ],
                     "complete": false,
-                    "text": "Oust the bourgeoisie"
+                    "text": "Oust the bourgeoisie",
+                    "failed": false
                 },
                 {
                     "complete": false,
@@ -81,24 +96,30 @@
                         {
                             "complete": false,
                             "text": "???",
-                            "unknown": true
+                            "unknown": true,
+                            "failed": false
                         }
-                    ]
+                    ],
+                    "failed": false
                 },
                 {
                     "complete": false,
-                    "text": "Fulfill the prophecy"
+                    "text": "Fulfill the prophecy",
+                    "failed": false
                 },
                 {
                     "complete": false,
-                    "text": "Become the chosen one"
+                    "text": "Become the chosen one",
+                    "failed": false
                 }
             ],
             "tags": [
                 "prophecy",
                 "identity"
             ],
-            "title": "The Chosen One"
+            "title": "The Chosen One",
+            "failed": false,
+            "failedIcon": "icons/chosen-one-failed.gif"
         },
         {
             "icon": "icons/old-grudges.bmp",
@@ -109,7 +130,8 @@
                     "children": [
                         {
                             "complete": false,
-                            "text": "Accept Marchant's offer for sponsorship"
+                            "text": "Accept Marchant's offer for sponsorship",
+                            "failed": false
                         },
                         {
                             "children": [
@@ -120,110 +142,133 @@
                                             "flags": [
                                                 "OPT"
                                             ],
-                                            "text": "Convince Mei-Zarah to fight with you"
+                                            "text": "Convince Mei-Zarah to fight with you",
+                                            "failed": false
                                         },
                                         {
                                             "complete": false,
                                             "text": "???",
-                                            "unknown": true
+                                            "unknown": true,
+                                            "failed": false
                                         }
                                     ],
                                     "complete": false,
-                                    "text": "Find a partner for the duo combat"
+                                    "text": "Find a partner for the duo combat",
+                                    "failed": false
                                 },
                                 {
                                     "complete": false,
-                                    "text": "Defeat your opponents"
+                                    "text": "Defeat your opponents",
+                                    "failed": false
                                 }
                             ],
                             "complete": false,
-                            "text": "Make it past the first round"
+                            "text": "Make it past the first round",
+                            "failed": false
                         },
                         {
                             "children": [
                                 {
                                     "complete": false,
                                     "text": "???",
-                                    "unknown": true
+                                    "unknown": true,
+                                    "failed": false
                                 },
                                 {
                                     "complete": false,
-                                    "text": "Defeat your opponent"
+                                    "text": "Defeat your opponent",
+                                    "failed": false
                                 }
                             ],
                             "complete": false,
-                            "text": "Make it through the quarterfinals"
+                            "text": "Make it through the quarterfinals",
+                            "failed": false
                         },
                         {
                             "children": [
                                 {
                                     "complete": false,
                                     "text": "???",
-                                    "unknown": true
+                                    "unknown": true,
+                                    "failed": false
                                 },
                                 {
                                     "complete": false,
-                                    "text": "Defeat your opponent"
+                                    "text": "Defeat your opponent",
+                                    "failed": false
                                 }
                             ],
                             "complete": false,
-                            "text": "Make it through the semifinals"
+                            "text": "Make it through the semifinals",
+                            "failed": false
                         },
                         {
                             "children": [
                                 {
                                     "complete": false,
                                     "text": "???",
-                                    "unknown": true
+                                    "unknown": true,
+                                    "failed": false
                                 },
                                 {
                                     "complete": false,
-                                    "text": "Defeat your opponent"
+                                    "text": "Defeat your opponent",
+                                    "failed": false
                                 }
                             ],
                             "complete": false,
-                            "text": "Win the tournament"
+                            "text": "Win the tournament",
+                            "failed": false
                         },
                         {
                             "complete": false,
-                            "text": "Attend victory ceremony as the Vengeful Rams' champion"
+                            "text": "Attend victory ceremony as the Vengeful Rams' champion",
+                            "failed": false
                         }
                     ],
                     "complete": false,
-                    "text": "Win the tournament for the Vengeful Rams"
+                    "text": "Win the tournament for the Vengeful Rams",
+                    "failed": false
                 },
                 {
                     "children": [
                         {
                             "complete": false,
-                            "text": "Learn of Marchant's grudge"
+                            "text": "Learn of Marchant's grudge",
+                            "failed": false
                         },
                         {
                             "complete": false,
                             "text": "???",
-                            "unknown": true
+                            "unknown": true,
+                            "failed": false
                         }
                     ],
                     "complete": false,
-                    "text": "Make him pay"
+                    "text": "Make him pay",
+                    "failed": false
                 },
                 {
                     "children": [
                         {
                             "complete": false,
                             "text": "???",
-                            "unknown": true
+                            "unknown": true,
+                            "failed": false
                         }
                     ],
                     "complete": false,
-                    "text": "Win her back"
+                    "text": "Win her back",
+                    "failed": false
                 }
             ],
             "tags": [
                 "tournament",
                 "revenge"
             ],
-            "title": "Old Grudges"
+            "title": "Old Grudges",
+            "failed": false,
+            "failedIcon": "icons/old-grudges-failed.gif"
         },
         {
             "icon": "icons/if-you-cant-beat-em.bmp",
@@ -234,39 +279,47 @@
                     "children": [
                         {
                             "complete": false,
-                            "text": "Find Rough Scale"
+                            "text": "Find Rough Scale",
+                            "failed": false
                         },
                         {
                             "complete": false,
-                            "text": "Convince him to hire you"
+                            "text": "Convince him to hire you",
+                            "failed": false
                         }
                     ],
                     "complete": false,
-                    "text": "Enter into Rough Scale's employ"
+                    "text": "Enter into Rough Scale's employ",
+                    "failed": false
                 },
                 {
                     "children": [
                         {
                             "complete": false,
                             "text": "???",
-                            "unknown": true
+                            "unknown": true,
+                            "failed": false
                         }
                     ],
                     "complete": false,
-                    "text": "Do as you're told"
+                    "text": "Do as you're told",
+                    "failed": false
                 },
                 {
                     "children": [],
                     "complete": false,
                     "text": "???",
-                    "unknown": true
+                    "unknown": true,
+                    "failed": false
                 }
             ],
             "tags": [
                 "rough scale",
                 "betrayal"
             ],
-            "title": "If You Can't Beat 'Em"
+            "title": "If You Can't Beat 'Em",
+            "failed": false,
+            "failedIcon": "icons/if-you-cant-beat-em-failed.gif"
         },
         {
             "icon": "icons/grand-champ.bmp",
@@ -282,22 +335,26 @@
                                     "flags": [
                                         "OPT"
                                     ],
-                                    "text": "Convince Haji-Zen to sponsor you"
+                                    "text": "Convince Haji-Zen to sponsor you",
+                                    "failed": false
                                 },
                                 {
                                     "complete": false,
                                     "flags": [
                                         "OPT"
                                     ],
-                                    "text": "Take Marchant up on his offer"
+                                    "text": "Take Marchant up on his offer",
+                                    "failed": false
                                 }
                             ],
                             "complete": false,
-                            "text": "Obtain 250 shells"
+                            "text": "Obtain 250 shells",
+                            "failed": false
                         }
                     ],
                     "complete": false,
-                    "text": "Secure entry into the tournament"
+                    "text": "Secure entry into the tournament",
+                    "failed": false
                 },
                 {
                     "children": [
@@ -308,80 +365,97 @@
                                     "flags": [
                                         "OPT"
                                     ],
-                                    "text": "Convince Mei-Zarah to fight with you"
+                                    "text": "Convince Mei-Zarah to fight with you",
+                                    "failed": false
                                 },
                                 {
                                     "complete": false,
                                     "text": "???",
-                                    "unknown": true
+                                    "unknown": true,
+                                    "failed": false
                                 }
                             ],
                             "complete": false,
-                            "text": "Find a partner for the duo combat"
+                            "text": "Find a partner for the duo combat",
+                            "failed": false
                         },
                         {
                             "complete": false,
-                            "text": "Defeat your opponents"
+                            "text": "Defeat your opponents",
+                            "failed": false
                         }
                     ],
                     "complete": false,
-                    "text": "Make it past the first round"
+                    "text": "Make it past the first round",
+                    "failed": false
                 },
                 {
                     "children": [
                         {
                             "complete": false,
                             "text": "???",
-                            "unknown": true
+                            "unknown": true,
+                            "failed": false
                         },
                         {
                             "complete": false,
-                            "text": "Defeat your opponent"
+                            "text": "Defeat your opponent",
+                            "failed": false
                         }
                     ],
                     "complete": false,
-                    "text": "Make it through the quarterfinals"
+                    "text": "Make it through the quarterfinals",
+                    "failed": false
                 },
                 {
                     "children": [
                         {
                             "complete": false,
                             "text": "???",
-                            "unknown": true
+                            "unknown": true,
+                            "failed": false
                         },
                         {
                             "complete": false,
-                            "text": "Defeat your opponent"
+                            "text": "Defeat your opponent",
+                            "failed": false
                         }
                     ],
                     "complete": false,
-                    "text": "Make it through the semifinals"
+                    "text": "Make it through the semifinals",
+                    "failed": false
                 },
                 {
                     "children": [
                         {
                             "complete": false,
                             "text": "???",
-                            "unknown": true
+                            "unknown": true,
+                            "failed": false
                         },
                         {
                             "complete": false,
-                            "text": "Defeat your opponent"
+                            "text": "Defeat your opponent",
+                            "failed": false
                         }
                     ],
                     "complete": false,
-                    "text": "Win the tournament"
+                    "text": "Win the tournament",
+                    "failed": false
                 },
                 {
                     "complete": false,
-                    "text": "Attend victory ceremony"
+                    "text": "Attend victory ceremony",
+                    "failed": false
                 }
             ],
             "tags": [
                 "mainline",
                 "tournament"
             ],
-            "title": "Grand Champ"
+            "title": "Grand Champ",
+            "failed": false,
+            "failedIcon": "icons/grand-champ-failed.gif"
         },
         {
             "icon": "icons/kitsune-conspiracy.bmp",
@@ -392,19 +466,23 @@
                     "children": [
                         {
                             "complete": true,
-                            "text": "Use magical powers in Zhui Yang Cheng"
+                            "text": "Use magical powers in Zhui Yang Cheng",
+                            "failed": false
                         },
                         {
                             "complete": true,
-                            "text": "Get ambushed like chumps"
+                            "text": "Get ambushed like chumps",
+                            "failed": false
                         },
                         {
                             "complete": true,
-                            "text": "SURVIVE!"
+                            "text": "SURVIVE!",
+                            "failed": false
                         }
                     ],
                     "complete": true,
-                    "text": "Clash with the Mystic Kitsune"
+                    "text": "Clash with the Mystic Kitsune",
+                    "failed": false
                 },
                 {
                     "children": [
@@ -413,29 +491,35 @@
                             "flags": [
                                 "OPT"
                             ],
-                            "text": "Learn what Will Mocked-For-Words knows"
+                            "text": "Learn what Will Mocked-For-Words knows",
+                            "failed": false
                         },
                         {
                             "children": [
                                 {
                                     "complete": true,
-                                    "text": "Visit market during the day"
+                                    "text": "Visit market during the day",
+                                    "failed": false
                                 },
                                 {
                                     "complete": true,
-                                    "text": "Check out the Kitsune stall"
+                                    "text": "Check out the Kitsune stall",
+                                    "failed": false
                                 },
                                 {
                                     "complete": true,
-                                    "text": "Find an isolated Kitsune"
+                                    "text": "Find an isolated Kitsune",
+                                    "failed": false
                                 },
                                 {
                                     "complete": true,
-                                    "text": "Beat some answers out of 'em"
+                                    "text": "Beat some answers out of 'em",
+                                    "failed": false
                                 }
                             ],
                             "complete": true,
-                            "text": "Investigate the Kitsune presence in Zhui Yang Cheng"
+                            "text": "Investigate the Kitsune presence in Zhui Yang Cheng",
+                            "failed": false
                         },
                         {
                             "complete": false,
@@ -443,13 +527,16 @@
                             "children": [
                                 {
                                     "complete": false,
-                                    "text": "Travel to the Wetlands' edge"
+                                    "text": "Travel to the Wetlands' edge",
+                                    "failed": false
                                 },
                                 {
                                     "complete": false,
-                                    "text": "Find the sunken factory in the swamp"
+                                    "text": "Find the sunken factory in the swamp",
+                                    "failed": false
                                 }
-                            ]
+                            ],
+                            "failed": false
                         }
                     ],
                     "complete": false,
@@ -457,19 +544,23 @@
                 },
                 {
                     "complete": false,
-                    "text": "Neutralize the threat posed by the Mystic Kitsune"
+                    "text": "Neutralize the threat posed by the Mystic Kitsune",
+                    "failed": false
                 },
                 {
                     "complete": false,
                     "text": "???",
-                    "unknown": true
+                    "unknown": true,
+                    "failed": false
                 }
             ],
             "tags": [
                 "mystery",
                 "assassins"
             ],
-            "title": "The Kitsune Conspiracy"
+            "title": "The Kitsune Conspiracy",
+            "failed": false,
+            "failedIcon": "icons/kitsune-conspiracy-failed.gif"
         }
     ],
     "systemStatus": {
