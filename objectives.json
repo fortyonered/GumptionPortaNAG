@@ -117,7 +117,7 @@
                 "prophecy",
                 "identity"
             ],
-            "title": "The Chosen One",
+            "title": "THE CHOSEN ONE",
             "failed": false,
             "failedIcon": "icons/chosen-one-failed.gif",
             "completed": false
@@ -267,7 +267,7 @@
                 "tournament",
                 "revenge"
             ],
-            "title": "Old Grudges",
+            "title": "OLD GRUDGES",
             "failed": false,
             "failedIcon": "icons/old-grudges-failed.gif",
             "completed": false
@@ -319,7 +319,7 @@
                 "rough scale",
                 "betrayal"
             ],
-            "title": "If You Can't Beat 'Em",
+            "title": "IF YOU CAN'T BEAT 'EM",
             "failed": false,
             "failedIcon": "icons/if-you-cant-beat-em-failed.gif",
             "completed": false
@@ -456,7 +456,7 @@
                 "mainline",
                 "tournament"
             ],
-            "title": "Grand Champ",
+            "title": "GRAND CHAMP",
             "failed": false,
             "failedIcon": "icons/grand-champ-failed.gif",
             "completed": false
@@ -574,7 +574,7 @@
                 "mystery",
                 "assassins"
             ],
-            "title": "The Kitsune Conspiracy",
+            "title": "THE KITSUNE CONSPIRACY",
             "failed": false,
             "failedIcon": "icons/kitsune-conspiracy-failed.gif",
             "completed": false
