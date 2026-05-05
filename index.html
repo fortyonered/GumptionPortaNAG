@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PORTA-NAG // Narrative-Alignment Guidance</title>
+  <link rel="icon" type="image/png" href="icons/favicon.png" />
   <style>
     @font-face {
       font-family: 'VCROSD';
@@ -49,6 +50,7 @@
       color: var(--text);
       font-family: var(--font-main);
       overflow-x: hidden;
+      overflow-y: hidden;
     }
     body::before {
       content: "";
@@ -165,6 +167,14 @@
       font-size: 1.4rem;
       box-shadow: 0 0 0 2px rgba(101,194,123,0.1) inset, 0 0 12px rgba(101,194,123,0.08);
     }
+    .refresh-icon {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      image-rendering: pixelated;
+      filter: drop-shadow(0 0 5px rgba(101,194,123,0.24));
+      pointer-events: none;
+    }
     .icon-button:hover, .icon-button:focus-visible, .path-card:hover, .path-card:focus-within { background: #173120; }
     .icon-button.spinning .icon { display: inline-block; animation: spin 0.8s linear infinite; }
     @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -238,6 +248,52 @@
         0 0 0 2px rgba(101,194,123,0.14) inset,
         0 0 18px rgba(101,194,123,0.09);
     }
+    .path-card.completed {
+      border-color: rgba(242, 223, 136, 0.82);
+      background:
+        linear-gradient(180deg, rgba(52, 50, 25, 0.96), rgba(19, 31, 18, 0.98));
+      box-shadow:
+        0 0 0 2px rgba(242,223,136,0.12) inset,
+        0 0 18px rgba(242,223,136,0.10);
+    }
+    .path-card.completed.selected {
+      border-color: var(--gold);
+      background:
+        linear-gradient(180deg, rgba(74, 70, 30, 0.98), rgba(28, 46, 26, 0.98));
+      box-shadow:
+        0 0 0 2px rgba(242,223,136,0.20) inset,
+        0 0 20px rgba(242,223,136,0.18);
+    }
+    .path-card.completed .path-icon {
+      filter:
+        sepia(1)
+        saturate(2)
+        hue-rotate(10deg)
+        brightness(1.1)
+        contrast(1.1);
+    }
+    .path-card.completed .path-icon-wrap {
+      border-color: rgba(242,223,136,0.45);
+      background: linear-gradient(180deg, rgba(28,27,12,0.96), rgba(35,45,20,0.96));
+    }
+    .path-card.completed .path-name,
+    .path-card.completed .path-meta,
+    .path-card.completed .integrity,
+    .path-card.completed .integrity-label,
+    .path-card.completed .integrity-value {
+      color: #fff1a8;
+      text-shadow: 0 0 8px rgba(242,223,136,0.28), 1px 0 rgba(255,255,170,0.18), -1px 0 rgba(101,194,123,0.16);
+    }
+    .path-card.completed .integrity-bar {
+      border-color: rgba(242,223,136,0.68);
+      background: linear-gradient(180deg, rgba(24,22,7,0.96), rgba(42,36,10,0.96));
+    }
+    .path-card.completed .integrity-fill {
+      background:
+        repeating-linear-gradient(90deg, rgba(242,223,136,0.90) 0 8px, rgba(242,223,136,0.48) 8px 10px),
+        linear-gradient(180deg, rgba(255,246,183,0.82), rgba(151,126,45,0.78));
+      box-shadow: 0 0 10px rgba(242,223,136,0.28);
+    }
     .path-card.failed {
       border-color: rgba(255, 79, 79, 0.82);
       background:
@@ -255,7 +311,7 @@
         0 0 20px rgba(255,79,79,0.18);
     }
     .path-card.failed .path-icon-wrap {
-      border-color: rgba(255,79,79,0.72);
+      border-color: rgba(255,79,79,0.45);
       background: linear-gradient(180deg, rgba(26,8,8,0.96), rgba(54,16,16,0.96));
     }
     .path-card.failed .path-name,
@@ -279,7 +335,27 @@
     .path-fail-text.path-glitching {
       animation: hiddenGlitch 340ms steps(2, end) 1;
       filter: brightness(1.16);
-      text-shadow: 2px 0 rgba(255,0,0,0.45), -2px 0 rgba(0,255,255,0.34), 0 0 12px rgba(255,79,79,0.32) !important;
+    }
+    .path-fail-text {
+      position: relative;
+    }
+    .path-fail-text::after {
+      content: attr(data-glitch-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      pointer-events: none;
+      opacity: 0;
+    }
+    .path-fail-text.path-glitching::after {
+      opacity: 0.62;
+      transform: translateX(1px);
+      mix-blend-mode: screen;
+      text-shadow:
+        2px 0 rgba(255,0,0,0.45),
+        -2px 0 rgba(0,255,255,0.34),
+        0 0 12px rgba(255,79,79,0.32);
     }
     .path-card-main {
       display: grid;
@@ -296,10 +372,20 @@
       background: linear-gradient(180deg, rgba(8,15,11,0.95), rgba(13,24,18,0.95));
       box-shadow: 0 0 0 1px rgba(101,194,123,0.08) inset;
       align-self: stretch;
+      position: relative;
+      overflow: hidden;
     }
-    .path-card.selected .path-icon-wrap {
+    .path-card.selected:not(.completed):not(.failed) .path-icon-wrap {
       background: linear-gradient(180deg, rgba(14,28,20,0.98), rgba(20,38,28,0.98));
       border-color: rgba(130, 230, 151, 0.65);
+    }
+    .path-card.completed.selected .path-icon-wrap {
+      background: linear-gradient(180deg, rgba(36,34,14,0.98), rgba(48,54,22,0.98));
+      border-color: rgba(242,223,136,0.85);
+    }
+    .path-card.failed.selected .path-icon-wrap {
+      background: linear-gradient(180deg, rgba(34,8,8,0.98), rgba(64,18,18,0.98));
+      border-color: rgba(255,79,79,0.85);
     }
     .path-content { display: grid; gap: 8px; min-width: 0; }
     .path-topline { display: flex; align-items: center; min-width: 0; }
@@ -310,6 +396,16 @@
       display: block;
       image-rendering: pixelated;
       filter: drop-shadow(0 0 4px rgba(101,194,123,0.12));
+    }
+    .completed-path-overlay {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      image-rendering: pixelated;
+      pointer-events: none;
+      z-index: 2;
     }
     .path-name {
       display: block; font-weight: 700; font-size: 1rem; min-width: 0;
@@ -402,6 +498,49 @@
       color: #ff9b9b;
       text-shadow: 2px 0 rgba(255,0,0,0.28), -2px 0 rgba(0,255,255,0.18), 0 0 9px rgba(255,79,79,0.25);
     }
+    .thread-card.completed {
+      border-color: rgba(242, 223, 136, 0.82);
+      background: rgba(38, 34, 12, 0.92);
+    }
+    
+    .thread-card.completed .thread-header {
+      border-bottom-color: rgba(242, 223, 136, 0.72);
+      background: linear-gradient(180deg, rgba(74, 70, 30, 0.95), rgba(32, 30, 12, 0.95));
+    }
+    
+    .thread-card.completed .thread-title,
+    .thread-card.completed .thread-summary {
+      color: #fff1a8;
+      text-shadow:
+        0 0 8px rgba(242,223,136,0.28),
+        1px 0 rgba(255,255,170,0.18),
+        -1px 0 rgba(101,194,123,0.16);
+    }
+    .thread-card.completed .objective-text:not(.failed) {
+      color: #e6d398;
+      text-shadow:
+        0 0 8px rgba(242,223,136,0.28),
+        1px 0 rgba(255,255,170,0.18),
+        -1px 0 rgba(101,194,123,0.16);
+    }
+    
+    .thread-card.completed .checkbox:not(.failed) {
+      color: #fff1a8;
+      text-shadow:
+        0 0 8px rgba(242,223,136,0.28),
+        1px 0 rgba(255,255,170,0.18),
+        -1px 0 rgba(101,194,123,0.16);
+    }
+    
+    .thread-card.completed .collapse-toggle:not(.no-children) {
+      color: #fff1a8;
+      border-color: rgba(242,223,136,0.55);
+      background: rgba(40, 34, 12, 0.88);
+    }
+    
+    .thread-card.completed .objective-children {
+      border-left-color: rgba(242,223,136,0.35);
+    }
     .empty-state {
       padding: 28px; border: 2px dashed var(--line); color: var(--muted);
       text-align: center; line-height: 1.6;
@@ -442,6 +581,15 @@
       flex: 1; line-height: 1.45; white-space: normal; word-break: break-word;
       position: relative;
     }
+    .objective-text::after {
+      content: attr(data-glitch-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      pointer-events: none;
+      opacity: 0;
+    }
     .objective-text.complete {
       color: var(--muted);
       text-decoration: line-through;
@@ -455,7 +603,7 @@
     }
 
     .objective-text.unknown {
-      color: var(--gold);
+      color: var(--muted);
       font-style: italic;
       text-shadow: 0 0 7px rgba(242,223,136,0.18);
       position: relative;
@@ -481,12 +629,26 @@
       transform: translateX(2px);
       text-shadow: -2px 0 rgba(0,255,255,0.6);
     }
-    .objective-text.body-glitching {
+    .objective-text.body-glitching::after {
+      opacity: 0.6;
+      transform: translateX(1px);
+      mix-blend-mode: screen;
       text-shadow:
         2px 0 rgba(255, 110, 110, 0.78),
         -2px 0 rgba(0, 255, 255, 0.68),
         0 0 12px rgba(101,194,123,0.24);
-      filter: brightness(1.14);
+    }
+    .thread-card.failed .objective-text.body-glitching::after {
+      text-shadow:
+        2px 0 rgba(255, 79, 79, 0.78),
+        -2px 0 rgba(255, 150, 150, 0.46),
+        0 0 12px rgba(255, 79, 79, 0.34);
+    }
+    .thread-card.completed .objective-text.body-glitching:not(.failed)::after {
+      text-shadow:
+        2px 0 rgba(242, 223, 136, 0.68),
+        -2px 0 rgba(255, 255, 170, 0.38),
+        0 0 12px rgba(242, 223, 136, 0.28);
     }
     .objective-flags {
       display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap;
@@ -592,7 +754,7 @@
       </div>
       <div class="header-actions">
         <button id="refreshBtn" class="icon-button" title="Refresh objective feed" aria-label="Refresh objective feed">
-          <span class="icon">↻</span>
+          <span class="icon"><b>↻</b></span>
         </button>
       </div>
     </header>
@@ -638,7 +800,7 @@
       collapsedNodes: 'portaNAG.collapsedNodes'
     };
 
-    const GLITCH_CHARS = '!@#$%&*?<>[]{}\/|+=-~';
+    const GLITCH_CHARS = '░▒▓';
     const unknownTextNodes = new Set();
     const failedPathTextNodes = new Set();
     const bodyTextNodes = new Set();
@@ -732,6 +894,7 @@
         card.setAttribute('aria-pressed', state.trackedPaths.has(path.id) ? 'true' : 'false');
         if (state.trackedPaths.has(path.id)) card.classList.add('selected');
         if (path.failed) card.classList.add('failed');
+        else if (path.completed) card.classList.add('completed');
 
         const togglePath = () => {
           if (state.trackedPaths.has(path.id)) state.trackedPaths.delete(path.id);
@@ -767,6 +930,14 @@
             : buildFallbackIcon(path.title);
         });
         iconWrap.append(icon);
+        if (path.completed && !path.failed) {
+          const completedOverlay = document.createElement('img');
+          completedOverlay.className = 'completed-path-overlay';
+          completedOverlay.alt = '';
+          completedOverlay.src = 'icons/completed_path_overlay.png';
+          completedOverlay.loading = 'lazy';
+          iconWrap.append(completedOverlay);
+        }
 
         const content = document.createElement('div');
         content.className = 'path-content';
@@ -792,7 +963,14 @@
 
         const meta = document.createElement('div');
         meta.className = 'path-meta';
-        meta.textContent = `${counts.complete} OF ${counts.total} COMPLETE`;
+        
+        if (path.failed) {
+          meta.textContent = '☒ FAILED…';
+        } else if (path.completed) {
+          meta.textContent = '☑ COMPLETE!';
+        } else {
+          meta.textContent = `${counts.complete} OF ${counts.total} COMPLETE`;
+        }
         meta.dataset.baseText = meta.textContent;
         if (path.failed) {
           meta.classList.add('path-fail-text');
@@ -824,6 +1002,7 @@
         const card = document.createElement('section');
         card.className = 'thread-card';
         if (path.failed) card.classList.add('failed');
+        else if (path.completed) card.classList.add('completed');
 
         const header = document.createElement('div');
         header.className = 'thread-header';
@@ -927,7 +1106,7 @@
       if (!original || original.length < 2) return;
 
       const glitched = corruptText(original);
-      target.textContent = glitched;
+      target.dataset.glitchText = glitched;
       if (target.classList.contains('path-fail-text')) target.classList.add('path-glitching');
       else target.classList.add('glitching');
       target.setAttribute('aria-label', original);
@@ -935,7 +1114,7 @@
       const restoreDelay = 220 + Math.random() * 260;
       setTimeout(() => {
         if (!document.body.contains(target)) return;
-        target.textContent = original;
+        delete target.dataset.glitchText;
         target.classList.remove('glitching');
         target.classList.remove('path-glitching');
         target.removeAttribute('aria-label');
@@ -1005,13 +1184,13 @@
       if (!original || original.length < 3) return;
 
       const glitched = corruptBodyText(original, target.classList.contains('unknown'));
-      target.textContent = glitched;
+      target.dataset.glitchText = glitched;
       target.classList.add('body-glitching');
 
       const restoreDelay = 260 + Math.random() * 260;
       setTimeout(() => {
         if (!document.body.contains(target)) return;
-        target.textContent = original;
+        delete target.dataset.glitchText;
         target.classList.remove('body-glitching');
       }, restoreDelay);
     }

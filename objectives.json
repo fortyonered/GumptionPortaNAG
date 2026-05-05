@@ -119,7 +119,8 @@
             ],
             "title": "The Chosen One",
             "failed": false,
-            "failedIcon": "icons/chosen-one-failed.gif"
+            "failedIcon": "icons/chosen-one-failed.gif",
+            "completed": false
         },
         {
             "icon": "icons/old-grudges.bmp",
@@ -268,7 +269,8 @@
             ],
             "title": "Old Grudges",
             "failed": false,
-            "failedIcon": "icons/old-grudges-failed.gif"
+            "failedIcon": "icons/old-grudges-failed.gif",
+            "completed": false
         },
         {
             "icon": "icons/if-you-cant-beat-em.bmp",
@@ -319,7 +321,8 @@
             ],
             "title": "If You Can't Beat 'Em",
             "failed": false,
-            "failedIcon": "icons/if-you-cant-beat-em-failed.gif"
+            "failedIcon": "icons/if-you-cant-beat-em-failed.gif",
+            "completed": false
         },
         {
             "icon": "icons/grand-champ.bmp",
@@ -455,7 +458,8 @@
             ],
             "title": "Grand Champ",
             "failed": false,
-            "failedIcon": "icons/grand-champ-failed.gif"
+            "failedIcon": "icons/grand-champ-failed.gif",
+            "completed": false
         },
         {
             "icon": "icons/kitsune-conspiracy.bmp",
@@ -532,6 +536,11 @@
                                 },
                                 {
                                     "complete": false,
+                                    "text": "???",
+                                    "unknown": true
+                                },
+                                {
+                                    "complete": false,
                                     "text": "Find the sunken factory in the swamp",
                                     "failed": false
                                 }
@@ -560,7 +569,8 @@
             ],
             "title": "The Kitsune Conspiracy",
             "failed": false,
-            "failedIcon": "icons/kitsune-conspiracy-failed.gif"
+            "failedIcon": "icons/kitsune-conspiracy-failed.gif",
+            "completed": false
         }
     ],
     "systemStatus": {
