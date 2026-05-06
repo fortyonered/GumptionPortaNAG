@@ -1,7 +1,7 @@
 {
     "paths": [
         {
-            "icon": "icons/chosen-one.bmp",
+            "icon": "icons/chosen-one.png",
             "id": "chosen-one",
             "integrity": 77,
             "objectives": [
@@ -117,13 +117,14 @@
                 "prophecy",
                 "identity"
             ],
-            "title": "THE CHOSEN ONE",
+            "title": "The Chosen One",
             "failed": false,
             "failedIcon": "icons/chosen-one-failed.gif",
-            "completed": false
+            "completed": false,
+            "staged": false
         },
         {
-            "icon": "icons/old-grudges.bmp",
+            "icon": "icons/old-grudges.png",
             "id": "old-grudges",
             "integrity": 47,
             "objectives": [
@@ -267,13 +268,14 @@
                 "tournament",
                 "revenge"
             ],
-            "title": "OLD GRUDGES",
+            "title": "Old Grudges",
             "failed": false,
             "failedIcon": "icons/old-grudges-failed.gif",
-            "completed": false
+            "completed": false,
+            "staged": false
         },
         {
-            "icon": "icons/if-you-cant-beat-em.bmp",
+            "icon": "icons/if-you-cant-beat-em.png",
             "id": "if-you-cant-beat-em",
             "integrity": 32,
             "objectives": [
@@ -319,13 +321,14 @@
                 "rough scale",
                 "betrayal"
             ],
-            "title": "IF YOU CAN'T BEAT 'EM",
+            "title": "If You Can't Beat 'Em",
             "failed": false,
             "failedIcon": "icons/if-you-cant-beat-em-failed.gif",
-            "completed": false
+            "completed": false,
+            "staged": false
         },
         {
-            "icon": "icons/grand-champ.bmp",
+            "icon": "icons/grand-champ.png",
             "id": "grand-champ",
             "integrity": 88,
             "objectives": [
@@ -456,13 +459,14 @@
                 "mainline",
                 "tournament"
             ],
-            "title": "GRAND CHAMP",
+            "title": "Grand Champ",
             "failed": false,
             "failedIcon": "icons/grand-champ-failed.gif",
-            "completed": false
+            "completed": false,
+            "staged": false
         },
         {
-            "icon": "icons/kitsune-conspiracy.bmp",
+            "icon": "icons/kitsune-conspiracy.png",
             "id": "kitsune-conspiracy",
             "integrity": 94,
             "objectives": [
@@ -523,7 +527,7 @@
                             ],
                             "complete": true,
                             "text": "Investigate the Kitsune presence in Zhui Yang Cheng",
-                            "failed": false
+                            "staged": false
                         },
                         {
                             "complete": false,
@@ -541,27 +545,137 @@
                                 },
                                 {
                                     "complete": false,
+                                    "staged": true,
+                                    "text": "Search Rough Scale ganger corpse"
+                                },
+                                {
+                                    "complete": false,
+                                    "staged": true,
+                                    "text": "Follow Rough Scale/Arauchigumi gang directions through wetlands",
+                                    "children": [
+                                        {
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "“Listen for the crows, who know the way.”"
+                                        },
+                                        {
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "“Right turns, all through the Labyrinth of Reeds.”"
+                                        },
+                                        {
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "“Adhere to the path, blind to the lights...”"
+                                        },
+                                        {
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "“Knock, as we do, at the Driftwood Door.”"
+                                        },
+                                        {
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "“Pass through the House of Blocks, ignoring the voice.”"
+                                        },
+                                        {
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "“Walk between the sunken houses...”"
+                                        },
+                                        {
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "“... keeping your distance from the shepherds.”"
+                                        },
+                                        {
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "“Observe the frogs, and use their wisdom.”"
+                                        },
+                                        {
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "“Show the pin of Arauchigumi to the telescope, and enter with respect.”"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "complete": false,
                                     "text": "Find the sunken factory in the swamp",
                                     "failed": false
                                 }
                             ],
                             "failed": false
+                        },
+                        {
+                            "complete": false,
+                            "staged": true,
+                            "text": "Explore the sunken factory",
+                            "children": [
+                                {
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Find the Kitsune leader"
+                                },
+                                {
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Uncover information about the Kitsune leader",
+                                    "flags": [
+                                        "OPT"
+                                    ]
+                                }
+                            ]
                         }
                     ],
                     "complete": false,
-                    "text": "Investigate the Mystic Kitsune"
+                    "text": "Investigate the Mystic Kitsune",
+                    "staged": false
                 },
                 {
                     "complete": false,
-                    "text": "Neutralize the threat posed by the Mystic Kitsune",
-                    "failed": false,
+                    "text": "End the threat posed by the Mystic Kitsune",
                     "children": [
                         {
                             "complete": false,
                             "text": "???",
                             "unknown": true
+                        },
+                        {
+                            "complete": false,
+                            "staged": true,
+                            "text": "Neutralize the Kitsune",
+                            "children": [
+                                {
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill the Kitsune"
+                                },
+                                {
+                                    "complete": false,
+                                    "staged": true,
+                                    "text": "Destroy the puppet network"
+                                },
+                                {
+                                    "complete": false,
+                                    "staged": true,
+                                    "text": "Disconnect the Kitsune from the puppet network"
+                                },
+                                {
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Convince the Kitsune to end his watch"
+                                }
+                            ]
+                        },
+                        {
+                            "complete": false,
+                            "staged": true,
+                            "text": "Convince the Kitsune to end his watch"
                         }
-                    ]
+                    ],
+                    "staged": false
                 },
                 {
                     "complete": false,
@@ -574,10 +688,23 @@
                 "mystery",
                 "assassins"
             ],
-            "title": "THE KITSUNE CONSPIRACY",
+            "title": "The Kitsune Conspiracy",
             "failed": false,
             "failedIcon": "icons/kitsune-conspiracy-failed.gif",
-            "completed": false
+            "completed": false,
+            "staged": false
+        },
+        {
+            "icon": "icons/uneven-odds.png",
+            "failedIcon": "icons/uneven-odds-failed.gif",
+            "failed": false,
+            "completed": false,
+            "staged": true,
+            "id": "uneven-odds",
+            "integrity": 67,
+            "objectives": [],
+            "tags": [],
+            "title": "Uneven Odds"
         }
     ],
     "systemStatus": {

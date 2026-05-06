@@ -22,11 +22,6 @@
     }
 
     @font-face {
-      font-family: 'AriW9500';
-      src: url('./fonts/ari-w9500-condensed-bold.ttf') format('truetype');
-    }
-
-    @font-face {
       font-family: 'Pixeland';
       src: url('./fonts/pixeland.ttf') format('truetype');
     }
@@ -47,7 +42,8 @@
       --gold: #f2df88;
       --shadow: rgba(0, 0, 0, 0.45);
       --font-main: "EASVHS", "Segoe UI", sans-serif;
-      --font-display: "Pixeland", "Lucida Console", monospace;
+      --font-display: "VCROSD", "Lucida Console", monospace;
+      --font-title: "Pixeland", "Lucida Console", monospace;
       --font-logo: "Edit Undo Line", "Lucida Console", monospace;
     }
     * { box-sizing: border-box; }
@@ -181,7 +177,7 @@
       width: 28px;
       height: 28px;
       object-fit: contain;
-      image-rendering: pixelated;
+      image-rendering: crisp-edges;
       filter: drop-shadow(0 0 5px rgba(101,194,123,0.24));
       pointer-events: none;
     }
@@ -229,9 +225,9 @@
     }
     .panel-title {
       color: var(--line-bright);
-      font-family: var(--font-display);
-      font-size: 1rem; letter-spacing: 0.08em;
-      margin-bottom: 6px;
+      font-family: var(--font-title);
+      font-size: 2rem; letter-spacing: 0em;
+      margin-bottom: 0.3rem;
       text-shadow: 0 0 8px rgba(101,194,123,0.18);
     }
     .panel-subtitle { color: var(--muted); font-size: 0.75rem; margin-bottom: 14px; }
@@ -404,7 +400,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      image-rendering: pixelated;
+      image-rendering: crisp-edges;
       filter: drop-shadow(0 0 4px rgba(101,194,123,0.12));
     }
     .completed-path-overlay {
@@ -413,7 +409,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      image-rendering: pixelated;
+      image-rendering: crisp-edges;
       pointer-events: none;
       z-index: 2;
     }
@@ -611,7 +607,23 @@
       text-decoration-thickness: 2px;
       text-shadow: 2px 0 rgba(255,0,0,0.28), -2px 0 rgba(0,255,255,0.18), 0 0 9px rgba(255,79,79,0.25);
     }
-
+    
+    .objective-text.complete.path-failed-tint,
+    .checkbox.complete.path-failed-tint {
+      color: var(--danger-bright);
+      text-shadow:
+        2px 0 rgba(255,0,0,0.28),
+        -2px 0 rgba(0,255,255,0.18),
+        0 0 9px rgba(255,79,79,0.25);
+    }
+    .thread-card.failed .objective-text.path-failed-tint,
+    .thread-card.failed .checkbox.path-failed-tint {
+      color: var(--danger-bright);
+      text-shadow:
+        2px 0 rgba(255,0,0,0.28),
+        -2px 0 rgba(0,255,255,0.18),
+        0 0 9px rgba(255,79,79,0.25);
+    }
     .objective-text.unknown {
       color: var(--muted);
       font-style: italic;
@@ -760,7 +772,7 @@
       <div>
         <div class="eyebrow">PATAPHYSICAL FIELD INSTRUMENT // PROPERTY OF DEEKIN RUSH</div>
         <h1>PORTA-NAG</h1>
-        <div class="subtitle">PORTABLE NARRATIVE-ALIGNMENT GUIDANCE INTERFACE // NAG.SYS_LOAD(88%)</div>
+        <div class="subtitle">PORTABLE NARRATIVE-ALIGNMENT GUIDANCE INTERFACE // NAG.PEAK_SYS_LOAD_24H(88%)</div>
       </div>
       <div class="header-actions">
         <button id="refreshBtn" class="icon-button" title="Refresh objective feed" aria-label="Refresh objective feed">
@@ -778,13 +790,13 @@
 
     <main class="workspace">
       <aside class="panel sidebar">
-        <div class="panel-title">PATH REGISTRY</div>
+        <div class="panel-title">// PATH REGISTRY</div>
         <div class="panel-subtitle">Select productive paths for live guidance.</div>
         <div id="pathList" class="path-list"></div>
       </aside>
 
       <section class="panel content">
-        <div class="panel-title">ACTIVE THREADS</div>
+        <div class="panel-title">// ACTIVE THREADS</div>
         <div class="panel-subtitle">Projected objectives. Collapse state preserved locally between syncs.</div>
         <div id="threadDisplay" class="thread-display"></div>
       </section>
@@ -814,8 +826,11 @@
     const unknownTextNodes = new Set();
     const failedPathTextNodes = new Set();
     const bodyTextNodes = new Set();
+    const liveIntegrityNodes = new Set();
+    
     let glitchTimer = null;
     let bodyGlitchTimer = null;
+    let integrityTimer = null;
 
     const state = {
       data: null,
@@ -878,25 +893,39 @@
       if (!Array.isArray(data.paths)) throw new Error('Feed is missing a paths array.');
     }
 
+    function isStaged(entry) {
+      return !!entry && entry.staged === true;
+    }
+
+    function visiblePaths() {
+      return (state.data?.paths || []).filter((path) => !isStaged(path));
+    }
+
+    function visibleObjectives(nodes) {
+      return (nodes || []).filter((node) => !isStaged(node));
+    }
+
     function reconcileTrackedPaths() {
-      const validIds = new Set(state.data.paths.map((path) => path.id));
+      const validIds = new Set(visiblePaths().map((path) => path.id));
       state.trackedPaths = new Set([...state.trackedPaths].filter((id) => validIds.has(id)));
       persistJSON(STORAGE_KEYS.trackedPaths, [...state.trackedPaths]);
     }
 
     function renderAll() {
+      liveIntegrityNodes.clear();
       renderPathList();
       renderThreads();
       updateHeaderCounts();
       restartUnknownGlitchLoop();
       restartBodyTextGlitchLoop();
+      startIntegrityFluctuation();
     }
 
     function renderPathList() {
       failedPathTextNodes.clear();
       elements.pathList.innerHTML = '';
 
-      state.data.paths.forEach((path) => {
+      visiblePaths().forEach((path) => {
         const card = document.createElement('div');
         card.className = 'path-card';
         card.tabIndex = 0;
@@ -979,7 +1008,7 @@
         } else if (path.completed) {
           meta.textContent = '☑ COMPLETE!';
         } else {
-          meta.textContent = `${counts.complete} OF ${counts.total} COMPLETE`;
+          meta.textContent = `${counts.complete}/${counts.total} COMPLETE`;
         }
         meta.dataset.baseText = meta.textContent;
         if (path.failed) {
@@ -1002,7 +1031,7 @@
       bodyTextNodes.clear();
       elements.threadDisplay.innerHTML = '';
 
-      const activePaths = state.data.paths.filter((path) => state.trackedPaths.has(path.id));
+      const activePaths = visiblePaths().filter((path) => state.trackedPaths.has(path.id));
       if (!activePaths.length) {
         elements.threadDisplay.innerHTML = '<div class="empty-state">NO ACTIVE PATHS SELECTED // ENGAGE PATHS FROM THE REGISTRY TO PROJECT OBJECTIVES</div>';
         return;
@@ -1032,7 +1061,7 @@
 
         const body = document.createElement('div');
         body.className = 'thread-body';
-        path.objectives.forEach((objective, index) => {
+        visibleObjectives(path.objectives).forEach((objective, index) => {
           body.append(renderObjectiveNode(objective, `${path.id}.${index}`, !!path.failed));
         });
 
@@ -1041,17 +1070,21 @@
       });
     }
 
-    function renderObjectiveNode(node, nodeId, pathFailed = false) {
-      const fragment = elements.objectiveNodeTemplate.content.firstElementChild.cloneNode(true);
-      const toggle = fragment.querySelector('.collapse-toggle');
-      const checkbox = fragment.querySelector('.checkbox');
-      const text = fragment.querySelector('.objective-text');
-      const flags = fragment.querySelector('.objective-flags');
-      const childrenWrap = fragment.querySelector('.objective-children');
-
-      const hasChildren = Array.isArray(node.children) && node.children.length > 0;
-      const isCollapsed = state.collapsedNodes.has(nodeId);
-      const effectiveFailed = !!node.failed || (pathFailed && !node.complete);
+      function renderObjectiveNode(node, nodeId, pathFailed = false, parentFailed = false) {
+        const fragment = elements.objectiveNodeTemplate.content.firstElementChild.cloneNode(true);
+        const toggle = fragment.querySelector('.collapse-toggle');
+        const checkbox = fragment.querySelector('.checkbox');
+        const text = fragment.querySelector('.objective-text');
+        const flags = fragment.querySelector('.objective-flags');
+        const childrenWrap = fragment.querySelector('.objective-children');
+      
+        const visibleChildren = visibleObjectives(node.children);
+        const hasChildren = visibleChildren.length > 0;
+        const isCollapsed = state.collapsedNodes.has(nodeId);
+      
+        const inheritedFailed = pathFailed || parentFailed;
+        const effectiveFailed = !!node.failed || (inheritedFailed && !node.complete);
+        const pathFailureTint = inheritedFailed && !node.failed;
 
       if (!hasChildren) {
         toggle.classList.add('no-children');
@@ -1071,10 +1104,12 @@
 
       checkbox.classList.toggle('complete', !!node.complete && !effectiveFailed);
       checkbox.classList.toggle('failed', effectiveFailed);
+      checkbox.classList.toggle('path-failed-tint', pathFailureTint);
       text.textContent = node.text;
       text.dataset.baseText = node.text;
       text.classList.toggle('complete', !!node.complete && !effectiveFailed);
       text.classList.toggle('failed', effectiveFailed);
+      text.classList.toggle('path-failed-tint', pathFailureTint);
       text.classList.toggle('unknown', !!node.unknown && !effectiveFailed);
 
       bodyTextNodes.add(text);
@@ -1085,8 +1120,15 @@
       if (isCollapsed && hasChildren) fragment.classList.add('collapsed');
 
       if (hasChildren) {
-        node.children.forEach((child, index) => {
-          childrenWrap.append(renderObjectiveNode(child, `${nodeId}.${index}`, pathFailed));
+        visibleChildren.forEach((child, index) => {
+          childrenWrap.append(
+            renderObjectiveNode(
+              child,
+              `${nodeId}.${index}`,
+              pathFailed,
+              inheritedFailed || node.failed
+            )
+          );
         });
       }
 
@@ -1261,21 +1303,58 @@
       const fill = document.createElement('div');
       fill.className = 'integrity-fill';
 
-      const clamped = Math.max(0, Math.min(100, Number.isFinite(Number(value)) ? Number(value) : 0));
-      fill.style.width = `${clamped}%`;
+      const base = Math.max(0, Math.min(100, Number.isFinite(Number(value)) ? Number(value) : 0));
 
       const numeric = document.createElement('span');
       numeric.className = 'integrity-value';
-      numeric.textContent = String(clamped);
-      numeric.dataset.baseText = numeric.textContent;
+      numeric.dataset.baseText = String(base);
+      
       if (failed) {
         numeric.classList.add('path-fail-text');
         failedPathTextNodes.add(numeric);
       }
-
+      
+      const integrityState = {
+        base,
+        current: base,
+        fill,
+        numeric
+      };
+      
+      updateIntegrityDisplay(integrityState);
+      liveIntegrityNodes.add(integrityState);
+      
       bar.append(fill);
       wrap.append(label, bar, numeric);
       return wrap;
+    }
+
+    function updateIntegrityDisplay(integrityState) {
+      integrityState.fill.style.width = `${integrityState.current}%`;
+      integrityState.numeric.textContent = String(integrityState.current);
+      integrityState.numeric.dataset.baseText = String(integrityState.current);
+    }
+    
+    function startIntegrityFluctuation() {
+      if (integrityTimer) clearInterval(integrityTimer);
+    
+      integrityTimer = setInterval(() => {
+        liveIntegrityNodes.forEach((integrityState) => {
+          const direction = Math.random() < 0.5 ? -1 : 1;
+          const magnitude = Math.random() < 0.5 ? 1 : 2;
+    
+          let next = integrityState.current + direction * magnitude;
+    
+          const min = Math.max(0, integrityState.base - 5);
+          const max = Math.min(100, integrityState.base + 5);
+    
+          if (next < min) next = min;
+          if (next > max) next = max;
+    
+          integrityState.current = next;
+          updateIntegrityDisplay(integrityState);
+        });
+      }, 2500);
     }
 
     function buildFailedFallbackIcon(title) {
@@ -1301,7 +1380,7 @@
       let total = 0;
       let complete = 0;
       function walk(list) {
-        list.forEach((node) => {
+        visibleObjectives(list).forEach((node) => {
           total += 1;
           if (node.complete && !node.failed) complete += 1;
           if (Array.isArray(node.children) && node.children.length) walk(node.children);
