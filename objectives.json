@@ -676,12 +676,6 @@
                         }
                     ],
                     "staged": false
-                },
-                {
-                    "complete": false,
-                    "text": "???",
-                    "unknown": true,
-                    "failed": false
                 }
             ],
             "tags": [
