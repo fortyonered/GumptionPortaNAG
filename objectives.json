@@ -330,7 +330,7 @@
         {
             "icon": "icons/grand-champ.png",
             "id": "grand-champ",
-            "integrity": 88,
+            "integrity": 82,
             "objectives": [
                 {
                     "children": [
