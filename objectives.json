@@ -642,12 +642,12 @@
                             "children": [
                                 {
                                     "complete": false,
-                                    "staged": false,
+                                    "staged": true,
                                     "text": "Find the Kitsune leader"
                                 },
                                 {
                                     "complete": false,
-                                    "staged": false,
+                                    "staged": true,
                                     "text": "Uncover information about the Kitsune leader",
                                     "flags": [
                                         "OPT"
