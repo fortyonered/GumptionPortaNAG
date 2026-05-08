@@ -551,12 +551,12 @@
                                 {
                                     "complete": false,
                                     "staged": true,
-                                    "text": "Follow Rough Scale/Arauchigumi gang directions through wetlands",
+                                    "text": "Follow Rough Scale gang directions through wetlands",
                                     "children": [
                                         {
                                             "complete": false,
                                             "staged": false,
-                                            "text": "“Listen for the crows, who know the way.”"
+                                            "text": "“Look for the crows; they know the way.”"
                                         },
                                         {
                                             "complete": false,
@@ -566,7 +566,7 @@
                                         {
                                             "complete": false,
                                             "staged": false,
-                                            "text": "“Adhere to the path, blind to the lights...”"
+                                            "text": "“Be brave in the Meadow of Purple.”"
                                         },
                                         {
                                             "complete": false,
@@ -576,7 +576,15 @@
                                         {
                                             "complete": false,
                                             "staged": false,
-                                            "text": "“Pass through the House of Blocks, ignoring the voice.”"
+                                            "text": "“Pass through the House of Blocks...”"
+                                        },
+                                        {
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "“... Ignore the voice.”",
+                                            "flags": [
+                                                "OPT"
+                                            ]
                                         },
                                         {
                                             "complete": false,
@@ -591,7 +599,15 @@
                                         {
                                             "complete": false,
                                             "staged": false,
-                                            "text": "“Observe the frogs, and use their wisdom.”"
+                                            "text": "“Watch your step crossing the lilyfields...”"
+                                        },
+                                        {
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "“... The frogs might be able to help.”",
+                                            "flags": [
+                                                "OPT"
+                                            ]
                                         },
                                         {
                                             "complete": false,
@@ -604,6 +620,17 @@
                                     "complete": false,
                                     "text": "Find the sunken factory in the swamp",
                                     "failed": false
+                                },
+                                {
+                                    "complete": false,
+                                    "staged": true,
+                                    "text": "Explore the sunken factory",
+                                    "children": []
+                                },
+                                {
+                                    "complete": false,
+                                    "staged": true,
+                                    "text": "Find the Kitsune leader"
                                 }
                             ],
                             "failed": false
@@ -645,7 +672,7 @@
                         {
                             "complete": false,
                             "staged": true,
-                            "text": "Neutralize the Kitsune",
+                            "text": "Deal with the Kitsune",
                             "children": [
                                 {
                                     "complete": false,
@@ -654,25 +681,30 @@
                                 },
                                 {
                                     "complete": false,
-                                    "staged": true,
-                                    "text": "Destroy the puppet network"
-                                },
-                                {
-                                    "complete": false,
-                                    "staged": true,
-                                    "text": "Disconnect the Kitsune from the puppet network"
-                                },
-                                {
-                                    "complete": false,
                                     "staged": false,
-                                    "text": "Convince the Kitsune to end his watch"
+                                    "text": "Convince the Kitsune to end his watch instead",
+                                    "flags": [
+                                        "OPT"
+                                    ]
                                 }
                             ]
                         },
                         {
                             "complete": false,
                             "staged": true,
-                            "text": "Convince the Kitsune to end his watch"
+                            "text": "Deal with the puppets",
+                            "children": [
+                                {
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Destroy the puppet network"
+                                },
+                                {
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Lock the Kitsune out of the puppet network"
+                                }
+                            ]
                         }
                     ],
                     "staged": false
