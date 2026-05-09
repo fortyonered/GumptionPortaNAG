@@ -554,7 +554,7 @@
                                             "text": "“Look for the crows; they know the way.”"
                                         },
                                         {
-                                            "complete": false,
+                                            "complete": true,
                                             "staged": false,
                                             "text": "“Right turns, all through the Labyrinth of Reeds.”"
                                         },
