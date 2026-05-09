@@ -559,7 +559,7 @@
                                             "text": "“Right turns, all through the Labyrinth of Reeds.”"
                                         },
                                         {
-                                            "complete": false,
+                                            "complete": true,
                                             "staged": false,
                                             "text": "“Be brave in the Meadow of Purple.”"
                                         },
