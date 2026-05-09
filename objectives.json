@@ -615,9 +615,9 @@
                                     ]
                                 },
                                 {
-                                    "complete": false,
+                                    "complete": true,
                                     "text": "Find the sunken factory in the swamp",
-                                    "failed": false
+                                    "staged": false
                                 },
                                 {
                                     "complete": false,
