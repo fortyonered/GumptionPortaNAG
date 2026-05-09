@@ -569,12 +569,12 @@
                                             "text": "“Knock, as we do, at the Driftwood Door.”"
                                         },
                                         {
-                                            "complete": false,
+                                            "complete": true,
                                             "staged": false,
                                             "text": "“Pass through the House of Blocks...”"
                                         },
                                         {
-                                            "complete": false,
+                                            "complete": true,
                                             "staged": false,
                                             "text": "“... Ignore the voice.”",
                                             "flags": [
