@@ -549,7 +549,7 @@
                                     "text": "Follow Rough Scale gang directions through wetlands",
                                     "children": [
                                         {
-                                            "complete": false,
+                                            "complete": true,
                                             "staged": false,
                                             "text": "“Look for the crows; they know the way.”"
                                         },
