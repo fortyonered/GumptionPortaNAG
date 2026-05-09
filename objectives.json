@@ -564,7 +564,7 @@
                                             "text": "“Be brave in the Meadow of Purple.”"
                                         },
                                         {
-                                            "complete": false,
+                                            "complete": true,
                                             "staged": false,
                                             "text": "“Knock, as we do, at the Driftwood Door.”"
                                         },
