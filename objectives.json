@@ -582,7 +582,7 @@
                                             ]
                                         },
                                         {
-                                            "complete": false,
+                                            "complete": true,
                                             "staged": false,
                                             "text": "“Walk between the sunken houses...”"
                                         },
