@@ -545,7 +545,7 @@
                                 },
                                 {
                                     "complete": false,
-                                    "staged": true,
+                                    "staged": false,
                                     "text": "Follow Rough Scale gang directions through wetlands",
                                     "children": [
                                         {
