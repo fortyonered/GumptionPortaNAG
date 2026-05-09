@@ -587,7 +587,7 @@
                                             "text": "“Walk between the sunken houses...”"
                                         },
                                         {
-                                            "complete": false,
+                                            "complete": true,
                                             "staged": false,
                                             "text": "“... keeping your distance from the shepherds.”"
                                         },
