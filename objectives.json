@@ -126,7 +126,7 @@
         {
             "icon": "icons/old-grudges.png",
             "id": "old-grudges",
-            "integrity": 47,
+            "integrity": 3,
             "objectives": [
                 {
                     "children": [
