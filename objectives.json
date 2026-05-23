@@ -664,12 +664,7 @@
                     "children": [
                         {
                             "complete": false,
-                            "text": "???",
-                            "unknown": true
-                        },
-                        {
-                            "complete": false,
-                            "staged": true,
+                            "staged": false,
                             "text": "Deal with the Kitsune",
                             "children": [
                                 {
@@ -679,7 +674,7 @@
                                 },
                                 {
                                     "complete": false,
-                                    "staged": false,
+                                    "staged": true,
                                     "text": "Convince the Kitsune to end his watch instead",
                                     "flags": [
                                         "OPT"
@@ -689,7 +684,7 @@
                         },
                         {
                             "complete": false,
-                            "staged": true,
+                            "staged": false,
                             "text": "Deal with the puppets",
                             "children": [
                                 {
@@ -699,7 +694,7 @@
                                 },
                                 {
                                     "complete": false,
-                                    "staged": false,
+                                    "staged": true,
                                     "text": "Lock the Kitsune out of the puppet network"
                                 }
                             ]
