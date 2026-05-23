@@ -530,7 +530,7 @@
                             "staged": false
                         },
                         {
-                            "complete": false,
+                            "complete": true,
                             "text": "Investigate the Southern Wetlands",
                             "children": [
                                 {
@@ -625,7 +625,7 @@
                                     ]
                                 }
                             ],
-                            "failed": false
+                            "staged": false
                         },
                         {
                             "complete": false,
@@ -636,24 +636,7 @@
                                     "complete": false,
                                     "staged": false,
                                     "text": "Explore the ground floor",
-                                    "children": [
-                                        {
-                                            "complete": false,
-                                            "staged": false,
-                                            "text": "???",
-                                            "unknown": true
-                                        },
-                                        {
-                                            "complete": false,
-                                            "staged": true,
-                                            "text": "Get ambushed like chumps"
-                                        },
-                                        {
-                                            "complete": false,
-                                            "staged": true,
-                                            "text": "SURVIVE!"
-                                        }
-                                    ]
+                                    "children": []
                                 },
                                 {
                                     "complete": false,
