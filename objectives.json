@@ -269,7 +269,7 @@
                 "revenge"
             ],
             "title": "Old Grudges",
-            "failed": false,
+            "failed": true,
             "failedIcon": "icons/old-grudges-failed.gif",
             "completed": false,
             "staged": false
