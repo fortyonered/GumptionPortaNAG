@@ -544,7 +544,12 @@
                                     "text": "Search Rough Scale ganger corpse"
                                 },
                                 {
-                                    "complete": false,
+                                    "complete": true,
+                                    "text": "Find the sunken factory in the swamp",
+                                    "staged": false
+                                },
+                                {
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Follow Rough Scale gang directions through wetlands",
                                     "children": [
@@ -592,7 +597,7 @@
                                             "text": "“... keeping your distance from the shepherds.”"
                                         },
                                         {
-                                            "complete": false,
+                                            "complete": true,
                                             "staged": false,
                                             "text": "“Watch your step crossing the lilyfields...”"
                                         },
@@ -602,50 +607,62 @@
                                             "text": "“... The frogs might be able to help.”",
                                             "flags": [
                                                 "OPT"
-                                            ]
+                                            ],
+                                            "failed": true
                                         },
                                         {
                                             "complete": false,
                                             "staged": false,
-                                            "text": "“Show the pin of Arauchigumi to the telescope, and enter...”"
+                                            "text": "“Show the pin of Arauchigumi to the telescope, and enter...”",
+                                            "failed": true,
+                                            "flags": [
+                                                "OPT"
+                                            ]
                                         }
                                     ],
                                     "flags": [
                                         "OPT"
                                     ]
-                                },
-                                {
-                                    "complete": true,
-                                    "text": "Find the sunken factory in the swamp",
-                                    "staged": false
-                                },
-                                {
-                                    "complete": false,
-                                    "staged": true,
-                                    "text": "Explore the sunken factory",
-                                    "children": []
-                                },
-                                {
-                                    "complete": false,
-                                    "staged": true,
-                                    "text": "Find the Kitsune leader"
                                 }
                             ],
                             "failed": false
                         },
                         {
                             "complete": false,
-                            "staged": true,
+                            "staged": false,
                             "text": "Explore the sunken factory",
                             "children": [
                                 {
                                     "complete": false,
-                                    "staged": true,
+                                    "staged": false,
+                                    "text": "Explore the ground floor",
+                                    "children": [
+                                        {
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "???",
+                                            "unknown": true
+                                        },
+                                        {
+                                            "complete": false,
+                                            "staged": true,
+                                            "text": "Get ambushed like chumps"
+                                        },
+                                        {
+                                            "complete": false,
+                                            "staged": true,
+                                            "text": "SURVIVE!"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "complete": false,
+                                    "staged": false,
                                     "text": "Find the Kitsune leader"
                                 },
                                 {
                                     "complete": false,
-                                    "staged": true,
+                                    "staged": false,
                                     "text": "Uncover information about the Kitsune leader",
                                     "flags": [
                                         "OPT"
