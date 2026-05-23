@@ -628,18 +628,18 @@
                             "staged": false
                         },
                         {
-                            "complete": false,
+                            "complete": true,
                             "staged": false,
                             "text": "Explore the sunken factory",
                             "children": [
                                 {
-                                    "complete": false,
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Explore the ground floor",
                                     "children": []
                                 },
                                 {
-                                    "complete": false,
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Find the Kitsune leader"
                                 },
@@ -654,7 +654,7 @@
                             ]
                         }
                     ],
-                    "complete": false,
+                    "complete": true,
                     "text": "Investigate the Mystic Kitsune",
                     "staged": false
                 },
