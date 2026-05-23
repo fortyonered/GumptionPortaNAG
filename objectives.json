@@ -644,7 +644,7 @@
                                     "text": "Find the Kitsune leader"
                                 },
                                 {
-                                    "complete": false,
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Uncover information about the Kitsune leader",
                                     "flags": [
