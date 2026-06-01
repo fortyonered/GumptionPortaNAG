@@ -126,7 +126,7 @@
         {
             "icon": "icons/old-grudges.png",
             "id": "old-grudges",
-            "integrity": 3,
+            "integrity": 36,
             "objectives": [
                 {
                     "children": [
@@ -269,7 +269,7 @@
                 "revenge"
             ],
             "title": "Old Grudges",
-            "failed": true,
+            "failed": false,
             "failedIcon": "icons/old-grudges-failed.gif",
             "completed": false,
             "staged": false
@@ -674,6 +674,12 @@
                                 },
                                 {
                                     "complete": false,
+                                    "staged": false,
+                                    "text": "???",
+                                    "unknown": true
+                                },
+                                {
+                                    "complete": false,
                                     "staged": true,
                                     "text": "Convince the Kitsune to end his watch instead",
                                     "flags": [
@@ -691,6 +697,12 @@
                                     "complete": false,
                                     "staged": false,
                                     "text": "Destroy the puppet network"
+                                },
+                                {
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "???",
+                                    "unknown": true
                                 },
                                 {
                                     "complete": false,
@@ -721,12 +733,24 @@
             "staged": true,
             "id": "uneven-odds",
             "integrity": 67,
-            "objectives": [],
+            "objectives": [
+                {
+                    "complete": false,
+                    "staged": false,
+                    "text": "Return to Zhui Yang Cheng"
+                },
+                {
+                    "complete": false,
+                    "staged": false,
+                    "text": "Visit the tournament registry"
+                }
+            ],
             "tags": [],
             "title": "Uneven Odds"
         }
     ],
     "systemStatus": {
         "threadLock": "STABLE"
-    }
+    },
+    "version": "2026-06-01T06:31:12Z"
 }

@@ -139,6 +139,11 @@
       opacity: 0;
       z-index: 2;
     }
+
+    body.incoming-update .shell::after {
+      opacity: 0.78;
+      animation: tearPass 0.35s linear 1;
+    }
     .device-header {
       display: flex; justify-content: space-between; gap: 16px;
       padding: 18px 20px 14px;
@@ -183,6 +188,35 @@
     }
     .icon-button:hover, .icon-button:focus-visible, .path-card:hover, .path-card:focus-within { background: #173120; }
     .icon-button.spinning .icon { display: inline-block; animation: spin 0.8s linear infinite; }
+
+    .icon-button.update-available {
+      border-color: var(--gold);
+      color: var(--gold);
+      animation: updatePulse 1s steps(2, end) infinite;
+      box-shadow:
+        0 0 0 2px rgba(242,223,136,0.18) inset,
+        0 0 18px rgba(242,223,136,0.35);
+    }
+    .icon-button.update-available .icon {
+      text-shadow:
+        0 0 10px rgba(242,223,136,0.65),
+        2px 0 rgba(255,0,0,0.20),
+        -2px 0 rgba(0,255,255,0.18);
+    }
+    @keyframes updatePulse {
+      0%, 100% {
+        background: #201d0d;
+        box-shadow:
+          0 0 0 2px rgba(242,223,136,0.18) inset,
+          0 0 12px rgba(242,223,136,0.25);
+      }
+      50% {
+        background: #3a3514;
+        box-shadow:
+          0 0 0 2px rgba(242,223,136,0.30) inset,
+          0 0 26px rgba(242,223,136,0.68);
+      }
+    }
     @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     .status-strip {
       display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px;
@@ -803,6 +837,10 @@
     </main>
   </div>
 
+  <audio id="transmissionSfx" preload="auto">
+    <source src="audio/objective_update_pending.wav" type="audio/wav">
+  </audio>
+
   <template id="objectiveNodeTemplate">
     <div class="objective-node">
       <div class="objective-row">
@@ -831,6 +869,9 @@
     let glitchTimer = null;
     let bodyGlitchTimer = null;
     let integrityTimer = null;
+    let loadedObjectiveVersion = null;
+    let remoteVersionCheckTimer = null;
+    let updatePending = false;
 
     const state = {
       data: null,
@@ -846,6 +887,7 @@
       lastRefresh: document.getElementById('lastRefresh'),
       syncStatus: document.getElementById('syncStatus'),
       threadLock: document.getElementById('threadLock'),
+      transmissionSfx: document.getElementById('transmissionSfx'),
       objectiveNodeTemplate: document.getElementById('objectiveNodeTemplate')
     };
 
@@ -854,6 +896,7 @@
     function boot() {
       elements.refreshBtn.addEventListener('click', () => refreshData(true));
       refreshData(false);
+      startRemoteVersionCheck();
     }
 
     async function refreshData(manual = false) {
@@ -867,6 +910,8 @@
         const data = await response.json();
         validateData(data);
         state.data = data;
+        loadedObjectiveVersion = getObjectiveVersion(data);
+        clearPendingUpdate();
         reconcileTrackedPaths();
         renderAll();
 
@@ -892,6 +937,63 @@
       if (!data || typeof data !== 'object') throw new Error('Malformed objective feed.');
       if (!Array.isArray(data.paths)) throw new Error('Feed is missing a paths array.');
     }
+
+    function getObjectiveVersion(data) {
+      return data?.version || data?.updatedAt || data?.revision || null;
+    }
+
+    function startRemoteVersionCheck() {
+      if (remoteVersionCheckTimer) clearInterval(remoteVersionCheckTimer);
+
+      remoteVersionCheckTimer = setInterval(checkRemoteVersion, 20000);
+    }
+
+    async function checkRemoteVersion() {
+      if (!loadedObjectiveVersion || updatePending) return;
+
+      try {
+        const response = await fetch(`${DATA_URL}?v=${Date.now()}`, { cache: 'no-store' });
+        if (!response.ok) return;
+
+        const data = await response.json();
+        const remoteVersion = getObjectiveVersion(data);
+
+        if (remoteVersion && remoteVersion !== loadedObjectiveVersion) {
+          triggerPendingUpdate();
+        }
+      } catch (error) {
+        console.warn('Remote objective version check failed:', error);
+      }
+    }
+
+    function triggerPendingUpdate() {
+      if (updatePending) return;
+      updatePending = true;
+
+      elements.syncStatus.textContent = 'OBJECTIVE UPDATE PENDING!';
+      elements.refreshBtn.classList.add('update-available');
+      elements.refreshBtn.title = 'Objective update pending — refresh objective feed';
+      elements.refreshBtn.setAttribute('aria-label', 'Objective update pending — refresh objective feed');
+      document.body.classList.add('incoming-update');
+
+      if (elements.transmissionSfx) {
+        elements.transmissionSfx.currentTime = 0;
+        elements.transmissionSfx.play().catch(() => {});
+      }
+
+      setTimeout(() => {
+        document.body.classList.remove('incoming-update');
+      }, 2500);
+    }
+
+    function clearPendingUpdate() {
+      updatePending = false;
+      elements.refreshBtn.classList.remove('update-available');
+      elements.refreshBtn.title = 'Refresh objective feed';
+      elements.refreshBtn.setAttribute('aria-label', 'Refresh objective feed');
+      document.body.classList.remove('incoming-update');
+    }
+
 
     function isStaged(entry) {
       return !!entry && entry.staged === true;
