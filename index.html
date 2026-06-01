@@ -188,6 +188,23 @@
     }
     .icon-button:hover, .icon-button:focus-visible, .path-card:hover, .path-card:focus-within { background: #173120; }
     .icon-button.spinning .icon { display: inline-block; animation: spin 0.8s linear infinite; }
+    .ack-button {
+      width: auto;
+      min-width: 58px;
+      padding: 0 10px;
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+    }
+    .ack-button.hidden { display: none; }
+    .ack-button:not(.hidden) {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: #201d0d;
+      box-shadow:
+        0 0 0 2px rgba(242,223,136,0.16) inset,
+        0 0 14px rgba(242,223,136,0.22);
+    }
 
     .icon-button.update-available {
       border-color: var(--gold);
@@ -371,6 +388,49 @@
         repeating-linear-gradient(90deg, rgba(255,79,79,0.85) 0 8px, rgba(255,79,79,0.45) 8px 10px),
         linear-gradient(180deg, rgba(255,170,170,0.72), rgba(146,34,34,0.78));
       box-shadow: 0 0 10px rgba(255,79,79,0.28);
+    }
+    .path-card.update-direct,
+    .path-card.update-descendant {
+      box-shadow:
+        0 0 0 2px rgba(242,223,136,0.16) inset,
+        0 0 18px rgba(242,223,136,0.16);
+    }
+    .path-card.update-direct .path-icon-wrap,
+    .path-card.update-descendant .path-icon-wrap {
+      border-color: rgba(242,223,136,0.82);
+    }
+    .path-update-badge,
+    .objective-update-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(242,223,136,0.72);
+      background: rgba(40, 34, 12, 0.88);
+      color: #fff1a8;
+      font-family: var(--font-display);
+      font-size: 0.62rem;
+      line-height: 1;
+      letter-spacing: 0.08em;
+      padding: 3px 5px 2px;
+      margin-left: 8px;
+      white-space: nowrap;
+      text-shadow:
+        0 0 8px rgba(242,223,136,0.32),
+        1px 0 rgba(255,255,170,0.18),
+        -1px 0 rgba(0,255,255,0.14);
+      animation: updateBadgePulse 1.2s steps(2, end) infinite;
+    }
+    .path-card.failed .path-update-badge,
+    .thread-card.failed .objective-update-badge,
+    .objective-text.failed + .objective-flags .objective-update-badge {
+      border-color: rgba(255,79,79,0.70);
+      background: rgba(42, 8, 8, 0.88);
+      color: #ffb0b0;
+      text-shadow: 2px 0 rgba(255,0,0,0.28), -2px 0 rgba(0,255,255,0.18), 0 0 9px rgba(255,79,79,0.25);
+    }
+    @keyframes updateBadgePulse {
+      0%, 100% { filter: brightness(1); opacity: 0.86; }
+      50% { filter: brightness(1.26); opacity: 1; }
     }
     .path-fail-text.path-glitching {
       animation: hiddenGlitch 340ms steps(2, end) 1;
@@ -593,6 +653,21 @@
     }
     .objective-node.collapsed > .objective-children { display: none; }
     .objective-row { display: flex; align-items: flex-start; gap: 8px; padding: 4px 0; min-height: 28px; }
+    .objective-row.update-direct {
+      margin-left: -4px;
+      padding-left: 4px;
+      padding-right: 4px;
+      background: linear-gradient(90deg, rgba(242,223,136,0.14), rgba(242,223,136,0.03), transparent 78%);
+      outline: 1px solid rgba(242,223,136,0.18);
+      box-shadow: 0 0 12px rgba(242,223,136,0.08);
+    }
+    .objective-node.contains-update > .objective-children {
+      border-left-color: rgba(242,223,136,0.70);
+      box-shadow: -6px 0 10px -10px rgba(242,223,136,0.55);
+    }
+    .objective-node.collapsed.contains-update > .objective-row {
+      background: linear-gradient(90deg, rgba(242,223,136,0.10), rgba(242,223,136,0.02), transparent 74%);
+    }
     .collapse-toggle {
       width: 18px; min-width: 18px; height: 18px;
       border: 1px solid var(--line);
@@ -606,6 +681,12 @@
       box-shadow: 0 0 8px rgba(101,194,123,0.12);
     }
     .collapse-toggle.no-children { visibility: hidden; pointer-events: none; }
+    .collapse-toggle.subtree-update {
+      border-color: rgba(242,223,136,0.78);
+      color: #fff1a8;
+      box-shadow: 0 0 10px rgba(242,223,136,0.28);
+      animation: updateBadgePulse 1.2s steps(2, end) infinite;
+    }
     .checkbox {
       width: 18px; min-width: 18px; display: inline-flex; justify-content: center;
       color: var(--muted); font-family: var(--font-display); margin-top: 1px;
@@ -812,6 +893,9 @@
         <button id="refreshBtn" class="icon-button" title="Refresh objective feed" aria-label="Refresh objective feed">
           <span class="icon"><b>↻</b></span>
         </button>
+        <button id="ackUpdatesBtn" class="icon-button ack-button hidden" title="Acknowledge objective updates" aria-label="Acknowledge objective updates">
+          <span class="icon">ACK</span>
+        </button>
       </div>
     </header>
 
@@ -857,7 +941,8 @@
     const DATA_URL = 'objectives.json';
     const STORAGE_KEYS = {
       trackedPaths: 'portaNAG.trackedPaths',
-      collapsedNodes: 'portaNAG.collapsedNodes'
+      collapsedNodes: 'portaNAG.collapsedNodes',
+      acknowledgedUpdateTime: 'portaNAG.acknowledgedUpdateTime'
     };
 
     const GLITCH_CHARS = '░▒▓';
@@ -876,13 +961,15 @@
     const state = {
       data: null,
       trackedPaths: new Set(loadJSON(STORAGE_KEYS.trackedPaths, [])),
-      collapsedNodes: new Set(loadJSON(STORAGE_KEYS.collapsedNodes, []))
+      collapsedNodes: new Set(loadJSON(STORAGE_KEYS.collapsedNodes, [])),
+      acknowledgedUpdateTime: loadJSON(STORAGE_KEYS.acknowledgedUpdateTime, null)
     };
 
     const elements = {
       pathList: document.getElementById('pathList'),
       threadDisplay: document.getElementById('threadDisplay'),
       refreshBtn: document.getElementById('refreshBtn'),
+      ackUpdatesBtn: document.getElementById('ackUpdatesBtn'),
       activePathCount: document.getElementById('activePathCount'),
       lastRefresh: document.getElementById('lastRefresh'),
       syncStatus: document.getElementById('syncStatus'),
@@ -895,6 +982,7 @@
 
     function boot() {
       elements.refreshBtn.addEventListener('click', () => refreshData(true));
+      elements.ackUpdatesBtn.addEventListener('click', acknowledgeUpdates);
       refreshData(false);
       startRemoteVersionCheck();
     }
@@ -911,6 +999,10 @@
         validateData(data);
         state.data = data;
         loadedObjectiveVersion = getObjectiveVersion(data);
+        if (!state.acknowledgedUpdateTime && loadedObjectiveVersion) {
+          state.acknowledgedUpdateTime = loadedObjectiveVersion;
+          persistJSON(STORAGE_KEYS.acknowledgedUpdateTime, state.acknowledgedUpdateTime);
+        }
         clearPendingUpdate();
         reconcileTrackedPaths();
         renderAll();
@@ -940,6 +1032,64 @@
 
     function getObjectiveVersion(data) {
       return data?.version || data?.updatedAt || data?.revision || null;
+    }
+
+    function parseUpdateTime(value) {
+      if (!value) return 0;
+      if (typeof value === 'number') return Number.isFinite(value) ? value : 0;
+      const parsed = Date.parse(value);
+      return Number.isFinite(parsed) ? parsed : 0;
+    }
+
+    function acknowledgedTimestamp() {
+      return parseUpdateTime(state.acknowledgedUpdateTime);
+    }
+
+    function itemTimestamp(item) {
+      return Math.max(parseUpdateTime(item?.updatedAt), parseUpdateTime(item?.createdAt));
+    }
+
+    function isDirectlyUpdated(item) {
+      const ack = acknowledgedTimestamp();
+      return ack > 0 && itemTimestamp(item) > ack;
+    }
+
+    function hasUpdatedDescendant(nodes) {
+      return visibleObjectives(nodes).some((node) => isDirectlyUpdated(node) || hasUpdatedDescendant(node.children));
+    }
+
+    function pathHasUpdate(path) {
+      return isDirectlyUpdated(path) || hasUpdatedDescendant(path.objectives);
+    }
+
+    function updateLabelFor(item) {
+      const created = parseUpdateTime(item?.createdAt);
+      const updated = parseUpdateTime(item?.updatedAt);
+      if (created && updated && Math.abs(updated - created) < 2000) return 'NEW!';
+      return 'UPDATED!';
+    }
+
+    function makeUpdateBadge(label, className = 'objective-update-badge') {
+      const badge = document.createElement('span');
+      badge.className = className;
+      badge.textContent = label;
+      return badge;
+    }
+
+    function updateAcknowledgeButton() {
+      const hasUpdates = !!state.data && visiblePaths().some(pathHasUpdate);
+      elements.ackUpdatesBtn.classList.toggle('hidden', !hasUpdates);
+      elements.ackUpdatesBtn.disabled = !hasUpdates;
+      elements.ackUpdatesBtn.title = hasUpdates ? 'Clear new/updated objective highlights' : 'No objective updates to acknowledge';
+      elements.ackUpdatesBtn.setAttribute('aria-label', elements.ackUpdatesBtn.title);
+    }
+
+    function acknowledgeUpdates() {
+      if (!state.data) return;
+      state.acknowledgedUpdateTime = getObjectiveVersion(state.data) || new Date().toISOString();
+      persistJSON(STORAGE_KEYS.acknowledgedUpdateTime, state.acknowledgedUpdateTime);
+      renderAll();
+      elements.syncStatus.textContent = 'UPDATES ACKNOWLEDGED';
     }
 
     function startRemoteVersionCheck() {
@@ -1036,6 +1186,10 @@
         if (state.trackedPaths.has(path.id)) card.classList.add('selected');
         if (path.failed) card.classList.add('failed');
         else if (path.completed) card.classList.add('completed');
+        const pathDirectUpdate = isDirectlyUpdated(path);
+        const pathDescendantUpdate = hasUpdatedDescendant(path.objectives);
+        if (pathDirectUpdate) card.classList.add('update-direct');
+        else if (pathDescendantUpdate) card.classList.add('update-descendant');
 
         const togglePath = () => {
           if (state.trackedPaths.has(path.id)) state.trackedPaths.delete(path.id);
@@ -1090,6 +1244,9 @@
         name.className = 'path-name';
         name.textContent = path.title;
         name.dataset.baseText = path.title;
+        if (pathDirectUpdate || pathDescendantUpdate) {
+          name.append(makeUpdateBadge(pathDirectUpdate ? updateLabelFor(path) : 'UPDATE!', 'path-update-badge'));
+        }
         if (path.failed) {
           name.classList.add('path-fail-text');
           failedPathTextNodes.add(name);
@@ -1174,6 +1331,7 @@
 
       function renderObjectiveNode(node, nodeId, pathFailed = false, parentFailed = false) {
         const fragment = elements.objectiveNodeTemplate.content.firstElementChild.cloneNode(true);
+        const row = fragment.querySelector('.objective-row');
         const toggle = fragment.querySelector('.collapse-toggle');
         const checkbox = fragment.querySelector('.checkbox');
         const text = fragment.querySelector('.objective-text');
@@ -1187,6 +1345,9 @@
         const inheritedFailed = pathFailed || parentFailed;
         const effectiveFailed = !!node.failed || (inheritedFailed && !node.complete);
         const pathFailureTint = inheritedFailed && !node.failed;
+        const directUpdate = isDirectlyUpdated(node);
+        const descendantUpdate = hasUpdatedDescendant(visibleChildren);
+        const updateInSubtree = directUpdate || descendantUpdate;
 
       if (!hasChildren) {
         toggle.classList.add('no-children');
@@ -1194,6 +1355,7 @@
         toggle.tabIndex = -1;
       } else {
         toggle.textContent = isCollapsed ? '+' : '–';
+        toggle.classList.toggle('subtree-update', descendantUpdate && !directUpdate);
         toggle.addEventListener('click', () => {
           if (state.collapsedNodes.has(nodeId)) state.collapsedNodes.delete(nodeId);
           else state.collapsedNodes.add(nodeId);
@@ -1213,11 +1375,24 @@
       text.classList.toggle('failed', effectiveFailed);
       text.classList.toggle('path-failed-tint', pathFailureTint);
       text.classList.toggle('unknown', !!node.unknown && !effectiveFailed);
+      row.classList.toggle('update-direct', directUpdate);
+      fragment.classList.toggle('contains-update', updateInSubtree);
+      fragment.classList.toggle('direct-update', directUpdate);
 
       bodyTextNodes.add(text);
       if (node.unknown && !node.failed) unknownTextNodes.add(text);
 
-      if (Array.isArray(node.flags) && node.flags.length) flags.textContent = node.flags.join(' ');
+      flags.textContent = '';
+      if (Array.isArray(node.flags) && node.flags.length) {
+        const flagText = document.createElement('span');
+        flagText.textContent = node.flags.join(' ');
+        flags.append(flagText);
+      }
+      if (directUpdate) {
+        flags.append(makeUpdateBadge(updateLabelFor(node)));
+      } else if (descendantUpdate) {
+        flags.append(makeUpdateBadge(isCollapsed ? 'SUBTHREAD UPDATE' : 'UPDATE BELOW'));
+      }
 
       if (isCollapsed && hasChildren) fragment.classList.add('collapsed');
 
@@ -1384,6 +1559,7 @@
 
     function updateHeaderCounts() {
       elements.activePathCount.textContent = String(state.trackedPaths.size);
+      updateAcknowledgeButton();
     }
 
     function renderIntegrity(value, failed = false) {

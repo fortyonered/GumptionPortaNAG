@@ -9,85 +9,133 @@
                     "children": [
                         {
                             "complete": true,
-                            "text": "Learn Basking Lizard tenets"
+                            "text": "Learn Basking Lizard tenets",
+                            "id": "obj-658301771777",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": true,
                             "text": "Demonstrate Basking Lizard tenets",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-62b79b27b4e4",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": true,
                             "text": "Learn Awesome Ape tenets",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-c6c1ee93a332",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": false,
                             "text": "Demonstrate Awesome Ape tenets",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-e781a2d5dc3c",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": true,
                             "text": "Learn Vengeful Ram tenets",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-ee1684c24898",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": false,
                             "text": "Demonstrate Vengeful Ram tenets",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-8411c66002ad",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": false,
                             "text": "Learn Iron Python tenets",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-2ea58b22a23a",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": false,
                             "text": "Demonstrate Iron Python tenets",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-40026f2a6974",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": false,
                             "text": "Learn Flying Fish tenets",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-1ca18339e2ac",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": false,
                             "text": "Demonstrate Flying Fish tenets",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-9e4a5f3939b5",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": false,
                             "text": "Learn Mystic Kitsune tenets",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-8e85cab72326",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": false,
                             "text": "Demonstrate Mystic Kitsune tenets",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-6086eef5118e",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
                     "complete": false,
                     "text": "Learn and demonstrate the Ways",
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-0cef39f988f2",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
                     "children": [
                         {
                             "complete": false,
                             "text": "Meet with Rough Scale",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-19cd59fedd2b",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": false,
                             "text": "???",
                             "unknown": true,
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-b8629d502441",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
                     "complete": false,
                     "text": "Oust the bourgeoisie",
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-893dc3094c03",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
                     "complete": false,
@@ -97,20 +145,32 @@
                             "complete": false,
                             "text": "???",
                             "unknown": true,
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-432337a17dc4",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-e95cccf14e9b",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
                     "complete": false,
                     "text": "Fulfill the prophecy",
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-b8b36172e7ef",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
                     "complete": false,
                     "text": "Become the chosen one",
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-9db42cebdc85",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 }
             ],
             "tags": [
@@ -121,7 +181,9 @@
             "failed": false,
             "failedIcon": "icons/chosen-one-failed.gif",
             "completed": false,
-            "staged": false
+            "staged": false,
+            "createdAt": "2026-06-01T06:31:12Z",
+            "updatedAt": "2026-06-01T06:31:12Z"
         },
         {
             "icon": "icons/old-grudges.png",
@@ -133,7 +195,10 @@
                         {
                             "complete": false,
                             "text": "Accept Marchant's offer for sponsorship",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-02e336631031",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "children": [
@@ -145,28 +210,43 @@
                                                 "OPT"
                                             ],
                                             "text": "Convince Mei-Zarah to fight with you",
-                                            "failed": false
+                                            "failed": false,
+                                            "id": "obj-1504c7d370b1",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
                                         },
                                         {
                                             "complete": false,
                                             "text": "???",
                                             "unknown": true,
-                                            "failed": false
+                                            "failed": false,
+                                            "id": "obj-1fe0295cdec1",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
                                         }
                                     ],
                                     "complete": false,
                                     "text": "Find a partner for the duo combat",
-                                    "failed": false
+                                    "failed": false,
+                                    "id": "obj-05421acbdc28",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": false,
                                     "text": "Defeat your opponents",
-                                    "failed": false
+                                    "failed": false,
+                                    "id": "obj-2307f9d25c2b",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 }
                             ],
                             "complete": false,
                             "text": "Make it past the first round",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-8d86c74de1a5",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "children": [
@@ -174,17 +254,26 @@
                                     "complete": false,
                                     "text": "???",
                                     "unknown": true,
-                                    "failed": false
+                                    "failed": false,
+                                    "id": "obj-31dac40be50b",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": false,
                                     "text": "Defeat your opponent",
-                                    "failed": false
+                                    "failed": false,
+                                    "id": "obj-dfc0ff4ac911",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 }
                             ],
                             "complete": false,
                             "text": "Make it through the quarterfinals",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-c3c301d8d359",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "children": [
@@ -192,17 +281,26 @@
                                     "complete": false,
                                     "text": "???",
                                     "unknown": true,
-                                    "failed": false
+                                    "failed": false,
+                                    "id": "obj-b13221ecf362",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": false,
                                     "text": "Defeat your opponent",
-                                    "failed": false
+                                    "failed": false,
+                                    "id": "obj-375c4024d990",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 }
                             ],
                             "complete": false,
                             "text": "Make it through the semifinals",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-19604df4da46",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "children": [
@@ -210,45 +308,69 @@
                                     "complete": false,
                                     "text": "???",
                                     "unknown": true,
-                                    "failed": false
+                                    "failed": false,
+                                    "id": "obj-66e497824258",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": false,
                                     "text": "Defeat your opponent",
-                                    "failed": false
+                                    "failed": false,
+                                    "id": "obj-8076d6210a6a",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 }
                             ],
                             "complete": false,
                             "text": "Win the tournament",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-758ac5105425",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": false,
                             "text": "Attend victory ceremony as the Vengeful Rams' champion",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-d855c14162c0",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
                     "complete": false,
                     "text": "Win the tournament for the Vengeful Rams",
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-18f4ebe7c152",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
                     "children": [
                         {
                             "complete": false,
                             "text": "Learn of Marchant's grudge",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-4546eca5ea2e",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": false,
                             "text": "???",
                             "unknown": true,
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-63d6ec9d2b2c",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
                     "complete": false,
                     "text": "Make him pay",
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-1eb8e0856d92",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
                     "children": [
@@ -256,12 +378,18 @@
                             "complete": false,
                             "text": "???",
                             "unknown": true,
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-71b6e56b60dc",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
                     "complete": false,
                     "text": "Win her back",
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-27fc55bdb6bb",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 }
             ],
             "tags": [
@@ -272,7 +400,9 @@
             "failed": false,
             "failedIcon": "icons/old-grudges-failed.gif",
             "completed": false,
-            "staged": false
+            "staged": false,
+            "createdAt": "2026-06-01T06:31:12Z",
+            "updatedAt": "2026-06-01T06:31:12Z"
         },
         {
             "icon": "icons/if-you-cant-beat-em.png",
@@ -284,17 +414,26 @@
                         {
                             "complete": false,
                             "text": "Find Rough Scale",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-e53bc3507418",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": false,
                             "text": "Convince him to hire you",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-6b855eef6c13",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
                     "complete": false,
                     "text": "Enter into Rough Scale's employ",
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-14ed0fc03b35",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
                     "children": [
@@ -302,19 +441,27 @@
                             "complete": false,
                             "text": "???",
                             "unknown": true,
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-0cc606fbd460",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
                     "complete": false,
                     "text": "Do as you're told",
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-ee6bf1006285",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
-                    "children": [],
                     "complete": false,
                     "text": "???",
                     "unknown": true,
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-0714f7d7af1e",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 }
             ],
             "tags": [
@@ -325,7 +472,9 @@
             "failed": false,
             "failedIcon": "icons/if-you-cant-beat-em-failed.gif",
             "completed": false,
-            "staged": false
+            "staged": false,
+            "createdAt": "2026-06-01T06:31:12Z",
+            "updatedAt": "2026-06-01T06:31:12Z"
         },
         {
             "icon": "icons/grand-champ.png",
@@ -342,7 +491,10 @@
                                         "OPT"
                                     ],
                                     "text": "Convince Haji-Zen to sponsor you",
-                                    "failed": false
+                                    "failed": false,
+                                    "id": "obj-7094b41c49fc",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": false,
@@ -350,17 +502,26 @@
                                         "OPT"
                                     ],
                                     "text": "Take Marchant up on his offer",
-                                    "failed": false
+                                    "failed": false,
+                                    "id": "obj-21b1bec41b6a",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 }
                             ],
                             "complete": false,
                             "text": "Obtain 250 shells",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-6dddaee99881",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
                     "complete": false,
                     "text": "Secure entry into the tournament",
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-9aca5265db17",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
                     "children": [
@@ -372,28 +533,43 @@
                                         "OPT"
                                     ],
                                     "text": "Convince Mei-Zarah to fight with you",
-                                    "failed": false
+                                    "failed": false,
+                                    "id": "obj-3c73aff9c100",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": false,
                                     "text": "???",
                                     "unknown": true,
-                                    "failed": false
+                                    "failed": false,
+                                    "id": "obj-7da2345b84ea",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 }
                             ],
                             "complete": false,
                             "text": "Find a partner for the duo combat",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-dc939b242a25",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": false,
                             "text": "Defeat your opponents",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-c8f0ec0a0106",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
                     "complete": false,
                     "text": "Make it past the first round",
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-b35dca0d871c",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
                     "children": [
@@ -401,17 +577,26 @@
                             "complete": false,
                             "text": "???",
                             "unknown": true,
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-629facb015be",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": false,
                             "text": "Defeat your opponent",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-c8c80e0c2d9a",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
                     "complete": false,
                     "text": "Make it through the quarterfinals",
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-5b93c5c8f1c8",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
                     "children": [
@@ -419,17 +604,26 @@
                             "complete": false,
                             "text": "???",
                             "unknown": true,
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-bebd55dafd26",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": false,
                             "text": "Defeat your opponent",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-0ba9e0aa1a90",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
                     "complete": false,
                     "text": "Make it through the semifinals",
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-81977bf4d306",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
                     "children": [
@@ -437,22 +631,34 @@
                             "complete": false,
                             "text": "???",
                             "unknown": true,
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-b31200f3d2e8",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": false,
                             "text": "Defeat your opponent",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-e813cfe25930",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
                     "complete": false,
                     "text": "Win the tournament",
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-5188f0530926",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
                     "complete": false,
                     "text": "Attend victory ceremony",
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-2c64a509ac3e",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 }
             ],
             "tags": [
@@ -463,7 +669,9 @@
             "failed": false,
             "failedIcon": "icons/grand-champ-failed.gif",
             "completed": false,
-            "staged": false
+            "staged": false,
+            "createdAt": "2026-06-01T06:31:12Z",
+            "updatedAt": "2026-06-01T06:31:12Z"
         },
         {
             "icon": "icons/kitsune-conspiracy.png",
@@ -475,22 +683,34 @@
                         {
                             "complete": true,
                             "text": "Use magical powers in Zhui Yang Cheng",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-b72d4de600d4",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": true,
                             "text": "Get ambushed like chumps",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-bd4aef2a0cb0",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": true,
                             "text": "SURVIVE!",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-4bab519a6a17",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
                     "complete": true,
                     "text": "Clash with the Mystic Kitsune",
-                    "failed": false
+                    "failed": false,
+                    "id": "obj-710b7bf6697c",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
                     "children": [
@@ -500,34 +720,52 @@
                                 "OPT"
                             ],
                             "text": "Learn what Will Mocked-For-Words knows",
-                            "failed": false
+                            "failed": false,
+                            "id": "obj-07b7e66c1c96",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "children": [
                                 {
                                     "complete": true,
                                     "text": "Visit market during the day",
-                                    "failed": false
+                                    "failed": false,
+                                    "id": "obj-2fd44d1fee12",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": true,
                                     "text": "Check out the Kitsune stall",
-                                    "failed": false
+                                    "failed": false,
+                                    "id": "obj-46cf0eb6fb4f",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": true,
                                     "text": "Find an isolated Kitsune",
-                                    "failed": false
+                                    "failed": false,
+                                    "id": "obj-c0315653b503",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": true,
                                     "text": "Beat some answers out of 'em",
-                                    "failed": false
+                                    "failed": false,
+                                    "id": "obj-a13ac746187b",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 }
                             ],
                             "complete": true,
                             "text": "Investigate the Kitsune presence in Zhui Yang Cheng",
-                            "staged": false
+                            "staged": false,
+                            "id": "obj-808c1090f441",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": true,
@@ -536,17 +774,26 @@
                                 {
                                     "complete": true,
                                     "text": "Travel to the Wetlands' edge",
-                                    "staged": false
+                                    "staged": false,
+                                    "id": "obj-53a23caf9051",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": true,
                                     "staged": false,
-                                    "text": "Search Rough Scale ganger corpse"
+                                    "text": "Search Rough Scale ganger corpse",
+                                    "id": "obj-5b88bd1563f6",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": true,
                                     "text": "Find the sunken factory in the swamp",
-                                    "staged": false
+                                    "staged": false,
+                                    "id": "obj-ce436bfa8a3a",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": true,
@@ -556,27 +803,42 @@
                                         {
                                             "complete": true,
                                             "staged": false,
-                                            "text": "“Look for the crows; they know the way.”"
+                                            "text": "“Look for the crows; they know the way.”",
+                                            "id": "obj-e3f4d1bfb350",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
                                         },
                                         {
                                             "complete": true,
                                             "staged": false,
-                                            "text": "“Right turns, all through the Labyrinth of Reeds.”"
+                                            "text": "“Right turns, all through the Labyrinth of Reeds.”",
+                                            "id": "obj-6a71a0bb5376",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
                                         },
                                         {
                                             "complete": true,
                                             "staged": false,
-                                            "text": "“Be brave in the Meadow of Purple.”"
+                                            "text": "“Be brave in the Meadow of Purple.”",
+                                            "id": "obj-bf8b7555a155",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
                                         },
                                         {
                                             "complete": true,
                                             "staged": false,
-                                            "text": "“Knock, as we do, at the Driftwood Door.”"
+                                            "text": "“Knock, as we do, at the Driftwood Door.”",
+                                            "id": "obj-82c1abbc4d52",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
                                         },
                                         {
                                             "complete": true,
                                             "staged": false,
-                                            "text": "“Pass through the House of Blocks...”"
+                                            "text": "“Pass through the House of Blocks...”",
+                                            "id": "obj-04bc1a2b1ac5",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
                                         },
                                         {
                                             "complete": true,
@@ -584,22 +846,34 @@
                                             "text": "“... Ignore the voice.”",
                                             "flags": [
                                                 "OPT"
-                                            ]
+                                            ],
+                                            "id": "obj-83eb84884b3e",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
                                         },
                                         {
                                             "complete": true,
                                             "staged": false,
-                                            "text": "“Walk between the sunken houses...”"
+                                            "text": "“Walk between the sunken houses...”",
+                                            "id": "obj-98f8be16d550",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
                                         },
                                         {
                                             "complete": true,
                                             "staged": false,
-                                            "text": "“... keeping your distance from the shepherds.”"
+                                            "text": "“... keeping your distance from the shepherds.”",
+                                            "id": "obj-602b2ec7753f",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
                                         },
                                         {
                                             "complete": true,
                                             "staged": false,
-                                            "text": "“Watch your step crossing the lilyfields...”"
+                                            "text": "“Watch your step crossing the lilyfields...”",
+                                            "id": "obj-43114d9af473",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
                                         },
                                         {
                                             "complete": false,
@@ -608,7 +882,10 @@
                                             "flags": [
                                                 "OPT"
                                             ],
-                                            "failed": true
+                                            "failed": true,
+                                            "id": "obj-586e2c9da432",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
                                         },
                                         {
                                             "complete": false,
@@ -617,15 +894,24 @@
                                             "failed": true,
                                             "flags": [
                                                 "OPT"
-                                            ]
+                                            ],
+                                            "id": "obj-44306ca58600",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
                                         }
                                     ],
                                     "flags": [
                                         "OPT"
-                                    ]
+                                    ],
+                                    "id": "obj-4be093085046",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 }
                             ],
-                            "staged": false
+                            "staged": false,
+                            "id": "obj-80c38e8fc24f",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
                             "complete": true,
@@ -636,12 +922,17 @@
                                     "complete": true,
                                     "staged": false,
                                     "text": "Explore the ground floor",
-                                    "children": []
+                                    "id": "obj-ea23fdbb04c3",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": true,
                                     "staged": false,
-                                    "text": "Find the Kitsune leader"
+                                    "text": "Find the Kitsune leader",
+                                    "id": "obj-265a9eedfb03",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": true,
@@ -649,34 +940,49 @@
                                     "text": "Uncover information about the Kitsune leader",
                                     "flags": [
                                         "OPT"
-                                    ]
+                                    ],
+                                    "id": "obj-bd1ebe7808d7",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 }
-                            ]
+                            ],
+                            "id": "obj-d5cb8889a15b",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
                     "complete": true,
                     "text": "Investigate the Mystic Kitsune",
-                    "staged": false
+                    "staged": false,
+                    "id": "obj-6e0760ea146e",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
                     "complete": false,
                     "text": "End the threat posed by the Mystic Kitsune",
                     "children": [
                         {
-                            "complete": false,
+                            "complete": true,
                             "staged": false,
                             "text": "Deal with the Kitsune",
                             "children": [
                                 {
                                     "complete": false,
                                     "staged": false,
-                                    "text": "Kill the Kitsune"
+                                    "text": "Kill the Kitsune",
+                                    "id": "obj-d3e8ff577bb1",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": false,
                                     "staged": false,
                                     "text": "???",
-                                    "unknown": true
+                                    "unknown": true,
+                                    "id": "obj-c8360f427cdd",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": false,
@@ -684,9 +990,15 @@
                                     "text": "Convince the Kitsune to end his watch instead",
                                     "flags": [
                                         "OPT"
-                                    ]
+                                    ],
+                                    "id": "obj-69d01fa1c26e",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 }
-                            ]
+                            ],
+                            "id": "obj-1544e147af71",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T19:44:32Z"
                         },
                         {
                             "complete": false,
@@ -696,23 +1008,38 @@
                                 {
                                     "complete": false,
                                     "staged": false,
-                                    "text": "Destroy the puppet network"
+                                    "text": "Destroy the puppet network",
+                                    "id": "obj-235f4ebd2cb1",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": false,
                                     "staged": false,
                                     "text": "???",
-                                    "unknown": true
+                                    "unknown": true,
+                                    "id": "obj-cd2e4e9de47b",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": false,
                                     "staged": true,
-                                    "text": "Lock the Kitsune out of the puppet network"
+                                    "text": "Lock the Kitsune out of the puppet network",
+                                    "id": "obj-bbf472aa1228",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 }
-                            ]
+                            ],
+                            "id": "obj-31176fc4e829",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
-                    "staged": false
+                    "staged": false,
+                    "id": "obj-e3d6ac40f413",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 }
             ],
             "tags": [
@@ -723,34 +1050,44 @@
             "failed": false,
             "failedIcon": "icons/kitsune-conspiracy-failed.gif",
             "completed": false,
-            "staged": false
+            "staged": false,
+            "createdAt": "2026-06-01T06:31:12Z",
+            "updatedAt": "2026-06-01T06:31:12Z"
         },
         {
             "icon": "icons/uneven-odds.png",
             "failedIcon": "icons/uneven-odds-failed.gif",
             "failed": false,
             "completed": false,
-            "staged": true,
+            "staged": false,
             "id": "uneven-odds",
             "integrity": 67,
             "objectives": [
                 {
                     "complete": false,
                     "staged": false,
-                    "text": "Return to Zhui Yang Cheng"
+                    "text": "Return to Zhui Yang Cheng",
+                    "id": "obj-6270df4268db",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
                     "complete": false,
                     "staged": false,
-                    "text": "Visit the tournament registry"
+                    "text": "Visit the tournament registry",
+                    "id": "obj-78ad1c94fe58",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
                 }
             ],
             "tags": [],
-            "title": "Uneven Odds"
+            "title": "Uneven Odds",
+            "createdAt": "2026-06-01T06:31:12Z",
+            "updatedAt": "2026-06-01T19:45:20Z"
         }
     ],
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-01T06:31:12Z"
+    "version": "2026-06-01T19:45:22Z"
 }
