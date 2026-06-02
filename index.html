@@ -894,7 +894,7 @@
           <span class="icon"><b>↻</b></span>
         </button>
         <button id="ackUpdatesBtn" class="icon-button ack-button hidden" title="Acknowledge objective updates" aria-label="Acknowledge objective updates">
-          <span class="icon">ACK</span>
+          <span class="icon">CLR</span>
         </button>
       </div>
     </header>
@@ -942,7 +942,9 @@
     const STORAGE_KEYS = {
       trackedPaths: 'portaNAG.trackedPaths',
       collapsedNodes: 'portaNAG.collapsedNodes',
-      acknowledgedUpdateTime: 'portaNAG.acknowledgedUpdateTime'
+      acknowledgedUpdateTime: 'portaNAG.acknowledgedUpdateTime',
+      knownVisibleItemIds: 'portaNAG.knownVisibleItemIds',
+      knownStagedItemIds: 'portaNAG.knownStagedItemIds'
     };
 
     const GLITCH_CHARS = '░▒▓';
@@ -958,12 +960,19 @@
     let remoteVersionCheckTimer = null;
     let updatePending = false;
 
+    const savedKnownVisibleItemIds = loadJSON(STORAGE_KEYS.knownVisibleItemIds, null);
+    const savedKnownStagedItemIds = loadJSON(STORAGE_KEYS.knownStagedItemIds, null);
+
     const state = {
       data: null,
       trackedPaths: new Set(loadJSON(STORAGE_KEYS.trackedPaths, [])),
       collapsedNodes: new Set(loadJSON(STORAGE_KEYS.collapsedNodes, [])),
-      acknowledgedUpdateTime: loadJSON(STORAGE_KEYS.acknowledgedUpdateTime, null)
+      acknowledgedUpdateTime: loadJSON(STORAGE_KEYS.acknowledgedUpdateTime, null),
+      knownVisibleItemIds: new Set(Array.isArray(savedKnownVisibleItemIds) ? savedKnownVisibleItemIds : []),
+      knownStagedItemIds: new Set(Array.isArray(savedKnownStagedItemIds) ? savedKnownStagedItemIds : []),
+      hasKnownVisibleSnapshot: Array.isArray(savedKnownVisibleItemIds)
     };
+
 
     const elements = {
       pathList: document.getElementById('pathList'),
@@ -1003,6 +1012,19 @@
           state.acknowledgedUpdateTime = loadedObjectiveVersion;
           persistJSON(STORAGE_KEYS.acknowledgedUpdateTime, state.acknowledgedUpdateTime);
         }
+        if (!state.hasKnownVisibleSnapshot) {
+          state.knownVisibleItemIds = collectVisibleItemIds(data);
+          state.knownStagedItemIds = collectStagedItemIds(data);
+          state.hasKnownVisibleSnapshot = true;
+          persistKnownVisibleItemIds();
+          persistKnownStagedItemIds();
+          persistKnownStagedItemIds();
+        }
+
+        const currentStagedIds = collectStagedItemIds(data);
+        currentStagedIds.forEach((id) => state.knownStagedItemIds.add(id));
+        persistKnownStagedItemIds();
+
         clearPendingUpdate();
         reconcileTrackedPaths();
         renderAll();
@@ -1049,24 +1071,108 @@
       return Math.max(parseUpdateTime(item?.updatedAt), parseUpdateTime(item?.createdAt));
     }
 
-    function isDirectlyUpdated(item) {
+    function stableItemId(item, fallbackId = '') {
+      return String(item?.id || fallbackId || '').trim();
+    }
+
+    function collectVisibleItemIds(data = state.data) {
+      const ids = new Set();
+      const collectObjectives = (nodes) => {
+        visibleObjectives(nodes).forEach((node) => {
+          const id = stableItemId(node);
+          if (id) ids.add(id);
+          collectObjectives(node.children);
+        });
+      };
+
+      (data?.paths || []).filter((path) => !isStaged(path)).forEach((path) => {
+        const id = stableItemId(path);
+        if (id) ids.add(id);
+        collectObjectives(path.objectives);
+      });
+
+      return ids;
+    }
+
+    function collectStagedItemIds(data = state.data) {
+      const ids = new Set();
+    
+      const collectObjectives = (nodes) => {
+        (nodes || []).forEach((node) => {
+          const id = stableItemId(node);
+          if (id && isStaged(node)) ids.add(id);
+          collectObjectives(node.children);
+        });
+      };
+    
+      (data?.paths || []).forEach((path) => {
+        const id = stableItemId(path);
+        if (id && isStaged(path)) ids.add(id);
+        collectObjectives(path.objectives);
+      });
+    
+      return ids;
+    }
+    
+    function persistKnownStagedItemIds() {
+      persistJSON(STORAGE_KEYS.knownStagedItemIds, [...state.knownStagedItemIds]);
+    }
+
+    function persistKnownVisibleItemIds() {
+      persistJSON(STORAGE_KEYS.knownVisibleItemIds, [...state.knownVisibleItemIds]);
+    }
+
+    function updateStateFor(item, fallbackId = '') {
+      const id = stableItemId(item, fallbackId);
+      if (state.hasKnownVisibleSnapshot && id) {
+        if (!state.knownVisibleItemIds.has(id)) return 'new';
+        if (state.knownStagedItemIds.has(id)) return 'new';
+      }
+
       const ack = acknowledgedTimestamp();
-      return ack > 0 && itemTimestamp(item) > ack;
+      if (ack > 0 && itemTimestamp(item) > ack) return 'updated';
+
+      return null;
+    }
+
+    function descendantUpdateState(nodes) {
+      let foundUpdated = false;
+      for (const node of visibleObjectives(nodes)) {
+        const directState = updateStateFor(node);
+        if (directState === 'new') return 'new';
+        if (directState === 'updated') foundUpdated = true;
+
+        const childState = descendantUpdateState(node.children);
+        if (childState === 'new') return 'new';
+        if (childState === 'updated') foundUpdated = true;
+      }
+      return foundUpdated ? 'updated' : null;
     }
 
     function hasUpdatedDescendant(nodes) {
-      return visibleObjectives(nodes).some((node) => isDirectlyUpdated(node) || hasUpdatedDescendant(node.children));
+      return !!descendantUpdateState(nodes);
     }
 
     function pathHasUpdate(path) {
-      return isDirectlyUpdated(path) || hasUpdatedDescendant(path.objectives);
+      return !!updateStateFor(path) || hasUpdatedDescendant(path.objectives);
     }
 
-    function updateLabelFor(item) {
-      const created = parseUpdateTime(item?.createdAt);
-      const updated = parseUpdateTime(item?.updatedAt);
-      if (created && updated && Math.abs(updated - created) < 2000) return 'NEW!';
-      return 'UPDATED!';
+    function updateLabelFor(item, fallbackId = '') {
+      const updateState = updateStateFor(item, fallbackId);
+      if (updateState === 'new') return 'NEW!';
+      if (updateState === 'updated') return 'UPDATED!';
+      return 'UPDATE!';
+    }
+
+    function descendantUpdateLabel(nodes, collapsed = false) {
+      const updateState = descendantUpdateState(nodes);
+    
+      if (!collapsed) return '';
+    
+      if (updateState === 'new') return 'NEW BELOW';
+      if (updateState === 'updated') return 'SUBTHREAD UPDATE';
+    
+      return '';
     }
 
     function makeUpdateBadge(label, className = 'objective-update-badge') {
@@ -1087,7 +1193,12 @@
     function acknowledgeUpdates() {
       if (!state.data) return;
       state.acknowledgedUpdateTime = getObjectiveVersion(state.data) || new Date().toISOString();
+      state.knownVisibleItemIds = collectVisibleItemIds();
+      state.knownStagedItemIds = collectStagedItemIds();
+      state.hasKnownVisibleSnapshot = true;
       persistJSON(STORAGE_KEYS.acknowledgedUpdateTime, state.acknowledgedUpdateTime);
+      persistKnownVisibleItemIds();
+      persistKnownStagedItemIds();
       renderAll();
       elements.syncStatus.textContent = 'UPDATES ACKNOWLEDGED';
     }
@@ -1186,8 +1297,10 @@
         if (state.trackedPaths.has(path.id)) card.classList.add('selected');
         if (path.failed) card.classList.add('failed');
         else if (path.completed) card.classList.add('completed');
-        const pathDirectUpdate = isDirectlyUpdated(path);
-        const pathDescendantUpdate = hasUpdatedDescendant(path.objectives);
+        const pathUpdateState = updateStateFor(path);
+        const pathDirectUpdate = !!pathUpdateState;
+        const pathDescendantUpdateState = descendantUpdateState(path.objectives);
+        const pathDescendantUpdate = !!pathDescendantUpdateState;
         if (pathDirectUpdate) card.classList.add('update-direct');
         else if (pathDescendantUpdate) card.classList.add('update-descendant');
 
@@ -1245,7 +1358,8 @@
         name.textContent = path.title;
         name.dataset.baseText = path.title;
         if (pathDirectUpdate || pathDescendantUpdate) {
-          name.append(makeUpdateBadge(pathDirectUpdate ? updateLabelFor(path) : 'UPDATE!', 'path-update-badge'));
+          const badgeLabel = pathDirectUpdate ? updateLabelFor(path) : (pathDescendantUpdateState === 'new' ? 'NEW!' : 'UPDATE!');
+          name.append(makeUpdateBadge(badgeLabel, 'path-update-badge'));
         }
         if (path.failed) {
           name.classList.add('path-fail-text');
@@ -1345,8 +1459,10 @@
         const inheritedFailed = pathFailed || parentFailed;
         const effectiveFailed = !!node.failed || (inheritedFailed && !node.complete);
         const pathFailureTint = inheritedFailed && !node.failed;
-        const directUpdate = isDirectlyUpdated(node);
-        const descendantUpdate = hasUpdatedDescendant(visibleChildren);
+        const directUpdateState = updateStateFor(node, nodeId);
+        const directUpdate = !!directUpdateState;
+        const descendantUpdateStateValue = descendantUpdateState(visibleChildren);
+        const descendantUpdate = !!descendantUpdateStateValue;
         const updateInSubtree = directUpdate || descendantUpdate;
 
       if (!hasChildren) {
@@ -1389,9 +1505,12 @@
         flags.append(flagText);
       }
       if (directUpdate) {
-        flags.append(makeUpdateBadge(updateLabelFor(node)));
+        flags.append(makeUpdateBadge(updateLabelFor(node, nodeId)));
       } else if (descendantUpdate) {
-        flags.append(makeUpdateBadge(isCollapsed ? 'SUBTHREAD UPDATE' : 'UPDATE BELOW'));
+        const label = descendantUpdateLabel(visibleChildren, isCollapsed);
+        if (label) {
+          flags.append(makeUpdateBadge(label));
+        }
       }
 
       if (isCollapsed && hasChildren) fragment.classList.add('collapsed');

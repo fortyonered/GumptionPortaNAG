@@ -449,10 +449,10 @@
                     ],
                     "complete": false,
                     "text": "Do as you're told",
-                    "failed": false,
                     "id": "obj-ee6bf1006285",
                     "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
+                    "updatedAt": "2026-06-02T00:36:03Z",
+                    "staged": false
                 },
                 {
                     "complete": false,
@@ -548,12 +548,12 @@
                                     "updatedAt": "2026-06-01T06:31:12Z"
                                 }
                             ],
-                            "complete": false,
+                            "complete": true,
                             "text": "Find a partner for the duo combat",
-                            "failed": false,
                             "id": "obj-dc939b242a25",
                             "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
+                            "updatedAt": "2026-06-02T00:57:46Z",
+                            "staged": false
                         },
                         {
                             "complete": false,
@@ -963,7 +963,7 @@
                     "text": "End the threat posed by the Mystic Kitsune",
                     "children": [
                         {
-                            "complete": true,
+                            "complete": false,
                             "staged": false,
                             "text": "Deal with the Kitsune",
                             "children": [
@@ -998,7 +998,7 @@
                             ],
                             "id": "obj-1544e147af71",
                             "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T19:44:32Z"
+                            "updatedAt": "2026-06-02T00:02:27Z"
                         },
                         {
                             "complete": false,
@@ -1055,39 +1055,31 @@
             "updatedAt": "2026-06-01T06:31:12Z"
         },
         {
+            "createdAt": "2026-06-02T00:50:51Z",
+            "updatedAt": "2026-06-02T00:57:12Z",
             "icon": "icons/uneven-odds.png",
             "failedIcon": "icons/uneven-odds-failed.gif",
             "failed": false,
             "completed": false,
-            "staged": false,
+            "staged": true,
             "id": "uneven-odds",
             "integrity": 67,
             "objectives": [
                 {
+                    "id": "obj-e96922fe855b",
+                    "createdAt": "2026-06-02T00:51:34Z",
+                    "updatedAt": "2026-06-02T00:51:41Z",
                     "complete": false,
                     "staged": false,
-                    "text": "Return to Zhui Yang Cheng",
-                    "id": "obj-6270df4268db",
-                    "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
-                },
-                {
-                    "complete": false,
-                    "staged": false,
-                    "text": "Visit the tournament registry",
-                    "id": "obj-78ad1c94fe58",
-                    "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
+                    "text": "Return to Zhui Yang Cheng"
                 }
             ],
             "tags": [],
-            "title": "Uneven Odds",
-            "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-06-01T19:45:20Z"
+            "title": "Uneven Odds"
         }
     ],
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-01T19:45:22Z"
+    "version": "2026-06-02T01:03:35Z"
 }
