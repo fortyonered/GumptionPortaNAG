@@ -533,10 +533,10 @@
                                         "OPT"
                                     ],
                                     "text": "Convince Mei-Zarah to fight with you",
-                                    "failed": false,
                                     "id": "obj-3c73aff9c100",
                                     "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                    "updatedAt": "2026-06-05T22:38:15Z",
+                                    "staged": false
                                 },
                                 {
                                     "complete": false,
@@ -1089,5 +1089,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-05T22:35:57Z"
+    "version": "2026-06-05T22:38:18Z"
 }
