@@ -1223,7 +1223,9 @@
         const remoteVersion = getObjectiveVersion(data);
 
         if (remoteVersion && remoteVersion !== loadedObjectiveVersion) {
-          triggerPendingUpdate();
+          if (remoteHasVisibleUpdates(data)) {
+            triggerPendingUpdate();
+          }
         }
       } catch (error) {
         console.warn('Remote objective version check failed:', error);
@@ -1259,6 +1261,16 @@
       elements.refreshBtn.setAttribute('aria-label', 'Refresh objective feed');
       document.body.classList.remove('incoming-update');
       stopTitleAlert();
+    }
+
+    function remoteHasVisibleUpdates(remoteData) {
+      const previousData = state.data;
+    
+      state.data = remoteData;
+      const hasVisibleUpdates = visiblePaths().some(pathHasUpdate);
+      state.data = previousData;
+    
+      return hasVisibleUpdates;
     }
 
     function startTitleAlert() {
