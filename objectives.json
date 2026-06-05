@@ -977,15 +977,6 @@
                                 },
                                 {
                                     "complete": false,
-                                    "staged": false,
-                                    "text": "???",
-                                    "unknown": true,
-                                    "id": "obj-c8360f427cdd",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                },
-                                {
-                                    "complete": false,
                                     "staged": true,
                                     "text": "Convince the Kitsune to end his watch instead",
                                     "flags": [
@@ -1012,15 +1003,6 @@
                                     "id": "obj-235f4ebd2cb1",
                                     "createdAt": "2026-06-01T06:31:12Z",
                                     "updatedAt": "2026-06-05T22:35:49Z"
-                                },
-                                {
-                                    "complete": false,
-                                    "staged": false,
-                                    "text": "???",
-                                    "unknown": true,
-                                    "id": "obj-cd2e4e9de47b",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 },
                                 {
                                     "complete": false,
@@ -1087,10 +1069,21 @@
                 {
                     "id": "e8ed8d39-3ead-479a-8e7d-b208119c4482",
                     "createdAt": "2026-06-05T22:14:31Z",
-                    "updatedAt": "2026-06-05T22:15:36Z",
+                    "updatedAt": "2026-06-05T23:37:01Z",
                     "complete": false,
                     "staged": false,
-                    "text": "Investigate the Arauchigumi"
+                    "text": "Figure out how the tourney is being rigged",
+                    "children": [
+                        {
+                            "id": "16153c1d-bccd-49c8-80a5-2cd03d1d855b",
+                            "createdAt": "2026-06-05T23:37:06Z",
+                            "updatedAt": "2026-06-05T23:37:06Z",
+                            "complete": false,
+                            "failed": false,
+                            "staged": false,
+                            "text": "New Objective"
+                        }
+                    ]
                 }
             ],
             "tags": [],
@@ -1100,5 +1093,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-05T23:35:11Z"
+    "version": "2026-06-05T23:38:11Z"
 }
