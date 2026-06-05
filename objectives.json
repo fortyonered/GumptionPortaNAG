@@ -978,13 +978,13 @@
                                 {
                                     "complete": false,
                                     "staged": true,
-                                    "text": "Convince the Kitsune to end his watch instead",
+                                    "text": "Convince the Kitsune to end his watch",
                                     "flags": [
                                         "OPT"
                                     ],
                                     "id": "obj-69d01fa1c26e",
                                     "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                    "updatedAt": "2026-06-05T23:43:19Z"
                                 }
                             ],
                             "id": "obj-1544e147af71",
@@ -1093,5 +1093,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-05T23:38:11Z"
+    "version": "2026-06-05T23:43:34Z"
 }
