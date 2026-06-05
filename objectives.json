@@ -968,12 +968,12 @@
                             "text": "Deal with the Kitsune",
                             "children": [
                                 {
-                                    "complete": false,
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Kill the Kitsune",
                                     "id": "obj-d3e8ff577bb1",
                                     "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                    "updatedAt": "2026-06-05T22:15:42Z"
                                 },
                                 {
                                     "complete": false,
@@ -1072,6 +1072,14 @@
                     "complete": false,
                     "staged": false,
                     "text": "Return to Zhui Yang Cheng"
+                },
+                {
+                    "id": "e8ed8d39-3ead-479a-8e7d-b208119c4482",
+                    "createdAt": "2026-06-05T22:14:31Z",
+                    "updatedAt": "2026-06-05T22:15:36Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Investigate the Arauchigumi"
                 }
             ],
             "tags": [],
@@ -1081,5 +1089,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-02T01:03:35Z"
+    "version": "2026-06-05T22:15:43Z"
 }
