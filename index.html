@@ -959,9 +959,12 @@
     let loadedObjectiveVersion = null;
     let remoteVersionCheckTimer = null;
     let updatePending = false;
+    let titleAlertTimer = null;
 
     const savedKnownVisibleItemIds = loadJSON(STORAGE_KEYS.knownVisibleItemIds, null);
     const savedKnownStagedItemIds = loadJSON(STORAGE_KEYS.knownStagedItemIds, null);
+
+    const BASE_DOCUMENT_TITLE = document.title;
 
     const state = {
       data: null,
@@ -1242,6 +1245,8 @@
         elements.transmissionSfx.play().catch(() => {});
       }
 
+      startTitleAlert();
+
       setTimeout(() => {
         document.body.classList.remove('incoming-update');
       }, 2500);
@@ -1253,8 +1258,26 @@
       elements.refreshBtn.title = 'Refresh objective feed';
       elements.refreshBtn.setAttribute('aria-label', 'Refresh objective feed');
       document.body.classList.remove('incoming-update');
+      stopTitleAlert();
     }
 
+    function startTitleAlert() {
+      if (titleAlertTimer) clearInterval(titleAlertTimer);
+    
+      let flip = false;
+      titleAlertTimer = setInterval(() => {
+        flip = !flip;
+        document.title = flip
+          ? '⚠ OBJECTIVE UPDATE PENDING!'
+          : BASE_DOCUMENT_TITLE;
+      }, 1000);
+    }
+    
+    function stopTitleAlert() {
+      if (titleAlertTimer) clearInterval(titleAlertTimer);
+      titleAlertTimer = null;
+      document.title = BASE_DOCUMENT_TITLE;
+    }
 
     function isStaged(entry) {
       return !!entry && entry.staged === true;
