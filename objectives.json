@@ -1029,8 +1029,8 @@
                 {
                     "id": "0d99eb6c-4ba8-4c94-8611-4a3f3dec9d71",
                     "createdAt": "2026-06-05T23:28:58Z",
-                    "updatedAt": "2026-06-06T01:23:18Z",
-                    "complete": false,
+                    "updatedAt": "2026-06-06T01:32:11Z",
+                    "complete": true,
                     "staged": false,
                     "text": "Take the scrolls",
                     "flags": [
@@ -1095,5 +1095,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-06T01:30:46Z"
+    "version": "2026-06-06T01:32:12Z"
 }
