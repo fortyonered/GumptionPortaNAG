@@ -397,12 +397,12 @@
                 "revenge"
             ],
             "title": "Old Grudges",
-            "failed": false,
+            "failed": true,
             "failedIcon": "icons/old-grudges-failed.gif",
             "completed": false,
             "staged": false,
             "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-06-01T06:31:12Z"
+            "updatedAt": "2026-06-06T02:12:52Z"
         },
         {
             "icon": "icons/if-you-cant-beat-em.png",
@@ -1052,12 +1052,12 @@
         },
         {
             "createdAt": "2026-06-02T00:50:51Z",
-            "updatedAt": "2026-06-02T00:57:12Z",
+            "updatedAt": "2026-06-06T02:12:30Z",
             "icon": "icons/uneven-odds.png",
             "failedIcon": "icons/uneven-odds-failed.gif",
             "failed": false,
             "completed": false,
-            "staged": true,
+            "staged": false,
             "id": "uneven-odds",
             "integrity": 67,
             "objectives": [
@@ -1080,10 +1080,11 @@
                         {
                             "id": "16153c1d-bccd-49c8-80a5-2cd03d1d855b",
                             "createdAt": "2026-06-05T23:37:06Z",
-                            "updatedAt": "2026-06-06T00:07:12Z",
+                            "updatedAt": "2026-06-06T02:10:09Z",
                             "complete": false,
                             "staged": false,
-                            "text": "Investigate the tourney admin building"
+                            "text": "???",
+                            "unknown": true
                         }
                     ]
                 }
@@ -1095,5 +1096,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-06T01:35:22Z"
+    "version": "2026-06-06T02:12:53Z"
 }
