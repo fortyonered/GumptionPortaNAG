@@ -188,7 +188,7 @@
         {
             "icon": "icons/old-grudges.png",
             "id": "old-grudges",
-            "integrity": 36,
+            "integrity": 0,
             "objectives": [
                 {
                     "children": [
@@ -402,7 +402,7 @@
             "completed": false,
             "staged": false,
             "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-06-06T02:12:52Z"
+            "updatedAt": "2026-06-06T02:13:11Z"
         },
         {
             "icon": "icons/if-you-cant-beat-em.png",
@@ -1096,5 +1096,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-06T02:12:53Z"
+    "version": "2026-06-06T02:13:12Z"
 }
