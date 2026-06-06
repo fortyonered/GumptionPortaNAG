@@ -992,25 +992,25 @@
                             "updatedAt": "2026-06-02T00:02:27Z"
                         },
                         {
-                            "complete": false,
+                            "complete": true,
                             "staged": false,
                             "text": "Deal with the puppets",
                             "children": [
                                 {
-                                    "complete": false,
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Destroy the puppet network",
                                     "id": "obj-235f4ebd2cb1",
                                     "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-05T22:35:49Z"
+                                    "updatedAt": "2026-06-06T01:30:12Z"
                                 },
                                 {
-                                    "complete": false,
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Lock the Kitsune out of the puppet network",
                                     "id": "obj-bbf472aa1228",
                                     "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-06T01:09:07Z",
+                                    "updatedAt": "2026-06-06T01:30:10Z",
                                     "flags": [
                                         "OPT"
                                     ]
@@ -1018,7 +1018,7 @@
                             ],
                             "id": "obj-31176fc4e829",
                             "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
+                            "updatedAt": "2026-06-06T01:30:14Z"
                         }
                     ],
                     "staged": false,
@@ -1095,5 +1095,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-06T01:23:19Z"
+    "version": "2026-06-06T01:30:46Z"
 }
