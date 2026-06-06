@@ -977,14 +977,14 @@
                                 },
                                 {
                                     "complete": false,
-                                    "staged": true,
+                                    "staged": false,
                                     "text": "Convince the Kitsune to end his watch",
                                     "flags": [
                                         "OPT"
                                     ],
                                     "id": "obj-69d01fa1c26e",
                                     "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-05T23:43:19Z"
+                                    "updatedAt": "2026-06-06T01:07:14Z"
                                 }
                             ],
                             "id": "obj-1544e147af71",
@@ -1006,11 +1006,11 @@
                                 },
                                 {
                                     "complete": false,
-                                    "staged": true,
+                                    "staged": false,
                                     "text": "Lock the Kitsune out of the puppet network",
                                     "id": "obj-bbf472aa1228",
                                     "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                    "updatedAt": "2026-06-06T01:07:20Z"
                                 }
                             ],
                             "id": "obj-31176fc4e829",
@@ -1092,5 +1092,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-06T00:07:21Z"
+    "version": "2026-06-06T01:07:21Z"
 }
