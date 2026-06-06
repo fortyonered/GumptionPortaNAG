@@ -47,12 +47,12 @@
                             "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
-                            "complete": false,
+                            "complete": true,
                             "text": "Demonstrate Vengeful Ram tenets",
-                            "failed": false,
                             "id": "obj-8411c66002ad",
                             "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
+                            "updatedAt": "2026-06-06T01:35:21Z",
+                            "staged": false
                         },
                         {
                             "complete": false,
@@ -1095,5 +1095,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-06T01:32:32Z"
+    "version": "2026-06-06T01:35:22Z"
 }
