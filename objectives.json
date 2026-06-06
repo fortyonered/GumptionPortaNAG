@@ -1010,7 +1010,10 @@
                                     "text": "Lock the Kitsune out of the puppet network",
                                     "id": "obj-bbf472aa1228",
                                     "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-06T01:07:20Z"
+                                    "updatedAt": "2026-06-06T01:09:07Z",
+                                    "flags": [
+                                        "OPT"
+                                    ]
                                 }
                             ],
                             "id": "obj-31176fc4e829",
@@ -1026,9 +1029,9 @@
                 {
                     "id": "0d99eb6c-4ba8-4c94-8611-4a3f3dec9d71",
                     "createdAt": "2026-06-05T23:28:58Z",
-                    "updatedAt": "2026-06-05T23:35:07Z",
+                    "updatedAt": "2026-06-06T01:23:18Z",
                     "complete": false,
-                    "staged": true,
+                    "staged": false,
                     "text": "Take the scrolls",
                     "flags": [
                         "OPT"
@@ -1092,5 +1095,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-06T01:07:21Z"
+    "version": "2026-06-06T01:23:19Z"
 }
