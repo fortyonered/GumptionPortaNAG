@@ -128,6 +128,30 @@
                             "id": "obj-b8629d502441",
                             "createdAt": "2026-06-01T06:31:12Z",
                             "updatedAt": "2026-06-01T06:31:12Z"
+                        },
+                        {
+                            "id": "e66da893-54d9-4ef7-b391-354a14fba984",
+                            "createdAt": "2026-06-19T16:45:30Z",
+                            "updatedAt": "2026-06-19T16:45:43Z",
+                            "complete": false,
+                            "staged": true,
+                            "text": "Dismantle the Arauchigumi enterprise"
+                        },
+                        {
+                            "id": "b7a60f5e-6804-4dd8-a597-52a07872f8d8",
+                            "createdAt": "2026-06-19T16:45:44Z",
+                            "updatedAt": "2026-06-19T16:46:07Z",
+                            "complete": false,
+                            "staged": true,
+                            "text": "Kill Rough Scale"
+                        },
+                        {
+                            "id": "bfd76a0f-3d39-45d9-a5f5-3e070aa13df3",
+                            "createdAt": "2026-06-19T16:46:09Z",
+                            "updatedAt": "2026-06-19T16:46:23Z",
+                            "complete": false,
+                            "staged": true,
+                            "text": "Expose or kill Grand Marshall Gill"
                         }
                     ],
                     "complete": false,
@@ -402,12 +426,13 @@
             "completed": false,
             "staged": false,
             "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-06-06T02:13:11Z"
+            "updatedAt": "2026-06-19T21:53:48Z",
+            "archived": true
         },
         {
             "icon": "icons/if-you-cant-beat-em.png",
             "id": "if-you-cant-beat-em",
-            "integrity": 32,
+            "integrity": 17,
             "objectives": [
                 {
                     "children": [
@@ -417,7 +442,20 @@
                             "failed": false,
                             "id": "obj-e53bc3507418",
                             "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
+                            "updatedAt": "2026-06-01T06:31:12Z",
+                            "children": [
+                                {
+                                    "id": "d6b6606f-6cf1-407b-b758-e015eb1542c3",
+                                    "createdAt": "2026-06-19T23:28:32Z",
+                                    "updatedAt": "2026-06-19T23:28:47Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Tail some Arauchigumi thugs",
+                                    "flags": [
+                                        "OPT"
+                                    ]
+                                }
+                            ]
                         },
                         {
                             "complete": false,
@@ -474,7 +512,7 @@
             "completed": false,
             "staged": false,
             "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-06-01T06:31:12Z"
+            "updatedAt": "2026-06-19T20:27:11Z"
         },
         {
             "icon": "icons/grand-champ.png",
@@ -984,40 +1022,52 @@
                                     ],
                                     "id": "obj-69d01fa1c26e",
                                     "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-06T01:07:14Z"
+                                    "updatedAt": "2026-06-19T16:34:50Z",
+                                    "failed": true
                                 },
                                 {
                                     "id": "ede6f5e8-e458-4bae-9573-89bdb9a28681",
                                     "createdAt": "2026-06-06T02:29:20Z",
-                                    "updatedAt": "2026-06-06T02:29:34Z",
+                                    "updatedAt": "2026-06-19T16:34:53Z",
                                     "complete": false,
                                     "staged": false,
                                     "text": "Leave the Kitsune to his fate",
                                     "flags": [
                                         "OPT"
-                                    ]
+                                    ],
+                                    "failed": true
                                 },
                                 {
                                     "id": "3bf3531b-5247-47bd-8149-5c37ae7a694b",
                                     "createdAt": "2026-06-06T02:29:58Z",
-                                    "updatedAt": "2026-06-06T02:30:10Z",
+                                    "updatedAt": "2026-06-19T16:34:55Z",
                                     "complete": false,
                                     "staged": false,
                                     "text": "Let the Kitsune rot",
                                     "flags": [
                                         "OPT"
-                                    ]
+                                    ],
+                                    "failed": true
                                 },
                                 {
                                     "id": "686bacb9-bc31-4558-ac48-49b440c85054",
                                     "createdAt": "2026-06-06T02:30:15Z",
-                                    "updatedAt": "2026-06-06T02:30:25Z",
+                                    "updatedAt": "2026-06-19T16:34:57Z",
                                     "complete": false,
                                     "staged": false,
                                     "text": "Dump him in the swamp",
                                     "flags": [
                                         "OPT"
-                                    ]
+                                    ],
+                                    "failed": true
+                                },
+                                {
+                                    "id": "9c1d5737-b9e6-4c25-b674-1138408dc2be",
+                                    "createdAt": "2026-06-19T16:35:01Z",
+                                    "updatedAt": "2026-06-19T16:35:26Z",
+                                    "complete": false,
+                                    "staged": true,
+                                    "text": "Let the Vengeful Rams take him"
                                 }
                             ],
                             "id": "obj-1544e147af71",
@@ -1081,7 +1131,8 @@
             "completed": false,
             "staged": false,
             "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-06-01T06:31:12Z"
+            "updatedAt": "2026-06-19T23:27:14Z",
+            "archived": false
         },
         {
             "createdAt": "2026-06-02T00:50:51Z",
@@ -1097,7 +1148,7 @@
                 {
                     "id": "obj-e96922fe855b",
                     "createdAt": "2026-06-02T00:51:34Z",
-                    "updatedAt": "2026-06-02T00:51:41Z",
+                    "updatedAt": "2026-06-19T21:53:27Z",
                     "complete": false,
                     "staged": false,
                     "text": "Return to Zhui Yang Cheng"
@@ -1113,21 +1164,387 @@
                         {
                             "id": "16153c1d-bccd-49c8-80a5-2cd03d1d855b",
                             "createdAt": "2026-06-05T23:37:06Z",
-                            "updatedAt": "2026-06-06T02:10:09Z",
+                            "updatedAt": "2026-06-19T16:37:15Z",
                             "complete": false,
-                            "staged": false,
-                            "text": "???",
-                            "unknown": true
+                            "staged": true,
+                            "text": "Investigate Grand Marshall Gill"
                         }
                     ]
+                },
+                {
+                    "id": "2cebb47d-914c-4c8d-b6eb-996982888d4a",
+                    "createdAt": "2026-06-19T20:12:01Z",
+                    "updatedAt": "2026-06-19T20:12:11Z",
+                    "complete": false,
+                    "staged": true,
+                    "text": "Find Rough Scale"
                 }
             ],
             "tags": [],
             "title": "Uneven Odds"
+        },
+        {
+            "createdAt": "2026-06-19T20:51:38Z",
+            "updatedAt": "2026-06-19T21:10:40Z",
+            "icon": "icons/sacred-vessel.png",
+            "failedIcon": "icons/sacred-vessel-failed.gif",
+            "failed": false,
+            "completed": false,
+            "staged": true,
+            "id": "sacred-vessel",
+            "integrity": 96,
+            "objectives": [
+                {
+                    "id": "a39eb6b0-e9d6-4685-8429-dfa18e487922",
+                    "createdAt": "2026-06-19T20:52:27Z",
+                    "updatedAt": "2026-06-19T20:53:46Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Eliminate significant actors",
+                    "children": [
+                        {
+                            "id": "59c41af8-b9e8-4cd1-96ab-babd008fd977",
+                            "createdAt": "2026-06-19T20:54:02Z",
+                            "updatedAt": "2026-06-19T21:53:22Z",
+                            "complete": false,
+                            "staged": false,
+                            "text": "Kill Basking Lizards",
+                            "children": [
+                                {
+                                    "id": "ec078422-8577-4d57-b9ed-9c5ad590103a",
+                                    "createdAt": "2026-06-19T20:54:24Z",
+                                    "updatedAt": "2026-06-19T20:54:31Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Haji-Zen"
+                                },
+                                {
+                                    "id": "232ce6c9-5927-4c23-8764-cf518e8c9f79",
+                                    "createdAt": "2026-06-19T20:54:33Z",
+                                    "updatedAt": "2026-06-19T20:54:44Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Nasir-Shu"
+                                },
+                                {
+                                    "id": "1c1e7547-96aa-4e5b-8763-2a5fd1b06c41",
+                                    "createdAt": "2026-06-19T20:54:45Z",
+                                    "updatedAt": "2026-06-19T20:54:50Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Mei-Zarah"
+                                },
+                                {
+                                    "id": "ba17155f-69ac-48b9-9d85-411044ce4c75",
+                                    "createdAt": "2026-06-19T20:54:51Z",
+                                    "updatedAt": "2026-06-19T20:55:00Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Ravi & Kesh"
+                                },
+                                {
+                                    "id": "8be63514-9269-4f66-b2b2-90e19ce1485e",
+                                    "createdAt": "2026-06-19T20:55:03Z",
+                                    "updatedAt": "2026-06-19T20:55:10Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Taji-Rei"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "35ea6556-bad6-4885-a237-16017ee42516",
+                            "createdAt": "2026-06-19T20:55:27Z",
+                            "updatedAt": "2026-06-19T20:55:37Z",
+                            "complete": false,
+                            "staged": false,
+                            "text": "Kill Awesome Apes",
+                            "children": [
+                                {
+                                    "id": "3afaaf4b-416b-444a-84ce-1903ac13d83e",
+                                    "createdAt": "2026-06-19T20:55:39Z",
+                                    "updatedAt": "2026-06-19T20:55:54Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Chao DiMaggio"
+                                },
+                                {
+                                    "id": "bfb67d37-b0e0-4c80-8a7a-da7ff69e8436",
+                                    "createdAt": "2026-06-19T20:55:56Z",
+                                    "updatedAt": "2026-06-19T20:56:02Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Wei Marconi"
+                                },
+                                {
+                                    "id": "bfe48f78-84be-470e-aa4b-c2ddba9751b1",
+                                    "createdAt": "2026-06-19T20:56:04Z",
+                                    "updatedAt": "2026-06-19T20:56:56Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill the Colombo Triplets",
+                                    "children": [
+                                        {
+                                            "id": "e6406972-5945-45a1-8b2a-6eb587b7d969",
+                                            "createdAt": "2026-06-19T20:59:03Z",
+                                            "updatedAt": "2026-06-19T20:59:09Z",
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "Kill Hao Colombo"
+                                        },
+                                        {
+                                            "id": "023012a8-65f6-4392-ae2d-1514e09bfc73",
+                                            "createdAt": "2026-06-19T20:59:11Z",
+                                            "updatedAt": "2026-06-19T20:59:17Z",
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "Kill Bowen Colombo"
+                                        },
+                                        {
+                                            "id": "f6097ff1-8895-47be-a746-bb8c2757b91c",
+                                            "createdAt": "2026-06-19T20:59:18Z",
+                                            "updatedAt": "2026-06-19T20:59:24Z",
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "Kill Jun Colombo"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "61de1ab9-8f3f-41b5-9b91-8a71ace5967a",
+                            "createdAt": "2026-06-19T20:57:01Z",
+                            "updatedAt": "2026-06-19T20:57:07Z",
+                            "complete": false,
+                            "staged": false,
+                            "text": "Kill Flying Fish",
+                            "children": [
+                                {
+                                    "id": "9df77617-dcdc-4be2-9e9a-753c4c5f2e0f",
+                                    "createdAt": "2026-06-19T20:57:08Z",
+                                    "updatedAt": "2026-06-19T20:57:20Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Grand Marshall Gill"
+                                },
+                                {
+                                    "id": "e449e635-6214-4f5a-8da0-a7d392fc799a",
+                                    "createdAt": "2026-06-19T20:57:23Z",
+                                    "updatedAt": "2026-06-19T20:57:36Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Rough Scale"
+                                },
+                                {
+                                    "id": "a03bf4e5-c0cb-4c1e-b5f6-9499102bc148",
+                                    "createdAt": "2026-06-19T20:57:37Z",
+                                    "updatedAt": "2026-06-19T20:57:50Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Supper Fin"
+                                },
+                                {
+                                    "id": "dd5f4cbf-de0a-43b6-812b-3a2b624bb50a",
+                                    "createdAt": "2026-06-19T21:06:52Z",
+                                    "updatedAt": "2026-06-19T21:07:14Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Brook Pond"
+                                },
+                                {
+                                    "id": "ef26fd99-88ac-4540-89bf-4ef494b5377e",
+                                    "createdAt": "2026-06-19T20:57:52Z",
+                                    "updatedAt": "2026-06-19T20:57:57Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill the Four Rivers",
+                                    "children": [
+                                        {
+                                            "id": "6f2d4eaa-f3b4-42a7-93c2-d5a6aa01b02e",
+                                            "createdAt": "2026-06-19T20:58:07Z",
+                                            "updatedAt": "2026-06-19T20:58:23Z",
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "Kill Soaring Blade"
+                                        },
+                                        {
+                                            "id": "ad80d2d2-992d-4eda-a9e0-04d81ee9b8ad",
+                                            "createdAt": "2026-06-19T20:58:40Z",
+                                            "updatedAt": "2026-06-19T20:58:47Z",
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "Kill Undying Lamplight"
+                                        },
+                                        {
+                                            "id": "3685b223-687d-4d93-805d-9051dfa819db",
+                                            "createdAt": "2026-06-19T20:58:24Z",
+                                            "updatedAt": "2026-06-19T20:58:32Z",
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "Kill Gold Current"
+                                        },
+                                        {
+                                            "id": "562cb8cd-57ca-4c2a-b22e-2da2b6317cff",
+                                            "createdAt": "2026-06-19T20:58:33Z",
+                                            "updatedAt": "2026-06-19T20:58:38Z",
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "Kill Azure Waters"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "8f046b3f-7417-4f25-a737-17555ddd54ae",
+                            "createdAt": "2026-06-19T21:00:17Z",
+                            "updatedAt": "2026-06-19T21:00:25Z",
+                            "complete": false,
+                            "staged": false,
+                            "text": "Kill Vengeful Rams",
+                            "children": [
+                                {
+                                    "id": "85bd93d6-ed0e-406b-8a99-af4fab6dc009",
+                                    "createdAt": "2026-06-19T21:00:26Z",
+                                    "updatedAt": "2026-06-19T21:00:33Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Marchant Spurned-For-Love"
+                                },
+                                {
+                                    "id": "0c5c792d-1d40-40c2-85dd-13d572e1ad31",
+                                    "createdAt": "2026-06-19T21:00:35Z",
+                                    "updatedAt": "2026-06-19T21:00:40Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Will Mocked-For-Words"
+                                },
+                                {
+                                    "id": "8ac03bdd-577a-443d-a622-cde29b7cf293",
+                                    "createdAt": "2026-06-19T21:00:42Z",
+                                    "updatedAt": "2026-06-19T21:00:51Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Carmine Skipped-For-Sweet"
+                                },
+                                {
+                                    "id": "caec362c-6ae6-4a97-91fc-64d1d9656e92",
+                                    "createdAt": "2026-06-19T21:00:52Z",
+                                    "updatedAt": "2026-06-19T21:01:00Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Roger Dropped-On-Head"
+                                },
+                                {
+                                    "id": "f2151627-4f5a-42be-b2e3-7c734dd16e8d",
+                                    "createdAt": "2026-06-19T21:01:01Z",
+                                    "updatedAt": "2026-06-19T21:03:38Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Phillipe Stiffed-For-Painted-Fence"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "0ae889f4-c0ce-47aa-8744-4ac66cf4cd18",
+                            "createdAt": "2026-06-19T21:03:52Z",
+                            "updatedAt": "2026-06-19T21:04:04Z",
+                            "complete": false,
+                            "staged": false,
+                            "text": "Kill Iron Pythons",
+                            "children": [
+                                {
+                                    "id": "55637d41-9706-4803-b3af-32fb46d0b903",
+                                    "createdAt": "2026-06-19T21:04:05Z",
+                                    "updatedAt": "2026-06-19T21:04:39Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Qyssiol Vasorynthyx"
+                                },
+                                {
+                                    "id": "958c9d4e-34e2-4c74-b2ec-b36a7fa6426d",
+                                    "createdAt": "2026-06-19T21:04:41Z",
+                                    "updatedAt": "2026-06-19T21:04:47Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Cyddryg Korexys"
+                                },
+                                {
+                                    "id": "f32a7dfe-c88b-4a5f-adf3-1721ca4b238c",
+                                    "createdAt": "2026-06-19T21:04:49Z",
+                                    "updatedAt": "2026-06-19T21:05:01Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Byrgricryd Syranicus"
+                                },
+                                {
+                                    "id": "5342d106-8daf-4a53-b3c0-dc6cb5607245",
+                                    "createdAt": "2026-06-19T21:05:02Z",
+                                    "updatedAt": "2026-06-19T21:05:14Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Qossiolth Aseontyth"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "396e5e47-d7e4-4f96-90d6-ba99b62f2f8b",
+                            "createdAt": "2026-06-19T21:05:32Z",
+                            "updatedAt": "2026-06-19T21:05:41Z",
+                            "complete": false,
+                            "staged": false,
+                            "text": "Kill Mystic Kitsune",
+                            "children": [
+                                {
+                                    "id": "349fc81d-f78a-4daf-bb19-bf55511cb8e8",
+                                    "createdAt": "2026-06-19T21:05:43Z",
+                                    "updatedAt": "2026-06-19T21:06:33Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill Axel Rawding, High Enchanter"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "e0cdfbbf-f3c5-401f-8b6a-93907de6d759",
+                    "createdAt": "2026-06-19T20:53:49Z",
+                    "updatedAt": "2026-06-19T21:00:07Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Get to the Temple of the Sacred Vessel",
+                    "flags": [
+                        "OPT"
+                    ]
+                },
+                {
+                    "id": "9deda55b-cc81-4b77-bc41-efbb2ad2b6c6",
+                    "createdAt": "2026-06-19T21:07:36Z",
+                    "updatedAt": "2026-06-19T21:07:49Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Activate the undetonated nuclear warhead",
+                    "flags": [
+                        "OPT"
+                    ]
+                },
+                {
+                    "id": "664983a1-4bf8-40f7-ba67-24499aff3de6",
+                    "createdAt": "2026-06-19T21:07:54Z",
+                    "updatedAt": "2026-06-19T21:08:25Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "ESCAPE!"
+                }
+            ],
+            "tags": [],
+            "title": "Sacred Vessel"
         }
     ],
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-06T03:11:52Z"
+    "version": "2026-06-19T23:29:58Z"
 }

@@ -457,6 +457,51 @@
         -2px 0 rgba(0,255,255,0.34),
         0 0 12px rgba(255,79,79,0.32);
     }
+
+    .archived-paths-panel {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(101,194,123,0.38);
+    }
+    .archived-paths-title {
+      font-family: var(--font-display);
+      color: var(--muted);
+      font-size: 0.66rem;
+      letter-spacing: 0.09em;
+      margin-bottom: 8px;
+    }
+    .archived-paths-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .path-card.archived-card {
+      width: 44px;
+      height: 44px;
+      padding: 3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .path-card.archived-card .path-icon-wrap {
+      width: 36px;
+      height: 36px;
+      align-self: auto;
+    }
+    .path-card.archived-card .path-update-badge {
+      position: absolute;
+      right: -5px;
+      top: -5px;
+      margin-left: 0;
+      min-width: 10px;
+      height: 10px;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0;
+    }
+
     .path-card-main {
       display: grid;
       grid-template-columns: 62px minmax(0, 1fr);
@@ -1323,115 +1368,160 @@
       failedPathTextNodes.clear();
       elements.pathList.innerHTML = '';
 
-      visiblePaths().forEach((path) => {
-        const card = document.createElement('div');
-        card.className = 'path-card';
-        card.tabIndex = 0;
-        card.setAttribute('role', 'button');
-        card.setAttribute('aria-pressed', state.trackedPaths.has(path.id) ? 'true' : 'false');
-        if (state.trackedPaths.has(path.id)) card.classList.add('selected');
-        if (path.failed) card.classList.add('failed');
-        else if (path.completed) card.classList.add('completed');
-        const pathUpdateState = updateStateFor(path);
-        const pathDirectUpdate = !!pathUpdateState;
-        const pathDescendantUpdateState = descendantUpdateState(path.objectives);
-        const pathDescendantUpdate = !!pathDescendantUpdateState;
-        if (pathDirectUpdate) card.classList.add('update-direct');
-        else if (pathDescendantUpdate) card.classList.add('update-descendant');
+      const paths = visiblePaths();
+      const activePaths = paths.filter((path) => !path.archived);
+      const archivedPaths = paths.filter((path) => !!path.archived);
 
-        const togglePath = () => {
-          if (state.trackedPaths.has(path.id)) state.trackedPaths.delete(path.id);
-          else state.trackedPaths.add(path.id);
-          persistJSON(STORAGE_KEYS.trackedPaths, [...state.trackedPaths]);
-          renderAll();
-        };
-
-        card.addEventListener('click', togglePath);
-        card.addEventListener('keydown', (event) => {
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            togglePath();
-          }
-        });
-
-        const main = document.createElement('div');
-        main.className = 'path-card-main';
-
-        const iconWrap = document.createElement('div');
-        iconWrap.className = 'path-icon-wrap';
-
-        const icon = document.createElement('img');
-        icon.className = 'path-icon';
-        icon.alt = '';
-        icon.src = path.failed
-          ? (path.failedIcon || buildFailedFallbackIcon(path.title))
-          : (path.icon || buildFallbackIcon(path.title));
-        icon.loading = 'lazy';
-        icon.addEventListener('error', () => {
-          icon.src = path.failed
-            ? buildFailedFallbackIcon(path.title)
-            : buildFallbackIcon(path.title);
-        });
-        iconWrap.append(icon);
-        if (path.completed && !path.failed) {
-          const completedOverlay = document.createElement('img');
-          completedOverlay.className = 'completed-path-overlay';
-          completedOverlay.alt = '';
-          completedOverlay.src = 'icons/completed_path_overlay.png';
-          completedOverlay.loading = 'lazy';
-          iconWrap.append(completedOverlay);
-        }
-
-        const content = document.createElement('div');
-        content.className = 'path-content';
-
-        const topLine = document.createElement('div');
-        topLine.className = 'path-topline';
-
-        const name = document.createElement('span');
-        name.className = 'path-name';
-        name.textContent = path.title;
-        name.dataset.baseText = path.title;
-        if (pathDirectUpdate || pathDescendantUpdate) {
-          const badgeLabel = pathDirectUpdate ? updateLabelFor(path) : (pathDescendantUpdateState === 'new' ? 'NEW!' : 'UPDATE!');
-          name.append(makeUpdateBadge(badgeLabel, 'path-update-badge'));
-        }
-        if (path.failed) {
-          name.classList.add('path-fail-text');
-          failedPathTextNodes.add(name);
-        }
-
-        topLine.append(name);
-
-        const metaRow = document.createElement('div');
-        metaRow.className = 'path-meta-row';
-
-        const counts = summarizePath(path.objectives);
-
-        const meta = document.createElement('div');
-        meta.className = 'path-meta';
-        
-        if (path.failed) {
-          meta.textContent = '☒ FAILED…';
-        } else if (path.completed) {
-          meta.textContent = '☑ COMPLETE!';
-        } else {
-          meta.textContent = `${counts.complete}/${counts.total} COMPLETE`;
-        }
-        meta.dataset.baseText = meta.textContent;
-        if (path.failed) {
-          meta.classList.add('path-fail-text');
-          failedPathTextNodes.add(meta);
-        }
-
-        const integrity = renderIntegrity(path.integrity, !!path.failed);
-
-        metaRow.append(meta, integrity);
-        content.append(topLine, metaRow);
-        main.append(iconWrap, content);
-        card.append(main);
-        elements.pathList.append(card);
+      activePaths.forEach((path) => {
+        elements.pathList.append(createPathCard(path, false));
       });
+
+      if (archivedPaths.length) {
+        const archivedPanel = document.createElement('div');
+        archivedPanel.className = 'archived-paths-panel';
+
+        const archivedTitle = document.createElement('div');
+        archivedTitle.className = 'archived-paths-title';
+        archivedTitle.textContent = 'ARCHIVED PATHS';
+
+        const archivedList = document.createElement('div');
+        archivedList.className = 'archived-paths-list';
+
+        archivedPaths.forEach((path) => {
+          archivedList.append(createPathCard(path, true));
+        });
+
+        archivedPanel.append(archivedTitle, archivedList);
+        elements.pathList.append(archivedPanel);
+      }
+    }
+
+    function createPathIconWrap(path) {
+      const iconWrap = document.createElement('div');
+      iconWrap.className = 'path-icon-wrap';
+
+      const icon = document.createElement('img');
+      icon.className = 'path-icon';
+      icon.alt = '';
+      icon.src = path.failed
+        ? (path.failedIcon || buildFailedFallbackIcon(path.title))
+        : (path.icon || buildFallbackIcon(path.title));
+      icon.loading = 'lazy';
+      icon.addEventListener('error', () => {
+        icon.src = path.failed
+          ? buildFailedFallbackIcon(path.title)
+          : buildFallbackIcon(path.title);
+      });
+      iconWrap.append(icon);
+
+      if (path.completed && !path.failed) {
+        const completedOverlay = document.createElement('img');
+        completedOverlay.className = 'completed-path-overlay';
+        completedOverlay.alt = '';
+        completedOverlay.src = 'icons/completed_path_overlay.png';
+        completedOverlay.loading = 'lazy';
+        iconWrap.append(completedOverlay);
+      }
+
+      return iconWrap;
+    }
+
+    function createPathCard(path, archived = false) {
+      const card = document.createElement('div');
+      card.className = archived ? 'path-card archived-card' : 'path-card';
+      card.tabIndex = 0;
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-pressed', state.trackedPaths.has(path.id) ? 'true' : 'false');
+      card.title = archived ? path.title : '';
+      if (state.trackedPaths.has(path.id)) card.classList.add('selected');
+      if (path.failed) card.classList.add('failed');
+      else if (path.completed) card.classList.add('completed');
+
+      const pathUpdateState = updateStateFor(path);
+      const pathDirectUpdate = !!pathUpdateState;
+      const pathDescendantUpdateState = descendantUpdateState(path.objectives);
+      const pathDescendantUpdate = !!pathDescendantUpdateState;
+      if (pathDirectUpdate) card.classList.add('update-direct');
+      else if (pathDescendantUpdate) card.classList.add('update-descendant');
+
+      const togglePath = () => {
+        if (state.trackedPaths.has(path.id)) state.trackedPaths.delete(path.id);
+        else state.trackedPaths.add(path.id);
+        persistJSON(STORAGE_KEYS.trackedPaths, [...state.trackedPaths]);
+        renderAll();
+      };
+
+      card.addEventListener('click', togglePath);
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          togglePath();
+        }
+      });
+
+      const iconWrap = createPathIconWrap(path);
+
+      if (archived) {
+        if (pathDirectUpdate || pathDescendantUpdate) {
+          const badge = makeUpdateBadge('', 'path-update-badge');
+          iconWrap.append(badge);
+        }
+        card.append(iconWrap);
+        return card;
+      }
+
+      const main = document.createElement('div');
+      main.className = 'path-card-main';
+
+      const content = document.createElement('div');
+      content.className = 'path-content';
+
+      const topLine = document.createElement('div');
+      topLine.className = 'path-topline';
+
+      const name = document.createElement('span');
+      name.className = 'path-name';
+      name.textContent = path.title;
+      name.dataset.baseText = path.title;
+      if (pathDirectUpdate || pathDescendantUpdate) {
+        const badgeLabel = pathDirectUpdate ? updateLabelFor(path) : (pathDescendantUpdateState === 'new' ? 'NEW!' : 'UPDATE!');
+        name.append(makeUpdateBadge(badgeLabel, 'path-update-badge'));
+      }
+      if (path.failed) {
+        name.classList.add('path-fail-text');
+        failedPathTextNodes.add(name);
+      }
+
+      topLine.append(name);
+
+      const metaRow = document.createElement('div');
+      metaRow.className = 'path-meta-row';
+
+      const counts = summarizePath(path.objectives);
+
+      const meta = document.createElement('div');
+      meta.className = 'path-meta';
+
+      if (path.failed) {
+        meta.textContent = '☒ FAILED…';
+      } else if (path.completed) {
+        meta.textContent = '☑ COMPLETE!';
+      } else {
+        meta.textContent = `${counts.complete}/${counts.total} COMPLETE`;
+      }
+      meta.dataset.baseText = meta.textContent;
+      if (path.failed) {
+        meta.classList.add('path-fail-text');
+        failedPathTextNodes.add(meta);
+      }
+
+      const integrity = renderIntegrity(path.integrity, !!path.failed);
+
+      metaRow.append(meta, integrity);
+      content.append(topLine, metaRow);
+      main.append(iconWrap, content);
+      card.append(main);
+      return card;
     }
 
     function renderThreads() {
