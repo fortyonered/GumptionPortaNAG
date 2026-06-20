@@ -493,8 +493,11 @@
     
     .path-card.archived-card .path-icon,
     .path-card.archived-card .completed-path-overlay {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       transform: scale(0.82);
-      transform-origin: center;
+      transform-origin: center center;
     }
     .path-card.archived-card .path-update-badge {
       position: absolute;
