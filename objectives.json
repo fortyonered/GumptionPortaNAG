@@ -1129,10 +1129,10 @@
             "title": "The Kitsune Conspiracy",
             "failed": false,
             "failedIcon": "icons/kitsune-conspiracy-failed.gif",
-            "completed": false,
+            "completed": true,
             "staged": false,
             "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-06-19T23:27:14Z",
+            "updatedAt": "2026-06-20T00:42:12Z",
             "archived": false
         },
         {
@@ -1547,5 +1547,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-20T00:41:47Z"
+    "version": "2026-06-20T00:42:14Z"
 }
