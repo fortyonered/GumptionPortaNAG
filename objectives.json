@@ -55,12 +55,12 @@
                             "staged": false
                         },
                         {
-                            "complete": false,
+                            "complete": true,
                             "text": "Learn Iron Python tenets",
-                            "failed": false,
                             "id": "obj-2ea58b22a23a",
                             "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
+                            "updatedAt": "2026-06-20T01:41:58Z",
+                            "staged": false
                         },
                         {
                             "complete": false,
@@ -1547,5 +1547,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-20T01:10:25Z"
+    "version": "2026-06-20T01:41:59Z"
 }
