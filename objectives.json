@@ -1149,10 +1149,18 @@
                 {
                     "id": "obj-e96922fe855b",
                     "createdAt": "2026-06-02T00:51:34Z",
-                    "updatedAt": "2026-06-19T21:53:27Z",
-                    "complete": false,
+                    "updatedAt": "2026-06-20T02:08:30Z",
+                    "complete": true,
                     "staged": false,
                     "text": "Return to Zhui Yang Cheng"
+                },
+                {
+                    "id": "6442e5a9-f310-4b74-a8d6-d8ddeb72133e",
+                    "createdAt": "2026-06-20T02:08:11Z",
+                    "updatedAt": "2026-06-20T02:08:20Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Obtain paint for scamps"
                 },
                 {
                     "id": "e8ed8d39-3ead-479a-8e7d-b208119c4482",
@@ -1179,14 +1187,6 @@
                     "complete": false,
                     "staged": true,
                     "text": "Find Rough Scale"
-                },
-                {
-                    "id": "6442e5a9-f310-4b74-a8d6-d8ddeb72133e",
-                    "createdAt": "2026-06-20T02:08:11Z",
-                    "updatedAt": "2026-06-20T02:08:20Z",
-                    "complete": false,
-                    "staged": false,
-                    "text": "Obtain paint for scamps"
                 }
             ],
             "tags": [],
@@ -1555,5 +1555,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-20T02:08:20Z"
+    "version": "2026-06-20T02:08:31Z"
 }
