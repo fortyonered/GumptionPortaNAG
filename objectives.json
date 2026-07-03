@@ -731,6 +731,17 @@
                                     "complete": false,
                                     "staged": true,
                                     "text": "Eavesdrop on meeting between Gill & Rough Scale"
+                                },
+                                {
+                                    "id": "624d352a-7095-47a3-95e9-057a2fa7f430",
+                                    "createdAt": "2026-07-03T21:58:27Z",
+                                    "updatedAt": "2026-07-03T21:59:31Z",
+                                    "complete": false,
+                                    "staged": true,
+                                    "text": "Learn what Rough Scale has on Gill",
+                                    "flags": [
+                                        "OPT"
+                                    ]
                                 }
                             ]
                         },
@@ -1848,5 +1859,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-03T21:55:08Z"
+    "version": "2026-07-03T21:59:32Z"
 }
