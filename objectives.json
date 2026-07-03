@@ -113,12 +113,54 @@
                 {
                     "children": [
                         {
+                            "id": "ed41e89d-d61e-40e6-a964-2f27a589b579",
+                            "createdAt": "2026-07-03T21:21:02Z",
+                            "updatedAt": "2026-07-03T21:21:20Z",
                             "complete": false,
-                            "text": "Meet with Rough Scale",
-                            "failed": false,
-                            "id": "obj-19cd59fedd2b",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
+                            "staged": false,
+                            "text": "Win the tournament"
+                        },
+                        {
+                            "id": "81da35d1-7f09-418e-ab0d-a0fdf2cc10dd",
+                            "createdAt": "2026-07-03T21:22:35Z",
+                            "updatedAt": "2026-07-03T21:25:42Z",
+                            "complete": false,
+                            "staged": true,
+                            "text": "Address the proletariat at trophy ceremony",
+                            "children": [
+                                {
+                                    "complete": false,
+                                    "text": "Present proof of Rough Scale's crimes",
+                                    "id": "889230c5-79ce-4616-9f51-8ae5ee36e636",
+                                    "createdAt": "2026-07-03T21:23:20Z",
+                                    "updatedAt": "2026-07-03T21:24:14Z",
+                                    "staged": false
+                                },
+                                {
+                                    "id": "d8b4fe44-c37f-49a7-a598-3db2b4731d3f",
+                                    "createdAt": "2026-07-03T21:23:23Z",
+                                    "updatedAt": "2026-07-03T21:24:17Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Present proof of Grand Marshall Gill's complicity"
+                                },
+                                {
+                                    "id": "c29b510c-0fdd-4926-9405-8727812db000",
+                                    "createdAt": "2026-07-03T21:23:33Z",
+                                    "updatedAt": "2026-07-03T21:24:19Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Convince the people to reject wanton commercialism"
+                                },
+                                {
+                                    "id": "43628890-25bc-463d-8b0b-c98332d6a6d4",
+                                    "createdAt": "2026-07-03T21:27:43Z",
+                                    "updatedAt": "2026-07-03T21:27:47Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Be convincing"
+                                }
+                            ]
                         },
                         {
                             "complete": false,
@@ -128,30 +170,6 @@
                             "id": "obj-b8629d502441",
                             "createdAt": "2026-06-01T06:31:12Z",
                             "updatedAt": "2026-06-01T06:31:12Z"
-                        },
-                        {
-                            "id": "e66da893-54d9-4ef7-b391-354a14fba984",
-                            "createdAt": "2026-06-19T16:45:30Z",
-                            "updatedAt": "2026-06-19T16:45:43Z",
-                            "complete": false,
-                            "staged": true,
-                            "text": "Dismantle the Arauchigumi enterprise"
-                        },
-                        {
-                            "id": "b7a60f5e-6804-4dd8-a597-52a07872f8d8",
-                            "createdAt": "2026-06-19T16:45:44Z",
-                            "updatedAt": "2026-06-19T16:46:07Z",
-                            "complete": false,
-                            "staged": true,
-                            "text": "Kill Rough Scale"
-                        },
-                        {
-                            "id": "bfd76a0f-3d39-45d9-a5f5-3e070aa13df3",
-                            "createdAt": "2026-06-19T16:46:09Z",
-                            "updatedAt": "2026-06-19T16:46:23Z",
-                            "complete": false,
-                            "staged": true,
-                            "text": "Expose or kill Grand Marshall Gill"
                         }
                     ],
                     "complete": false,
@@ -165,6 +183,72 @@
                     "complete": false,
                     "text": "Inspire the people",
                     "children": [
+                        {
+                            "id": "0a72bb71-c627-46d5-a885-c37b3b1ff2cb",
+                            "createdAt": "2026-07-03T21:25:02Z",
+                            "updatedAt": "2026-07-03T21:25:11Z",
+                            "complete": false,
+                            "staged": false,
+                            "text": "Win the tournament"
+                        },
+                        {
+                            "id": "0a3d2025-a476-4d55-a6b1-d45198d70332",
+                            "createdAt": "2026-07-03T21:25:16Z",
+                            "updatedAt": "2026-07-03T21:30:02Z",
+                            "complete": false,
+                            "staged": true,
+                            "text": "Address the people at trophy ceremony",
+                            "children": [
+                                {
+                                    "id": "ee1e9c0f-ea4e-4923-b262-94a5b944f81f",
+                                    "createdAt": "2026-07-03T21:25:31Z",
+                                    "updatedAt": "2026-07-03T21:28:21Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Explain they have lost sight of what matters"
+                                },
+                                {
+                                    "id": "d2896537-69fe-4afb-8be4-5533b21ba3af",
+                                    "createdAt": "2026-07-03T21:26:37Z",
+                                    "updatedAt": "2026-07-03T21:28:28Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Remind the people of tournament's purpose"
+                                },
+                                {
+                                    "id": "39fef015-131d-47c4-b7b0-aaa4f058915c",
+                                    "createdAt": "2026-07-03T21:26:47Z",
+                                    "updatedAt": "2026-07-03T21:28:32Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Reject temptation of merchandising"
+                                },
+                                {
+                                    "id": "504649eb-331d-4d37-ae05-3ff9c961a5c2",
+                                    "createdAt": "2026-07-03T21:27:27Z",
+                                    "updatedAt": "2026-07-03T21:29:13Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Reveal the Measure, holy artifact of kung-fu"
+                                },
+                                {
+                                    "id": "1c453427-2a66-449f-a192-fa198e4d36ee",
+                                    "createdAt": "2026-07-03T21:29:27Z",
+                                    "updatedAt": "2026-07-03T21:29:54Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Urge the people to return to old ways"
+                                },
+                                {
+                                    "id": "b0dfe440-154e-40e5-b571-06eb730e8bee",
+                                    "createdAt": "2026-07-03T21:29:19Z",
+                                    "updatedAt": "2026-07-03T21:29:25Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Be convincing"
+                                }
+                            ]
+                        },
                         {
                             "complete": false,
                             "text": "???",
@@ -540,10 +624,11 @@
                                         "OPT"
                                     ],
                                     "text": "Take Marchant up on his offer",
-                                    "failed": false,
+                                    "failed": true,
                                     "id": "obj-21b1bec41b6a",
                                     "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                    "updatedAt": "2026-07-03T21:19:35Z",
+                                    "staged": false
                                 }
                             ],
                             "complete": false,
@@ -997,7 +1082,7 @@
                     "updatedAt": "2026-06-01T06:31:12Z"
                 },
                 {
-                    "complete": false,
+                    "complete": true,
                     "text": "End the threat posed by the Mystic Kitsune",
                     "children": [
                         {
@@ -1108,7 +1193,7 @@
                     "staged": false,
                     "id": "obj-e3d6ac40f413",
                     "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
+                    "updatedAt": "2026-06-23T23:02:44Z"
                 },
                 {
                     "id": "0d99eb6c-4ba8-4c94-8611-4a3f3dec9d71",
@@ -1132,8 +1217,8 @@
             "completed": true,
             "staged": false,
             "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-06-20T00:42:12Z",
-            "archived": false
+            "updatedAt": "2026-07-03T20:41:03Z",
+            "archived": true
         },
         {
             "createdAt": "2026-06-02T00:50:51Z",
@@ -1155,41 +1240,246 @@
                     "text": "Return to Zhui Yang Cheng"
                 },
                 {
-                    "id": "6442e5a9-f310-4b74-a8d6-d8ddeb72133e",
-                    "createdAt": "2026-06-20T02:08:11Z",
-                    "updatedAt": "2026-06-20T02:27:58Z",
-                    "complete": false,
-                    "staged": false,
-                    "text": "Obtain paint for scamps",
-                    "flags": [
-                        "OPT"
-                    ]
-                },
-                {
-                    "id": "e8ed8d39-3ead-479a-8e7d-b208119c4482",
-                    "createdAt": "2026-06-05T22:14:31Z",
-                    "updatedAt": "2026-06-05T23:37:01Z",
+                    "id": "bb5784be-6f86-496e-96d8-dc13dd8e1057",
+                    "createdAt": "2026-07-03T21:08:15Z",
+                    "updatedAt": "2026-07-03T21:08:15Z",
                     "complete": false,
                     "staged": false,
                     "text": "Figure out how the tourney is being rigged",
                     "children": [
                         {
-                            "id": "16153c1d-bccd-49c8-80a5-2cd03d1d855b",
-                            "createdAt": "2026-06-05T23:37:06Z",
-                            "updatedAt": "2026-06-19T16:37:15Z",
+                            "id": "653f2037-9e1b-455b-9877-7dcd8b1185ec",
+                            "createdAt": "2026-07-03T21:09:09Z",
+                            "updatedAt": "2026-07-03T21:09:09Z",
+                            "complete": false,
+                            "staged": false,
+                            "text": "Get a lead on the Arauchigumi crime operation",
+                            "children": [
+                                {
+                                    "id": "86bd32fb-9a10-4f1c-9dc3-2c874ef12225",
+                                    "createdAt": "2026-07-03T21:09:09Z",
+                                    "updatedAt": "2026-07-03T21:09:09Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Help the scamps",
+                                    "children": [
+                                        {
+                                            "id": "1b3bb419-5b76-42d0-834f-0169736aa4ef",
+                                            "createdAt": "2026-07-03T21:09:09Z",
+                                            "updatedAt": "2026-07-03T21:12:54Z",
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "Obtain paint for scamps"
+                                        }
+                                    ],
+                                    "flags": [
+                                        "OPT"
+                                    ]
+                                },
+                                {
+                                    "id": "70f83917-41ff-4365-81d3-83168bc5dbbc",
+                                    "createdAt": "2026-07-03T21:09:09Z",
+                                    "updatedAt": "2026-07-03T21:09:09Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Find someone who knows things",
+                                    "children": [
+                                        {
+                                            "id": "4afce8c0-6755-4e7b-876f-da8c950148c6",
+                                            "createdAt": "2026-07-03T21:09:09Z",
+                                            "updatedAt": "2026-07-03T21:09:09Z",
+                                            "complete": true,
+                                            "staged": false,
+                                            "text": "Follow the bar manager home"
+                                        },
+                                        {
+                                            "id": "af7ba638-5066-4aec-a364-7a029ca93a74",
+                                            "createdAt": "2026-07-03T21:09:09Z",
+                                            "updatedAt": "2026-07-03T21:09:09Z",
+                                            "complete": true,
+                                            "staged": false,
+                                            "text": "Break into bar manager's house"
+                                        },
+                                        {
+                                            "id": "344bdb4b-a641-4a7a-b016-4435cd7e2cae",
+                                            "createdAt": "2026-07-03T21:09:09Z",
+                                            "updatedAt": "2026-07-03T21:09:09Z",
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "Find out what he knows"
+                                        }
+                                    ],
+                                    "flags": [
+                                        "OPT"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "8099e50f-baec-40b6-943b-e7454043e510",
+                            "createdAt": "2026-07-03T21:08:15Z",
+                            "updatedAt": "2026-07-03T21:12:22Z",
                             "complete": false,
                             "staged": true,
-                            "text": "Investigate Grand Marshall Gill"
+                            "text": "Investigate Cold Hook",
+                            "children": [
+                                {
+                                    "id": "b829251d-01b6-47ad-b768-2a1de351b15c",
+                                    "createdAt": "2026-07-03T21:08:15Z",
+                                    "updatedAt": "2026-07-03T21:08:15Z",
+                                    "complete": true,
+                                    "staged": false,
+                                    "text": "Learn Cold Hook's schedule"
+                                },
+                                {
+                                    "id": "4810805a-07f6-406c-8d73-228dc50cbc4e",
+                                    "createdAt": "2026-07-03T21:08:15Z",
+                                    "updatedAt": "2026-07-03T21:08:15Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Get Cold Hook alone and learn what he knows"
+                                },
+                                {
+                                    "id": "5f02cab0-02fb-435c-b5e8-29b19d69945f",
+                                    "createdAt": "2026-07-03T21:08:15Z",
+                                    "updatedAt": "2026-07-03T21:11:06Z",
+                                    "complete": false,
+                                    "staged": true,
+                                    "text": "Eliminate Cold Hook",
+                                    "flags": [
+                                        "OPT"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "307df4fa-3ca3-4ab7-a4da-a1014a3eb53f",
+                            "createdAt": "2026-07-03T21:08:15Z",
+                            "updatedAt": "2026-07-03T21:08:15Z",
+                            "complete": false,
+                            "staged": true,
+                            "text": "Investigate Grand Marshall Gill",
+                            "children": [
+                                {
+                                    "id": "52366994-ca1b-4a03-bd2a-5e3b836c0bd9",
+                                    "createdAt": "2026-07-03T21:08:15Z",
+                                    "updatedAt": "2026-07-03T21:08:15Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Infiltrate Gill's manor"
+                                },
+                                {
+                                    "id": "dad0080e-1ee8-4868-af84-bdc44f292d9a",
+                                    "createdAt": "2026-07-03T21:08:15Z",
+                                    "updatedAt": "2026-07-03T21:08:15Z",
+                                    "complete": false,
+                                    "staged": true,
+                                    "text": "Eavesdrop on meeting between Gill & Rough Scale"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "abaaf695-7896-4bf0-a90b-dfbc1b752273",
+                            "createdAt": "2026-07-03T21:12:05Z",
+                            "updatedAt": "2026-07-03T21:12:09Z",
+                            "complete": false,
+                            "staged": false,
+                            "text": "???",
+                            "unknown": true
                         }
                     ]
                 },
                 {
-                    "id": "2cebb47d-914c-4c8d-b6eb-996982888d4a",
-                    "createdAt": "2026-06-19T20:12:01Z",
-                    "updatedAt": "2026-06-19T20:12:11Z",
+                    "id": "bc2a5c36-4db6-47a2-a3db-7899d544b9c0",
+                    "createdAt": "2026-07-03T20:58:49Z",
+                    "updatedAt": "2026-07-03T21:10:02Z",
                     "complete": false,
                     "staged": true,
-                    "text": "Find Rough Scale"
+                    "text": "Stop the rigging",
+                    "children": [
+                        {
+                            "id": "d8430b23-d232-44ca-b8db-475f1d4e6420",
+                            "createdAt": "2026-07-03T20:59:07Z",
+                            "updatedAt": "2026-07-03T20:59:13Z",
+                            "complete": false,
+                            "staged": false,
+                            "text": "Find Rough Scale",
+                            "children": [
+                                {
+                                    "id": "97ffa0a3-ba08-49a8-a795-0e1ff89c272c",
+                                    "createdAt": "2026-07-03T21:14:13Z",
+                                    "updatedAt": "2026-07-03T21:14:19Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Follow Rough Scale from the meeting",
+                                    "flags": [
+                                        "- OR -"
+                                    ]
+                                },
+                                {
+                                    "id": "19bcd46d-6805-4e71-9131-463e22b07c30",
+                                    "createdAt": "2026-07-03T21:14:24Z",
+                                    "updatedAt": "2026-07-03T21:14:26Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Convince Gill to set a meeting with Rough Scale"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "bcf784f7-d371-45f8-9bf9-a1dddf82198d",
+                            "createdAt": "2026-07-03T21:15:51Z",
+                            "updatedAt": "2026-07-03T21:17:19Z",
+                            "complete": false,
+                            "staged": true,
+                            "text": "Eliminate Rough Scale"
+                        },
+                        {
+                            "id": "29ecefb8-1acf-4af7-971d-f25a7823f9c3",
+                            "createdAt": "2026-07-03T21:17:34Z",
+                            "updatedAt": "2026-07-03T21:17:57Z",
+                            "complete": false,
+                            "staged": true,
+                            "text": "Convince Gill to keep the tourney fair"
+                        }
+                    ]
+                },
+                {
+                    "id": "49b3dfaf-ddf8-4b12-bdaf-7a14462c46c0",
+                    "createdAt": "2026-07-03T21:13:29Z",
+                    "updatedAt": "2026-07-03T21:13:29Z",
+                    "complete": false,
+                    "staged": true,
+                    "text": "Rig the tournament",
+                    "children": [
+                        {
+                            "id": "5db4bee2-2fb3-4285-aff3-faf028e716d4",
+                            "createdAt": "2026-07-03T21:13:29Z",
+                            "updatedAt": "2026-07-03T21:13:29Z",
+                            "complete": false,
+                            "staged": false,
+                            "text": "Convince Gill to rig the tourney for you"
+                        },
+                        {
+                            "id": "b12c5eda-af7c-4fba-9024-bc610c7e15f1",
+                            "createdAt": "2026-07-03T21:16:21Z",
+                            "updatedAt": "2026-07-03T21:16:34Z",
+                            "complete": false,
+                            "staged": true,
+                            "text": "Eliminate Rough Scale"
+                        },
+                        {
+                            "id": "b8d90875-c7d0-4636-87f0-57db6a9c41a5",
+                            "createdAt": "2026-07-03T21:13:29Z",
+                            "updatedAt": "2026-07-03T21:13:29Z",
+                            "complete": false,
+                            "staged": true,
+                            "text": "Give Gill your preferred brackets"
+                        }
+                    ],
+                    "flags": [
+                        "OPT"
+                    ]
                 }
             ],
             "tags": [],
@@ -1558,5 +1848,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-06-20T02:27:58Z"
+    "version": "2026-07-03T21:32:25Z"
 }
