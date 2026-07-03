@@ -294,226 +294,6 @@
             "updatedAt": "2026-06-01T06:31:12Z"
         },
         {
-            "icon": "icons/old-grudges.png",
-            "id": "old-grudges",
-            "integrity": 0,
-            "objectives": [
-                {
-                    "children": [
-                        {
-                            "complete": false,
-                            "text": "Accept Marchant's offer for sponsorship",
-                            "failed": false,
-                            "id": "obj-02e336631031",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "children": [
-                                        {
-                                            "complete": true,
-                                            "flags": [
-                                                "OPT"
-                                            ],
-                                            "text": "Convince Mei-Zarah to fight with you",
-                                            "failed": false,
-                                            "id": "obj-1504c7d370b1",
-                                            "createdAt": "2026-06-01T06:31:12Z",
-                                            "updatedAt": "2026-06-01T06:31:12Z"
-                                        },
-                                        {
-                                            "complete": false,
-                                            "text": "???",
-                                            "unknown": true,
-                                            "failed": false,
-                                            "id": "obj-1fe0295cdec1",
-                                            "createdAt": "2026-06-01T06:31:12Z",
-                                            "updatedAt": "2026-06-01T06:31:12Z"
-                                        }
-                                    ],
-                                    "complete": false,
-                                    "text": "Find a partner for the duo combat",
-                                    "failed": false,
-                                    "id": "obj-05421acbdc28",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                },
-                                {
-                                    "complete": false,
-                                    "text": "Defeat your opponents",
-                                    "failed": false,
-                                    "id": "obj-2307f9d25c2b",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                }
-                            ],
-                            "complete": false,
-                            "text": "Make it past the first round",
-                            "failed": false,
-                            "id": "obj-8d86c74de1a5",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "complete": false,
-                                    "text": "???",
-                                    "unknown": true,
-                                    "failed": false,
-                                    "id": "obj-31dac40be50b",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                },
-                                {
-                                    "complete": false,
-                                    "text": "Defeat your opponent",
-                                    "failed": false,
-                                    "id": "obj-dfc0ff4ac911",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                }
-                            ],
-                            "complete": false,
-                            "text": "Make it through the quarterfinals",
-                            "failed": false,
-                            "id": "obj-c3c301d8d359",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "complete": false,
-                                    "text": "???",
-                                    "unknown": true,
-                                    "failed": false,
-                                    "id": "obj-b13221ecf362",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                },
-                                {
-                                    "complete": false,
-                                    "text": "Defeat your opponent",
-                                    "failed": false,
-                                    "id": "obj-375c4024d990",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                }
-                            ],
-                            "complete": false,
-                            "text": "Make it through the semifinals",
-                            "failed": false,
-                            "id": "obj-19604df4da46",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "complete": false,
-                                    "text": "???",
-                                    "unknown": true,
-                                    "failed": false,
-                                    "id": "obj-66e497824258",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                },
-                                {
-                                    "complete": false,
-                                    "text": "Defeat your opponent",
-                                    "failed": false,
-                                    "id": "obj-8076d6210a6a",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                }
-                            ],
-                            "complete": false,
-                            "text": "Win the tournament",
-                            "failed": false,
-                            "id": "obj-758ac5105425",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        },
-                        {
-                            "complete": false,
-                            "text": "Attend victory ceremony as the Vengeful Rams' champion",
-                            "failed": false,
-                            "id": "obj-d855c14162c0",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        }
-                    ],
-                    "complete": false,
-                    "text": "Win the tournament for the Vengeful Rams",
-                    "failed": false,
-                    "id": "obj-18f4ebe7c152",
-                    "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
-                },
-                {
-                    "children": [
-                        {
-                            "complete": false,
-                            "text": "Learn of Marchant's grudge",
-                            "failed": false,
-                            "id": "obj-4546eca5ea2e",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        },
-                        {
-                            "complete": false,
-                            "text": "???",
-                            "unknown": true,
-                            "failed": false,
-                            "id": "obj-63d6ec9d2b2c",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        }
-                    ],
-                    "complete": false,
-                    "text": "Make him pay",
-                    "failed": false,
-                    "id": "obj-1eb8e0856d92",
-                    "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
-                },
-                {
-                    "children": [
-                        {
-                            "complete": false,
-                            "text": "???",
-                            "unknown": true,
-                            "failed": false,
-                            "id": "obj-71b6e56b60dc",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        }
-                    ],
-                    "complete": false,
-                    "text": "Win her back",
-                    "failed": false,
-                    "id": "obj-27fc55bdb6bb",
-                    "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
-                }
-            ],
-            "tags": [
-                "tournament",
-                "revenge"
-            ],
-            "title": "Old Grudges",
-            "failed": true,
-            "failedIcon": "icons/old-grudges-failed.gif",
-            "completed": false,
-            "staged": false,
-            "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-06-19T21:53:48Z",
-            "archived": true
-        },
-        {
             "icon": "icons/if-you-cant-beat-em.png",
             "id": "if-you-cant-beat-em",
             "integrity": 17,
@@ -795,430 +575,6 @@
             "staged": false,
             "createdAt": "2026-06-01T06:31:12Z",
             "updatedAt": "2026-06-01T06:31:12Z"
-        },
-        {
-            "icon": "icons/kitsune-conspiracy.png",
-            "id": "kitsune-conspiracy",
-            "integrity": 94,
-            "objectives": [
-                {
-                    "children": [
-                        {
-                            "complete": true,
-                            "text": "Use magical powers in Zhui Yang Cheng",
-                            "failed": false,
-                            "id": "obj-b72d4de600d4",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        },
-                        {
-                            "complete": true,
-                            "text": "Get ambushed like chumps",
-                            "failed": false,
-                            "id": "obj-bd4aef2a0cb0",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        },
-                        {
-                            "complete": true,
-                            "text": "SURVIVE!",
-                            "failed": false,
-                            "id": "obj-4bab519a6a17",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        }
-                    ],
-                    "complete": true,
-                    "text": "Clash with the Mystic Kitsune",
-                    "failed": false,
-                    "id": "obj-710b7bf6697c",
-                    "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
-                },
-                {
-                    "children": [
-                        {
-                            "complete": true,
-                            "flags": [
-                                "OPT"
-                            ],
-                            "text": "Learn what Will Mocked-For-Words knows",
-                            "failed": false,
-                            "id": "obj-07b7e66c1c96",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        },
-                        {
-                            "children": [
-                                {
-                                    "complete": true,
-                                    "text": "Visit market during the day",
-                                    "failed": false,
-                                    "id": "obj-2fd44d1fee12",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                },
-                                {
-                                    "complete": true,
-                                    "text": "Check out the Kitsune stall",
-                                    "failed": false,
-                                    "id": "obj-46cf0eb6fb4f",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                },
-                                {
-                                    "complete": true,
-                                    "text": "Find an isolated Kitsune",
-                                    "failed": false,
-                                    "id": "obj-c0315653b503",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                },
-                                {
-                                    "complete": true,
-                                    "text": "Beat some answers out of 'em",
-                                    "failed": false,
-                                    "id": "obj-a13ac746187b",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                }
-                            ],
-                            "complete": true,
-                            "text": "Investigate the Kitsune presence in Zhui Yang Cheng",
-                            "staged": false,
-                            "id": "obj-808c1090f441",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        },
-                        {
-                            "complete": true,
-                            "text": "Investigate the Southern Wetlands",
-                            "children": [
-                                {
-                                    "complete": true,
-                                    "text": "Travel to the Wetlands' edge",
-                                    "staged": false,
-                                    "id": "obj-53a23caf9051",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                },
-                                {
-                                    "complete": true,
-                                    "staged": false,
-                                    "text": "Search Rough Scale ganger corpse",
-                                    "id": "obj-5b88bd1563f6",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                },
-                                {
-                                    "complete": true,
-                                    "text": "Find the sunken factory in the swamp",
-                                    "staged": false,
-                                    "id": "obj-ce436bfa8a3a",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                },
-                                {
-                                    "complete": true,
-                                    "staged": false,
-                                    "text": "Follow Rough Scale gang directions through wetlands",
-                                    "children": [
-                                        {
-                                            "complete": true,
-                                            "staged": false,
-                                            "text": "“Look for the crows; they know the way.”",
-                                            "id": "obj-e3f4d1bfb350",
-                                            "createdAt": "2026-06-01T06:31:12Z",
-                                            "updatedAt": "2026-06-01T06:31:12Z"
-                                        },
-                                        {
-                                            "complete": true,
-                                            "staged": false,
-                                            "text": "“Right turns, all through the Labyrinth of Reeds.”",
-                                            "id": "obj-6a71a0bb5376",
-                                            "createdAt": "2026-06-01T06:31:12Z",
-                                            "updatedAt": "2026-06-01T06:31:12Z"
-                                        },
-                                        {
-                                            "complete": true,
-                                            "staged": false,
-                                            "text": "“Be brave in the Meadow of Purple.”",
-                                            "id": "obj-bf8b7555a155",
-                                            "createdAt": "2026-06-01T06:31:12Z",
-                                            "updatedAt": "2026-06-01T06:31:12Z"
-                                        },
-                                        {
-                                            "complete": true,
-                                            "staged": false,
-                                            "text": "“Knock, as we do, at the Driftwood Door.”",
-                                            "id": "obj-82c1abbc4d52",
-                                            "createdAt": "2026-06-01T06:31:12Z",
-                                            "updatedAt": "2026-06-01T06:31:12Z"
-                                        },
-                                        {
-                                            "complete": true,
-                                            "staged": false,
-                                            "text": "“Pass through the House of Blocks...”",
-                                            "id": "obj-04bc1a2b1ac5",
-                                            "createdAt": "2026-06-01T06:31:12Z",
-                                            "updatedAt": "2026-06-01T06:31:12Z"
-                                        },
-                                        {
-                                            "complete": true,
-                                            "staged": false,
-                                            "text": "“... Ignore the voice.”",
-                                            "flags": [
-                                                "OPT"
-                                            ],
-                                            "id": "obj-83eb84884b3e",
-                                            "createdAt": "2026-06-01T06:31:12Z",
-                                            "updatedAt": "2026-06-01T06:31:12Z"
-                                        },
-                                        {
-                                            "complete": true,
-                                            "staged": false,
-                                            "text": "“Walk between the sunken houses...”",
-                                            "id": "obj-98f8be16d550",
-                                            "createdAt": "2026-06-01T06:31:12Z",
-                                            "updatedAt": "2026-06-01T06:31:12Z"
-                                        },
-                                        {
-                                            "complete": true,
-                                            "staged": false,
-                                            "text": "“... keeping your distance from the shepherds.”",
-                                            "id": "obj-602b2ec7753f",
-                                            "createdAt": "2026-06-01T06:31:12Z",
-                                            "updatedAt": "2026-06-01T06:31:12Z"
-                                        },
-                                        {
-                                            "complete": true,
-                                            "staged": false,
-                                            "text": "“Watch your step crossing the lilyfields...”",
-                                            "id": "obj-43114d9af473",
-                                            "createdAt": "2026-06-01T06:31:12Z",
-                                            "updatedAt": "2026-06-01T06:31:12Z"
-                                        },
-                                        {
-                                            "complete": false,
-                                            "staged": false,
-                                            "text": "“... The frogs might be able to help.”",
-                                            "flags": [
-                                                "OPT"
-                                            ],
-                                            "failed": true,
-                                            "id": "obj-586e2c9da432",
-                                            "createdAt": "2026-06-01T06:31:12Z",
-                                            "updatedAt": "2026-06-01T06:31:12Z"
-                                        },
-                                        {
-                                            "complete": false,
-                                            "staged": false,
-                                            "text": "“Show the pin of Arauchigumi to the telescope, and enter...”",
-                                            "failed": true,
-                                            "flags": [
-                                                "OPT"
-                                            ],
-                                            "id": "obj-44306ca58600",
-                                            "createdAt": "2026-06-01T06:31:12Z",
-                                            "updatedAt": "2026-06-01T06:31:12Z"
-                                        }
-                                    ],
-                                    "flags": [
-                                        "OPT"
-                                    ],
-                                    "id": "obj-4be093085046",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                }
-                            ],
-                            "staged": false,
-                            "id": "obj-80c38e8fc24f",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        },
-                        {
-                            "complete": true,
-                            "staged": false,
-                            "text": "Explore the sunken factory",
-                            "children": [
-                                {
-                                    "complete": true,
-                                    "staged": false,
-                                    "text": "Explore the ground floor",
-                                    "id": "obj-ea23fdbb04c3",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                },
-                                {
-                                    "complete": true,
-                                    "staged": false,
-                                    "text": "Find the Kitsune leader",
-                                    "id": "obj-265a9eedfb03",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                },
-                                {
-                                    "complete": true,
-                                    "staged": false,
-                                    "text": "Uncover information about the Kitsune leader",
-                                    "flags": [
-                                        "OPT"
-                                    ],
-                                    "id": "obj-bd1ebe7808d7",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
-                                }
-                            ],
-                            "id": "obj-d5cb8889a15b",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        }
-                    ],
-                    "complete": true,
-                    "text": "Investigate the Mystic Kitsune",
-                    "staged": false,
-                    "id": "obj-6e0760ea146e",
-                    "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
-                },
-                {
-                    "complete": true,
-                    "text": "End the threat posed by the Mystic Kitsune",
-                    "children": [
-                        {
-                            "complete": false,
-                            "staged": false,
-                            "text": "Deal with the Kitsune",
-                            "children": [
-                                {
-                                    "complete": false,
-                                    "staged": false,
-                                    "text": "Kill the Kitsune",
-                                    "id": "obj-d3e86f5777b1",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-20T00:41:45Z",
-                                    "failed": true
-                                },
-                                {
-                                    "complete": false,
-                                    "staged": false,
-                                    "text": "Convince the Kitsune to end his watch",
-                                    "flags": [
-                                        "OPT"
-                                    ],
-                                    "id": "obj-69d01fa1c26e",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-19T16:34:50Z",
-                                    "failed": true
-                                },
-                                {
-                                    "id": "ede6f5e8-e458-4bae-9573-89bdb9a28681",
-                                    "createdAt": "2026-06-06T02:29:20Z",
-                                    "updatedAt": "2026-06-19T16:34:53Z",
-                                    "complete": false,
-                                    "staged": false,
-                                    "text": "Leave the Kitsune to his fate",
-                                    "flags": [
-                                        "OPT"
-                                    ],
-                                    "failed": true
-                                },
-                                {
-                                    "id": "3bf3531b-5247-47bd-8149-5c37ae7a694b",
-                                    "createdAt": "2026-06-06T02:29:58Z",
-                                    "updatedAt": "2026-06-19T16:34:55Z",
-                                    "complete": false,
-                                    "staged": false,
-                                    "text": "Let the Kitsune rot",
-                                    "flags": [
-                                        "OPT"
-                                    ],
-                                    "failed": true
-                                },
-                                {
-                                    "id": "686bacb9-bc31-4558-ac48-49b440c85054",
-                                    "createdAt": "2026-06-06T02:30:15Z",
-                                    "updatedAt": "2026-06-19T16:34:57Z",
-                                    "complete": false,
-                                    "staged": false,
-                                    "text": "Dump him in the swamp",
-                                    "flags": [
-                                        "OPT"
-                                    ],
-                                    "failed": true
-                                },
-                                {
-                                    "id": "9c1d5737-b9e6-4c25-b674-1138408dc2be",
-                                    "createdAt": "2026-06-19T16:35:01Z",
-                                    "updatedAt": "2026-06-20T00:41:42Z",
-                                    "complete": true,
-                                    "staged": false,
-                                    "text": "Let the Vengeful Rams take him"
-                                }
-                            ],
-                            "id": "obj-1544e147af71",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-02T00:02:27Z"
-                        },
-                        {
-                            "complete": true,
-                            "staged": false,
-                            "text": "Deal with the puppets",
-                            "children": [
-                                {
-                                    "complete": true,
-                                    "staged": false,
-                                    "text": "Destroy the puppet network",
-                                    "id": "obj-235f4ebd2cb1",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-06T01:30:12Z"
-                                },
-                                {
-                                    "complete": true,
-                                    "staged": false,
-                                    "text": "Lock the Kitsune out of the puppet network",
-                                    "id": "obj-bbf472aa1228",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-06T01:30:10Z",
-                                    "flags": [
-                                        "OPT"
-                                    ]
-                                }
-                            ],
-                            "id": "obj-31176fc4e829",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-06T01:30:14Z"
-                        }
-                    ],
-                    "staged": false,
-                    "id": "obj-e3d6ac40f413",
-                    "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-23T23:02:44Z"
-                },
-                {
-                    "id": "0d99eb6c-4ba8-4c94-8611-4a3f3dec9d71",
-                    "createdAt": "2026-06-05T23:28:58Z",
-                    "updatedAt": "2026-06-06T01:32:11Z",
-                    "complete": true,
-                    "staged": false,
-                    "text": "Take the scrolls",
-                    "flags": [
-                        "OPT"
-                    ]
-                }
-            ],
-            "tags": [
-                "mystery",
-                "assassins"
-            ],
-            "title": "The Kitsune Conspiracy",
-            "failed": false,
-            "failedIcon": "icons/kitsune-conspiracy-failed.gif",
-            "completed": true,
-            "staged": false,
-            "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-07-03T20:41:03Z",
-            "archived": true
         },
         {
             "createdAt": "2026-06-02T00:50:51Z",
@@ -1843,10 +1199,654 @@
             ],
             "tags": [],
             "title": "Sacred Vessel"
+        },
+        {
+            "icon": "icons/kitsune-conspiracy.png",
+            "id": "kitsune-conspiracy",
+            "integrity": 94,
+            "objectives": [
+                {
+                    "children": [
+                        {
+                            "complete": true,
+                            "text": "Use magical powers in Zhui Yang Cheng",
+                            "failed": false,
+                            "id": "obj-b72d4de600d4",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        },
+                        {
+                            "complete": true,
+                            "text": "Get ambushed like chumps",
+                            "failed": false,
+                            "id": "obj-bd4aef2a0cb0",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        },
+                        {
+                            "complete": true,
+                            "text": "SURVIVE!",
+                            "failed": false,
+                            "id": "obj-4bab519a6a17",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        }
+                    ],
+                    "complete": true,
+                    "text": "Clash with the Mystic Kitsune",
+                    "failed": false,
+                    "id": "obj-710b7bf6697c",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
+                },
+                {
+                    "children": [
+                        {
+                            "complete": true,
+                            "flags": [
+                                "OPT"
+                            ],
+                            "text": "Learn what Will Mocked-For-Words knows",
+                            "failed": false,
+                            "id": "obj-07b7e66c1c96",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "complete": true,
+                                    "text": "Visit market during the day",
+                                    "failed": false,
+                                    "id": "obj-2fd44d1fee12",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                },
+                                {
+                                    "complete": true,
+                                    "text": "Check out the Kitsune stall",
+                                    "failed": false,
+                                    "id": "obj-46cf0eb6fb4f",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                },
+                                {
+                                    "complete": true,
+                                    "text": "Find an isolated Kitsune",
+                                    "failed": false,
+                                    "id": "obj-c0315653b503",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                },
+                                {
+                                    "complete": true,
+                                    "text": "Beat some answers out of 'em",
+                                    "failed": false,
+                                    "id": "obj-a13ac746187b",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                }
+                            ],
+                            "complete": true,
+                            "text": "Investigate the Kitsune presence in Zhui Yang Cheng",
+                            "staged": false,
+                            "id": "obj-808c1090f441",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        },
+                        {
+                            "complete": true,
+                            "text": "Investigate the Southern Wetlands",
+                            "children": [
+                                {
+                                    "complete": true,
+                                    "text": "Travel to the Wetlands' edge",
+                                    "staged": false,
+                                    "id": "obj-53a23caf9051",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                },
+                                {
+                                    "complete": true,
+                                    "staged": false,
+                                    "text": "Search Rough Scale ganger corpse",
+                                    "id": "obj-5b88bd1563f6",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                },
+                                {
+                                    "complete": true,
+                                    "text": "Find the sunken factory in the swamp",
+                                    "staged": false,
+                                    "id": "obj-ce436bfa8a3a",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                },
+                                {
+                                    "complete": true,
+                                    "staged": false,
+                                    "text": "Follow Rough Scale gang directions through wetlands",
+                                    "children": [
+                                        {
+                                            "complete": true,
+                                            "staged": false,
+                                            "text": "“Look for the crows; they know the way.”",
+                                            "id": "obj-e3f4d1bfb350",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
+                                        },
+                                        {
+                                            "complete": true,
+                                            "staged": false,
+                                            "text": "“Right turns, all through the Labyrinth of Reeds.”",
+                                            "id": "obj-6a71a0bb5376",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
+                                        },
+                                        {
+                                            "complete": true,
+                                            "staged": false,
+                                            "text": "“Be brave in the Meadow of Purple.”",
+                                            "id": "obj-bf8b7555a155",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
+                                        },
+                                        {
+                                            "complete": true,
+                                            "staged": false,
+                                            "text": "“Knock, as we do, at the Driftwood Door.”",
+                                            "id": "obj-82c1abbc4d52",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
+                                        },
+                                        {
+                                            "complete": true,
+                                            "staged": false,
+                                            "text": "“Pass through the House of Blocks...”",
+                                            "id": "obj-04bc1a2b1ac5",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
+                                        },
+                                        {
+                                            "complete": true,
+                                            "staged": false,
+                                            "text": "“... Ignore the voice.”",
+                                            "flags": [
+                                                "OPT"
+                                            ],
+                                            "id": "obj-83eb84884b3e",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
+                                        },
+                                        {
+                                            "complete": true,
+                                            "staged": false,
+                                            "text": "“Walk between the sunken houses...”",
+                                            "id": "obj-98f8be16d550",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
+                                        },
+                                        {
+                                            "complete": true,
+                                            "staged": false,
+                                            "text": "“... keeping your distance from the shepherds.”",
+                                            "id": "obj-602b2ec7753f",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
+                                        },
+                                        {
+                                            "complete": true,
+                                            "staged": false,
+                                            "text": "“Watch your step crossing the lilyfields...”",
+                                            "id": "obj-43114d9af473",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
+                                        },
+                                        {
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "“... The frogs might be able to help.”",
+                                            "flags": [
+                                                "OPT"
+                                            ],
+                                            "failed": true,
+                                            "id": "obj-586e2c9da432",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
+                                        },
+                                        {
+                                            "complete": false,
+                                            "staged": false,
+                                            "text": "“Show the pin of Arauchigumi to the telescope, and enter...”",
+                                            "failed": true,
+                                            "flags": [
+                                                "OPT"
+                                            ],
+                                            "id": "obj-44306ca58600",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
+                                        }
+                                    ],
+                                    "flags": [
+                                        "OPT"
+                                    ],
+                                    "id": "obj-4be093085046",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                }
+                            ],
+                            "staged": false,
+                            "id": "obj-80c38e8fc24f",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        },
+                        {
+                            "complete": true,
+                            "staged": false,
+                            "text": "Explore the sunken factory",
+                            "children": [
+                                {
+                                    "complete": true,
+                                    "staged": false,
+                                    "text": "Explore the ground floor",
+                                    "id": "obj-ea23fdbb04c3",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                },
+                                {
+                                    "complete": true,
+                                    "staged": false,
+                                    "text": "Find the Kitsune leader",
+                                    "id": "obj-265a9eedfb03",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                },
+                                {
+                                    "complete": true,
+                                    "staged": false,
+                                    "text": "Uncover information about the Kitsune leader",
+                                    "flags": [
+                                        "OPT"
+                                    ],
+                                    "id": "obj-bd1ebe7808d7",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                }
+                            ],
+                            "id": "obj-d5cb8889a15b",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        }
+                    ],
+                    "complete": true,
+                    "text": "Investigate the Mystic Kitsune",
+                    "staged": false,
+                    "id": "obj-6e0760ea146e",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
+                },
+                {
+                    "complete": true,
+                    "text": "End the threat posed by the Mystic Kitsune",
+                    "children": [
+                        {
+                            "complete": false,
+                            "staged": false,
+                            "text": "Deal with the Kitsune",
+                            "children": [
+                                {
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Kill the Kitsune",
+                                    "id": "obj-d3e86f5777b1",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-20T00:41:45Z",
+                                    "failed": true
+                                },
+                                {
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Convince the Kitsune to end his watch",
+                                    "flags": [
+                                        "OPT"
+                                    ],
+                                    "id": "obj-69d01fa1c26e",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-19T16:34:50Z",
+                                    "failed": true
+                                },
+                                {
+                                    "id": "ede6f5e8-e458-4bae-9573-89bdb9a28681",
+                                    "createdAt": "2026-06-06T02:29:20Z",
+                                    "updatedAt": "2026-06-19T16:34:53Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Leave the Kitsune to his fate",
+                                    "flags": [
+                                        "OPT"
+                                    ],
+                                    "failed": true
+                                },
+                                {
+                                    "id": "3bf3531b-5247-47bd-8149-5c37ae7a694b",
+                                    "createdAt": "2026-06-06T02:29:58Z",
+                                    "updatedAt": "2026-06-19T16:34:55Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Let the Kitsune rot",
+                                    "flags": [
+                                        "OPT"
+                                    ],
+                                    "failed": true
+                                },
+                                {
+                                    "id": "686bacb9-bc31-4558-ac48-49b440c85054",
+                                    "createdAt": "2026-06-06T02:30:15Z",
+                                    "updatedAt": "2026-06-19T16:34:57Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Dump him in the swamp",
+                                    "flags": [
+                                        "OPT"
+                                    ],
+                                    "failed": true
+                                },
+                                {
+                                    "id": "9c1d5737-b9e6-4c25-b674-1138408dc2be",
+                                    "createdAt": "2026-06-19T16:35:01Z",
+                                    "updatedAt": "2026-06-20T00:41:42Z",
+                                    "complete": true,
+                                    "staged": false,
+                                    "text": "Let the Vengeful Rams take him"
+                                }
+                            ],
+                            "id": "obj-1544e147af71",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-02T00:02:27Z"
+                        },
+                        {
+                            "complete": true,
+                            "staged": false,
+                            "text": "Deal with the puppets",
+                            "children": [
+                                {
+                                    "complete": true,
+                                    "staged": false,
+                                    "text": "Destroy the puppet network",
+                                    "id": "obj-235f4ebd2cb1",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-06T01:30:12Z"
+                                },
+                                {
+                                    "complete": true,
+                                    "staged": false,
+                                    "text": "Lock the Kitsune out of the puppet network",
+                                    "id": "obj-bbf472aa1228",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-06T01:30:10Z",
+                                    "flags": [
+                                        "OPT"
+                                    ]
+                                }
+                            ],
+                            "id": "obj-31176fc4e829",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-06T01:30:14Z"
+                        }
+                    ],
+                    "staged": false,
+                    "id": "obj-e3d6ac40f413",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-23T23:02:44Z"
+                },
+                {
+                    "id": "0d99eb6c-4ba8-4c94-8611-4a3f3dec9d71",
+                    "createdAt": "2026-06-05T23:28:58Z",
+                    "updatedAt": "2026-06-06T01:32:11Z",
+                    "complete": true,
+                    "staged": false,
+                    "text": "Take the scrolls",
+                    "flags": [
+                        "OPT"
+                    ]
+                }
+            ],
+            "tags": [
+                "mystery",
+                "assassins"
+            ],
+            "title": "The Kitsune Conspiracy",
+            "failed": false,
+            "failedIcon": "icons/kitsune-conspiracy-failed.gif",
+            "completed": true,
+            "staged": false,
+            "createdAt": "2026-06-01T06:31:12Z",
+            "updatedAt": "2026-07-03T20:41:03Z",
+            "archived": true
+        },
+        {
+            "icon": "icons/old-grudges.png",
+            "id": "old-grudges",
+            "integrity": 0,
+            "objectives": [
+                {
+                    "children": [
+                        {
+                            "complete": false,
+                            "text": "Accept Marchant's offer for sponsorship",
+                            "failed": false,
+                            "id": "obj-02e336631031",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "complete": true,
+                                            "flags": [
+                                                "OPT"
+                                            ],
+                                            "text": "Convince Mei-Zarah to fight with you",
+                                            "failed": false,
+                                            "id": "obj-1504c7d370b1",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
+                                        },
+                                        {
+                                            "complete": false,
+                                            "text": "???",
+                                            "unknown": true,
+                                            "failed": false,
+                                            "id": "obj-1fe0295cdec1",
+                                            "createdAt": "2026-06-01T06:31:12Z",
+                                            "updatedAt": "2026-06-01T06:31:12Z"
+                                        }
+                                    ],
+                                    "complete": false,
+                                    "text": "Find a partner for the duo combat",
+                                    "failed": false,
+                                    "id": "obj-05421acbdc28",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                },
+                                {
+                                    "complete": false,
+                                    "text": "Defeat your opponents",
+                                    "failed": false,
+                                    "id": "obj-2307f9d25c2b",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                }
+                            ],
+                            "complete": false,
+                            "text": "Make it past the first round",
+                            "failed": false,
+                            "id": "obj-8d86c74de1a5",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "complete": false,
+                                    "text": "???",
+                                    "unknown": true,
+                                    "failed": false,
+                                    "id": "obj-31dac40be50b",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                },
+                                {
+                                    "complete": false,
+                                    "text": "Defeat your opponent",
+                                    "failed": false,
+                                    "id": "obj-dfc0ff4ac911",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                }
+                            ],
+                            "complete": false,
+                            "text": "Make it through the quarterfinals",
+                            "failed": false,
+                            "id": "obj-c3c301d8d359",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "complete": false,
+                                    "text": "???",
+                                    "unknown": true,
+                                    "failed": false,
+                                    "id": "obj-b13221ecf362",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                },
+                                {
+                                    "complete": false,
+                                    "text": "Defeat your opponent",
+                                    "failed": false,
+                                    "id": "obj-375c4024d990",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                }
+                            ],
+                            "complete": false,
+                            "text": "Make it through the semifinals",
+                            "failed": false,
+                            "id": "obj-19604df4da46",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "complete": false,
+                                    "text": "???",
+                                    "unknown": true,
+                                    "failed": false,
+                                    "id": "obj-66e497824258",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                },
+                                {
+                                    "complete": false,
+                                    "text": "Defeat your opponent",
+                                    "failed": false,
+                                    "id": "obj-8076d6210a6a",
+                                    "createdAt": "2026-06-01T06:31:12Z",
+                                    "updatedAt": "2026-06-01T06:31:12Z"
+                                }
+                            ],
+                            "complete": false,
+                            "text": "Win the tournament",
+                            "failed": false,
+                            "id": "obj-758ac5105425",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        },
+                        {
+                            "complete": false,
+                            "text": "Attend victory ceremony as the Vengeful Rams' champion",
+                            "failed": false,
+                            "id": "obj-d855c14162c0",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Win the tournament for the Vengeful Rams",
+                    "failed": false,
+                    "id": "obj-18f4ebe7c152",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
+                },
+                {
+                    "children": [
+                        {
+                            "complete": false,
+                            "text": "Learn of Marchant's grudge",
+                            "failed": false,
+                            "id": "obj-4546eca5ea2e",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        },
+                        {
+                            "complete": false,
+                            "text": "???",
+                            "unknown": true,
+                            "failed": false,
+                            "id": "obj-63d6ec9d2b2c",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Make him pay",
+                    "failed": false,
+                    "id": "obj-1eb8e0856d92",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
+                },
+                {
+                    "children": [
+                        {
+                            "complete": false,
+                            "text": "???",
+                            "unknown": true,
+                            "failed": false,
+                            "id": "obj-71b6e56b60dc",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Win her back",
+                    "failed": false,
+                    "id": "obj-27fc55bdb6bb",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
+                }
+            ],
+            "tags": [
+                "tournament",
+                "revenge"
+            ],
+            "title": "Old Grudges",
+            "failed": true,
+            "failedIcon": "icons/old-grudges-failed.gif",
+            "completed": false,
+            "staged": false,
+            "createdAt": "2026-06-01T06:31:12Z",
+            "updatedAt": "2026-06-19T21:53:48Z",
+            "archived": true
         }
     ],
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-03T21:32:25Z"
+    "version": "2026-07-03T21:55:08Z"
 }
