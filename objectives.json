@@ -635,8 +635,8 @@
                                 {
                                     "id": "70f83917-41ff-4365-81d3-83168bc5dbbc",
                                     "createdAt": "2026-07-03T21:09:09Z",
-                                    "updatedAt": "2026-07-03T21:09:09Z",
-                                    "complete": false,
+                                    "updatedAt": "2026-07-04T00:35:43Z",
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Find someone who knows things",
                                     "children": [
@@ -659,8 +659,8 @@
                                         {
                                             "id": "344bdb4b-a641-4a7a-b016-4435cd7e2cae",
                                             "createdAt": "2026-07-03T21:09:09Z",
-                                            "updatedAt": "2026-07-03T21:09:09Z",
-                                            "complete": false,
+                                            "updatedAt": "2026-07-04T00:35:42Z",
+                                            "complete": true,
                                             "staged": false,
                                             "text": "Find out what he knows"
                                         }
@@ -674,9 +674,9 @@
                         {
                             "id": "8099e50f-baec-40b6-943b-e7454043e510",
                             "createdAt": "2026-07-03T21:08:15Z",
-                            "updatedAt": "2026-07-03T21:12:22Z",
+                            "updatedAt": "2026-07-04T00:35:56Z",
                             "complete": false,
-                            "staged": true,
+                            "staged": false,
                             "text": "Investigate Cold Hook",
                             "children": [
                                 {
@@ -1859,5 +1859,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-03T21:59:32Z"
+    "version": "2026-07-04T00:35:57Z"
 }
