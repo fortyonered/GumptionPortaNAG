@@ -411,20 +411,20 @@
                                     "staged": false
                                 }
                             ],
-                            "complete": false,
+                            "complete": true,
                             "text": "Obtain 250 shells",
-                            "failed": false,
                             "id": "obj-6dddaee99881",
                             "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
+                            "updatedAt": "2026-07-04T01:38:47Z",
+                            "staged": false
                         }
                     ],
-                    "complete": false,
+                    "complete": true,
                     "text": "Secure entry into the tournament",
-                    "failed": false,
                     "id": "obj-9aca5265db17",
                     "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
+                    "updatedAt": "2026-07-04T01:38:50Z",
+                    "staged": false
                 },
                 {
                     "children": [
@@ -1859,5 +1859,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-04T00:53:16Z"
+    "version": "2026-07-04T01:38:55Z"
 }
