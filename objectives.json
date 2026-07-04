@@ -606,8 +606,8 @@
                         {
                             "id": "653f2037-9e1b-455b-9877-7dcd8b1185ec",
                             "createdAt": "2026-07-03T21:09:09Z",
-                            "updatedAt": "2026-07-03T21:09:09Z",
-                            "complete": false,
+                            "updatedAt": "2026-07-04T00:53:15Z",
+                            "complete": true,
                             "staged": false,
                             "text": "Get a lead on the Arauchigumi crime operation",
                             "children": [
@@ -1859,5 +1859,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-04T00:35:57Z"
+    "version": "2026-07-04T00:53:16Z"
 }
