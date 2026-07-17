@@ -299,6 +299,22 @@
             "integrity": 17,
             "objectives": [
                 {
+                    "id": "44394736-e3d7-4c9f-9d53-a413c87c2985",
+                    "createdAt": "2026-07-17T18:18:32Z",
+                    "updatedAt": "2026-07-17T18:19:33Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Eliminate Cold Hook"
+                },
+                {
+                    "id": "4de7af18-e94e-48b8-9f15-e700ff912d51",
+                    "createdAt": "2026-07-17T18:19:39Z",
+                    "updatedAt": "2026-07-17T18:20:49Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Hide or dispose of Cold Hook's body"
+                },
+                {
                     "children": [
                         {
                             "complete": false,
@@ -332,10 +348,10 @@
                     ],
                     "complete": false,
                     "text": "Enter into Rough Scale's employ",
-                    "failed": false,
                     "id": "obj-14ed0fc03b35",
                     "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
+                    "updatedAt": "2026-07-17T18:18:26Z",
+                    "staged": true
                 },
                 {
                     "children": [
@@ -353,8 +369,8 @@
                     "text": "Do as you're told",
                     "id": "obj-ee6bf1006285",
                     "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-02T00:36:03Z",
-                    "staged": false
+                    "updatedAt": "2026-07-17T18:18:29Z",
+                    "staged": true
                 },
                 {
                     "complete": false,
@@ -371,12 +387,13 @@
                 "betrayal"
             ],
             "title": "If You Can't Beat 'Em",
-            "failed": false,
+            "failed": true,
             "failedIcon": "icons/if-you-cant-beat-em-failed.gif",
             "completed": false,
             "staged": false,
             "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-06-19T20:27:11Z"
+            "updatedAt": "2026-07-17T18:11:10Z",
+            "archived": false
         },
         {
             "icon": "icons/grand-champ.png",
@@ -1859,5 +1876,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-04T01:47:44Z"
+    "version": "2026-07-17T23:45:34Z"
 }
