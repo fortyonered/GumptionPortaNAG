@@ -615,8 +615,8 @@
                 {
                     "id": "bb5784be-6f86-496e-96d8-dc13dd8e1057",
                     "createdAt": "2026-07-03T21:08:15Z",
-                    "updatedAt": "2026-07-03T21:08:15Z",
-                    "complete": false,
+                    "updatedAt": "2026-07-18T03:23:24Z",
+                    "complete": true,
                     "staged": false,
                     "text": "Figure out how the tourney is being rigged",
                     "children": [
@@ -728,8 +728,8 @@
                         {
                             "id": "307df4fa-3ca3-4ab7-a4da-a1014a3eb53f",
                             "createdAt": "2026-07-03T21:08:15Z",
-                            "updatedAt": "2026-07-18T00:50:10Z",
-                            "complete": false,
+                            "updatedAt": "2026-07-18T03:23:13Z",
+                            "complete": true,
                             "staged": false,
                             "text": "Investigate Grand Marshall Gill",
                             "children": [
@@ -750,15 +750,6 @@
                                     "text": "Eavesdrop on meeting between Gill & Rough Scale"
                                 }
                             ]
-                        },
-                        {
-                            "id": "abaaf695-7896-4bf0-a90b-dfbc1b752273",
-                            "createdAt": "2026-07-03T21:12:05Z",
-                            "updatedAt": "2026-07-03T21:12:09Z",
-                            "complete": false,
-                            "staged": false,
-                            "text": "???",
-                            "unknown": true
                         }
                     ]
                 },
@@ -1866,5 +1857,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-18T03:20:57Z"
+    "version": "2026-07-18T03:23:28Z"
 }
