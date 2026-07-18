@@ -744,9 +744,9 @@
                                 {
                                     "id": "dad0080e-1ee8-4868-af84-bdc44f292d9a",
                                     "createdAt": "2026-07-03T21:08:15Z",
-                                    "updatedAt": "2026-07-03T21:08:15Z",
+                                    "updatedAt": "2026-07-18T01:09:42Z",
                                     "complete": false,
-                                    "staged": true,
+                                    "staged": false,
                                     "text": "Eavesdrop on meeting between Gill & Rough Scale"
                                 },
                                 {
@@ -1876,5 +1876,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-18T01:09:32Z"
+    "version": "2026-07-18T01:09:43Z"
 }
