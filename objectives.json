@@ -707,17 +707,17 @@
                                 {
                                     "id": "4810805a-07f6-406c-8d73-228dc50cbc4e",
                                     "createdAt": "2026-07-03T21:08:15Z",
-                                    "updatedAt": "2026-07-03T21:08:15Z",
-                                    "complete": false,
+                                    "updatedAt": "2026-07-18T00:50:05Z",
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Get Cold Hook alone and learn what he knows"
                                 },
                                 {
                                     "id": "5f02cab0-02fb-435c-b5e8-29b19d69945f",
                                     "createdAt": "2026-07-03T21:08:15Z",
-                                    "updatedAt": "2026-07-03T21:11:06Z",
+                                    "updatedAt": "2026-07-18T00:50:07Z",
                                     "complete": false,
-                                    "staged": true,
+                                    "staged": false,
                                     "text": "Eliminate Cold Hook",
                                     "flags": [
                                         "OPT"
@@ -728,9 +728,9 @@
                         {
                             "id": "307df4fa-3ca3-4ab7-a4da-a1014a3eb53f",
                             "createdAt": "2026-07-03T21:08:15Z",
-                            "updatedAt": "2026-07-03T21:08:15Z",
+                            "updatedAt": "2026-07-18T00:50:10Z",
                             "complete": false,
-                            "staged": true,
+                            "staged": false,
                             "text": "Investigate Grand Marshall Gill",
                             "children": [
                                 {
@@ -1876,5 +1876,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-18T00:39:35Z"
+    "version": "2026-07-18T00:50:34Z"
 }
