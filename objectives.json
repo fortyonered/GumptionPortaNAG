@@ -744,21 +744,10 @@
                                 {
                                     "id": "dad0080e-1ee8-4868-af84-bdc44f292d9a",
                                     "createdAt": "2026-07-03T21:08:15Z",
-                                    "updatedAt": "2026-07-18T01:09:42Z",
-                                    "complete": false,
+                                    "updatedAt": "2026-07-18T03:20:45Z",
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Eavesdrop on meeting between Gill & Rough Scale"
-                                },
-                                {
-                                    "id": "624d352a-7095-47a3-95e9-057a2fa7f430",
-                                    "createdAt": "2026-07-03T21:58:27Z",
-                                    "updatedAt": "2026-07-03T21:59:31Z",
-                                    "complete": false,
-                                    "staged": true,
-                                    "text": "Learn what Rough Scale has on Gill",
-                                    "flags": [
-                                        "OPT"
-                                    ]
                                 }
                             ]
                         },
@@ -1877,5 +1866,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-18T03:17:40Z"
+    "version": "2026-07-18T03:20:57Z"
 }
