@@ -301,8 +301,8 @@
                 {
                     "id": "44394736-e3d7-4c9f-9d53-a413c87c2985",
                     "createdAt": "2026-07-17T18:18:32Z",
-                    "updatedAt": "2026-07-17T18:19:33Z",
-                    "complete": false,
+                    "updatedAt": "2026-07-18T01:09:25Z",
+                    "complete": true,
                     "staged": false,
                     "text": "Eliminate Cold Hook"
                 },
@@ -691,8 +691,8 @@
                         {
                             "id": "8099e50f-baec-40b6-943b-e7454043e510",
                             "createdAt": "2026-07-03T21:08:15Z",
-                            "updatedAt": "2026-07-04T00:35:56Z",
-                            "complete": false,
+                            "updatedAt": "2026-07-18T01:09:30Z",
+                            "complete": true,
                             "staged": false,
                             "text": "Investigate Cold Hook",
                             "children": [
@@ -715,8 +715,8 @@
                                 {
                                     "id": "5f02cab0-02fb-435c-b5e8-29b19d69945f",
                                     "createdAt": "2026-07-03T21:08:15Z",
-                                    "updatedAt": "2026-07-18T00:50:07Z",
-                                    "complete": false,
+                                    "updatedAt": "2026-07-18T01:09:28Z",
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Eliminate Cold Hook",
                                     "flags": [
@@ -1876,5 +1876,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-18T00:51:15Z"
+    "version": "2026-07-18T01:09:32Z"
 }
