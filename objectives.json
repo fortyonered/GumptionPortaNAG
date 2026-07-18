@@ -736,8 +736,8 @@
                                 {
                                     "id": "52366994-ca1b-4a03-bd2a-5e3b836c0bd9",
                                     "createdAt": "2026-07-03T21:08:15Z",
-                                    "updatedAt": "2026-07-03T21:08:15Z",
-                                    "complete": false,
+                                    "updatedAt": "2026-07-18T03:17:04Z",
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Infiltrate Gill's manor"
                                 },
@@ -1877,5 +1877,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-18T02:17:01Z"
+    "version": "2026-07-18T03:17:09Z"
 }
