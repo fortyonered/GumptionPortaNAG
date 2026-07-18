@@ -825,14 +825,6 @@
                             "text": "Convince Gill to rig the tourney for you"
                         },
                         {
-                            "id": "b12c5eda-af7c-4fba-9024-bc610c7e15f1",
-                            "createdAt": "2026-07-03T21:16:21Z",
-                            "updatedAt": "2026-07-03T21:16:34Z",
-                            "complete": false,
-                            "staged": true,
-                            "text": "Eliminate Rough Scale"
-                        },
-                        {
                             "id": "b8d90875-c7d0-4636-87f0-57db6a9c41a5",
                             "createdAt": "2026-07-03T21:13:29Z",
                             "updatedAt": "2026-07-03T21:13:29Z",
@@ -1857,5 +1849,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-18T03:23:28Z"
+    "version": "2026-07-18T03:24:54Z"
 }
