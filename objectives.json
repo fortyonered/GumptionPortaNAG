@@ -776,9 +776,9 @@
                 {
                     "id": "bc2a5c36-4db6-47a2-a3db-7899d544b9c0",
                     "createdAt": "2026-07-03T20:58:49Z",
-                    "updatedAt": "2026-07-03T21:10:02Z",
+                    "updatedAt": "2026-07-18T03:17:32Z",
                     "complete": false,
-                    "staged": true,
+                    "staged": false,
                     "text": "Stop the rigging",
                     "children": [
                         {
@@ -813,17 +813,17 @@
                         {
                             "id": "bcf784f7-d371-45f8-9bf9-a1dddf82198d",
                             "createdAt": "2026-07-03T21:15:51Z",
-                            "updatedAt": "2026-07-03T21:17:19Z",
+                            "updatedAt": "2026-07-18T03:17:37Z",
                             "complete": false,
-                            "staged": true,
+                            "staged": false,
                             "text": "Eliminate Rough Scale"
                         },
                         {
                             "id": "29ecefb8-1acf-4af7-971d-f25a7823f9c3",
                             "createdAt": "2026-07-03T21:17:34Z",
-                            "updatedAt": "2026-07-03T21:17:57Z",
+                            "updatedAt": "2026-07-18T03:17:38Z",
                             "complete": false,
-                            "staged": true,
+                            "staged": false,
                             "text": "Convince Gill to keep the tourney fair"
                         }
                     ]
@@ -1877,5 +1877,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-18T03:17:09Z"
+    "version": "2026-07-18T03:17:40Z"
 }
