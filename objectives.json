@@ -595,14 +595,14 @@
         },
         {
             "createdAt": "2026-06-02T00:50:51Z",
-            "updatedAt": "2026-06-06T02:12:30Z",
+            "updatedAt": "2026-07-18T01:11:46Z",
             "icon": "icons/uneven-odds.png",
             "failedIcon": "icons/uneven-odds-failed.gif",
             "failed": false,
             "completed": false,
             "staged": false,
             "id": "uneven-odds",
-            "integrity": 67,
+            "integrity": 82,
             "objectives": [
                 {
                     "id": "obj-e96922fe855b",
@@ -867,7 +867,8 @@
                 }
             ],
             "tags": [],
-            "title": "Uneven Odds"
+            "title": "Uneven Odds",
+            "archived": false
         },
         {
             "createdAt": "2026-06-19T20:51:38Z",
@@ -1876,5 +1877,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-18T01:09:43Z"
+    "version": "2026-07-18T01:11:47Z"
 }
