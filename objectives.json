@@ -309,8 +309,8 @@
                 {
                     "id": "4de7af18-e94e-48b8-9f15-e700ff912d51",
                     "createdAt": "2026-07-17T18:19:39Z",
-                    "updatedAt": "2026-07-17T18:20:49Z",
-                    "complete": false,
+                    "updatedAt": "2026-07-18T02:11:30Z",
+                    "complete": true,
                     "staged": false,
                     "text": "Hide or dispose of Cold Hook's body"
                 },
@@ -350,8 +350,8 @@
                     "text": "Enter into Rough Scale's employ",
                     "id": "obj-14ed0fc03b35",
                     "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-07-17T18:18:26Z",
-                    "staged": true
+                    "updatedAt": "2026-07-18T02:11:33Z",
+                    "staged": false
                 },
                 {
                     "children": [
@@ -369,8 +369,8 @@
                     "text": "Do as you're told",
                     "id": "obj-ee6bf1006285",
                     "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-07-17T18:18:29Z",
-                    "staged": true
+                    "updatedAt": "2026-07-18T02:11:35Z",
+                    "staged": false
                 },
                 {
                     "complete": false,
@@ -1877,5 +1877,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-18T01:11:47Z"
+    "version": "2026-07-18T02:11:36Z"
 }
