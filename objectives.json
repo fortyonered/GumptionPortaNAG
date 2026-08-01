@@ -756,7 +756,7 @@
                 {
                     "id": "bc2a5c36-4db6-47a2-a3db-7899d544b9c0",
                     "createdAt": "2026-07-03T20:58:49Z",
-                    "updatedAt": "2026-07-18T03:17:32Z",
+                    "updatedAt": "2026-08-01T01:49:14Z",
                     "complete": false,
                     "staged": false,
                     "text": "Stop the rigging",
@@ -803,35 +803,37 @@
                         {
                             "id": "29ecefb8-1acf-4af7-971d-f25a7823f9c3",
                             "createdAt": "2026-07-03T21:17:34Z",
-                            "updatedAt": "2026-07-18T03:17:38Z",
+                            "updatedAt": "2026-08-01T01:49:12Z",
                             "complete": false,
                             "staged": false,
-                            "text": "Convince Gill to keep the tourney fair"
+                            "text": "Convince Gill to keep the tourney fair",
+                            "failed": true
                         }
-                    ]
+                    ],
+                    "failed": true
                 },
                 {
                     "id": "49b3dfaf-ddf8-4b12-bdaf-7a14462c46c0",
                     "createdAt": "2026-07-03T21:13:29Z",
-                    "updatedAt": "2026-08-01T00:31:23Z",
-                    "complete": false,
+                    "updatedAt": "2026-08-01T01:49:18Z",
+                    "complete": true,
                     "staged": false,
                     "text": "Rig the tournament",
                     "children": [
                         {
                             "id": "5db4bee2-2fb3-4285-aff3-faf028e716d4",
                             "createdAt": "2026-07-03T21:13:29Z",
-                            "updatedAt": "2026-07-03T21:13:29Z",
-                            "complete": false,
+                            "updatedAt": "2026-08-01T01:49:26Z",
+                            "complete": true,
                             "staged": false,
                             "text": "Convince Gill to rig the tourney for you"
                         },
                         {
                             "id": "b8d90875-c7d0-4636-87f0-57db6a9c41a5",
                             "createdAt": "2026-07-03T21:13:29Z",
-                            "updatedAt": "2026-07-03T21:13:29Z",
-                            "complete": false,
-                            "staged": true,
+                            "updatedAt": "2026-08-01T01:49:30Z",
+                            "complete": true,
+                            "staged": false,
                             "text": "Give Gill your preferred brackets"
                         }
                     ],
@@ -1851,5 +1853,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-08-01T00:56:26Z"
+    "version": "2026-08-01T01:49:32Z"
 }
