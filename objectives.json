@@ -631,16 +631,16 @@
                                 {
                                     "id": "86bd32fb-9a10-4f1c-9dc3-2c874ef12225",
                                     "createdAt": "2026-07-03T21:09:09Z",
-                                    "updatedAt": "2026-07-03T21:09:09Z",
-                                    "complete": false,
+                                    "updatedAt": "2026-08-01T02:35:12Z",
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Help the scamps",
                                     "children": [
                                         {
                                             "id": "1b3bb419-5b76-42d0-834f-0169736aa4ef",
                                             "createdAt": "2026-07-03T21:09:09Z",
-                                            "updatedAt": "2026-07-03T21:12:54Z",
-                                            "complete": false,
+                                            "updatedAt": "2026-08-01T02:35:14Z",
+                                            "complete": true,
                                             "staged": false,
                                             "text": "Obtain paint for scamps"
                                         }
@@ -1853,5 +1853,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-08-01T01:50:47Z"
+    "version": "2026-08-01T02:35:15Z"
 }
