@@ -294,108 +294,6 @@
             "updatedAt": "2026-06-01T06:31:12Z"
         },
         {
-            "icon": "icons/if-you-cant-beat-em.png",
-            "id": "if-you-cant-beat-em",
-            "integrity": 17,
-            "objectives": [
-                {
-                    "id": "44394736-e3d7-4c9f-9d53-a413c87c2985",
-                    "createdAt": "2026-07-17T18:18:32Z",
-                    "updatedAt": "2026-07-18T01:09:25Z",
-                    "complete": true,
-                    "staged": false,
-                    "text": "Eliminate Cold Hook"
-                },
-                {
-                    "id": "4de7af18-e94e-48b8-9f15-e700ff912d51",
-                    "createdAt": "2026-07-17T18:19:39Z",
-                    "updatedAt": "2026-07-18T02:11:30Z",
-                    "complete": true,
-                    "staged": false,
-                    "text": "Hide or dispose of Cold Hook's body"
-                },
-                {
-                    "children": [
-                        {
-                            "complete": false,
-                            "text": "Find Rough Scale",
-                            "failed": false,
-                            "id": "obj-e53bc3507418",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z",
-                            "children": [
-                                {
-                                    "id": "d6b6606f-6cf1-407b-b758-e015eb1542c3",
-                                    "createdAt": "2026-06-19T23:28:32Z",
-                                    "updatedAt": "2026-06-19T23:28:47Z",
-                                    "complete": false,
-                                    "staged": false,
-                                    "text": "Tail some Arauchigumi thugs",
-                                    "flags": [
-                                        "OPT"
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "complete": false,
-                            "text": "Convince him to hire you",
-                            "failed": false,
-                            "id": "obj-6b855eef6c13",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        }
-                    ],
-                    "complete": false,
-                    "text": "Enter into Rough Scale's employ",
-                    "id": "obj-14ed0fc03b35",
-                    "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-07-18T02:11:33Z",
-                    "staged": false
-                },
-                {
-                    "children": [
-                        {
-                            "complete": false,
-                            "text": "???",
-                            "unknown": true,
-                            "failed": false,
-                            "id": "obj-0cc606fbd460",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
-                        }
-                    ],
-                    "complete": false,
-                    "text": "Do as you're told",
-                    "id": "obj-ee6bf1006285",
-                    "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-07-18T02:11:35Z",
-                    "staged": false
-                },
-                {
-                    "complete": false,
-                    "text": "???",
-                    "unknown": true,
-                    "failed": false,
-                    "id": "obj-0714f7d7af1e",
-                    "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
-                }
-            ],
-            "tags": [
-                "rough scale",
-                "betrayal"
-            ],
-            "title": "If You Can't Beat 'Em",
-            "failed": true,
-            "failedIcon": "icons/if-you-cant-beat-em-failed.gif",
-            "completed": false,
-            "staged": false,
-            "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-08-01T00:31:07Z",
-            "archived": false
-        },
-        {
             "icon": "icons/grand-champ.png",
             "id": "grand-champ",
             "integrity": 82,
@@ -1630,6 +1528,108 @@
             "archived": true
         },
         {
+            "icon": "icons/if-you-cant-beat-em.png",
+            "id": "if-you-cant-beat-em",
+            "integrity": 17,
+            "objectives": [
+                {
+                    "id": "44394736-e3d7-4c9f-9d53-a413c87c2985",
+                    "createdAt": "2026-07-17T18:18:32Z",
+                    "updatedAt": "2026-07-18T01:09:25Z",
+                    "complete": true,
+                    "staged": false,
+                    "text": "Eliminate Cold Hook"
+                },
+                {
+                    "id": "4de7af18-e94e-48b8-9f15-e700ff912d51",
+                    "createdAt": "2026-07-17T18:19:39Z",
+                    "updatedAt": "2026-07-18T02:11:30Z",
+                    "complete": true,
+                    "staged": false,
+                    "text": "Hide or dispose of Cold Hook's body"
+                },
+                {
+                    "children": [
+                        {
+                            "complete": false,
+                            "text": "Find Rough Scale",
+                            "failed": false,
+                            "id": "obj-e53bc3507418",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z",
+                            "children": [
+                                {
+                                    "id": "d6b6606f-6cf1-407b-b758-e015eb1542c3",
+                                    "createdAt": "2026-06-19T23:28:32Z",
+                                    "updatedAt": "2026-06-19T23:28:47Z",
+                                    "complete": false,
+                                    "staged": false,
+                                    "text": "Tail some Arauchigumi thugs",
+                                    "flags": [
+                                        "OPT"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "complete": false,
+                            "text": "Convince him to hire you",
+                            "failed": false,
+                            "id": "obj-6b855eef6c13",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Enter into Rough Scale's employ",
+                    "id": "obj-14ed0fc03b35",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-07-18T02:11:33Z",
+                    "staged": false
+                },
+                {
+                    "children": [
+                        {
+                            "complete": false,
+                            "text": "???",
+                            "unknown": true,
+                            "failed": false,
+                            "id": "obj-0cc606fbd460",
+                            "createdAt": "2026-06-01T06:31:12Z",
+                            "updatedAt": "2026-06-01T06:31:12Z"
+                        }
+                    ],
+                    "complete": false,
+                    "text": "Do as you're told",
+                    "id": "obj-ee6bf1006285",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-07-18T02:11:35Z",
+                    "staged": false
+                },
+                {
+                    "complete": false,
+                    "text": "???",
+                    "unknown": true,
+                    "failed": false,
+                    "id": "obj-0714f7d7af1e",
+                    "createdAt": "2026-06-01T06:31:12Z",
+                    "updatedAt": "2026-06-01T06:31:12Z"
+                }
+            ],
+            "tags": [
+                "rough scale",
+                "betrayal"
+            ],
+            "title": "If You Can't Beat 'Em",
+            "failed": true,
+            "failedIcon": "icons/if-you-cant-beat-em-failed.gif",
+            "completed": false,
+            "staged": false,
+            "createdAt": "2026-06-01T06:31:12Z",
+            "updatedAt": "2026-08-01T02:52:23Z",
+            "archived": true
+        },
+        {
             "icon": "icons/old-grudges.png",
             "id": "old-grudges",
             "integrity": 0,
@@ -1853,5 +1853,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-08-01T02:35:15Z"
+    "version": "2026-08-01T02:53:37Z"
 }
