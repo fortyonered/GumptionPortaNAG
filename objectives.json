@@ -387,12 +387,12 @@
                 "betrayal"
             ],
             "title": "If You Can't Beat 'Em",
-            "failed": false,
+            "failed": true,
             "failedIcon": "icons/if-you-cant-beat-em-failed.gif",
             "completed": false,
             "staged": false,
             "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-07-18T00:39:34Z",
+            "updatedAt": "2026-08-01T00:31:07Z",
             "archived": false
         },
         {
@@ -1851,5 +1851,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-08-01T00:28:31Z"
+    "version": "2026-08-01T00:31:12Z"
 }
