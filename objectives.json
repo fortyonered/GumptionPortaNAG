@@ -764,29 +764,31 @@
                         {
                             "id": "d8430b23-d232-44ca-b8db-475f1d4e6420",
                             "createdAt": "2026-07-03T20:59:07Z",
-                            "updatedAt": "2026-07-03T20:59:13Z",
-                            "complete": false,
+                            "updatedAt": "2026-08-01T00:28:10Z",
+                            "complete": true,
                             "staged": false,
                             "text": "Find Rough Scale",
                             "children": [
                                 {
                                     "id": "97ffa0a3-ba08-49a8-a795-0e1ff89c272c",
                                     "createdAt": "2026-07-03T21:14:13Z",
-                                    "updatedAt": "2026-07-03T21:14:19Z",
+                                    "updatedAt": "2026-08-01T00:28:16Z",
                                     "complete": false,
                                     "staged": false,
                                     "text": "Follow Rough Scale from the meeting",
                                     "flags": [
                                         "- OR -"
-                                    ]
+                                    ],
+                                    "failed": true
                                 },
                                 {
                                     "id": "19bcd46d-6805-4e71-9131-463e22b07c30",
                                     "createdAt": "2026-07-03T21:14:24Z",
-                                    "updatedAt": "2026-07-03T21:14:26Z",
+                                    "updatedAt": "2026-08-01T00:28:18Z",
                                     "complete": false,
                                     "staged": false,
-                                    "text": "Convince Gill to set a meeting with Rough Scale"
+                                    "text": "Convince Gill to set a meeting with Rough Scale",
+                                    "failed": true
                                 }
                             ]
                         },
@@ -1849,5 +1851,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-07-18T03:46:30Z"
+    "version": "2026-08-01T00:28:31Z"
 }
