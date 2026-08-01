@@ -813,9 +813,9 @@
                 {
                     "id": "49b3dfaf-ddf8-4b12-bdaf-7a14462c46c0",
                     "createdAt": "2026-07-03T21:13:29Z",
-                    "updatedAt": "2026-07-03T21:13:29Z",
+                    "updatedAt": "2026-08-01T00:31:23Z",
                     "complete": false,
-                    "staged": true,
+                    "staged": false,
                     "text": "Rig the tournament",
                     "children": [
                         {
@@ -1851,5 +1851,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-08-01T00:31:12Z"
+    "version": "2026-08-01T00:31:27Z"
 }
