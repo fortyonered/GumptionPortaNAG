@@ -1,0 +1,27 @@
+/* Cursed Storybook / PortaNAG Mk.III placeholder theme. Tune freely. */
+body.theme-storybook {
+  --bg: #19140f;
+  --bg-2: #090706;
+  --panel: #241b13;
+  --panel-2: #332518;
+  --line: #7d5c37;
+  --line-bright: #d7b06a;
+  --text: #fff0cf;
+  --muted: #d3b98a;
+  --danger: #b76b56;
+  --danger-bright: #e15454;
+  --danger-muted: #96584c;
+  --danger-bg: rgba(72, 35, 20, 0.68);
+  --gold: #f0d998;
+  --shadow: rgba(0, 0, 0, 0.50);
+  --font-main: Georgia, "Times New Roman", serif;
+  --font-display: "VCROSD", "Lucida Console", monospace;
+  --font-title: Georgia, "Times New Roman", serif;
+  --font-logo: Georgia, "Times New Roman", serif;
+}
+
+body.theme-storybook {
+  background:
+    radial-gradient(circle at top, rgba(240, 217, 152, 0.16), transparent 40%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+}

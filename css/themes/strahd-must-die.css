@@ -1,0 +1,27 @@
+/* Strahd Must Die / PortaNAG Mk.II placeholder theme. Tune freely. */
+body.theme-strahd {
+  --bg: #12070a;
+  --bg-2: #050203;
+  --panel: #1c1012;
+  --panel-2: #281316;
+  --line: #6b2528;
+  --line-bright: #d04a4f;
+  --text: #ffe4dc;
+  --muted: #d7a39b;
+  --danger: #ff8e70;
+  --danger-bright: #ff4f4f;
+  --danger-muted: #a84d4d;
+  --danger-bg: rgba(72, 16, 16, 0.68);
+  --gold: #d8c08a;
+  --shadow: rgba(0, 0, 0, 0.55);
+  --font-main: "EASVHS", "Segoe UI", sans-serif;
+  --font-display: "VCROSD", "Lucida Console", monospace;
+  --font-title: "Pixeland", "Lucida Console", monospace;
+  --font-logo: "Edit Undo Line", "Lucida Console", monospace;
+}
+
+body.theme-strahd {
+  background:
+    radial-gradient(circle at top, rgba(180, 31, 38, 0.14), transparent 38%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+}
