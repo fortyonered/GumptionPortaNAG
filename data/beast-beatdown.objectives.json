@@ -31,12 +31,12 @@
                             "updatedAt": "2026-06-01T06:31:12Z"
                         },
                         {
-                            "complete": false,
+                            "complete": true,
                             "text": "Demonstrate Awesome Ape tenets",
-                            "failed": false,
                             "id": "obj-e781a2d5dc3c",
                             "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
+                            "updatedAt": "2026-08-29T03:41:08Z",
+                            "staged": false
                         },
                         {
                             "complete": true,
@@ -1853,5 +1853,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-08-01T03:08:24Z"
+    "version": "2026-08-29T03:41:08Z"
 }
