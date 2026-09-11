@@ -355,15 +355,6 @@
                                     "createdAt": "2026-06-01T06:31:12Z",
                                     "updatedAt": "2026-06-05T22:38:15Z",
                                     "staged": false
-                                },
-                                {
-                                    "complete": false,
-                                    "text": "???",
-                                    "unknown": true,
-                                    "failed": false,
-                                    "id": "obj-7da2345b84ea",
-                                    "createdAt": "2026-06-01T06:31:12Z",
-                                    "updatedAt": "2026-06-01T06:31:12Z"
                                 }
                             ],
                             "complete": true,
@@ -1853,5 +1844,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-08-29T03:41:08Z"
+    "version": "2026-09-11T23:23:33Z"
 }
