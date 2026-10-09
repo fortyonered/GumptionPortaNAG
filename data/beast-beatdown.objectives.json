@@ -3,7 +3,7 @@
         {
             "icon": "icons/chosen-one.png",
             "id": "chosen-one",
-            "integrity": 77,
+            "integrity": 66,
             "objectives": [
                 {
                     "children": [
@@ -291,12 +291,13 @@
             "completed": false,
             "staged": false,
             "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-06-01T06:31:12Z"
+            "updatedAt": "2026-10-09T22:58:43Z",
+            "archived": false
         },
         {
             "icon": "icons/grand-champ.png",
             "id": "grand-champ",
-            "integrity": 82,
+            "integrity": 89,
             "objectives": [
                 {
                     "children": [
@@ -453,7 +454,8 @@
             "completed": false,
             "staged": false,
             "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-06-01T06:31:12Z"
+            "updatedAt": "2026-10-09T22:58:36Z",
+            "archived": false
         },
         {
             "createdAt": "2026-10-09T21:51:33Z",
@@ -1951,5 +1953,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-10-09T22:05:11Z"
+    "version": "2026-10-09T22:58:44Z"
 }
