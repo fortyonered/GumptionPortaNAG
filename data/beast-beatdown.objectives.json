@@ -560,18 +560,17 @@
                 {
                     "id": "d039efbf-7027-4363-8ecb-a1d4d627a97d",
                     "createdAt": "2026-10-09T21:53:09Z",
-                    "updatedAt": "2026-10-09T21:58:41Z",
+                    "updatedAt": "2026-10-09T22:05:04Z",
                     "complete": false,
-                    "failed": false,
-                    "staged": false,
+                    "staged": true,
                     "text": "Secure the Bag of Holding"
                 },
                 {
                     "id": "b62f1ca5-b044-493d-8385-56c0f81f93ec",
                     "createdAt": "2026-10-09T21:52:23Z",
-                    "updatedAt": "2026-10-09T21:52:36Z",
+                    "updatedAt": "2026-10-09T22:05:07Z",
                     "complete": false,
-                    "staged": false,
+                    "staged": true,
                     "text": "Rescue Percy"
                 },
                 {
@@ -1952,5 +1951,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-10-09T21:59:28Z"
+    "version": "2026-10-09T22:05:11Z"
 }
