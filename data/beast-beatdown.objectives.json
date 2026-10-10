@@ -563,25 +563,25 @@
                 {
                     "id": "d039efbf-7027-4363-8ecb-a1d4d627a97d",
                     "createdAt": "2026-10-09T21:53:09Z",
-                    "updatedAt": "2026-10-10T02:13:56Z",
-                    "complete": false,
+                    "updatedAt": "2026-10-10T03:41:45Z",
+                    "complete": true,
                     "staged": false,
                     "text": "Secure the Bag of Holding"
                 },
                 {
                     "id": "b62f1ca5-b044-493d-8385-56c0f81f93ec",
                     "createdAt": "2026-10-09T21:52:23Z",
-                    "updatedAt": "2026-10-10T02:13:58Z",
-                    "complete": false,
+                    "updatedAt": "2026-10-10T03:41:47Z",
+                    "complete": true,
                     "staged": false,
                     "text": "Rescue Percy"
                 },
                 {
                     "id": "377b31ff-31ff-430e-8827-eb8afea490bc",
                     "createdAt": "2026-10-09T21:59:10Z",
-                    "updatedAt": "2026-10-10T02:14:02Z",
+                    "updatedAt": "2026-10-10T03:41:51Z",
                     "complete": false,
-                    "staged": true,
+                    "staged": false,
                     "text": "Recover the Kitsune",
                     "flags": [
                         "OPT"
@@ -1954,5 +1954,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-10-10T02:14:15Z"
+    "version": "2026-10-10T03:41:52Z"
 }
