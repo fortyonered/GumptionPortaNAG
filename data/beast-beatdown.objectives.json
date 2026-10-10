@@ -471,33 +471,32 @@
                 {
                     "id": "92139073-8d31-431d-91e3-8ff236ddfcf0",
                     "createdAt": "2026-10-09T21:52:43Z",
-                    "updatedAt": "2026-10-09T21:53:06Z",
-                    "complete": false,
-                    "failed": false,
+                    "updatedAt": "2026-10-10T02:14:14Z",
+                    "complete": true,
                     "staged": false,
                     "text": "Locate Percy",
                     "children": [
                         {
                             "id": "3fb0c0b7-1d03-46d3-a252-fee1bfa30ecf",
                             "createdAt": "2026-10-09T21:53:14Z",
-                            "updatedAt": "2026-10-09T21:53:29Z",
-                            "complete": false,
+                            "updatedAt": "2026-10-10T02:14:10Z",
+                            "complete": true,
                             "staged": false,
                             "text": "Follow the smooth thug's instructions",
                             "children": [
                                 {
                                     "id": "8f25aa3a-3f61-4687-8e7c-a559a3906a38",
                                     "createdAt": "2026-10-09T21:54:28Z",
-                                    "updatedAt": "2026-10-09T21:54:37Z",
-                                    "complete": false,
+                                    "updatedAt": "2026-10-10T02:13:43Z",
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Find where the Kitsune is being held",
                                     "children": [
                                         {
                                             "id": "8dfd6e30-43bf-46d2-bfb7-2d3d29f1289d",
                                             "createdAt": "2026-10-09T21:54:41Z",
-                                            "updatedAt": "2026-10-09T21:56:31Z",
-                                            "complete": false,
+                                            "updatedAt": "2026-10-10T02:13:45Z",
+                                            "complete": true,
                                             "staged": false,
                                             "text": "Meet with Marchant and/or Will",
                                             "flags": [
@@ -507,8 +506,8 @@
                                         {
                                             "id": "8c192196-6fe1-4e63-b151-8936bb252530",
                                             "createdAt": "2026-10-09T21:55:32Z",
-                                            "updatedAt": "2026-10-09T21:56:34Z",
-                                            "complete": false,
+                                            "updatedAt": "2026-10-10T02:13:47Z",
+                                            "complete": true,
                                             "staged": false,
                                             "text": "Convince the Vengeful Rams to release the Kitsune",
                                             "flags": [
@@ -518,29 +517,30 @@
                                         {
                                             "id": "075158f3-a0f4-4114-b8fd-f1035361b03c",
                                             "createdAt": "2026-10-09T21:56:04Z",
-                                            "updatedAt": "2026-10-09T21:56:38Z",
+                                            "updatedAt": "2026-10-10T02:13:49Z",
                                             "complete": false,
                                             "staged": false,
                                             "text": "Get someone to tell you where the Kitsune is",
                                             "flags": [
                                                 "OPT"
-                                            ]
+                                            ],
+                                            "failed": true
                                         }
                                     ]
                                 },
                                 {
                                     "id": "f9595d26-8ab5-4069-b7e4-066f8cbb5e7d",
                                     "createdAt": "2026-10-09T21:54:08Z",
-                                    "updatedAt": "2026-10-09T21:54:19Z",
-                                    "complete": false,
+                                    "updatedAt": "2026-10-10T02:13:52Z",
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Take custody of the Kitsune"
                                 },
                                 {
                                     "id": "d72a743e-3807-4f38-8ecb-629176b11243",
                                     "createdAt": "2026-10-09T21:57:12Z",
-                                    "updatedAt": "2026-10-09T21:57:45Z",
-                                    "complete": false,
+                                    "updatedAt": "2026-10-10T02:13:54Z",
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Bring the Kitsune to the exchange"
                                 }
@@ -549,36 +549,37 @@
                         {
                             "id": "82baabdc-e036-44c8-8e68-5ea87ccc08fc",
                             "createdAt": "2026-10-09T21:53:32Z",
-                            "updatedAt": "2026-10-09T21:53:55Z",
+                            "updatedAt": "2026-10-10T02:14:06Z",
                             "complete": false,
                             "staged": false,
                             "text": "Find Percy on your own",
                             "flags": [
                                 "OPT"
-                            ]
+                            ],
+                            "failed": true
                         }
                     ]
                 },
                 {
                     "id": "d039efbf-7027-4363-8ecb-a1d4d627a97d",
                     "createdAt": "2026-10-09T21:53:09Z",
-                    "updatedAt": "2026-10-09T22:05:04Z",
+                    "updatedAt": "2026-10-10T02:13:56Z",
                     "complete": false,
-                    "staged": true,
+                    "staged": false,
                     "text": "Secure the Bag of Holding"
                 },
                 {
                     "id": "b62f1ca5-b044-493d-8385-56c0f81f93ec",
                     "createdAt": "2026-10-09T21:52:23Z",
-                    "updatedAt": "2026-10-09T22:05:07Z",
+                    "updatedAt": "2026-10-10T02:13:58Z",
                     "complete": false,
-                    "staged": true,
+                    "staged": false,
                     "text": "Rescue Percy"
                 },
                 {
                     "id": "377b31ff-31ff-430e-8827-eb8afea490bc",
                     "createdAt": "2026-10-09T21:59:10Z",
-                    "updatedAt": "2026-10-09T21:59:24Z",
+                    "updatedAt": "2026-10-10T02:14:02Z",
                     "complete": false,
                     "staged": true,
                     "text": "Recover the Kitsune",
@@ -1953,5 +1954,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-10-09T22:58:44Z"
+    "version": "2026-10-10T02:14:15Z"
 }
