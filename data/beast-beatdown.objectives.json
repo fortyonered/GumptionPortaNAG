@@ -3,7 +3,7 @@
         {
             "icon": "icons/chosen-one.png",
             "id": "chosen-one",
-            "integrity": 66,
+            "integrity": 43,
             "objectives": [
                 {
                     "children": [
@@ -291,7 +291,7 @@
             "completed": false,
             "staged": false,
             "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-10-09T22:58:43Z",
+            "updatedAt": "2026-10-23T23:22:07Z",
             "archived": false
         },
         {
@@ -459,14 +459,14 @@
         },
         {
             "createdAt": "2026-10-09T21:51:33Z",
-            "updatedAt": "2026-10-09T21:52:07Z",
+            "updatedAt": "2026-10-23T23:23:14Z",
             "icon": "icons/fox-for-cat.png",
             "failedIcon": "icons/fox-for-cat-failed.gif",
             "failed": false,
             "completed": false,
             "staged": false,
             "id": "fox-for-cat",
-            "integrity": 87,
+            "integrity": 97,
             "objectives": [
                 {
                     "id": "92139073-8d31-431d-91e3-8ff236ddfcf0",
@@ -1954,5 +1954,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-10-10T03:41:52Z"
+    "version": "2026-10-23T23:23:28Z"
 }
