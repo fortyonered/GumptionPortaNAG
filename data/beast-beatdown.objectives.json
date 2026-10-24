@@ -402,20 +402,20 @@
                 {
                     "children": [
                         {
-                            "complete": false,
+                            "complete": true,
                             "text": "Defeat your opponent",
-                            "failed": false,
                             "id": "obj-0ba9e0aa1a90",
                             "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
+                            "updatedAt": "2026-10-24T02:12:36Z",
+                            "staged": false
                         }
                     ],
-                    "complete": false,
+                    "complete": true,
                     "text": "Make it through the semifinals",
-                    "failed": false,
                     "id": "obj-81977bf4d306",
                     "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
+                    "updatedAt": "2026-10-24T02:12:33Z",
+                    "staged": false
                 },
                 {
                     "children": [
@@ -1965,5 +1965,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-10-24T01:33:06Z"
+    "version": "2026-10-24T02:12:38Z"
 }
