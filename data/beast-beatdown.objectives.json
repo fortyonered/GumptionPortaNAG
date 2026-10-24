@@ -459,11 +459,11 @@
         },
         {
             "createdAt": "2026-10-09T21:51:33Z",
-            "updatedAt": "2026-10-23T23:23:14Z",
+            "updatedAt": "2026-10-24T02:17:17Z",
             "icon": "icons/fox-for-cat.png",
             "failedIcon": "icons/fox-for-cat-failed.gif",
             "failed": false,
-            "completed": false,
+            "completed": true,
             "staged": false,
             "id": "fox-for-cat",
             "integrity": 97,
@@ -590,8 +590,8 @@
                 {
                     "id": "ba65cf79-44a8-4c1e-a21c-ff594ba98480",
                     "createdAt": "2026-10-24T01:25:55Z",
-                    "updatedAt": "2026-10-24T01:26:08Z",
-                    "complete": false,
+                    "updatedAt": "2026-10-24T02:16:04Z",
+                    "complete": true,
                     "staged": false,
                     "text": "Return the Kitsune",
                     "flags": [
@@ -1965,5 +1965,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-10-24T02:12:38Z"
+    "version": "2026-10-24T02:17:18Z"
 }
