@@ -579,10 +579,21 @@
                 {
                     "id": "377b31ff-31ff-430e-8827-eb8afea490bc",
                     "createdAt": "2026-10-09T21:59:10Z",
-                    "updatedAt": "2026-10-10T03:41:51Z",
-                    "complete": false,
+                    "updatedAt": "2026-10-24T01:25:58Z",
+                    "complete": true,
                     "staged": false,
                     "text": "Recover the Kitsune",
+                    "flags": [
+                        "OPT"
+                    ]
+                },
+                {
+                    "id": "ba65cf79-44a8-4c1e-a21c-ff594ba98480",
+                    "createdAt": "2026-10-24T01:25:55Z",
+                    "updatedAt": "2026-10-24T01:26:08Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Return the Kitsune",
                     "flags": [
                         "OPT"
                     ]
@@ -1954,5 +1965,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-10-23T23:23:28Z"
+    "version": "2026-10-24T01:26:09Z"
 }
