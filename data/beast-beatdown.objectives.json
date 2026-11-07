@@ -115,17 +115,17 @@
                         {
                             "id": "ed41e89d-d61e-40e6-a964-2f27a589b579",
                             "createdAt": "2026-07-03T21:21:02Z",
-                            "updatedAt": "2026-07-03T21:21:20Z",
-                            "complete": false,
+                            "updatedAt": "2026-11-07T03:15:31Z",
+                            "complete": true,
                             "staged": false,
                             "text": "Win the tournament"
                         },
                         {
                             "id": "81da35d1-7f09-418e-ab0d-a0fdf2cc10dd",
                             "createdAt": "2026-07-03T21:22:35Z",
-                            "updatedAt": "2026-07-03T21:25:42Z",
+                            "updatedAt": "2026-11-07T03:15:34Z",
                             "complete": false,
-                            "staged": true,
+                            "staged": false,
                             "text": "Address the proletariat at trophy ceremony",
                             "children": [
                                 {
@@ -161,15 +161,6 @@
                                     "text": "Be convincing"
                                 }
                             ]
-                        },
-                        {
-                            "complete": false,
-                            "text": "???",
-                            "unknown": true,
-                            "failed": false,
-                            "id": "obj-b8629d502441",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
                     "complete": false,
@@ -186,17 +177,17 @@
                         {
                             "id": "0a72bb71-c627-46d5-a885-c37b3b1ff2cb",
                             "createdAt": "2026-07-03T21:25:02Z",
-                            "updatedAt": "2026-07-03T21:25:11Z",
-                            "complete": false,
+                            "updatedAt": "2026-11-07T03:15:40Z",
+                            "complete": true,
                             "staged": false,
                             "text": "Win the tournament"
                         },
                         {
                             "id": "0a3d2025-a476-4d55-a6b1-d45198d70332",
                             "createdAt": "2026-07-03T21:25:16Z",
-                            "updatedAt": "2026-07-03T21:30:02Z",
+                            "updatedAt": "2026-11-07T03:15:42Z",
                             "complete": false,
-                            "staged": true,
+                            "staged": false,
                             "text": "Address the people at trophy ceremony",
                             "children": [
                                 {
@@ -248,15 +239,6 @@
                                     "text": "Be convincing"
                                 }
                             ]
-                        },
-                        {
-                            "complete": false,
-                            "text": "???",
-                            "unknown": true,
-                            "failed": false,
-                            "id": "obj-432337a17dc4",
-                            "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
                         }
                     ],
                     "failed": false,
@@ -1966,5 +1948,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-11-07T00:52:00Z"
+    "version": "2026-11-07T03:15:48Z"
 }
