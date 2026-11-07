@@ -459,7 +459,7 @@
         },
         {
             "createdAt": "2026-06-19T20:51:38Z",
-            "updatedAt": "2026-06-19T21:10:40Z",
+            "updatedAt": "2026-11-07T00:51:57Z",
             "icon": "icons/sacred-vessel.png",
             "failedIcon": "icons/sacred-vessel-failed.gif",
             "failed": false,
@@ -814,7 +814,8 @@
                 }
             ],
             "tags": [],
-            "title": "Sacred Vessel"
+            "title": "Sacred Vessel",
+            "archived": false
         },
         {
             "icon": "icons/kitsune-conspiracy.png",
@@ -1965,5 +1966,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-11-07T00:45:59Z"
+    "version": "2026-11-07T00:52:00Z"
 }
