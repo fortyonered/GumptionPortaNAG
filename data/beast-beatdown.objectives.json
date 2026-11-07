@@ -105,10 +105,11 @@
                     ],
                     "complete": false,
                     "text": "Learn and demonstrate the Ways",
-                    "failed": false,
+                    "failed": true,
                     "id": "obj-0cef39f988f2",
                     "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
+                    "updatedAt": "2026-11-07T03:41:55Z",
+                    "staged": false
                 },
                 {
                     "children": [
@@ -123,7 +124,7 @@
                         {
                             "id": "81da35d1-7f09-418e-ab0d-a0fdf2cc10dd",
                             "createdAt": "2026-07-03T21:22:35Z",
-                            "updatedAt": "2026-11-07T03:15:34Z",
+                            "updatedAt": "2026-11-07T03:42:01Z",
                             "complete": false,
                             "staged": false,
                             "text": "Address the proletariat at trophy ceremony",
@@ -133,42 +134,48 @@
                                     "text": "Present proof of Rough Scale's crimes",
                                     "id": "889230c5-79ce-4616-9f51-8ae5ee36e636",
                                     "createdAt": "2026-07-03T21:23:20Z",
-                                    "updatedAt": "2026-07-03T21:24:14Z",
-                                    "staged": false
+                                    "updatedAt": "2026-11-07T03:41:47Z",
+                                    "staged": false,
+                                    "failed": true
                                 },
                                 {
                                     "id": "d8b4fe44-c37f-49a7-a598-3db2b4731d3f",
                                     "createdAt": "2026-07-03T21:23:23Z",
-                                    "updatedAt": "2026-07-03T21:24:17Z",
+                                    "updatedAt": "2026-11-07T03:41:45Z",
                                     "complete": false,
                                     "staged": false,
-                                    "text": "Present proof of Grand Marshall Gill's complicity"
+                                    "text": "Present proof of Grand Marshall Gill's complicity",
+                                    "failed": true
                                 },
                                 {
                                     "id": "c29b510c-0fdd-4926-9405-8727812db000",
                                     "createdAt": "2026-07-03T21:23:33Z",
-                                    "updatedAt": "2026-07-03T21:24:19Z",
+                                    "updatedAt": "2026-11-07T03:41:43Z",
                                     "complete": false,
                                     "staged": false,
-                                    "text": "Convince the people to reject wanton commercialism"
+                                    "text": "Convince the people to reject wanton commercialism",
+                                    "failed": true
                                 },
                                 {
                                     "id": "43628890-25bc-463d-8b0b-c98332d6a6d4",
                                     "createdAt": "2026-07-03T21:27:43Z",
-                                    "updatedAt": "2026-07-03T21:27:47Z",
+                                    "updatedAt": "2026-11-07T03:41:25Z",
                                     "complete": false,
                                     "staged": false,
-                                    "text": "Be convincing"
+                                    "text": "Be convincing",
+                                    "failed": true
                                 }
-                            ]
+                            ],
+                            "failed": true
                         }
                     ],
                     "complete": false,
                     "text": "Oust the bourgeoisie",
-                    "failed": false,
+                    "failed": true,
                     "id": "obj-893dc3094c03",
                     "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
+                    "updatedAt": "2026-11-07T03:41:58Z",
+                    "staged": false
                 },
                 {
                     "complete": false,
@@ -185,7 +192,7 @@
                         {
                             "id": "0a3d2025-a476-4d55-a6b1-d45198d70332",
                             "createdAt": "2026-07-03T21:25:16Z",
-                            "updatedAt": "2026-11-07T03:15:42Z",
+                            "updatedAt": "2026-11-07T03:42:03Z",
                             "complete": false,
                             "staged": false,
                             "text": "Address the people at trophy ceremony",
@@ -193,74 +200,83 @@
                                 {
                                     "id": "ee1e9c0f-ea4e-4923-b262-94a5b944f81f",
                                     "createdAt": "2026-07-03T21:25:31Z",
-                                    "updatedAt": "2026-07-03T21:28:21Z",
+                                    "updatedAt": "2026-11-07T03:41:39Z",
                                     "complete": false,
                                     "staged": false,
-                                    "text": "Explain they have lost sight of what matters"
+                                    "text": "Explain they have lost sight of what matters",
+                                    "failed": true
                                 },
                                 {
                                     "id": "d2896537-69fe-4afb-8be4-5533b21ba3af",
                                     "createdAt": "2026-07-03T21:26:37Z",
-                                    "updatedAt": "2026-07-03T21:28:28Z",
-                                    "complete": false,
+                                    "updatedAt": "2026-11-07T03:42:08Z",
+                                    "complete": true,
                                     "staged": false,
                                     "text": "Remind the people of tournament's purpose"
                                 },
                                 {
                                     "id": "39fef015-131d-47c4-b7b0-aaa4f058915c",
                                     "createdAt": "2026-07-03T21:26:47Z",
-                                    "updatedAt": "2026-07-03T21:28:32Z",
+                                    "updatedAt": "2026-11-07T03:41:35Z",
                                     "complete": false,
                                     "staged": false,
-                                    "text": "Reject temptation of merchandising"
+                                    "text": "Reject temptation of merchandising",
+                                    "failed": true
                                 },
                                 {
                                     "id": "504649eb-331d-4d37-ae05-3ff9c961a5c2",
                                     "createdAt": "2026-07-03T21:27:27Z",
-                                    "updatedAt": "2026-07-03T21:29:13Z",
+                                    "updatedAt": "2026-11-07T03:41:37Z",
                                     "complete": false,
                                     "staged": false,
-                                    "text": "Reveal the Measure, holy artifact of kung-fu"
+                                    "text": "Reveal the Measure, holy artifact of kung-fu",
+                                    "failed": true
                                 },
                                 {
                                     "id": "1c453427-2a66-449f-a192-fa198e4d36ee",
                                     "createdAt": "2026-07-03T21:29:27Z",
-                                    "updatedAt": "2026-07-03T21:29:54Z",
+                                    "updatedAt": "2026-11-07T03:41:29Z",
                                     "complete": false,
                                     "staged": false,
-                                    "text": "Urge the people to return to old ways"
+                                    "text": "Urge the people to return to old ways",
+                                    "failed": true
                                 },
                                 {
                                     "id": "b0dfe440-154e-40e5-b571-06eb730e8bee",
                                     "createdAt": "2026-07-03T21:29:19Z",
-                                    "updatedAt": "2026-07-03T21:29:25Z",
+                                    "updatedAt": "2026-11-07T03:41:27Z",
                                     "complete": false,
                                     "staged": false,
-                                    "text": "Be convincing"
+                                    "text": "Be convincing",
+                                    "failed": true
                                 }
-                            ]
+                            ],
+                            "failed": true
                         }
                     ],
-                    "failed": false,
+                    "failed": true,
                     "id": "obj-e95cccf14e9b",
                     "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
+                    "updatedAt": "2026-11-07T03:42:05Z",
+                    "staged": false
                 },
                 {
                     "complete": false,
                     "text": "Fulfill the prophecy",
-                    "failed": false,
+                    "failed": true,
                     "id": "obj-b8b36172e7ef",
                     "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
+                    "updatedAt": "2026-11-07T03:41:50Z",
+                    "staged": false
                 },
                 {
                     "complete": false,
                     "text": "Become the chosen one",
-                    "failed": false,
+                    "failed": true,
                     "id": "obj-9db42cebdc85",
                     "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
+                    "updatedAt": "2026-11-07T03:41:52Z",
+                    "staged": false
                 }
             ],
             "tags": [
@@ -268,12 +284,12 @@
                 "identity"
             ],
             "title": "The Chosen One",
-            "failed": false,
+            "failed": true,
             "failedIcon": "icons/chosen-one-failed.gif",
             "completed": false,
             "staged": false,
             "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-10-23T23:22:07Z",
+            "updatedAt": "2026-11-07T03:42:33Z",
             "archived": false
         },
         {
@@ -627,8 +643,8 @@
                                         {
                                             "id": "ad80d2d2-992d-4eda-a9e0-04d81ee9b8ad",
                                             "createdAt": "2026-06-19T20:58:40Z",
-                                            "updatedAt": "2026-06-19T20:58:47Z",
-                                            "complete": false,
+                                            "updatedAt": "2026-11-07T03:40:21Z",
+                                            "complete": true,
                                             "staged": false,
                                             "text": "Kill Undying Lamplight"
                                         },
@@ -1948,5 +1964,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-11-07T03:16:23Z"
+    "version": "2026-11-07T03:42:35Z"
 }
