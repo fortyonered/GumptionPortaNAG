@@ -434,12 +434,12 @@
                     "staged": false
                 },
                 {
-                    "complete": false,
+                    "complete": true,
                     "text": "Attend victory ceremony",
-                    "failed": false,
                     "id": "obj-2c64a509ac3e",
                     "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
+                    "updatedAt": "2026-11-07T03:43:16Z",
+                    "staged": false
                 }
             ],
             "tags": [
@@ -449,10 +449,10 @@
             "title": "Grand Champ",
             "failed": false,
             "failedIcon": "icons/grand-champ-failed.gif",
-            "completed": false,
+            "completed": true,
             "staged": false,
             "createdAt": "2026-06-01T06:31:12Z",
-            "updatedAt": "2026-10-09T22:58:36Z",
+            "updatedAt": "2026-11-07T03:43:22Z",
             "archived": false
         },
         {
@@ -1964,5 +1964,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-11-07T03:42:35Z"
+    "version": "2026-11-07T03:43:23Z"
 }
