@@ -402,20 +402,20 @@
                 {
                     "children": [
                         {
-                            "complete": false,
+                            "complete": true,
                             "text": "Defeat your opponent",
-                            "failed": false,
                             "id": "obj-e813cfe25930",
                             "createdAt": "2026-06-01T06:31:12Z",
-                            "updatedAt": "2026-06-01T06:31:12Z"
+                            "updatedAt": "2026-11-07T03:16:17Z",
+                            "staged": false
                         }
                     ],
-                    "complete": false,
+                    "complete": true,
                     "text": "Win the tournament",
-                    "failed": false,
                     "id": "obj-5188f0530926",
                     "createdAt": "2026-06-01T06:31:12Z",
-                    "updatedAt": "2026-06-01T06:31:12Z"
+                    "updatedAt": "2026-11-07T03:16:19Z",
+                    "staged": false
                 },
                 {
                     "complete": false,
@@ -1948,5 +1948,5 @@
     "systemStatus": {
         "threadLock": "STABLE"
     },
-    "version": "2026-11-07T03:15:48Z"
+    "version": "2026-11-07T03:16:23Z"
 }
