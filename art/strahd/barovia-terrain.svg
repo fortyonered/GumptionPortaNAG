@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+ <defs>
+  <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".65" fill="#b6aa8c" opacity=".29"/><circle cx="6" cy="6" r=".45" fill="#b6aa8c" opacity=".22"/></pattern>
+  <pattern id="pine" width="27" height="23" patternUnits="userSpaceOnUse"><path d="M5 20v-6m-4 1 4-7 4 7m9-6V5m-4 1 4-6 4 6" fill="none" stroke="#8d8979" stroke-width="1" opacity=".42"/></pattern>
+  <pattern id="water" width="12" height="9" patternUnits="userSpaceOnUse"><rect width="12" height="9" fill="#393832"/><path d="M1 3h4m3 4h4" stroke="#99937e" opacity=".36" stroke-width=".8"/></pattern>
+  <g id="ridge" fill="none" stroke="#aaa087" stroke-width="1.1" opacity=".66"><path d="m0 37 33-30 15 16 18-23 36 36M33 7l-3 16 7 2-9 12m38-37-4 18 11 8-10 10m-41-9-7 11m70-14 12 11"/></g>
+ </defs>
+ <rect width="1200" height="675" fill="#252423"/>
+ <rect width="1200" height="675" fill="url(#dots)"/>
+ <g fill="url(#pine)" opacity=".85">
+  <path d="M0 0h406l39 46-55 89-37 39-104 25-45-29-80 28-95 36L0 218Z"/>
+  <path d="m659 0 235 0 97 74 97 22 42 102-91 37-101-10-111 51-57-32-57-77-50-16-24-78Z"/>
+  <path d="m4 322 85-30 108 4 25 58-45 81 10 47-103 39L0 486Z"/>
+  <path d="m340 305 97-32 32 51 12 68-36 63-62-2-53-45-5-73Z"/>
+  <path d="m495 312 87 26 37 53 43 29-40 54-83-19-55-59Z"/>
+  <path d="m872 360 90-36 108-7 110-42 20 85v124l-80 10-86-12-67 19-55-36Z"/>
+  <path d="m0 542 110-34 89 26 82 25 14 116H0Zm888 66 106-69 126-34 80 14v156H938Z"/>
+ </g>
+ <g fill="none" stroke="#8d8a77" stroke-width="3" stroke-linecap="round" opacity=".65">
+  <path d="M0 299q72-34 131-16t106-8Q275 265 308 244"/>
+  <path d="M471 245q-36 32-26 85t15 72l-1 67"/>
+  <path d="M474 493c-16 33-47 33-42 61s-58 33-88 71q-22 28-41 18"/>
+  <path d="M620 542c5-24 26-32 25-55s39-34 82-26q40 8 67 3"/>
+  <path d="M794 464c16 25 53 23 91 25M921 515q21 15 49 8t69 12 83 10l78-28"/>
+ </g>
+ <g stroke="#9f947b" stroke-width="1.4" fill="url(#water)">
+  <path d="M428 198q-13-20 12-28l38-4 30-13 51 8 52 10 33 24 14 24-24 23-48 0-26-11-39 8-27 14-47-3-21-21Z"/>
+  <path d="M293 208q16-10 34-6l13 14-4 13-20 8-10 16-13-7 6-15-11-12Z"/>
+  <path d="M453 469q26-17 61-4l25 13 30 6 12 24-30 19-39-8-24-16-31-6Z"/>
+  <path d="M605 533q19-9 36 4l10 25-3 29-23 29-27 1-15-17 9-24-3-26Z"/>
+  <path d="M880 470q25-17 46-6l15 22-8 25-20 10-24-12-12-23Z"/>
+  <path d="M246 642q12-13 36-13l25 5 11 12-13 13-34 3-26-8Z"/>
+ </g>
+ <g transform="translate(337 631) rotate(37)" stroke-linecap="round">
+  <path d="M-8 0H8" stroke="#252423" stroke-width="9"/>
+  <path d="M-8-4H8M-8 4H8" stroke="#9f947b" stroke-width="1.2"/>
+ </g>
+ <g fill="none" stroke="#aaa087" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".66">
+  <path d="M444 103l47-46 20 24 39-39 47 57 21-23 44 47M491 57l-6 24 12 8-10 15m63-62-7 35 18 11-11 16m68-28-5 22 14 12-5 12m-44-12 18 18"/>
+  <path d="M742 244l50-48 23 24 37-36 39 34 29-41 45 48M792 196l-8 25 11 8-11 16m68-61-5 25 13 9-9 11m69-52-6 25 14 9-8 12m-36 13 20 16"/>
+  <g transform="translate(1015 267)">
+   <path d="M23 43V32l34 4 15-8v16l-15 9-15-2m15-15v17M23 32l8-5m30 0 11 1"/>
+   <path d="M30 33V16h-2V9h4v3h3V8h4v4h3V9h4v7h-2v19M28 16h18m-9 5v5"/>
+   <path d="M49 35V12h-2L55 0l8 12h-2v22M49 12h12m-6 5v6"/>
+   <path d="M33 45v-3q0-4 4.5-6 4.5 2 4.5 6v9M0 40l42 9v3L0 43m6 1v8m29-1v6M6 52q13-14 29 5"/>
+   <path d="m0 54 6-2m29 5 7-6m4 1 5 5m11-7 7 4m-3-18v4"/>
+  </g>
+ </g>
+ <g>
+  <use href="#ridge" transform="translate(212 93) scale(.76)"/>
+  <use href="#ridge" transform="translate(788 347) scale(1.45)"/>
+  <use href="#ridge" transform="translate(659 390) scale(1.07)"/><use href="#ridge" transform="translate(435 547) scale(1.17)"/><use href="#ridge" transform="translate(654 586) scale(1.65)"/>
+  <use href="#ridge" transform="translate(199 373) scale(.95)"/><use href="#ridge" transform="translate(119 521) scale(1.04)"/><use href="#ridge" transform="translate(975 356) scale(1.12)"/>
+ </g>
+ <defs>
+  <path id="baratok-ridge-label" d="M458 61Q541 9 629 59"/>
+  <path id="ghakis-ridge-label" d="M433 592Q472 533 548 567"/>
+  <path id="raven-river-label" d="M31 282Q88 259 151 280T252 271"/>
+ </defs>
+ <g fill="#d2c5a9" stroke="#252423" stroke-width="2.5" stroke-linejoin="round"
+    paint-order="stroke" font-family="Georgia, serif" text-anchor="middle">
+  <text font-size="15" font-weight="bold" letter-spacing="2"><textPath href="#baratok-ridge-label" startOffset="50%">MOUNT BARATOK</textPath></text>
+  <text font-size="15" font-style="italic" letter-spacing=".8"><textPath href="#ghakis-ridge-label" startOffset="50%">Mount Ghakis</textPath></text>
+  <g fill="#c2bcaa" font-size="13" font-style="italic" letter-spacing=".7">
+   <text x="547" y="205" font-size="15">Lake Zarovich</text>
+   <text x="311" y="218" transform="rotate(-9 311 218)" font-size="10.5" letter-spacing="0">Baratok<tspan x="311" dy="11">Pool</tspan></text>
+   <text x="515" y="495" transform="rotate(15 515 495)" font-size="12" letter-spacing=".2">Cabyrys Pond</text>
+   <text x="617" y="579" transform="rotate(-72 617 579)" font-size="12">Lake Eddon</text>
+   <text x="281" y="650" font-size="11" letter-spacing=".1">Luna Lake</text>
+   <text><textPath href="#raven-river-label" startOffset="47%">Raven River</textPath></text>
+  </g>
+ </g>
+ <g transform="translate(1098 111)" fill="none" stroke="#bcb08e" opacity=".8">
+  <circle r="25"/><path d="M0-29 7 0 0 27-7 0Zm-24 29H24M0-33v66"/><path d="M0-27 7 0H0Z" fill="#bcb08e"/>
+  <text x="0" y="-39" fill="#bcb08e" stroke="none" text-anchor="middle" font-family="monospace" font-size="12">N</text>
+ </g>
+ <rect x="7" y="7" width="1186" height="661" rx="4" fill="none" stroke="#a49678" opacity=".6"/>
+</svg>

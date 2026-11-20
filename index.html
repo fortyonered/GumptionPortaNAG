@@ -6,9 +6,75 @@
   <title>PORTA-NAG // Narrative-Alignment Guidance</title>
   <link rel="icon" type="image/png" href="icons/favicon.png" />
   <link rel="stylesheet" href="css/base.css" />
-  <link id="themeStylesheet" rel="stylesheet" href="css/themes/beast-beatdown.css" />
+  <link rel="preload" href="fonts/Larceny.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="stylesheet" href="css/profile-transition.css" />
+  <link rel="stylesheet" href="css/device-tour.css" />
+  <link rel="stylesheet" href="css/path-preview.css" />
+  <link rel="stylesheet" href="css/barovia-map.css" />
+  <link rel="stylesheet" href="css/themes/strahd-must-die.css" />
+  <link rel="stylesheet" href="css/themes/beast-beatdown.css" />
+  <link rel="stylesheet" href="css/themes/cursed-storybook.css" />
 </head>
-<body class="theme-beast">
+<body>
+  <script>
+    const DEVICE_PROFILES = {
+      beast: {
+        fugue: 4,
+        name: 'Beast Beatdown',
+        iconPath: 'icons/profile-switch.png',
+        label: 'REV_1.11',
+        revisionText: 'REV_1.11',
+        deviceLabel: 'PORTA-NAG',
+        headerText: 'PATAPHYSICAL FIELD INSTRUMENT REV_1.11 // PROPERTY OF DEEKIN RUSH',
+        dataUrl: 'data/beast-beatdown.objectives.json',
+        themeClass: 'theme-beast',
+        storagePrefix: 'portaNAG.beast',
+        updateSound: 'audio/beast-beatdown/objective_update_pending.wav'
+      },
+      strahd: {
+        fugue: 5,
+        name: 'Strahd Must Die',
+        iconPath: 'icons/ravenloft-sigil.svg',
+        label: 'REV_2.06',
+        revisionText: 'REV_2.06',
+        deviceLabel: 'PORTA-NAG',
+        headerText: 'PATAPHYSICAL FIELD INSTRUMENT REV_2.06 // PROPERTY OF DEEKIN RUSH',
+        dataUrl: 'data/strahd-must-die.objectives.json',
+        themeClass: 'theme-strahd',
+        storagePrefix: 'portaNAG.strahd',
+        updateSound: 'audio/strahd/objective_update_pending.wav'
+      },
+      storybook: {
+        fugue: 2,
+        name: 'Cursed Storybook',
+        iconPath: 'icons/fugue-2.png',
+        label: 'REV_3.64',
+        revisionText: 'REV_3.64',
+        deviceLabel: 'PORTA-NAG',
+        headerText: 'PATAPHYSICAL FIELD INSTRUMENT REV_3.64 // PROPERTY OF DEEKIN RUSH',
+        dataUrl: 'data/cursed-storybook.objectives.json',
+        themeClass: 'theme-storybook',
+        storagePrefix: 'portaNAG.storybook',
+        updateSound: 'audio/storybook/objective_update_pending.wav'
+      }
+    };
+
+    const PROFILE_IDS = Object.keys(DEVICE_PROFILES);
+    const ACTIVE_PROFILE_KEY = 'portaNAG.activeProfile';
+    function loadJSON(key, fallback) {
+      try {
+        const raw = localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : fallback;
+      } catch {
+        return fallback;
+      }
+    }
+
+    let activeProfileId = loadJSON(ACTIVE_PROFILE_KEY, 'beast');
+    if (!PROFILE_IDS.includes(activeProfileId)) activeProfileId = 'beast';
+    let activeProfile = DEVICE_PROFILES[activeProfileId];
+    document.body.classList.add(activeProfile.themeClass);
+  </script>
   <div class="scanlines" aria-hidden="true"></div>
   <div class="shell">
     <header class="device-header">
@@ -18,8 +84,9 @@
         <div class="subtitle">PORTABLE NARRATIVE-ALIGNMENT GUIDANCE INTERFACE // NAG.PEAK_SYS_LOAD_24H(88%)</div>
       </div>
       <div class="header-actions">
-        <button id="profileToggleBtn" class="icon-button profile-button" title="Switch PortaNAG profile" aria-label="Switch PortaNAG profile" hidden>
-          <span class="icon"><img id="profileSwitchIcon" class="profile-switch-icon" src="icons/fugue-1.png" alt="" aria-hidden="true"></span>
+        <button type="button" class="device-tour-help" data-tour-launch title="Show the interface tour" aria-label="Show the interface tour">?</button>
+        <button id="profileToggleBtn" class="icon-button profile-button" type="button" title="Switch PORTA-NAG profile" aria-label="Switch PORTA-NAG profile" hidden>
+          <span class="icon"><img id="profileSwitchIcon" class="profile-switch-icon" src="icons/ravenloft-sigil.svg" alt="" aria-hidden="true"></span>
         </button>
         <button id="refreshBtn" class="icon-button" title="Refresh objective feed" aria-label="Refresh objective feed">
           <span class="icon"><b>↻</b></span>
@@ -56,6 +123,22 @@
     <source src="audio/objective_update_pending.wav" type="audio/wav">
   </audio>
 
+  <dialog id="deviceTour" class="device-tour" aria-labelledby="tourTitle" aria-describedby="tourText">
+    <div class="device-tour-spotlight" aria-hidden="true"></div>
+    <div class="device-tour-card">
+      <div aria-live="polite" aria-atomic="true">
+        <div id="tourStep" class="device-tour-step"></div>
+        <h2 id="tourTitle"></h2>
+        <p id="tourText"></p>
+      </div>
+      <div class="device-tour-actions">
+        <button type="button" id="tourSkip">Skip tour</button>
+        <button type="button" id="tourBack">Back</button>
+        <button type="button" id="tourNext">Next</button>
+      </div>
+    </div>
+  </dialog>
+
   <template id="objectiveNodeTemplate">
     <div class="objective-node">
       <div class="objective-row">
@@ -68,65 +151,336 @@
     </div>
   </template>
 
-  <script>
-    const DEVICE_PROFILES = {
-      beast: {
-        fugue: 0,
-        name: 'Beast Beatdown',
-        iconPath: 'icons/switcher_beast_beatdown.png',
-        label: 'REV_1.11',
-        revisionText: 'REV_1.11',
-        deviceLabel: 'PORTA-NAG',
-        headerText: 'PATAPHYSICAL FIELD INSTRUMENT REV_1.11 // PROPERTY OF DEEKIN RUSH',
-        dataUrl: 'data/beast-beatdown.objectives.json',
-        themeCss: 'css/themes/beast-beatdown.css',
-        themeClass: 'theme-beast',
-        storagePrefix: 'portaNAG.beast',
-        updateSound: 'audio/beast-beatdown/objective_update_pending.wav'
-      },
-      strahd: {
-        fugue: 1,
-        name: 'Strahd Must Die',
-        iconPath: 'icons/switcher_strahd_must_die.png',
-        label: 'REV_2.06',
-        revisionText: 'REV_2.06',
-        deviceLabel: 'PORTA-NAG',
-        headerText: 'PATAPHYSICAL FIELD INSTRUMENT REV_2.06 // PROPERTY OF DEEKIN RUSH',
-        dataUrl: 'data/strahd-must-die.objectives.json',
-        themeCss: 'css/themes/strahd-must-die.css',
-        themeClass: 'theme-strahd',
-        storagePrefix: 'portaNAG.strahd',
-        updateSound: 'audio/strahd/objective_update_pending.wav'
-      },
-      storybook: {
-        fugue: 2,
-        name: 'Cursed Storybook',
-        iconPath: 'icons/switcher_cursed_storybook.png',
-        label: 'REV_3.64',
-        revisionText: 'REV_3.64',
-        deviceLabel: 'PORTA-NAG',
-        headerText: 'PATAPHYSICAL FIELD INSTRUMENT REV_3.64 // PROPERTY OF DEEKIN RUSH',
-        dataUrl: 'data/cursed-storybook.objectives.json',
-        themeCss: 'css/themes/cursed-storybook.css',
-        themeClass: 'theme-storybook',
-        storagePrefix: 'portaNAG.storybook',
-        updateSound: 'audio/storybook/objective_update_pending.wav'
-      }
-    };
+  <template id="profileCorruptionTemplate">
+    <div class="profile-corruption" aria-hidden="true">
+      <div class="profile-corruption__cover"></div>
+      <div class="profile-corruption__raster"></div>
+      <div class="profile-corruption__band"></div>
+      <div class="profile-corruption__band"></div>
+      <div class="profile-corruption__band"></div>
+      <div class="profile-corruption__band"></div>
+      <div class="profile-corruption__band"></div>
+      <div class="profile-corruption__top"><span>PORTA-NAG / SIGNAL LOST</span><span>ERR 0xF06</span></div>
+      <div class="profile-corruption__readout">
+        <span class="profile-corruption__status"></span>
+        <span class="profile-corruption__name"></span>
+        <span class="profile-corruption__meter"></span>
+      </div>
+      <div class="profile-corruption__bottom"><span>RECONSTRUCTING OBJECTIVE LINK</span><span>▒░▓░▒▓</span></div>
+    </div>
+  </template>
 
-    const PROFILE_IDS = Object.keys(DEVICE_PROFILES)
-      .sort((a, b) => DEVICE_PROFILES[a].fugue - DEVICE_PROFILES[b].fugue);
+  <template id="ravenloftTemplate">
+    <div id="ravenloft" class="ravenloft" hidden>
+      <div class="rv-clouds" aria-hidden="true">
+        <video muted loop playsinline preload="none" poster="art/strahd/clouds-poster.webp" data-src="art/strahd/clouds.mp4"></video>
+      </div>
+      <header class="rv-masthead">
+        <div class="rv-brand"><img class="rv-brand-mark" data-rv-art="sigil" alt=""><div>PORTA-NAG <small>FIELD INSTRUMENT / REV_2.06</small></div></div>
+        <div class="rv-actions" aria-label="Profile and display controls">
+          <button type="button" id="rvMotion" class="rv-button" aria-pressed="false">Pause motion</button>
+          <span id="rvSwitchSlot"></span>
+          <button type="button" class="device-tour-help" data-tour-launch title="Show the interface tour" aria-label="Show the interface tour">?</button>
+        </div>
+      </header>
+
+      <section class="rv-hero" aria-labelledby="rvTitle">
+        <div id="rvScene" class="rv-scene" aria-hidden="true">
+          <img class="rv-landscape" data-rv-art="ravenloft" width="768" height="384" alt="">
+          <img class="rv-braziers" data-rv-art="braziers" width="768" height="384" alt="">
+        </div>
+        <h1 id="rvTitle">STRAHD <em>MUST DIE!</em></h1>
+      </section>
+
+      <div class="rv-command-row">
+        <div class="rv-field-tools">
+          <button type="button" class="rv-atlas-launch" id="rvOpenMap" aria-haspopup="dialog" aria-controls="rvMap">
+            <img src="icons/barovia-map.svg" width="32" height="32" alt="">
+            <span>04 / FIELD ATLAS<strong>Barovia map</strong></span>
+            <span class="rv-atlas-arrow" aria-hidden="true">›</span>
+          </button>
+          <button type="button" class="rv-atlas-launch" id="rvOpenBomb" aria-haspopup="dialog" aria-controls="rvBomb">
+            <svg class="rv-bomb-icon" viewBox="0 0 32 32" aria-hidden="true">
+              <path d="M9 8h14a7 7 0 0 1 7 7v2a7 7 0 0 1-7 7H9a7 7 0 0 1-7-7v-2a7 7 0 0 1 7-7Z M16 12l6 4-6 4-6-4z"/>
+            </svg>
+            <span>05 / SCHEMATIC<strong>Arcane bomb</strong></span>
+            <span class="rv-atlas-arrow" aria-hidden="true">&rsaquo;</span>
+          </button>
+        </div>
+        <div class="rv-telemetry">
+          <div id="rvStatusSlot"></div>
+          <div id="rvFeedActions" aria-label="Objective feed controls"></div>
+        </div>
+      </div>
+
+      <nav class="rv-jumps" aria-label="Dossier sections">
+        <a href="#rvRegistry">Paths</a><a href="#rvObjectives">Objectives</a><a href="#rvJournal">Journal</a>
+      </nav>
+
+      <main class="rv-workspace">
+        <section class="rv-panel" id="rvRegistry" aria-labelledby="rvRegistryTitle">
+          <div class="rv-panel-head">
+            <span>01 / REGISTRY</span>
+            <div class="rv-registry-heading">
+              <div>
+                <h2 id="rvRegistryTitle">Paths</h2>
+                <p>Choose which paths to track.</p>
+              </div>
+              <label class="rv-compact-paths">
+                <input type="checkbox" id="rvCompactPaths" aria-controls="pathList" />
+                Grid view
+              </label>
+            </div>
+          </div>
+          <div class="rv-panel-body" id="rvPathSlot"></div>
+        </section>
+
+        <section class="rv-panel" id="rvObjectives" aria-labelledby="rvObjectivesTitle">
+          <div class="rv-panel-head"><span>02 / GUIDANCE</span><h2 id="rvObjectivesTitle">Objectives</h2><p>Checkpoints for your tracked paths.</p></div>
+          <div class="rv-panel-body" id="rvThreadSlot"></div>
+        </section>
+
+        <section class="rv-panel" id="rvJournal" aria-labelledby="rvJournalTitle">
+          <div class="rv-panel-head rv-journal-head">
+            <span>03 / PERSONAL LOG</span><h2 id="rvJournalTitle">Field journal</h2><p>Autosaved in this browser.</p>
+            <button type="button" class="rv-button" id="rvOpenJournalBackup" aria-label="Journal backup" title="Journal backup" aria-controls="rvJournalBackup" aria-expanded="false">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 3h14l4 4v14H3zM7 3v6h9V3M7 21v-8h10v8M13 5v2"/>
+              </svg>
+            </button>
+          </div>
+          <div class="rv-panel-body">
+            <div id="rvEntryMenu">
+              <div class="rv-entry-bar">
+                <span id="rvEntryListLabel">Entry register</span>
+                <button type="button" class="rv-button" id="rvNewEntry">+ New entry</button>
+              </div>
+              <div class="rv-entry-bar rv-entry-options">
+                <label class="rv-entry-sort" for="rvEntrySort">Sort
+                  <select id="rvEntrySort">
+                    <option value="newest">Newest first</option>
+                    <option value="oldest">Oldest first</option>
+                    <option value="name-asc">Name A–Z</option>
+                    <option value="name-desc">Name Z–A</option>
+                  </select>
+                </label>
+                <button type="button" class="rv-button" id="rvBackToNote" hidden>Back to note</button>
+              </div>
+              <div id="rvDeleteEntry" role="group" aria-labelledby="rvDeletePrompt" hidden>
+                <p id="rvDeletePrompt"></p>
+                <button type="button" class="rv-button" id="rvCancelDelete">Cancel</button>
+                <button type="button" class="rv-button" id="rvConfirmDelete">Delete entry</button>
+              </div>
+              <ul id="rvEntryList" aria-labelledby="rvEntryListLabel"></ul>
+              <p id="rvJournalEmpty" class="rv-journal-empty">No entries yet. Start a new entry to record a note.</p>
+            </div>
+            <div id="rvEntryEditor" hidden>
+              <button type="button" class="rv-button" id="rvOpenEntryMenu">← Entry register</button>
+              <label class="rv-entry-label" for="rvEntryName">Entry name</label>
+              <input type="text" id="rvEntryName" placeholder="Untitled entry">
+              <div id="rvEntryCreated"></div>
+              <div class="rv-editor" role="group" aria-label="Entry formatting">
+                <button type="button" data-format="bold" title="Bold" aria-label="Bold" aria-pressed="false"><b>B</b></button>
+                <button type="button" data-format="italic" title="Italic" aria-label="Italic" aria-pressed="false"><i>I</i></button>
+                <button type="button" data-format="heading" title="Heading" aria-label="Heading" aria-pressed="false">H</button>
+                <button type="button" data-format="list" title="Bulleted list" aria-label="Bulleted list" aria-pressed="false">•≡</button>
+                <button type="button" id="rvExpandNote" aria-controls="rvNote" aria-pressed="false">Expand note</button>
+              </div>
+              <div id="rvNote" contenteditable="true" role="textbox" aria-label="Entry text" aria-multiline="true" spellcheck="true" data-placeholder="Write your note…"></div>
+            </div>
+            <section id="rvJournalBackup" aria-labelledby="rvJournalBackupTitle" hidden>
+              <div class="rv-entry-bar">
+                <h3 id="rvJournalBackupTitle">Journal backup</h3>
+                <button type="button" class="rv-button" id="rvCloseJournalBackup">Back</button>
+              </div>
+              <p>Your field journal saves automatically to this browser's local storage. Clearing browser data can erase it, so export a backup regularly.</p>
+              <div class="rv-backup-actions" id="rvBackupActions">
+                <button type="button" class="rv-button" id="rvExportJournal">Export journal</button>
+                <button type="button" class="rv-button" id="rvImportJournal">Import backup</button>
+              </div>
+              <input type="file" id="rvJournalBackupFile" accept=".json,application/json" hidden>
+              <section id="rvRestoreJournal" aria-labelledby="rvRestoreJournalTitle" hidden>
+                <h4 id="rvRestoreJournalTitle" tabindex="-1">Review backup</h4>
+                <dl class="rv-restore-counts">
+                  <div><dt>Current entries</dt><dd id="rvCurrentEntryCount"></dd></div>
+                  <div><dt>Entries after import</dt><dd id="rvProposedEntryCount"></dd></div>
+                </dl>
+                <p id="rvRestoreChangesLabel"></p>
+                <ul id="rvRestoreChanges" aria-labelledby="rvRestoreChangesLabel" hidden></ul>
+                <p id="rvRestoreJournalPrompt">Overwriting replaces the current field journal with this backup. This cannot be undone.</p>
+                <div class="rv-backup-actions">
+                  <button type="button" class="rv-button" id="rvCancelJournalRestore">Cancel</button>
+                  <button type="button" class="rv-button" id="rvConfirmJournalRestore" aria-describedby="rvRestoreJournalPrompt">Overwrite journal</button>
+                </div>
+              </section>
+              <p id="rvJournalBackupStatus" role="status"></p>
+            </section>
+            <div class="rv-journal-footer"><span id="rvSaveStatus" role="status"></span></div>
+          </div>
+        </section>
+      </main>
+
+      <dialog class="rv-map-dialog" id="rvMap" aria-labelledby="rvMapTitle">
+        <header class="rv-map-header">
+          <div><div class="rv-map-kicker">04 / FIELD ATLAS</div><h2 id="rvMapTitle">Barovia</h2></div>
+          <div class="rv-map-tools">
+            <label><input type="checkbox" id="rvMapMarkers" checked> Path markers</label>
+            <div class="rv-map-zoom" role="group" aria-label="Map zoom controls">
+              <button type="button" class="rv-button" id="rvMapOut" aria-label="Zoom out">-</button>
+              <button type="button" class="rv-button" id="rvMapFit">Fit</button>
+              <button type="button" class="rv-button" id="rvMapIn" aria-label="Zoom in">+</button>
+            </div>
+            <button type="button" class="rv-button" id="rvCloseMap" autofocus>Close map</button>
+          </div>
+        </header>
+        <svg class="rv-map-board" viewBox="0 0 1200 675" tabindex="0" aria-label="Barovia map. Plus and minus zoom; arrow keys pan.">
+          <image href="art/strahd/barovia-terrain.svg" width="1200" height="675" aria-hidden="true"/>
+          <g class="rv-map-roads" aria-hidden="true"></g>
+          <g class="rv-map-locations"></g>
+          <g class="rv-map-markers"></g>
+        </svg>
+        <p class="rv-map-legend"><span>Road</span><span class="rv-legend-trail">Trail</span><span class="rv-legend-landmark">Landmark</span><span class="rv-legend-quest">Path marker</span></p>
+        <div class="rv-map-details" aria-live="polite"></div>
+      </dialog>
+
+      <dialog class="rv-map-dialog rv-bomb-dialog" id="rvBomb" aria-labelledby="rvBombTitle">
+        <header class="rv-map-header">
+          <div><div class="rv-map-kicker">05 / SCHEMATIC</div><h2 id="rvBombTitle">Arcane bomb</h2></div>
+          <div class="rv-map-tools">
+            <button type="button" class="rv-button" id="rvCloseBomb" autofocus>Close schematic</button>
+          </div>
+        </header>
+        <svg class="rv-bomb-board" viewBox="160 125 750 425" role="group" aria-label="Arcane bomb side elevation with separate casing, ignition, payload, runewords, and cradle">
+          <g data-bomb-section="casing">
+            <path class="rv-bomb-face" d="m482.53 199.35c0 32.67 0 213.01 0 242.4-93.39 0-92.69 5.73-98.72-100.75h20.19v-42h-20.44c4.75-100.27 3.95-99.65 98.97-99.65z"/>
+            <path class="rv-bomb-face" d="m704.17 441.8c0-32.67 0-213.01 0-242.4 100.07 0 94.36-6.58 94.36 125.34 0 117.74 5.87 117.06-94.36 117.06z"/>
+            <path class="rv-bomb-face" d="m662.83 199v243h-138.83v-243z"/>
+            <path class="rv-bomb-face" d="m653 321l-29.25 34h-58.5l-29.25-34 29.25-34h58.5z"/>
+          </g>
+          <g data-bomb-section="runewords">
+            <path class="rv-bomb-face" d="m517 199v243h-28v-243z"/>
+            <path class="rv-bomb-face" d="m697 199v243h-28v-243z"/>
+            <path class="rv-bomb-inscription" fill-rule="evenodd" d="m506.16 207.11q0.1-0.05 0.39-0.05 0.38 0 0.57 0.1 0.34 0.17 0.44 0.77 0.09 0.57 0.09 2.97v1.66q0 2.5-0.02 3.7-0.03 1.2-0.15 1.99-0.09 0.77-0.26 0.93-0.17 0.17-0.5 0.17-0.48 0-0.63-0.31-0.12-0.34-0.12-1.49 0-1.34-0.19-1.61-0.19-0.26-1.42-1.44-1.2-1.2-1.36-1.27h-0.05q-0.31 0-2.04 1.61-0.96 0.94-1.51 0.94-0.32 0-0.56-0.34-0.14-0.19-0.14-0.38 0-0.6 1.9-2.31 0.6-0.55 0.6-0.77 0-0.21-1.32-1.53-1.32-1.32-1.32-1.66 0-0.17 0.21-0.38 0.22-0.22 0.53-0.22 0.86 0 2.16 1.35 0.65 0.64 1.01 0.72 0.19 0.04 0.26 0.04 0.15 0 0.48-0.24 0.41-0.31 0.41-0.4 0-0.08 1.2-1.28 1.22-1.22 1.34-1.27zm-0.36 3.24q-0.12-0.17-0.19-0.17-0.14 0-0.6 0.46-0.43 0.46-0.53 0.7-0.09 0.24-0.09 0.28 0 0.15 0.31 0.63 0.58 0.89 0.91 0.89 0.05 0 0.1-0.05 0.29-0.29 0.29-1.61 0-0.89-0.2-1.13zm-3.76 5.76q0.16-0.09 0.48-0.09 0.52 0 1 0.24 0.24 0.12 0.44 0.45 0.19 0.31 0.19 0.6 0 0.7-0.55 1.3-0.34 0.33-0.77 0.33-0.82 0-1.23-0.86-0.21-0.43-0.21-0.74 0-0.34 0.19-0.72 0.22-0.39 0.46-0.51zm1.62 14.98q0.45-0.36 0.76-0.36 0.22 0 0.51 0.14 0.29 0.15 0.38 0.31 0.1 0.17 0.1 0.6 0 0.36-0.07 1.13-0.1 1.59-0.1 4.87 0 2.79 0.07 3.34 0.1 0.55 0.48 0.55 0.7 0 0.7-1.2v-0.14q0-0.51 0.09-2.76 0.1-1.8 0.22-2.33 0.14-0.53 0.53-0.53 0.31 0 0.55 0.29 0.19 0.26 0.19 1.03 0 0.05-0.05 2.16-0.04 2.74-0.14 3.72-0.1 0.87-0.34 1.03-0.24 0.17-1.44 0.2-2.01 0.04-2.52 0.04-2.66 0-3.57-0.52-0.75-0.44-1.3-1.32-0.55-0.92-0.55-1.64 0-0.26 0.07-0.43 0.17-0.43 0.51-0.43 0.14 0 0.24 0.02 0.24 0.05 0.69 0.92 0.77 1.53 1.61 1.77 0.62 0.22 1.51 0.22 0.48 0 0.65-0.1 0.22-0.12 0.22-0.57v-0.36q-0.05-0.8-0.22-0.99-0.14-0.19-0.74-0.19-1.44 0-2.4-1.2-0.58-0.7-0.72-1.15-0.15-0.46-0.17-1.44l-0.03-1.11 0.7-1.32q0.5-0.96 0.67-1.15 0.17-0.21 0.63-0.45 0.62-0.34 1.32-0.36 0.69-0.03 0.96-0.29zm-0.1 1.85q-0.24-0.1-0.31-0.1-0.05 0-0.15 0.02-0.07 0-0.21 0.03-0.12 0.02-0.27 0.05-0.43 0.07-0.55 0.21-0.12 0.12-0.55 0.87-0.58 1-0.58 1.8 0 0.26 0.08 0.6 0.09 0.45 0.43 0.86 0.33 0.41 0.69 0.55 0.36 0.15 0.82 0.15 0.46 0 0.6-0.15 0.14-0.14 0.17-2.47 0.02-0.62 0.02-1.42 0-0.91-0.19-1zm-5.14 22.77q0.22-0.14 0.41-0.14 0.19 0 0.63 0.19 0.55 0.29 1.34 1.73 0.19 0.31 0.6 0.81 0.41 0.51 0.91 1.08 0.51 0.56 0.67 0.75 0.34 0.43 0.48 0.43 0.32 0 1.49-1.78 1.03-1.51 1.42-2.11 0.33-0.62 0.84-0.62 0.07 0 0.26 0.05 0.34 0.07 0.43 0.48 0.1 0.38 0.1 1.65v0.67q-0.02 2.09-0.22 2.31-0.16 0.19-0.4 0.19-0.29 0-0.56-0.24-0.24-0.24-0.24-0.5 0-0.22-0.12-0.41-0.12-0.19-0.24-0.19-0.31 0-1.08 1.1-0.12 0.17-0.33 0.46-0.19 0.28-0.24 0.36-0.05 0.07-0.17 0.26-0.1 0.17-0.12 0.24 0 0.07-0.05 0.26-0.02 0.2-0.02 0.36 0 0.15 0 0.44v0.84q0 1.41-0.07 1.87-0.08 0.43-0.34 0.62-0.1 0.07-0.31 0.07-0.31 0-0.65-0.21-0.34-0.24-0.98-0.99-0.63-0.76-0.84-1.2-0.2-0.38-0.77-1.1-1.85-2.23-1.85-3 0-0.24 0.19-0.43 0.19-0.19 0.58-0.07 0.69 0.24 1.44 1.36 0.26 0.41 0.77 1.06 0.5 0.62 0.72 0.94 0.28 0.4 0.38 0.4 0.12 0 0.22-0.24 0.09-0.24 0.09-0.48 0-0.02-0.02-0.07 0-0.07 0-0.09-0.07-0.34-0.7-1.23-0.62-0.89-1.17-1.46-0.72-0.77-1.25-1.56-0.65-0.96-0.72-0.99-0.17-0.12-0.43-0.48-0.32-0.4-0.32-0.86 0-0.36 0.24-0.53zm7.48 23.38q0.07-0.53 0.41-0.87 0.33-0.33 0.53-0.33 0.14 0 0.38 0.19 0.34 0.29 0.34 1.15 0 1.3-0.58 2.45-0.94 1.9-2.38 2.14-0.62 0.12-0.62 0.4 0 0.12 0.05 0.17 0.12 0.17 1.17 0.24 1.11 0.1 1.32 0.19 0.29 0.17 0.48 0.56 0.22 0.36 0.22 1.05 0 0.53-0.02 0.94l-0.05 1.58-0.34 0.29q-0.33 0.31-1.25 0.38-1.03 0.08-1.34 0.2-0.31 0.12-0.5 0.57-0.24 0.53-0.39 0.67-0.14 0.17-0.38 0.17-0.27 0-0.53-0.21-0.26-0.24-0.38-0.6-0.22-0.75-0.77-0.75-0.58 0-1.2-0.29-0.63-0.28-0.63-0.69 0-0.31 0.41-0.58 0.31-0.21 0.63-0.21 0.28 0 0.5 0.02 0.19 0.02 0.46 0.02 0.33 0 0.52-0.19 0.24-0.24 0.15-0.6-0.1-0.38-0.17-0.5-0.1-0.1-0.96-0.19-0.79-0.08-1.08-0.22-0.26-0.14-0.26-0.5 0-0.48 0.36-0.68 0.38-0.21 1.56-0.4 0.4-0.08 0.48-0.29 0.04-0.15 0.04-0.22 0-0.33-0.74-0.53-0.41-0.12-0.65-0.26-0.21-0.14-0.6-0.55-1.13-1.25-1.39-2.55-0.07-0.36-0.07-0.67 0-1.05 0.77-1.25 0.26-0.09 0.55 0.24 0.36 0.36 0.48 1.42 0.07 0.41 0.48 0.98 0.41 0.56 0.86 0.84 0.36 0.22 0.6 0.27 0.24 0.05 0.96 0.05 1.03 0 1.32-0.22 0.41-0.31 0.77-1.13 0.36-0.81 0.48-1.7zm-0.72 7.39q-0.12-0.07-0.58-0.07-0.45 0-0.6 0.24-0.12 0.19-0.12 0.45 0 0.48 0.32 0.72 0.21 0.15 0.55 0.15 0.36 0 0.5-0.15 0.24-0.24 0.24-0.64 0-0.48-0.31-0.7zm-5.21 14.42q0.24-0.04 0.48-0.04 0.87 0 1.51 0.19 0.99 0.26 1.49 1.61 0.29 0.79 0.34 2.2 0.07 1.52 0.19 1.64 0.12 0.12 1.8 0.19 0.6 0.02 0.82 0.02 0.24 0 0.6 0.1 0.38 0.07 0.45 0.07 0.1 0 0.29 0.22 0.19 0.21 0.19 0.28 0.03 0.08 0.07 0.48 0.08 0.41 0.05 0.63 0 0.21 0.03 0.86 0.02 0.51 0.02 1.15 0 0.8-0.22 1.04-0.21 0.28-0.5 0.28-0.46 0-0.65-0.6-0.09-0.43-0.09-1.58 0-0.79-0.05-0.98-0.03-0.22-0.19-0.34-0.24-0.17-0.92-0.17-1.41 0-1.75 0.41-0.12 0.12-0.12 0.58 0 0.31 0.05 0.43 0.02 0.12 0.48 0.26 0.46 0.15 0.84 0.46 0.7 0.5 0.7 1.8 0 0.07-0.03 0.26 0 0.17 0 0.27-0.02 0.98-0.31 1.44-0.5 0.91-1.51 1.27-0.39 0.14-0.63 0.14-0.02 0-0.69-0.09-1.35-0.24-1.9-1.35-0.41-0.79-0.41-1.46 0-0.31 0.08-0.65 0.38-1.42 0.98-1.85 0.89-0.62 0.89-1.1 0-0.17-0.17-0.43-0.22-0.29-1.39-0.29-1.23 0-1.39 0.31-0.12 0.24-0.12 1.78-0.03 1.12-0.08 1.39-0.02 0.26-0.21 0.45-0.27 0.27-0.63 0.2-0.38-0.08-0.48-0.34-0.09-0.29-0.09-1.42v-0.88q0.02-1.8 0.12-2.21 0.12-0.43 0.57-0.43 0.36 0 0.92-0.17 0.45-0.15 1.6-0.15h1.04l0.14-0.36q0.17-0.36 0.17-1.2 0-0.93-0.22-1.48-0.53-1.35-1.37-1.35-0.48 0-0.96 0.53-0.45 0.5-0.57 1.18-0.05 0.31-0.29 0.62-0.24 0.29-0.43 0.29-0.17 0-0.43-0.27-0.27-0.24-0.27-0.98 0-0.62 0.12-0.98 0.15-0.36 0.58-0.89 0.67-0.79 1.46-0.99zm3.99 10.61q-0.6-0.24-1.2-0.24-0.17 0-0.27 0.05-0.19 0.12-0.33 0.5-0.15 0.36-0.15 0.72 0 0.51 0.41 0.89 0.41 0.39 0.96 0.39 0.41 0 0.72-0.46 0.34-0.48 0.34-1.08 0-0.36-0.1-0.5-0.1-0.15-0.38-0.27zm-3.87 14.79q0.29-0.29 0.48-0.29 0.15 0 0.27 0.02 0.43 0.05 0.69 0.29 0.29 0.22 0.6 0.77 0.15 0.26 0.65 1.01 0.53 0.74 0.89 1.36 0.36 0.6 0.36 0.92 0 0.88-0.6 0.88-0.58 0-1.13-0.84-0.43-0.64-0.65-0.64-0.26 0-0.38 0.81-0.03 0.15-0.03 0.39 0 0.45 0.56 1.08 0.48 0.52 0.74 0.98 0.34 0.58 1.34 2.09 1.61 2.42 1.71 3.19 0 0.02 0 0.1 0.02 0.04 0.02 0.07 0 0.57-0.67 0.57-0.79 0-1.44-1.29-0.31-0.58-0.74-1.23-0.44-0.64-0.6-0.91-0.48-0.74-0.8-0.74-0.31 0-0.31 1.94 0 1.01-0.05 1.25-0.02 0.24-0.19 0.41-0.24 0.26-0.6 0.26-0.38 0-0.57-0.26-0.17-0.24-0.17-1.35 0-1.32 0.02-2.44 0.1-5.86 0.17-6.94 0.07-1.08 0.43-1.46zm4.35 7.15q0.09-0.17 0.4-0.36 0.32-0.19 0.72-0.19 0.32 0 0.48 0.09 0.2 0.12 0.34 0.48 0.17 0.36 0.17 0.75 0 0.69-0.82 0.98-0.19 0.05-0.29 0.05-0.43 0-0.76-0.36-0.32-0.39-0.32-0.91 0-0.36 0.08-0.53zm-1.61 15.98q0.19-0.26 0.45-0.26 0.29 0 0.48 0.26 0.2 0.22 0.2 0.84l-0.05 2.02q-0.03 0.72-0.03 1.63 0 0.96 0.17 1.2 0.36 0.43 2.31 0.43 1.12 0 1.41 0.22l0.24 0.19v7.27l-0.24 0.27q-0.26 0.26-0.5 0.26-0.46 0-0.6-0.62-0.07-0.48-0.12-3.05-0.03-2.76-0.19-2.93-0.17-0.17-1.08-0.17-0.65 0-0.82 0.05-0.14 0.05-0.34 0.24-0.19 0.22-0.24 0.65-0.02 0.41-0.02 2.45 0 2.78-0.19 3.16-0.19 0.41-0.46 0.41-0.21 0-0.45-0.21l-0.32-0.27-0.02-2.97q-0.02-3-0.22-3.2-0.16-0.16-1-0.16-0.34 0-1.16 0.04-0.79 0.03-1.12 0.03-0.94 0-1.06-0.19-0.12-0.2-0.12-0.46 0-0.46 0.26-0.67 0.29-0.24 1.9-0.24h0.55q1.49 0 1.71-0.22 0.19-0.19 0.26-2.73 0.1-2.64 0.12-2.79 0.02-0.17 0.29-0.48zm3.24 1.11q0.31-0.22 0.72-0.22 0.81 0 1.37 0.82 0.24 0.38 0.24 1 0 1.16-0.58 1.52-0.36 0.21-0.86 0.21-0.51 0-0.96-0.19-0.44-0.19-0.6-0.53-0.17-0.33-0.17-0.79 0-1.25 0.84-1.82zm-7.25 9q0.24-0.05 0.38-0.05 0.58 0 0.94 0.24 0.58 0.36 0.58 1.39 0 1.27-0.77 1.61-0.29 0.12-0.79 0.12-0.8 0-1.23-0.75-0.19-0.31-0.19-0.79 0-0.62 0.31-1.15 0.31-0.53 0.77-0.62zm3.76 13.84q0.48-0.16 0.96-0.16 0.57 0 0.93 0.24 0.39 0.24 0.39 0.62 0 0.26-0.29 0.48-0.29 0.22-0.79 0.29-0.89 0.14-1.68 0.93-0.56 0.53-0.75 0.92-0.17 0.36-0.17 0.91 0 0.65 0.17 1.08 0.12 0.31 0.31 0.45 0.2 0.15 0.94 0.51 1.06 0.5 1.25 0.5 0.19 0 0.79-0.21 0.38-0.15 0.65-0.15 0.29 0 0.55 0.24 0.19 0.15 0.19 0.39 0 0.33-0.53 0.93-0.52 0.6-0.74 1.25-0.22 0.72-0.65 1.39-0.48 0.82-0.48 1.2 0 0.17 0.07 0.24 0.1 0.17 1.88 0.19 1.41 0.03 1.84 0.15 0.46 0.09 0.53 0.43 0.07 0.26-0.17 0.53-0.36 0.38-0.88 0.48-0.53 0.07-2.5 0.09-1.8 0.03-3.82 0.03-0.69 0-1.05 0-0.34 0-0.55-0.05-0.2-0.05-0.24-0.05-0.03-0.02-0.17-0.12-0.48-0.29-0.48-0.72 0-0.26 0.14-0.62 0.12-0.39 0.58-1.13 0.43-0.67 1.08-2.06 0.67-1.42 0.67-1.68 0-0.32-0.34-0.82-0.81-1.25-0.81-2.3 0-0.6 0.26-1.59 0.22-0.72 0.77-1.25 1.32-1.29 2.14-1.56zm0.38 8.48q-0.1-0.12-0.36-0.12-0.22 0-0.38 0.09-0.17 0.1-0.34 0.55 0 0.03-0.77 1.66-0.53 1.18-0.53 1.37 0 0.19 0.41 0.19 0.24 0 0.41-0.1 0.22-0.12 0.38-0.64 0.15-0.51 0.63-1.35 0.6-1.05 0.6-1.46 0-0.15-0.05-0.19zm0.29-5.79q0.14-0.07 0.45-0.07 0.82 0 1.16 0.26 0.4 0.32 0.4 0.87 0 0.5-0.36 0.93-0.36 0.44-0.91 0.48-0.07 0-0.17 0.03-0.07 0-0.09 0-0.27 0-0.6-0.34-0.24-0.24-0.31-0.38-0.05-0.15-0.05-0.51 0-0.96 0.48-1.27zm-0.99 21.34q0.2-0.27 0.51-0.27 0.33 0 0.57 0.34 0.2 0.29 0.29 1.58 0.03 0.53 0.03 2.24 0 3.67-0.1 3.96-0.12 0.31-0.72 1.15-0.58 0.81-0.7 1.01-0.38 0.67-0.52 0.88-0.22 0.32-0.29 0.6-0.05 0.2-0.05 0.22 0 0.14 0.34 0.19 0.36 0.03 1.89 0.07 0.48 0.03 1.18 0.03 1.03 0 1.03-0.27 0-0.21-0.72-0.98-0.86-0.91-0.86-1.42 0-0.45 0.69-0.45 0.43 0 0.79 0.26 0.36 0.24 1.4 1.25 0.72 0.7 0.93 0.98 0.24 0.29 0.36 0.65l0.19 0.58-0.31 0.31q-0.38 0.41-0.81 0.5-0.44 0.1-1.88 0.1-1.82 0-5.78 0.29-0.62 0.05-0.65 0.05-0.29 0-0.53-0.24-0.24-0.24-0.24-0.53 0-0.34 0.34-0.75 0.29-0.38 0.94-1.41 0.55-0.94 0.69-1.03 0.1-0.03 0.39-0.68 0.28-0.64 0.67-1.08 0.43-0.5 0.57-0.86 0.15-0.36 0.15-0.98 0-0.51-0.1-0.72l-0.12-0.29-0.43 0.41q-0.41 0.38-0.7 0.88-0.14 0.24-0.67 1.06-0.5 0.82-0.65 1.08-0.43 0.7-1.12 0.7-0.32 0-0.46-0.22-0.17-0.19-0.17-0.53 0-0.55 0.67-1.46 0.15-0.22 0.56-0.87 0.4-0.67 0.79-1.1 0.31-0.38 0.72-1.01 0.41-0.62 0.84-1.08 0.53-0.55 0.67-0.96 0.17-0.43 0.17-1.2 0-0.69 0.21-0.98zm3.15 4.13q0.38-0.2 0.55-0.2 0.29 0 0.67 0.22 0.39 0.19 0.51 0.41 0.16 0.26 0.16 0.77 0 0.4-0.12 0.62-0.12 0.24-0.5 0.48-0.38 0.24-0.65 0.24-0.57 0-0.93-0.43-0.36-0.43-0.36-0.99 0-0.79 0.67-1.12zm0.01 19.41q0.12-0.09 0.36-0.09 0.34 0 0.67 0.21 0.41 0.29 0.96 1.95 0.51 1.56 0.51 2.06 0 0.43-0.39 1.7-0.43 1.32-0.79 1.97-0.34 0.65-0.94 1.23-0.81 0.76-1.12 0.91-0.36 0.21-0.46 0.33-0.05 0.08-0.14 1.78-0.05 1.66-0.27 1.94-0.21 0.32-0.48 0.32-0.21 0-0.45-0.24-0.2-0.2-0.24-0.36-0.03-0.17-0.03-0.77 0-1.18-0.09-2.11-0.05-0.72-0.05-0.92 0-0.6 0.19-0.86 0.22-0.29 0.82-0.6 1.05-0.55 1.65-1.25 0.63-0.72 0.63-1.39 0-0.38-0.32-0.55-0.33-0.15-0.79-0.15h-0.05q-0.36 0-0.55 0.17-0.19 0.15-0.89 1.01-0.69 0.79-0.96 0.91-0.48 0.24-0.57 0.48-0.17 0.34-0.22 3-0.07 2.93-0.17 3.12-0.19 0.36-0.62 0.36-0.17 0-0.22-0.05-0.31-0.16-0.38-0.72-0.07-0.55-0.1-2.88 0-3.07-0.12-3.07-0.31-0.09-0.76-0.48-0.44-0.38-0.6-0.69-0.22-0.36-0.22-0.89 0-0.43 0.02-0.79 0.03-0.99 0.17-1.44 0.15-0.48 0.53-0.92 0.36-0.4 1.01-0.64 0.67-0.27 1.34-0.27 0.19 0 0.53 0.05 0.38 0.07 0.98 0.6 0.6 0.53 0.84 1.01l0.27 0.5 0.74 0.07q0.94 0.12 1.06 0.15 0.33 0.07 0.41-0.05 0.02-0.02 0.02-0.17 0-0.72-0.55-1.92-0.36-0.72-0.36-1.13 0-0.28 0.19-0.43zm-3.82 3.17q-0.45-0.26-0.64-0.26-0.22 0-0.41 0.24-0.19 0.21-0.48 0.76-0.39 0.77-0.39 1.06 0 0.29 0.34 0.62 0.34 0.34 0.77 0.34 0.62 0 1.17-0.77 0.32-0.45 0.32-0.91 0-0.7-0.68-1.08z"/>
+            <path class="rv-bomb-inscription" fill-rule="evenodd" d="m685.42 204.95q0.12-0.09 0.36-0.09 0.34 0 0.67 0.21 0.41 0.29 0.96 1.95 0.51 1.56 0.51 2.06 0 0.43-0.39 1.7-0.43 1.32-0.79 1.97-0.34 0.65-0.94 1.23-0.81 0.76-1.12 0.91-0.36 0.21-0.46 0.33-0.05 0.08-0.14 1.78-0.05 1.66-0.27 1.94-0.21 0.32-0.48 0.32-0.21 0-0.45-0.24-0.2-0.2-0.24-0.36-0.03-0.17-0.03-0.77 0-1.18-0.09-2.11-0.05-0.72-0.05-0.92 0-0.6 0.19-0.86 0.22-0.29 0.82-0.6 1.05-0.55 1.65-1.25 0.63-0.72 0.63-1.39 0-0.38-0.32-0.55-0.33-0.15-0.79-0.15h-0.05q-0.36 0-0.55 0.17-0.19 0.15-0.89 1.01-0.69 0.79-0.96 0.91-0.48 0.24-0.57 0.48-0.17 0.34-0.22 3-0.07 2.93-0.17 3.12-0.19 0.36-0.62 0.36-0.17 0-0.22-0.05-0.31-0.16-0.38-0.72-0.07-0.55-0.1-2.88 0-3.07-0.12-3.07-0.31-0.09-0.76-0.48-0.44-0.38-0.6-0.69-0.22-0.36-0.22-0.89 0-0.43 0.02-0.79 0.03-0.99 0.17-1.44 0.15-0.48 0.53-0.92 0.36-0.4 1.01-0.64 0.67-0.27 1.34-0.27 0.19 0 0.53 0.05 0.38 0.07 0.98 0.6 0.6 0.53 0.84 1.01l0.27 0.5 0.74 0.07q0.94 0.12 1.06 0.15 0.33 0.07 0.41-0.05 0.02-0.02 0.02-0.17 0-0.72-0.55-1.92-0.36-0.72-0.36-1.13 0-0.28 0.19-0.43zm-3.82 3.17q-0.45-0.26-0.64-0.26-0.22 0-0.41 0.24-0.19 0.21-0.48 0.76-0.39 0.77-0.39 1.06 0 0.29 0.34 0.62 0.34 0.34 0.77 0.34 0.62 0 1.17-0.77 0.32-0.45 0.32-0.91 0-0.7-0.68-1.08zm0.69 21.96q0.67-1.25 2.35-1.25 0.17 0 0.6 0.05 0.38 0.05 0.84 0.46 0.46 0.4 0.74 0.93l0.29 0.55q0.03 1.83 0.07 5.5 0.05 3.65 0.08 5.47l0.31 0.39q0.67 0.84 0.67 1.34 0 0.26-0.05 0.36-0.05 0.07-0.21 0.1-0.08 0.02-0.27 0.02-0.55 0-1.22-0.29-0.67-0.31-0.87-0.67-0.16-0.34-0.96-1.2-0.76-0.86-0.88-0.86-0.15 0-0.22 0.21-0.05 0.19-0.14 0.99-0.17 1.41-0.77 1.41-0.15 0-0.43-0.12-0.27-0.12-0.34-0.5-0.07-0.41-0.12-2.02l-0.07-1.82-0.72-0.67q-0.82-0.77-1.03-0.89-0.24-0.15-0.32-0.15-0.28 0-0.28 1.95v0.77 0.88q0 1.54-0.1 2.12-0.07 0.57-0.29 0.72-0.21 0.14-0.43 0.14-0.36 0-0.58-0.41-0.19-0.38-0.21-4.41 0-4.08 0.07-4.44 0.17-0.89 0.77-0.89 0.29 0 1.58 1.32 1.3 1.29 1.49 1.29 0.22 0 0.26-0.55 0.08-0.55 0.1-2.69 0.02-1.92 0.05-2.35 0.05-0.43 0.24-0.79zm2.81 0.72q-0.2-0.19-0.44-0.19-0.24 0-0.57 0.21-0.34 0.2-0.39 0.36-0.04 0.2-0.04 3.03 0 2.95-0.08 3.45l-0.07 0.65 0.77 0.75q0.74 0.74 0.98 0.74 0.15 0 0.2-0.22 0.04-0.26 0.09-3.91v-1.34q0-1.99-0.09-2.62-0.08-0.62-0.36-0.91zm-4.61 32.59q-0.46 0-0.46 1.78v0.48q0 1.17-0.12 1.46-0.17 0.43-0.62 0.43-0.07 0-0.22-0.04-0.33-0.2-0.43-0.63-0.07-0.43-0.1-2.16v-0.62q0-1.42 0.1-1.97 0.12-0.58 0.43-0.89 0.24-0.24 0.48-0.24 0.17 0 0.27 0.03 0.36 0.04 0.72 0.28 0.12 0.12 0.84 0.6 1.58 1.06 2.16 1.47 0.48 0.33 0.76 0.33 0.34 0 0.34-0.52 0-0.12-0.05-0.46-0.07-0.46-0.31-0.74-0.24-0.29-0.94-0.77-0.74-0.53-0.96-0.75-0.31-0.31-0.91-0.64-0.67-0.39-1.53-1.04-0.84-0.64-0.96-0.84-0.1-0.16-0.1-0.43 0-0.41 0.17-0.6 0.19-0.24 0.53-0.17 0.79 0.15 1.75 0.99 0.33 0.31 1.44 1.08 1.1 0.74 1.41 0.74 0.05 0 0.08-0.02 0.09-0.1 0.14-0.87v-0.31q0-0.5-0.24-0.77-0.22-0.28-1.13-0.91-0.67-0.48-1.68-1.32-0.24-0.19-0.69-0.53-0.44-0.36-0.51-0.4-0.86-0.68-0.86-1.35 0-0.24 0.19-0.36 0.12-0.09 0.36-0.09 0.19 0 1.01 0.45 0.84 0.43 1.17 0.75 0.39 0.33 0.68 0.5 0.74 0.41 2.9 2.3l0.41 0.36v1.8q0 1.56 0.09 1.95 0.12 0.36 0.72 0.86 0.65 0.55 0.65 1.01 0 0.41-0.53 0.7-0.43 0.21-0.52 0.45-0.1 0.22-0.1 0.89v0.34q0 1.58-0.55 1.94-0.27 0.19-0.53 0-0.12-0.05-0.67-0.67-0.43-0.51-1.37-1.06-1.01-0.62-1.25-0.86-0.31-0.34-0.79-0.63-0.46-0.31-0.67-0.31zm1.86 13.95q0.26-0.2 0.41-0.2 0.16 0 0.45 0.08 0.29 0.04 1.13 0.86 0.86 0.79 1.51 1.63 0.43 0.55 0.94 1.06 0.72 0.67 0.72 1.22 0 0.27-0.17 0.43-0.19 0.2-0.43 0.2-0.91 0-2.19-1.73-0.72-0.96-1-0.96-0.1 0-0.15 0.05-0.14 0.14-0.14 2.95 0 1.41 0.07 1.7 0.1 0.34 0.77 0.91 0.43 0.39 1.15 1.23 0.72 0.84 1.22 1.25 1.2 0.96 1.37 1.68 0 0.02 0 0.07 0.03 0.05 0.03 0.07 0 0.19-0.39 0.55-0.43 0.39-0.84 0.51-0.29 0.07-1.32 0.07-3.05 0-3.26-0.22-0.15-0.14-0.22-2.47-0.07-2.02-0.19-2.42-0.12-0.44-0.82-1.06-0.64-0.65-0.81-0.91-0.29-0.46-0.99-1.06-1.05-0.91-1.05-1.41 0-0.15 0.26-0.46 0.22-0.22 0.46-0.22 0.53 0 2.09 1.47 0.67 0.62 0.76 0.62 0.22 0 0.22-2.09 0-3.09 0.41-3.4zm2.01 10.6q-0.33-0.38-0.45-0.38-0.27 0-0.27 0.94 0 0.55 0.15 0.69 0.17 0.17 0.79 0.17 0.48 0 0.6-0.12 0.05-0.05 0.05-0.1 0-0.26-0.87-1.2zm0.05 3.96q0.84-0.12 1.61-0.12 1.56 0 1.82 0.58 0.1 0.19 0.08 0.29-0.03 0.09-0.27 0.29-0.33 0.31-1.15 0.36-0.65 0.07-1.9 0.16-0.62 0.05-0.86 0.05-1.1 0-1.56-0.31-0.31-0.19-0.31-0.65 0-0.17 0.05-0.24 0.16-0.38 1.17-0.38 0.05 0 0.15 0.02 0.09 0 0.12 0h0.24q0.33 0 0.81-0.05zm-4.32 10.4q0.29-0.29 0.48-0.29 0.15 0 0.27 0.02 0.43 0.05 0.69 0.29 0.29 0.22 0.6 0.77 0.15 0.26 0.65 1.01 0.53 0.74 0.89 1.36 0.36 0.6 0.36 0.92 0 0.88-0.6 0.88-0.58 0-1.13-0.84-0.43-0.64-0.65-0.64-0.26 0-0.38 0.81-0.03 0.15-0.03 0.39 0 0.45 0.56 1.08 0.48 0.52 0.74 0.98 0.34 0.58 1.34 2.09 1.61 2.42 1.71 3.19 0 0.02 0 0.1 0.02 0.04 0.02 0.07 0 0.57-0.67 0.57-0.79 0-1.44-1.29-0.31-0.58-0.74-1.23-0.44-0.64-0.6-0.91-0.48-0.74-0.8-0.74-0.31 0-0.31 1.94 0 1.01-0.05 1.25-0.02 0.24-0.19 0.41-0.24 0.26-0.6 0.26-0.38 0-0.57-0.26-0.17-0.24-0.17-1.35 0-1.32 0.02-2.44 0.1-5.86 0.17-6.94 0.07-1.08 0.43-1.46zm4.35 7.15q0.09-0.17 0.4-0.36 0.32-0.19 0.72-0.19 0.32 0 0.48 0.09 0.2 0.12 0.34 0.48 0.17 0.36 0.17 0.75 0 0.69-0.82 0.98-0.19 0.05-0.29 0.05-0.43 0-0.76-0.36-0.32-0.39-0.32-0.91 0-0.36 0.08-0.53zm-3.41 15.84q0.29-0.1 1.1-0.1h0.55q1.28 0.03 1.64 0.29 0.31 0.22 0.72 0.38 0.84 0.32 1.58 1.8l0.41 0.8v1.75q0 1.75-0.19 1.94-0.29 0.29-3.48 0.48-3.17 0.17-3.41 0.48-0.15 0.22-0.15 0.6 0 0.48 0.22 0.75 0.14 0.14 0.31 0.14 0.05 0 0.12 0 0.1-0.02 0.24-0.05 0.15-0.02 0.27-0.05 0.4-0.07 0.84-0.07 0.26 0 0.33 0.03 0.03 0 0.1 0.02 0.09 0 0.17 0 0.4 0 1.89-0.14 1.37-0.12 1.63-0.12 0.34 0 0.56 0.07 0.45 0.12 0.57 0.26 0.15 0.15 0.15 0.51 0 0.28-0.12 0.48-0.12 0.16-0.6 0.62l-1.42 1.25q-0.72 0.6-0.94 1.01-0.24 0.45-0.64 0.64-0.46 0.24-2.33 0.27l-1.87 0.05-0.34-0.36q-0.34-0.34-0.48-0.89-0.1-0.36-0.19-3.15l-0.05-2.64 0.24-0.36q0.31-0.45 0.62-0.57 0.34-0.15 1.18-0.15 0.12 0 0.38 0.03 0.27 0 0.44 0 0.19 0 0.45 0.02 0.27 0 0.39 0 0.81 0 1.84-0.19 0.58-0.12 1.3-0.26 0.55-0.12 0.55-0.72 0-0.46-0.21-1.16-0.2-0.69-0.46-1.08-0.22-0.31-0.43-0.45-0.19-0.15-0.79-0.39-0.87-0.36-1.35-0.36-0.41 0-1.1 0.32-0.75 0.38-1.01 0.76-0.62 0.92-0.98 0.92-0.22 0-0.46-0.22-0.24-0.19-0.24-0.38 0-0.2 0.02-0.32 0.1-0.76 0.77-1.46 0.7-0.7 1.66-1.03zm2.61 10.89q-0.14-0.14-1-0.14-0.6 0-1.35 0.07-0.74 0.1-0.93 0.17-0.2 0.05-0.29 0.24-0.12 0.29-0.12 0.46 0 0.24 0.21 0.52 0.2 0.27 0.53 0.27 0.31 0 0.58-0.03 0.69-0.02 0.96-0.16 0.29-0.15 0.96-0.75 0.48-0.45 0.48-0.57 0-0.05-0.03-0.08zm2.16 1.25q0.22-0.07 0.6-0.07 0.44 0 0.72 0.1 0.72 0.26 0.72 1.08 0 0.43-0.24 0.76-0.36 0.58-0.93 0.58-0.53 0-0.96-0.41-0.41-0.43-0.41-0.96 0-0.31 0.17-0.67 0.17-0.36 0.33-0.41zm0.36 13.68q0.1-0.05 0.39-0.05 0.38 0 0.57 0.1 0.34 0.17 0.44 0.77 0.09 0.57 0.09 2.97v1.66q0 2.5-0.02 3.7-0.03 1.2-0.15 1.99-0.09 0.77-0.26 0.93-0.17 0.17-0.5 0.17-0.48 0-0.63-0.31-0.12-0.34-0.12-1.49 0-1.34-0.19-1.61-0.19-0.26-1.42-1.44-1.2-1.2-1.36-1.27h-0.05q-0.31 0-2.04 1.61-0.96 0.94-1.51 0.94-0.32 0-0.56-0.34-0.14-0.19-0.14-0.38 0-0.6 1.9-2.31 0.6-0.55 0.6-0.77 0-0.21-1.32-1.53-1.32-1.32-1.32-1.66 0-0.17 0.21-0.38 0.22-0.22 0.53-0.22 0.86 0 2.16 1.35 0.65 0.64 1.01 0.72 0.19 0.04 0.26 0.04 0.15 0 0.48-0.24 0.41-0.31 0.41-0.4 0-0.08 1.2-1.28 1.22-1.22 1.34-1.27zm-0.36 3.24q-0.12-0.17-0.19-0.17-0.14 0-0.6 0.46-0.43 0.46-0.53 0.7-0.09 0.24-0.09 0.28 0 0.15 0.31 0.63 0.58 0.89 0.91 0.89 0.05 0 0.1-0.05 0.29-0.29 0.29-1.61 0-0.89-0.2-1.13zm-3.76 5.76q0.16-0.09 0.48-0.09 0.52 0 1 0.24 0.24 0.12 0.44 0.45 0.19 0.31 0.19 0.6 0 0.7-0.55 1.3-0.34 0.33-0.77 0.33-0.82 0-1.23-0.86-0.21-0.43-0.21-0.74 0-0.34 0.19-0.72 0.22-0.39 0.46-0.51zm0.79 13.32q0.19-0.26 0.45-0.26 0.29 0 0.48 0.26 0.2 0.22 0.2 0.84l-0.05 2.02q-0.03 0.72-0.03 1.63 0 0.96 0.17 1.2 0.36 0.43 2.31 0.43 1.12 0 1.41 0.22l0.24 0.19v7.27l-0.24 0.27q-0.26 0.26-0.5 0.26-0.46 0-0.6-0.62-0.07-0.48-0.12-3.05-0.03-2.76-0.19-2.93-0.17-0.17-1.08-0.17-0.65 0-0.82 0.05-0.14 0.05-0.34 0.24-0.19 0.22-0.24 0.65-0.02 0.41-0.02 2.45 0 2.78-0.19 3.16-0.19 0.41-0.46 0.41-0.21 0-0.45-0.21l-0.32-0.27-0.02-2.97q-0.02-3-0.22-3.2-0.16-0.16-1-0.16-0.34 0-1.16 0.04-0.79 0.03-1.12 0.03-0.94 0-1.06-0.19-0.12-0.2-0.12-0.46 0-0.46 0.26-0.67 0.29-0.24 1.9-0.24h0.55q1.49 0 1.71-0.22 0.19-0.19 0.26-2.73 0.1-2.64 0.12-2.79 0.02-0.17 0.29-0.48zm3.24 1.11q0.31-0.22 0.72-0.22 0.81 0 1.37 0.82 0.24 0.38 0.24 1 0 1.16-0.58 1.52-0.36 0.21-0.86 0.21-0.51 0-0.96-0.19-0.44-0.19-0.6-0.53-0.17-0.33-0.17-0.79 0-1.25 0.84-1.82zm-7.25 9q0.24-0.05 0.38-0.05 0.58 0 0.94 0.24 0.58 0.36 0.58 1.39 0 1.27-0.77 1.61-0.29 0.12-0.79 0.12-0.8 0-1.23-0.75-0.19-0.31-0.19-0.79 0-0.62 0.31-1.15 0.31-0.53 0.77-0.62zm3.98 17.61q3.56-0.09 3.7-0.09h0.14q1.32 0 1.32 0.81 0 0.31-0.26 0.72-0.19 0.29-0.24 0.63-0.02 0.31-0.02 1.84 0 2.04-0.12 2.33-0.15 0.27-0.53 0.51-0.31 0.19-0.82 0.72-0.48 0.52-0.48 0.69 0 0.1 1.13 0.19 0.91 0.08 1.22 0.2 0.32 0.12 0.32 0.43 0 0.55-0.44 0.72-0.4 0.14-1.99 0.24-1.97 0.12-2.45 0.12-0.81 0-1.12-0.19-0.34-0.24-0.34-0.58 0-0.26 0.19-0.55 0.27-0.41 0.6-0.58 0.29-0.14 0.94-0.69 0.41-0.36 1.2-0.92 0.89-0.6 1.03-0.91 0.14-0.33 0.14-1.77v-0.24q0-1.9-0.04-2.04-0.08-0.15-0.53-0.15-0.36 0-0.48 0.12-0.15 0.12-0.17 1.68-0.02 1.35-0.22 1.78-0.16 0.43-0.86 0.98-0.62 0.48-3.34 3-0.76 0.72-1.05 0.91-0.29 0.2-0.6 0.2-0.65 0-0.65-0.56 0-0.36 0.31-0.79 0.31-0.45 0.84-0.79 0.53-0.31 0.87-0.82 0.28-0.4 1.32-1.24 1.05-0.87 1.17-0.96 0.43-0.39 0.51-0.56 0.09-0.16 0.12-0.72 0-0.09 0-0.33 0.02-0.24 0.02-0.36 0-0.12-0.02-0.34 0-0.24 0-0.31-0.05-0.55-0.24-0.7-0.2-0.14-1.04-0.14-0.76 0-1.29 0.02-0.53 0.03-1.18 0.03-0.79 0-1.05-0.24-0.24-0.24-0.24-0.48 0-0.19 0.14-0.36 0.17-0.22 1.01-0.29 0.86-0.1 3.57-0.17zm1.7 23.23q0.26-0.31 0.45-0.31 0.24 0 0.48 0.27 0.27 0.24 0.36 0.57 0.15 0.48 0.15 3.48l0.02 3.07 0.29 0.36q0.29 0.34 0.53 0.89 0.26 0.53 0.26 0.82 0 0.29-0.22 0.72-0.21 0.41-0.45 0.6-0.53 0.43-1.3 0.43-0.67 0-1.29-0.36l-0.48-0.29-0.6 0.22q-0.6 0.21-0.96 0.21-0.75 0-0.75 0.8v0.19q0.05 0.48 0.19 0.62 0.17 0.15 0.72 0.15 0.41 0 0.7-0.03 0.36-0.02 0.96-0.02 1.27 0 1.7 0.36 0.34 0.26 0.34 0.69 0 0.27-0.14 0.44-0.12 0.16-1.56 0.33-1.42 0.17-2.55 0.17-0.5 0-0.69-0.02-0.99-0.12-1.28-0.53-0.26-0.41-0.26-1.97 0-0.17 0-0.58 0.02-0.4 0.02-0.64 0.03-1.78 0.15-2.6 0.14-0.81 0.62-2.2 0.29-0.87 0.96-1.71 0.6-0.74 1.68-1.32 0.96-0.5 1.23-0.74 0.26-0.27 0.31-0.77 0.07-0.91 0.41-1.3zm-0.58 7.18q0.24-0.53 0.24-1.34 0-1.32-0.6-1.32-0.19 0-0.74 0.38-0.56 0.36-0.75 0.62-0.17 0.22-0.53 1.28-0.36 1.05-0.36 1.27 0 0.21 0.27 0.38 0.29 0.15 0.67 0.15 0.41 0 0.72-0.17 0.62-0.34 1.08-1.25z"/>
+          </g>
+          <g data-bomb-section="ignition">
+            <path class="rv-bomb-face" d="m398 305v31h-10v-31z"/>
+            <path class="rv-bomb-face" d="m388 312v17h-10v-17zm-5.53 7.93h4.93z"/>
+            <path class="rv-bomb-face" d="m377.18 279.62v86.64l-13.11-44.65z"/>
+            <path class="rv-bomb-face" d="m367 312v18h-68v-18z"/>
+            <path class="rv-bomb-face" d="m372.5 331c-5.81 0-10.5-4.69-10.5-10.5 0-5.81 4.69-10.5 10.5-10.5 5.81 0 10.5 4.69 10.5 10.5 0 5.81-4.69 10.5-10.5 10.5z"/>
+            <path class="rv-bomb-face" d="m372.5 311l0.98 5.83 3.77-4.56-2.06 5.54 5.54-2.06-4.56 3.77 5.83 0.98-5.83 0.98 4.56 3.77-5.54-2.06 2.06 5.54-3.77-4.56-0.98 5.83-0.98-5.83-3.77 4.56 2.06-5.54-5.54 2.06 4.56-3.77-5.83-0.98 5.83-0.98-4.56-3.77 5.54 2.06-2.06-5.54 3.77 4.56z"/>
+            <path class="rv-bomb-face" d="m285.5 338c-9.12 0-16.5-7.38-16.5-16.5 0-9.12 7.38-16.5 16.5-16.5 9.12 0 16.5 7.38 16.5 16.5 0 9.12-7.38 16.5-16.5 16.5zm0-8.35c-4.51 0-8.15-3.64-8.15-8.15 0-4.51 3.64-8.15 8.15-8.15 4.51 0 8.15 3.64 8.15 8.15 0 4.51-3.64 8.15-8.15 8.15z"/>
+          </g>
+          <g data-bomb-section="payload">
+            <path class="rv-bomb-face" d="m583.22 299.5l25.66 44.45z"/>
+            <path class="rv-bomb-face" d="m596.05 296.06v51.32z"/>
+            <path class="rv-bomb-face" d="m608.88 299.5l-25.66 44.45z"/>
+            <path class="rv-bomb-face" d="m632.46 321.67l-18.37 12.68h-36.73l-18.36-12.68 18.36-12.67h36.73z"/>
+            <path class="rv-bomb-detail" d="m577.59 334.68l16.6-10.16 17.61 3.89 20.5-6.6"/>
+            <path class="rv-bomb-detail" d="m594.36 324.69l9.14 9.14 8.3-5.59"/>
+            <path class="rv-bomb-detail" d="m559.46 321.47l18.64 1.02-0.34 12.53"/>
+            <path class="rv-bomb-detail" d="m586.57 329.43l-16.43-15.41"/>
+            <path class="rv-bomb-detail" d="m578.77 322.32l15.59 2.2"/>
+            <path class="rv-bomb-detail" d="m587.92 309.61l-8.98 13.38"/>
+            <path class="rv-bomb-detail" d="m577.76 309.61l5.93 6.95"/>
+            <path class="rv-bomb-detail" d="m570.64 314.02l12.71 1.69"/>
+            <path class="rv-bomb-detail" d="m611.3 328.75l2.87-19.14"/>
+            <path class="rv-bomb-detail" d="m621.63 325.2l-6.95-15.08"/>
+            <path class="rv-bomb-detail" d="m600.62 312.15l-8.13 5.59 7.8 4.24 6.09-4.41z"/>
+            <path class="rv-bomb-detail" d="m614.17 309.44l-7.79 8.3"/>
+            <path class="rv-bomb-detail" d="m600.62 312.15l12.88-2.54"/>
+            <path class="rv-bomb-detail" d="m606.21 317.74l5.09 10.67"/>
+            <path class="rv-bomb-detail" d="m601.64 321.13l-5.76 4.07"/>
+            <path class="rv-bomb-detail" d="m579.45 322.32l14.57-4.92"/>
+            <path class="rv-bomb-detail" d="m595.54 325.03l-3.22-6.44"/>
+            <path class="rv-bomb-detail" d="m587.41 309.44l13.38 2.54"/>
+            <path class="rv-bomb-detail" d="m592.32 317.57l-3.89-8.3"/>
+            <path class="rv-bomb-detail" d="m594.19 324.69l-0.85 8.97"/>
+          </g>
+          <g data-bomb-section="cradle">
+            <rect x="399" y="445" width="376" height="49" fill="transparent" stroke="none"/>
+            <defs>
+              <g id="rvBombCradleWheel">
+                <circle r="16" class="rv-bomb-face"/>
+                <circle r="12" class="rv-bomb-detail"/>
+                <circle r="4"/>
+                <path class="rv-bomb-detail" d="M0-12v8m0 8v8M-12 0h8m8 0h8M-8.5-8.5l5.7 5.7m5.6 5.6 5.7 5.7m0-17-5.7 5.7m-5.6 5.6-5.7 5.7"/>
+              </g>
+            </defs>
+            <path d="M416 454v-24l9-5q11 15 36 18h18v11M761 454v-24l-9-5q-11 15-36 18h-18v11"/>
+            <path class="rv-bomb-detail" d="m424 433 16 21h25m288-21-16 21h-25M439 463l13 13h19l13-13m209 0 13 13h19l13-13"/>
+            <use href="#rvBombCradleWheel" x="461" y="477"/>
+            <use href="#rvBombCradleWheel" x="715" y="477"/>
+            <path class="rv-bomb-face" d="M406 454h365v5l-8 4H414l-8-4Z"/>
+            <path class="rv-bomb-detail" d="M414 458h349m-357 0h-12l-13 6"/>
+            <circle cx="378" cy="465" r="4"/>
+          </g>
+          <g class="rv-bomb-callout" data-part="casing">
+            <path d="M450 181v18"/>
+            <circle cx="450" cy="199" r="2.5"/>
+            <rect x="369" y="132" width="162" height="49" rx="3"/>
+            <text class="rv-bomb-caption" x="381" y="152">Bell casing</text>
+            <text data-bomb-status="" x="381" y="171"></text>
+          </g>
+          <g class="rv-bomb-callout" data-part="ignition">
+            <path d="M240 259v14h81v39"/>
+            <circle cx="321" cy="312" r="2.5"/>
+            <rect x="177" y="210" width="184" height="49" rx="3"/>
+            <text class="rv-bomb-caption" x="189" y="230">Ignition charge</text>
+            <text data-bomb-status="" x="189" y="249"></text>
+          </g>
+          <g class="rv-bomb-callout" data-part="payload">
+            <path d="M594 262v10h52v40l-15 9"/>
+            <circle cx="631" cy="321" r="2.5"/>
+            <rect x="538" y="213" width="113" height="49" rx="3"/>
+            <text class="rv-bomb-caption" x="550" y="233">Payload</text>
+            <text data-bomb-status="" x="550" y="252"></text>
+          </g>
+          <g class="rv-bomb-callout" data-part="runewords">
+            <path d="M728 181v8h-45v10"/>
+            <circle cx="683" cy="199" r="2.5"/>
+            <rect x="645" y="132" width="166" height="49" rx="3"/>
+            <text class="rv-bomb-caption" x="657" y="152">Runewords</text>
+            <text data-bomb-status="" x="657" y="171"></text>
+          </g>
+          <g class="rv-bomb-callout" data-part="cradle">
+            <path d="M588 463v32"/>
+            <circle cx="588" cy="463" r="2.5"/>
+            <rect x="492" y="495" width="192" height="49" rx="3"/>
+            <text class="rv-bomb-caption" x="504" y="515">Rolling cradle</text>
+            <text data-bomb-status="" x="504" y="534"></text>
+          </g>
+        </svg>
+        <section class="rv-bomb-description" id="rvBombDescription" aria-labelledby="rvBombComponent" hidden>
+          <div class="rv-bomb-description-header">
+            <h3 id="rvBombComponent"></h3>
+            <button type="button" class="rv-button" id="rvBombPath"></button>
+          </div>
+          <div id="rvBombPathDescription" class="rv-map-landmark-description" aria-live="polite"></div>
+        </section>
+        <p class="rv-bomb-status" role="status"></p>
+      </dialog>
+
+      <footer class="rv-footer"><span>PORTA-NAG / DEEKIN RUSH</span><span class="rv-halftone" aria-hidden="true"></span><span>END OF DOSSIER</span></footer>
+    </div>
+  </template>
+
+  <script src="strahd-clouds.js"></script>
+  <script src="strahd.js"></script>
+  <script src="device-tour.js"></script>
+  <script src="path-preview.js"></script>
+  <script src="barovia-map.js"></script>
+  <script src="arcane-bomb.js"></script>
+  <script>
     let availableProfileIds = [];
-    const ACTIVE_PROFILE_KEY = 'portaNAG.activeProfile';
+    const COMPACT_PATHS_KEY = 'portaNAG.strahd.compactPaths';
     const GLITCH_CHARS = '░▒▓';
     const unknownTextNodes = new Set();
     const failedPathTextNodes = new Set();
     const bodyTextNodes = new Set();
     const liveIntegrityNodes = new Set();
 
-    let activeProfileId = loadJSON(ACTIVE_PROFILE_KEY, 'beast');
-    if (!DEVICE_PROFILES[activeProfileId]) activeProfileId = 'beast';
-    let activeProfile = DEVICE_PROFILES[activeProfileId];
     let STORAGE_KEYS = buildStorageKeys(activeProfile);
     let state = createState();
     let glitchTimer = null;
@@ -136,8 +490,9 @@
     let remoteVersionCheckTimer = null;
     let updatePending = false;
     let titleAlertTimer = null;
+    let incomingUpdateTimer = null;
 
-    const BASE_DOCUMENT_TITLE = document.title;
+    let refreshSequence = 0;
 
     function buildStorageKeys(profile) {
       const prefix = profile.storagePrefix;
@@ -169,7 +524,6 @@
       threadDisplay: document.getElementById('threadDisplay'),
       profileToggleBtn: document.getElementById('profileToggleBtn'),
       profileSwitchIcon: document.getElementById('profileSwitchIcon'),
-      themeStylesheet: document.getElementById('themeStylesheet'),
       deviceEyebrow: document.getElementById('deviceEyebrow'),
       refreshBtn: document.getElementById('refreshBtn'),
       ackUpdatesBtn: document.getElementById('ackUpdatesBtn'),
@@ -181,13 +535,59 @@
       objectiveNodeTemplate: document.getElementById('objectiveNodeTemplate')
     };
 
+    const ravenloft = setupRavenloft({
+      rvSwitchSlot: elements.profileToggleBtn,
+      rvStatusSlot: document.querySelector('.status-strip'),
+      rvFeedActions: [elements.refreshBtn, elements.ackUpdatesBtn],
+      rvPathSlot: elements.pathList,
+      rvThreadSlot: elements.threadDisplay
+    });
+    const compactPaths = document.getElementById('rvCompactPaths');
+
+    const pathPreview = setupPathPreview(createPathIconWrap);
+    const baroviaMap = setupBaroviaMap({
+      isBombReady: bombComponentsReady,
+      getFeed: () => ({ map: state.data?.map, paths: visiblePaths() }),
+      createIcon: (path) => {
+        const icon = createPathIconWrap(path);
+        if (path.id === 'strahd-must-die') {
+          icon.setAttribute('data-bomb-path-icon', '');
+          icon.classList.toggle('rv-bomb-ready-icon', bombComponentsReady());
+        }
+        return icon;
+      },
+      isTracked: (path) => state.trackedPaths.has(path.id),
+      togglePath: toggleTrackedPath
+    });
+
+    const arcaneBomb = setupArcaneBomb(
+      () => activeProfileId === 'strahd' && state.data ? visiblePaths() : null,
+      (pathId) => state.trackedPaths.has(pathId),
+      toggleTrackedPath,
+      (path) => createPathIconWrap(path, 'span')
+    );
+
+    const tour = setupDeviceTour(() => activeProfileId, {
+      map: baroviaMap.preview,
+      bomb: arcaneBomb.preview,
+      register: () => ravenloft.previewJournal('register'),
+      editor: () => ravenloft.previewJournal('editor'),
+      backup: () => ravenloft.previewJournal('backup')
+    });
+
     boot();
 
     async function boot() {
       elements.profileToggleBtn.addEventListener('click', cycleProfile);
       elements.refreshBtn.addEventListener('click', () => refreshData(true));
       elements.ackUpdatesBtn.addEventListener('click', acknowledgeUpdates);
+      compactPaths.checked = loadJSON(COMPACT_PATHS_KEY, false) === true;
+      compactPaths.addEventListener('change', () => {
+        persistJSON(COMPACT_PATHS_KEY, compactPaths.checked);
+        applyCompactPathView();
+      });
 
+      applyActiveProfilePresentation();
       availableProfileIds = await discoverAvailableProfiles();
 
       if (!availableProfileIds.includes(activeProfileId)) {
@@ -196,16 +596,21 @@
         STORAGE_KEYS = buildStorageKeys(activeProfile);
         state = createState();
         persistJSON(ACTIVE_PROFILE_KEY, activeProfileId);
+        applyActiveProfilePresentation();
+      } else {
+        updateProfileToggle();
       }
 
-      applyActiveProfilePresentation();
       refreshData(false);
       startRemoteVersionCheck();
+      tour.offer();
     }
 
     async function discoverAvailableProfiles() {
       const availability = await Promise.all(PROFILE_IDS.map(async (profileId) => {
         const profile = DEVICE_PROFILES[profileId];
+
+        if (profileId !== 'storybook') return profileId;
 
         try {
           const response = await fetch(`${profile.dataUrl}?availability=${Date.now()}`, { cache: 'no-store' });
@@ -248,12 +653,70 @@
       const fugueLabel = `Fugue ${nextProfile.fugue}`;
       const targetLabel = nextProfile.name ? `${fugueLabel}: ${nextProfile.name}` : fugueLabel;
       elements.profileToggleBtn.title = `Switch to ${targetLabel}`;
+      elements.profileToggleBtn.dataset.target = nextProfile.name;
       elements.profileToggleBtn.setAttribute('aria-label', elements.profileToggleBtn.title);
     }
 
     function cycleProfile() {
+      if (document.querySelector('.profile-corruption')) return;
       const nextProfileId = getNextProfileId();
-      if (nextProfileId) setActiveProfile(nextProfileId);
+      if (!nextProfileId) return;
+
+      const switchProfile = () => {
+        setActiveProfile(nextProfileId);
+        elements.profileToggleBtn.focus({ preventScroll: true });
+      };
+
+      const involvesStrahd = activeProfileId === 'strahd' || nextProfileId === 'strahd';
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+          (involvesStrahd && ravenloft.motionPaused({ includeInactive: true }))) {
+        switchProfile();
+        tour.offer();
+        return;
+      }
+
+      playProfileCorruption(activeProfileId, nextProfileId, switchProfile);
+    }
+
+    function playProfileCorruption(from, to, switchProfile) {
+      const template = document.getElementById('profileCorruptionTemplate');
+      const overlay = template.content.firstElementChild.cloneNode(true);
+      const cover = overlay.querySelector('.profile-corruption__cover');
+      overlay.dataset.from = from;
+      overlay.dataset.to = to;
+      const fromFugue = String(DEVICE_PROFILES[from].fugue).padStart(2, '0');
+      const toFugue = String(DEVICE_PROFILES[to].fugue).padStart(2, '0');
+      overlay.querySelector('.profile-corruption__status').textContent = `RETUNING FUGUE // ${fromFugue} → ${toFugue}`;
+      const name = overlay.querySelector('.profile-corruption__name');
+      name.textContent = DEVICE_PROFILES[to].name;
+      name.dataset.text = name.textContent;
+
+      let cleanup;
+      const finish = () => {
+        clearTimeout(cleanup);
+        overlay.remove();
+        tour.offer();
+      };
+
+      const handoff = () => {
+        if (overlay.dataset.phase === 'receiving') return;
+        clearTimeout(cleanup);
+        overlay.dataset.phase = 'receiving';
+        switchProfile();
+        cleanup = setTimeout(finish, 1050);
+      };
+
+      overlay.addEventListener('animationend', (event) => {
+        if (event.target === cover && event.animationName === 'fugue-break') handoff();
+        if (event.target === overlay) finish();
+      });
+      overlay.addEventListener('animationcancel', (event) => {
+        if (event.target === overlay) finish();
+      });
+
+      document.body.append(overlay);
+      // If animation events are suppressed, the switch can still complete.
+      cleanup = setTimeout(handoff, 500);
     }
 
     function setActiveProfile(profileId) {
@@ -268,6 +731,10 @@
       persistJSON(ACTIVE_PROFILE_KEY, activeProfileId);
       applyActiveProfilePresentation();
       clearPendingUpdate();
+      elements.threadLock.textContent = '—';
+      elements.lastRefresh.textContent = '—';
+      renderAll();
+      window.scrollTo(0, 0);
       refreshData(false);
     }
 
@@ -295,13 +762,20 @@
       elements.deviceEyebrow.append(before, revision, after);
     }
 
+    function applyCompactPathView() {
+      const compact = activeProfileId === 'strahd' && compactPaths.checked;
+      elements.pathList.classList.toggle('compact-paths', compact);
+      pathPreview.clear();
+    }
+
     function applyActiveProfilePresentation() {
       document.body.classList.remove(...PROFILE_IDS.map((id) => DEVICE_PROFILES[id].themeClass));
       document.body.classList.add(activeProfile.themeClass);
       document.title = `${activeProfile.deviceLabel} // Narrative-Alignment Guidance`;
       renderDeviceEyebrow();
+      ravenloft.show(activeProfileId === 'strahd');
+      applyCompactPathView();
       updateProfileToggle();
-      if (elements.themeStylesheet) elements.themeStylesheet.href = activeProfile.themeCss;
       if (elements.transmissionSfx) {
         elements.transmissionSfx.src = activeProfile.updateSound;
         elements.transmissionSfx.load();
@@ -309,6 +783,7 @@
     }
 
     async function refreshData(manual = false) {
+      const request = ++refreshSequence;
       setRefreshBusy(true);
       elements.syncStatus.textContent = manual ? 'RESYNCING' : 'PULLING FEED';
 
@@ -317,6 +792,7 @@
         if (!response.ok) throw new Error(`Feed returned ${response.status}`);
 
         const data = await response.json();
+        if (request !== refreshSequence) return;
         validateData(data);
         state.data = data;
         loadedObjectiveVersion = getObjectiveVersion(data);
@@ -329,7 +805,6 @@
           state.knownStagedItemIds = collectStagedItemIds(data);
           state.hasKnownVisibleSnapshot = true;
           persistKnownVisibleItemIds();
-          persistKnownStagedItemIds();
           persistKnownStagedItemIds();
         }
 
@@ -345,17 +820,23 @@
         elements.threadLock.textContent = data.systemStatus?.threadLock ?? 'STABLE';
         elements.lastRefresh.textContent = new Date().toLocaleTimeString();
       } catch (error) {
+        if (request !== refreshSequence) return;
         console.error(error);
         elements.syncStatus.textContent = 'LINK FAULT';
-        if (!state.data) {
+        if (!state.data && activeProfileId === 'strahd') {
+          elements.pathList.replaceChildren(ravenloft.empty('Feed unavailable.'));
+          elements.threadDisplay.replaceChildren(ravenloft.empty('Unable to load objectives.', 'Use Sync feed to retry.'));
+        } else if (!state.data) {
           elements.pathList.innerHTML = '<div class="empty-state">NO OBJECTIVE FEED AVAILABLE</div>';
           elements.threadDisplay.innerHTML = '<div class="empty-state">UNABLE TO PROJECT THREADS</div>';
         }
       } finally {
-        updateHeaderCounts();
-        restartUnknownGlitchLoop();
-        restartBodyTextGlitchLoop();
-        setRefreshBusy(false);
+        if (request === refreshSequence) {
+          updateHeaderCounts();
+          restartUnknownGlitchLoop();
+          restartBodyTextGlitchLoop();
+          setRefreshBusy(false);
+        }
       }
     }
 
@@ -522,13 +1003,16 @@
     }
 
     async function checkRemoteVersion() {
-      if (!loadedObjectiveVersion || updatePending) return;
+      if (!loadedObjectiveVersion || updatePending || elements.refreshBtn.disabled) return;
+      const request = refreshSequence;
 
       try {
         const response = await fetch(`${activeProfile.dataUrl}?v=${Date.now()}`, { cache: 'no-store' });
         if (!response.ok) return;
 
         const data = await response.json();
+        if (request !== refreshSequence || elements.refreshBtn.disabled) return;
+        validateData(data);
         const remoteVersion = getObjectiveVersion(data);
 
         if (remoteVersion && remoteVersion !== loadedObjectiveVersion) {
@@ -558,12 +1042,14 @@
 
       startTitleAlert();
 
-      setTimeout(() => {
+      incomingUpdateTimer = setTimeout(() => {
         document.body.classList.remove('incoming-update');
       }, 2500);
     }
 
     function clearPendingUpdate() {
+      clearTimeout(incomingUpdateTimer);
+      elements.transmissionSfx.pause();
       updatePending = false;
       elements.refreshBtn.classList.remove('update-available');
       elements.refreshBtn.title = 'Refresh objective feed';
@@ -618,10 +1104,20 @@
       persistJSON(STORAGE_KEYS.trackedPaths, [...state.trackedPaths]);
     }
 
+    function bombComponentsReady() {
+      return activeProfileId === 'strahd' && Object.values(arcaneBombParts).every(([id]) =>
+        state.data?.paths?.some((path) => path.id === id && path.completed === true && !path.failed));
+    }
+
     function renderAll() {
       liveIntegrityNodes.clear();
+      arcaneBomb.render();
+      baroviaMap.updateCompletion();
       renderPathList();
       renderThreads();
+      for (const icon of document.querySelectorAll('#rvMap [data-bomb-path-icon]')) {
+        icon.classList.toggle('rv-bomb-ready-icon', bombComponentsReady());
+      }
       updateHeaderCounts();
       restartUnknownGlitchLoop();
       restartBodyTextGlitchLoop();
@@ -629,12 +1125,16 @@
     }
 
     function renderPathList() {
+      pathPreview.clear();
       failedPathTextNodes.clear();
       elements.pathList.innerHTML = '';
 
       const paths = visiblePaths();
       const activePaths = paths.filter((path) => !path.archived);
       const archivedPaths = paths.filter((path) => !!path.archived);
+      if (activeProfileId === 'strahd' && !paths.length) {
+        elements.pathList.append(ravenloft.empty(state.data ? 'No paths published.' : 'Checking the feed…'));
+      }
 
       activePaths.forEach((path) => {
         elements.pathList.append(createPathCard(path, false));
@@ -660,34 +1160,60 @@
       }
     }
 
-    function createPathIconWrap(path) {
-      const iconWrap = document.createElement('div');
+    function createPathIconWrap(path, tagName = 'div') {
+      const iconWrap = document.createElement(tagName);
       iconWrap.className = 'path-icon-wrap';
 
       const icon = document.createElement('img');
       icon.className = 'path-icon';
       icon.alt = '';
-      icon.src = path.failed
-        ? (path.failedIcon || buildFailedFallbackIcon(path.title))
-        : (path.icon || buildFallbackIcon(path.title));
+      const isStrahd = activeProfileId === 'strahd';
+      const setFallbackIcon = () => {
+        if (isStrahd) {
+          const badge = path.failed ? 'failed' : path.completed ? 'complete' : 'sigil';
+          ravenloft.useArt(icon, badge);
+        } else {
+          icon.src = path.failed ? buildFailedFallbackIcon(path.title) : buildFallbackIcon(path.title);
+        }
+      };
+      const feedIcon = path.failed ? path.failedIcon : path.icon;
       icon.loading = 'lazy';
-      icon.addEventListener('error', () => {
-        icon.src = path.failed
-          ? buildFailedFallbackIcon(path.title)
-          : buildFallbackIcon(path.title);
-      });
+      if (feedIcon) {
+        icon.addEventListener('error', setFallbackIcon, { once: true });
+        icon.src = feedIcon;
+      } else {
+        setFallbackIcon();
+      }
       iconWrap.append(icon);
 
       if (path.completed && !path.failed) {
-        const completedOverlay = document.createElement('img');
-        completedOverlay.className = 'completed-path-overlay';
-        completedOverlay.alt = '';
-        completedOverlay.src = 'icons/completed_path_overlay.png';
-        completedOverlay.loading = 'lazy';
-        iconWrap.append(completedOverlay);
+        if (isStrahd) {
+          iconWrap.classList.add('rv-completed-icon');
+          const stamp = document.createElement('span');
+          stamp.className = 'rv-completion-stamp';
+          stamp.setAttribute('aria-hidden', 'true');
+          iconWrap.append(stamp);
+          icon.addEventListener('load', () => {
+            iconWrap.style.setProperty('--foil-artwork', `url(${JSON.stringify(icon.currentSrc)})`);
+          });
+        } else {
+          const completedOverlay = document.createElement('img');
+          completedOverlay.className = 'completed-path-overlay';
+          completedOverlay.alt = '';
+          completedOverlay.src = 'icons/completed_path_overlay.png';
+          completedOverlay.loading = 'lazy';
+          iconWrap.append(completedOverlay);
+        }
       }
 
       return iconWrap;
+    }
+
+    function toggleTrackedPath(path) {
+      if (state.trackedPaths.has(path.id)) state.trackedPaths.delete(path.id);
+      else state.trackedPaths.add(path.id);
+      persistJSON(STORAGE_KEYS.trackedPaths, [...state.trackedPaths]);
+      renderAll();
     }
 
     function createPathCard(path, archived = false) {
@@ -696,7 +1222,12 @@
       card.tabIndex = 0;
       card.setAttribute('role', 'button');
       card.setAttribute('aria-pressed', state.trackedPaths.has(path.id) ? 'true' : 'false');
-      card.title = archived ? path.title : '';
+      const isStrahd = activeProfileId === 'strahd';
+      card.title = archived || isStrahd ? path.title : '';
+      if (isStrahd) {
+        card.dataset.pathId = path.id;
+        card.setAttribute('aria-label', path.completed && !path.failed ? `${path.title}, complete` : path.title);
+      }
       if (state.trackedPaths.has(path.id)) card.classList.add('selected');
       if (path.failed) card.classList.add('failed');
       else if (path.completed) card.classList.add('completed');
@@ -709,10 +1240,10 @@
       else if (pathDescendantUpdate) card.classList.add('update-descendant');
 
       const togglePath = () => {
-        if (state.trackedPaths.has(path.id)) state.trackedPaths.delete(path.id);
-        else state.trackedPaths.add(path.id);
-        persistJSON(STORAGE_KEYS.trackedPaths, [...state.trackedPaths]);
-        renderAll();
+        toggleTrackedPath(path);
+        if (activeProfileId === 'strahd') {
+          elements.pathList.querySelector(`[data-path-id="${CSS.escape(String(path.id))}"]`)?.focus({ preventScroll: true });
+        }
       };
 
       card.addEventListener('click', togglePath);
@@ -724,8 +1255,9 @@
       });
 
       const iconWrap = createPathIconWrap(path);
+      pathPreview.bind(card, path);
 
-      if (archived) {
+      if (archived && activeProfileId !== 'strahd') {
         if (pathDirectUpdate || pathDescendantUpdate) {
           const badge = makeUpdateBadge('', 'path-update-badge');
           iconWrap.append(badge);
@@ -795,6 +1327,13 @@
 
       const activePaths = visiblePaths().filter((path) => state.trackedPaths.has(path.id));
       if (!activePaths.length) {
+        if (activeProfileId === 'strahd') {
+          elements.threadDisplay.append(ravenloft.empty(
+            !state.data ? 'Checking the feed…' : visiblePaths().length ? 'Choose a path to begin.' : 'Awaiting objectives.',
+            !state.data ? '' : visiblePaths().length ? 'Select any path in the registry to open its checkpoints here.' : 'Published objectives will appear here when the feed is updated.'
+          ));
+          return;
+        }
         elements.threadDisplay.innerHTML = '<div class="empty-state">NO ACTIVE PATHS SELECTED // ENGAGE PATHS FROM THE REGISTRY TO PROJECT OBJECTIVES</div>';
         return;
       }
@@ -860,12 +1399,20 @@
         toggle.tabIndex = -1;
       } else {
         toggle.textContent = isCollapsed ? '+' : '–';
+        if (activeProfileId === 'strahd') {
+          toggle.dataset.nodeId = nodeId;
+          toggle.setAttribute('aria-expanded', String(!isCollapsed));
+          toggle.setAttribute('aria-label', `${isCollapsed ? 'Expand' : 'Collapse'} checkpoints for ${node.text}`);
+        }
         toggle.classList.toggle('subtree-update', descendantUpdate && !directUpdate);
         toggle.addEventListener('click', () => {
           if (state.collapsedNodes.has(nodeId)) state.collapsedNodes.delete(nodeId);
           else state.collapsedNodes.add(nodeId);
           persistJSON(STORAGE_KEYS.collapsedNodes, [...state.collapsedNodes]);
           renderThreads();
+          if (activeProfileId === 'strahd') {
+            elements.threadDisplay.querySelector(`[data-node-id="${CSS.escape(nodeId)}"]`)?.focus({ preventScroll: true });
+          }
           restartUnknownGlitchLoop();
           restartBodyTextGlitchLoop();
         });
@@ -926,8 +1473,8 @@
     }
 
     function scheduleNextGlitch() {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const delay = 350 + Math.random() * 1150;
+      if (ravenloft.motionPaused() || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const delay = activeProfileId === 'strahd' ? 3000 + Math.random() * 4000 : 350 + Math.random() * 1150;
       glitchTimer = setTimeout(() => {
         triggerUnknownGlitch();
         scheduleNextGlitch();
@@ -935,6 +1482,7 @@
     }
 
     function triggerUnknownGlitch() {
+      if (ravenloft.motionPaused()) return;
       const nodes = [...unknownTextNodes, ...failedPathTextNodes].filter((node) => document.body.contains(node));
       if (!nodes.length) return;
 
@@ -981,8 +1529,10 @@
 
     function restartBodyTextGlitchLoop() {
       if (bodyGlitchTimer) clearTimeout(bodyGlitchTimer);
-      triggerBodyTextGlitchBurst();
-      scheduleNextBodyTextGlitch();
+      if (activeProfileId !== 'strahd') {
+        triggerBodyTextGlitchBurst();
+        scheduleNextBodyTextGlitch();
+      }
     }
 
     function triggerBodyTextGlitchBurst() {
@@ -1004,6 +1554,7 @@
     }
 
     function triggerBodyTextGlitch() {
+      if (activeProfileId === 'strahd') return;
       const nodes = [...bodyTextNodes].filter((node) => document.body.contains(node));
       if (!nodes.length) return;
 
@@ -1182,17 +1733,14 @@
     }
 
     function persistJSON(key, value) {
-      localStorage.setItem(key, JSON.stringify(value));
-    }
-
-    function loadJSON(key, fallback) {
       try {
-        const raw = localStorage.getItem(key);
-        return raw ? JSON.parse(raw) : fallback;
-      } catch {
-        return fallback;
+        localStorage.setItem(key, JSON.stringify(value));
+      } catch (error) {
+        console.warn('Unable to save Porta-NAG preferences:', error);
       }
     }
+
+
   </script>
 </body>
 </html>

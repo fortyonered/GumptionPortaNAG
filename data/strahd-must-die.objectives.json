@@ -1,7 +1,961 @@
 {
-  "version": "2026-06-23T23:32:59Z",
-  "systemStatus": {
-    "threadLock": "STABLE"
-  },
-  "paths": []
+    "version": "2026-11-20T06:23:24Z",
+    "systemStatus": {
+        "threadLock": "STABLE"
+    },
+    "paths": [
+        {
+            "createdAt": "2026-11-16T19:29:06Z",
+            "updatedAt": "2026-11-16T22:07:02Z",
+            "icon": "icons/strahd-must-die.png",
+            "failedIcon": "icons/strahd-must-die-failed.gif",
+            "failed": false,
+            "completed": false,
+            "staged": false,
+            "id": "strahd-must-die",
+            "integrity": 80,
+            "objectives": [
+                {
+                    "id": "ca7bb2d2-62ac-44cd-9279-2a515199d1af",
+                    "createdAt": "2026-11-16T19:30:31Z",
+                    "updatedAt": "2026-11-16T19:30:41Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Defeat Strahd von Zarovich"
+                },
+                {
+                    "id": "9fe06201-4972-4711-8be6-fa5e7530d075",
+                    "createdAt": "2026-11-16T19:30:45Z",
+                    "updatedAt": "2026-11-16T19:31:01Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Put a stake through Strahd's heart"
+                }
+            ],
+            "tags": [],
+            "title": "Strahd Must Die!",
+            "mouseover": "<strong>Simple as, baby!</strong> Build the bomb, blow up Castle Ravenloft, pull Strahd's coffin from the rubble and stake him!",
+            "location": "ravenloft"
+        },
+        {
+            "createdAt": "2026-11-16T19:32:34Z",
+            "updatedAt": "2026-11-20T04:20:02Z",
+            "icon": "icons/the-verse-to-curse.png",
+            "failedIcon": "icons/the-verse-to-curse-failed.gif",
+            "failed": false,
+            "completed": false,
+            "staged": false,
+            "id": "the-verse-to-curse",
+            "integrity": 85,
+            "objectives": [
+                {
+                    "id": "887b9051-9bac-40ce-a82e-51199088ea88",
+                    "createdAt": "2026-11-16T19:33:09Z",
+                    "updatedAt": "2026-11-17T00:57:23Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Find Strahd's magical verses"
+                }
+            ],
+            "tags": [
+                "OPT"
+            ],
+            "title": "The Verse to Curse",
+            "mouseover": "In episode sixteen of <i>The Barovia Bunch</i>, our heroes did a rap battle against Strahd. Strahd won, of course, because his words were hexed with his own <strong>dark magics</strong>. Those words carried his magical signature, and with them, we can—<br>You know what? It doesn't matter how—you've probably stopped reading anyways.<br><strong>TL;DR: We need Strahd's verses to hex the bomb, cutie.</strong> So go get them!",
+            "location": "abbey"
+        },
+        {
+            "createdAt": "2026-11-16T20:22:00Z",
+            "updatedAt": "2026-11-20T04:20:04Z",
+            "icon": "icons/hells-bells.png",
+            "failedIcon": "icons/hells-bells-failed.gif",
+            "failed": false,
+            "completed": false,
+            "staged": false,
+            "id": "hell-s-bells",
+            "integrity": 75,
+            "objectives": [
+                {
+                    "id": "305748cc-9305-4916-9e2e-a8a8459dfed7",
+                    "createdAt": "2026-11-16T22:07:35Z",
+                    "updatedAt": "2026-11-17T00:57:30Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Recover the cursed bell"
+                }
+            ],
+            "tags": [],
+            "title": "Hell's Bells",
+            "mouseover": "Okay, so, this cave used to be a werewolf lair. Then, after the weird mid-season genre shift, it became a casino/bathhouse for gay furries to “socialize”—and who knows what's happened to it since.<br>But back then, it was home to a <strong>powerful cursed relic</strong> in the proprietor's office: a bell that could turn you into a were-person.<br>That bell will serve perfectly for our bomb's casing—<strong>go track it down!</strong>",
+            "location": "werewolf-den"
+        },
+        {
+            "createdAt": "2026-11-16T22:07:51Z",
+            "updatedAt": "2026-11-20T06:23:24Z",
+            "icon": "icons/so-many-demonic-pacts.png",
+            "failedIcon": "icons/so-many-demonic-pacts-failed.gif",
+            "failed": false,
+            "completed": false,
+            "staged": false,
+            "id": "so-many-demonic-pacts",
+            "integrity": 88,
+            "objectives": [
+                {
+                    "id": "b91466c4-2629-4d13-8f47-48a6e22e2445",
+                    "createdAt": "2026-11-16T22:10:49Z",
+                    "updatedAt": "2026-11-16T22:10:58Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Go to the Amber Temple"
+                },
+                {
+                    "id": "7f322697-0e73-4ee5-8c27-903236f48e86",
+                    "createdAt": "2026-11-18T21:40:11Z",
+                    "updatedAt": "2026-11-18T21:40:34Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Charge up the arcanocrystal"
+                }
+            ],
+            "tags": [],
+            "title": "So Many Demonic Pacts",
+            "mouseover": "I know when you hear “bomb” you think “explosives”, but arcanodemolition's a little bit more... high-concept.<br>There are <strong>tons of captured Dark Ones</strong> locked inside of the Amber Temple. I've rigged up an arcanocrystal with a daemonological interfetterer—it'll intercept any incoming demonic pacts, deals with devil(s), or any otherwise Faustian transactions for power and charge up the arcanocrystal.<br><strong>The more deals you can make</strong> with those poor schmucks, <strong>the bigger our boom</strong>. And we need a big boom.",
+            "location": "amber-temple"
+        },
+        {
+            "createdAt": "2026-11-17T00:25:27Z",
+            "updatedAt": "2026-11-20T06:11:36Z",
+            "icon": "icons/depth-charge.png",
+            "failedIcon": "icons/depth-charge-failed.gif",
+            "failed": false,
+            "completed": false,
+            "staged": false,
+            "id": "depth-charge",
+            "integrity": 87,
+            "objectives": [
+                {
+                    "id": "990b3417-68ac-4f86-ba63-22f873eae766",
+                    "createdAt": "2026-11-17T00:33:54Z",
+                    "updatedAt": "2026-11-17T00:33:59Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Go to Tser Pools"
+                }
+            ],
+            "tags": [],
+            "title": "Depth Charge",
+            "mouseover": "If this bomb's as potent as we need it to be, baby, it'll need a hell of an ignition charge to kick off the boom.<br>Maxine retrieved <strong>a relic from the Amber Temple</strong> that should serve us nicely, but she took that thing into Castle Ravenloft with her.<br>Luckily for you, I've tracked it down! Less lucky for you, it's about 300 feet underwater. But I have faith in you, cutie! <strong>Dive down into Tser Pools and retrieve that relic!</strong>",
+            "location": "tser-falls"
+        },
+        {
+            "createdAt": "2026-11-16T22:25:32Z",
+            "updatedAt": "2026-11-20T04:20:11Z",
+            "icon": "icons/delivery-service.png",
+            "failedIcon": "icons/delivery-service-failed.gif",
+            "failed": false,
+            "completed": false,
+            "staged": false,
+            "id": "delivery-service",
+            "integrity": 83,
+            "objectives": [
+                {
+                    "id": "2563517e-0d05-4cd5-ab49-5c6e6e093687",
+                    "createdAt": "2026-11-17T00:21:35Z",
+                    "updatedAt": "2026-11-17T00:21:45Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Find the legendary wagon pilot"
+                }
+            ],
+            "tags": [],
+            "title": "Delivery Service",
+            "mouseover": "Getting the bomb's parts is one thing, baby, but the hardest part will be getting it from here to the castle gates once it's armed—it's much too heavy for the X-Jet and too fragile to just launch at the walls. And even though we're moving pretty quick, nothing happens in the valley without Strahd knowing.<br>We'll need a <strong>ground vehicle</strong>, and ideally <strong>a driver</strong>, so you can focus on fighting off Strahd's fliers.<br>Rumor is, there's a wagon tech and driver amongst the Vistani. <strong>Go conscript them to our cause!</strong>",
+            "location": "tser-pool"
+        },
+        {
+            "createdAt": "2026-11-17T01:01:32Z",
+            "updatedAt": "2026-11-18T21:09:44Z",
+            "icon": "icons/memento-mori.png",
+            "failedIcon": "icons/memento-mori-failed.gif",
+            "failed": false,
+            "completed": false,
+            "staged": false,
+            "id": "memento-mori",
+            "integrity": 88,
+            "objectives": [
+                {
+                    "id": "a14a0ecc-92a2-4ffb-9836-2973f3019503",
+                    "createdAt": "2026-11-17T02:00:05Z",
+                    "updatedAt": "2026-11-17T02:00:16Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Find Bucket"
+                },
+                {
+                    "id": "567f2228-c9e7-43af-b3b9-41fca219cf20",
+                    "createdAt": "2026-11-17T02:00:19Z",
+                    "updatedAt": "2026-11-17T02:00:25Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Find Duncan"
+                },
+                {
+                    "id": "3f748d61-1a2a-4fc3-8597-5e4c12c16ee2",
+                    "createdAt": "2026-11-17T02:00:26Z",
+                    "updatedAt": "2026-11-17T02:00:30Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Find Maxine"
+                },
+                {
+                    "id": "ce1e8211-9ea1-4e87-ac76-f964b35efb12",
+                    "createdAt": "2026-11-17T02:00:31Z",
+                    "updatedAt": "2026-11-17T02:01:03Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Find Lorian"
+                },
+                {
+                    "id": "b628b452-f475-46a2-800c-2c062fa55fa0",
+                    "createdAt": "2026-11-17T02:01:03Z",
+                    "updatedAt": "2026-11-17T02:01:07Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Find Dy'mon"
+                },
+                {
+                    "id": "b1040bc6-7a66-4188-8b04-5b639e2594f8",
+                    "createdAt": "2026-11-17T02:01:09Z",
+                    "updatedAt": "2026-11-17T02:01:12Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Find Oswall"
+                }
+            ],
+            "tags": [],
+            "title": "Memento Mori",
+            "location": "across-barovia",
+            "mouseover": "After their presumptive defeat at the hands of Strahd, the Barovia Bunch—what was left of them, anyway—were piled up and blasted off the top of Ravenloft's High Tower.<br>Their remains have since been scattered across Barovia, unsanctified and forgotten. If you happen upon any of them on your mission, it couldn't hurt to <strong>lay them to rest</strong>!<br><i>Note: If you're looking for clues as to where the Barovia Bunch ended up, you might start with someone who <strong>was close to them</strong>!</i>"
+        },
+        {
+            "createdAt": "2026-11-18T19:38:50Z",
+            "updatedAt": "2026-11-18T20:43:57Z",
+            "icon": "icons/sure-why-not.png",
+            "failedIcon": "icons/sure-why-not-failed.gif",
+            "failed": false,
+            "completed": false,
+            "staged": false,
+            "id": "sure-why-not",
+            "integrity": 86,
+            "objectives": [
+                {
+                    "id": "7d9e6ad3-1324-414a-9514-8758ccfdda22",
+                    "createdAt": "2026-11-18T21:19:30Z",
+                    "updatedAt": "2026-11-18T21:20:01Z",
+                    "complete": false,
+                    "staged": false,
+                    "text": "Find some cool stuff to add to the bomb"
+                }
+            ],
+            "tags": [],
+            "title": "Sure, Why Not",
+            "location": "across-barovia",
+            "mouseover": "Okay, cutie—this path isn't really for you. It's for your friends. The second you tell them you're compiling bomb parts, they're gonna start looking for all sorts of things to throw in.<br>Some of them might genuinely make it better; most will just make it <i>different</i>. But remember, none of them are geniuses, not like you. They're just trying to help.<br>This path will just track the <strong>things</strong> you've <strong>duct-taped</strong>, <strong>zip-tied</strong>, and <strong>crammed</strong> into our delicately tuned arcane bomb."
+        }
+    ],
+    "map": {
+        "locations": [
+            {
+                "id": "abbey",
+                "name": "Abbey of St. Markovia",
+                "x": 188,
+                "y": 93,
+                "kind": "site",
+                "labelSide": "above",
+                "description": "In the half-season finale of <i>The Barovia Bunch</i>, our heroes reunited the ghosts of Sergei and Tatyana and were defeated by Count Strahd in a rap battle. This is widely credited as the first example of the burgeoning rap genre on television.<br><i>“Let's <strong>rap</strong>! Gehehehehe!”</i> —Bucket, Ep. 16, “Showdown at the Abbey”"
+            },
+            {
+                "id": "krezk",
+                "name": "Krezk",
+                "x": 198,
+                "y": 163,
+                "kind": "town",
+                "labelSide": "above",
+                "description": "It was here that Lorian, Maxine, and Dy'mon tried to solve The Mystery of the Missing Pigs, while Duncan and Bucket tried to solve The Mystery of the Missing Sandwiches.<br><i>“Like, zoinks, Bucket! I smell turkey, provolone, and pickles!”</i> —Duncan Gaultier, Ep. 14, “Hungry as a Hog”"
+            },
+            {
+                "id": "werewolf-den",
+                "name": "Werewolf Den",
+                "x": 318,
+                "y": 105,
+                "kind": "site",
+                "labelSide": "above",
+                "description": "Formerly <strong>“Wolfie's Den of Second Chances”</strong>, this cave was once home to feral werewolves before being reclaimed by a tribe of bestial werefolk seeking to be better than their curse."
+            },
+            {
+                "id": "tower",
+                "name": "Van Richten’s Tower",
+                "x": 337,
+                "y": 217,
+                "kind": "site",
+                "labelSide": "above",
+                "description": "Van Richten’s tower had a lakeside view, a tricky front door, and very little left in the way of stairs—that is, until the Barovia Bunch found it. Currently more horizontal than vertical."
+            },
+            {
+                "id": "raven-crossroads",
+                "name": "Raven River Crossroads",
+                "x": 310,
+                "y": 285,
+                "kind": "junction",
+                "labelSide": "below",
+                "description": "At the Raven River, the roads divide for Vallaki, Krezk, and the high pass. The winery is down a side trail. Follow the signs before the fog thickens."
+            },
+            {
+                "id": "winery",
+                "name": "Wizard of Wines",
+                "x": 89,
+                "y": 360,
+                "kind": "site",
+                "labelSide": "above",
+                "description": "An overgrown vineyard, once the source of all wines in the valley. In episode nine of <i>The Barovia Bunch</i>, Lorian saved the day by dropping a wine barrel on the wildling druid haunting the winery. It has fallen into disrepair in the years since.<br><i>“Jinkies! I'll use these barrels to stop that druid!”</i> —Lorian, Ep. 9, “Spookery at the Winery”"
+            },
+            {
+                "id": "yester-hill",
+                "name": "Yester Hill",
+                "x": 104,
+                "y": 508,
+                "kind": "site",
+                "labelSide": "below",
+                "description": "At the standing stones above the vineyard, an entire hillside stood up and shook the dirt out of its branches. Holiday Man held the Forest Blight still just long enough for Lorian to pluck the green gem out of its chest."
+            },
+            {
+                "id": "vallaki",
+                "name": "Vallaki",
+                "x": 509,
+                "y": 275,
+                "kind": "town",
+                "labelSide": "above",
+                "description": "Maxine won the election, and Strahd crashed the victory party at the Blue Water Hotel. Urwin Matrikov borrowed every mirror in the tailor’s shop to bounce St. Andral’s light across town after Strahd, who had Bucket in his grasp. Maxine met Strahd in the beam with the Sunblade, and the Count fled, wounded, back to Castle Ravenloft.<br><i>“Hold that mirror steady, Lorian—I only get one sunrise!”</i> —Urwin Matrikov, Ep. 24, “A Landslide for Maxine”"
+            },
+            {
+                "id": "argonvostholt",
+                "name": "Argynvostholt",
+                "x": 406,
+                "y": 430,
+                "kind": "site",
+                "labelSide": "above",
+                "description": "The old knights of the Silver Dragon gave the Bunch a chilly welcome. Sir Godfrey finally got them through the halls with Argynvost’s skull, and the beacon sent a warm beam right through the fog. For the first time in the series, you could see the entirety of Castle Ravenloft."
+            },
+            {
+                "id": "berez",
+                "name": "Berez Ruins",
+                "x": 351,
+                "y": 510,
+                "kind": "site",
+                "labelSide": "above",
+                "description": "Baba’s scarecrows stood perfectly still whenever the Bunch looked at them. Her flying dragon skull was harder to miss. By the time the water went down, the wagon had lost a wheel and Dy’mon had a dragon skull small enough to tuck under his arm.<br><i>“This is really groovy! I think I'll hold on to it.”</i> —Dy'mon, Ep. 20, “Which Witch?”"
+            },
+            {
+                "id": "bonegrinder",
+                "name": "Old Bonegrinder",
+                "x": 611,
+                "y": 340,
+                "kind": "site",
+                "labelSide": "below",
+                "description": "One bite of a dream pie and Bucket started sleepwalking straight back to the windmill. Maxine followed him, with a flock of ravens making a tremendous fuss at the window. Behind the flour sacks she found the kids who’d gone missing from the road."
+            },
+            {
+                "id": "west-gate",
+                "name": "West Gate",
+                "x": 752,
+                "y": 343,
+                "kind": "gate",
+                "labelSide": "above",
+                "description": "At the western gate, the Old Svalich Road gives travelers a choice: take the cliff road toward Ravenloft, descend toward Tser Falls, or push on to Vallaki.<br><i>“A dinner invitation from a stranger? Now <strong>that's</strong> a trap if I've ever seen one!”</i> —Maxine, Ep. 3, “The Road to Vallaki”"
+            },
+            {
+                "id": "ravenloft-gates",
+                "name": "Ravenloft Gates",
+                "x": 896,
+                "y": 328,
+                "kind": "gate",
+                "labelSide": "below",
+                "description": "Just as the road ran out, a ghostly bridge appeared over the gorge. Bucket drove the Battle-Wagon across, Lorian brought Bucephalus alongside, and Duncan and the Matrikovs took the shortcut overhead on raven wings."
+            },
+            {
+                "id": "ravenloft",
+                "name": "Castle Ravenloft",
+                "x": 978,
+                "y": 303,
+                "kind": "castle",
+                "labelSide": "above",
+                "description": "In the last episode before premature cancellation, Maxine led the Bunch through the front doors. The portraits started whispering and a very convincing Strahd kept them busy while the real Count was nowhere to be seen. The doors swung shut just before the credits.<br><i>“Like, I've got a bad feeling about this, Bucket...”</i> —Duncan, Ep. 29, “The Count in the Frame”"
+            },
+            {
+                "id": "east-gate",
+                "name": "East Gate",
+                "x": 1155,
+                "y": 382,
+                "kind": "gate",
+                "labelSide": "above",
+                "description": "The East Gate is the closest accessible location to the edge of Barovia's demiplane, contained within the Shadowfell, and is where most visitors enter the valley. None of that came up in the show, of course—this is all according to series showrunner Duke McCaffery.<br><i>“No, see, because the entire valley is actually a sort of prison, because—hang on, let me go back to how Strahd became a vampire...”</i> —Duke McCaffery, 1972 conversation with Comix Monthly"
+            },
+            {
+                "id": "barovia",
+                "name": "Village of Barovia",
+                "x": 1080,
+                "y": 462,
+                "kind": "town",
+                "labelSide": "above",
+                "description": "The easternmost town in the valley, where the Barovia Bunch first appeared in episode one, “Hi-Ho, Barovi-o!”"
+            },
+            {
+                "id": "fugue-cave",
+                "name": "Fugue-Cave",
+                "x": 992,
+                "y": 442,
+                "kind": "hideout",
+                "labelSide": "above",
+                "description": "A cozy little command center tucked under Death House, where my systems are installed. It's also where the hundreds of unethically cloned bodies you directed me to make live!"
+            },
+            {
+                "id": "ivlis-crossroads",
+                "name": "River Ivlis Crossroads",
+                "x": 912,
+                "y": 573,
+                "kind": "junction",
+                "labelSide": "below",
+                "description": "After curing the burgomaster's son with a very garlicky sandwich, the old party took the river road out of the village. The trail to the Vistani wagons turns off here."
+            },
+            {
+                "id": "tser-pool",
+                "name": "Vistani Encampment",
+                "x": 817,
+                "y": 513,
+                "kind": "site",
+                "labelSide": "below",
+                "labelOffsetX": -23,
+                "labelOffsetY": -6,
+                "description": "The Vistani had supper on, a song going, and a place by the fire for every member of the Bunch. In the tent beside the barrel-topped wagons, Madam Eva had already dealt the cards.<br><i>“Right on time! Just as I predicted!”</i> —Madam Eva, Ep. 2, “A Hand in the Fog”"
+            },
+            {
+                "id": "tser-falls",
+                "name": "Tser Falls",
+                "x": 794,
+                "y": 464,
+                "kind": "junction",
+                "labelSide": "above",
+                "description": "The bridge at Tser Falls is the only way to cross the Upper River Ivlis—unless you're in a future jet, of course."
+            },
+            {
+                "id": "tsolenka-pass",
+                "name": "Tsolenka Pass",
+                "x": 319,
+                "y": 617,
+                "kind": "gate",
+                "labelSide": "above",
+                "description": "The bridge over Tsolenka Pass is five hundred feet above the Luna River. Here our heroes ran into Dwayne, the friendly roc, whose kindly demeanor did nothing to prevent the damage dealt to the bridge.<br><i>“Oh, gosh! Drat and bother!”</i> —Dwayne the Friendly Roc, Ep. 18, “A Roc and a Hard Place”"
+            },
+            {
+                "id": "across-barovia",
+                "name": "Across Barovia",
+                "x": 1080,
+                "y": 595,
+                "kind": "regional",
+                "labelSide": "above",
+                "description": "Paths that span the valley or have no fixed location."
+            },
+            {
+                "id": "amber-temple",
+                "name": "Amber Temple",
+                "x": 511,
+                "y": 615,
+                "kind": "site",
+                "labelSide": "above",
+                "description": "The Bunch found Neferon’s library at the end of the snowy pass. When Arrigal set the Amber Vault ablaze, Neferon shielded the others long enough for Maxine to raise a broken sword hilt. The Morning Lord answered, and a blade of sunlight lit the library from floor to ceiling."
+            }
+        ],
+        "roads": [
+            {
+                "from": "abbey",
+                "to": "krezk",
+                "via": [
+                    [
+                        183,
+                        115
+                    ],
+                    [
+                        213,
+                        122
+                    ],
+                    [
+                        193,
+                        137
+                    ]
+                ],
+                "kind": "trail"
+            },
+            {
+                "from": "krezk",
+                "to": "raven-crossroads",
+                "via": [
+                    [
+                        230,
+                        189
+                    ],
+                    [
+                        252,
+                        205
+                    ],
+                    [
+                        259,
+                        245
+                    ],
+                    [
+                        283,
+                        262
+                    ]
+                ]
+            },
+            {
+                "from": "tower",
+                "to": "raven-crossroads",
+                "via": [
+                    [
+                        356,
+                        238
+                    ],
+                    [
+                        348,
+                        270
+                    ]
+                ],
+                "kind": "trail"
+            },
+            {
+                "from": "raven-crossroads",
+                "to": "vallaki",
+                "via": [
+                    [
+                        356,
+                        302
+                    ],
+                    [
+                        375,
+                        352
+                    ],
+                    [
+                        406,
+                        351
+                    ],
+                    [
+                        442,
+                        311
+                    ],
+                    [
+                        476,
+                        296
+                    ]
+                ]
+            },
+            {
+                "from": "raven-crossroads",
+                "to": "winery",
+                "via": [
+                    [
+                        253,
+                        295
+                    ],
+                    [
+                        217,
+                        302
+                    ],
+                    [
+                        199,
+                        337
+                    ],
+                    [
+                        170,
+                        353
+                    ],
+                    [
+                        137,
+                        367
+                    ]
+                ],
+                "kind": "trail"
+            },
+            {
+                "from": "winery",
+                "to": "yester-hill",
+                "via": [
+                    [
+                        168,
+                        389
+                    ],
+                    [
+                        166,
+                        416
+                    ],
+                    [
+                        125,
+                        470
+                    ]
+                ],
+                "kind": "trail"
+            },
+            {
+                "from": "raven-crossroads",
+                "to": "argonvostholt",
+                "via": [
+                    [
+                        332,
+                        316
+                    ],
+                    [
+                        336,
+                        363
+                    ],
+                    [
+                        352,
+                        385
+                    ],
+                    [
+                        353,
+                        408
+                    ],
+                    [
+                        383,
+                        429
+                    ]
+                ]
+            },
+            {
+                "from": "argonvostholt",
+                "to": "berez",
+                "via": [
+                    [
+                        445,
+                        443
+                    ],
+                    [
+                        432,
+                        479
+                    ],
+                    [
+                        404,
+                        517
+                    ]
+                ],
+                "kind": "trail"
+            },
+            {
+                "from": "raven-crossroads",
+                "to": "tsolenka-pass",
+                "via": [
+                    [
+                        253,
+                        304
+                    ],
+                    [
+                        255,
+                        348
+                    ],
+                    [
+                        229,
+                        393
+                    ],
+                    [
+                        214,
+                        421
+                    ],
+                    [
+                        227,
+                        459
+                    ],
+                    [
+                        199,
+                        495
+                    ],
+                    [
+                        237,
+                        479
+                    ],
+                    [
+                        277,
+                        472
+                    ],
+                    [
+                        301,
+                        491
+                    ],
+                    [
+                        285,
+                        525
+                    ],
+                    [
+                        281,
+                        573
+                    ],
+                    [
+                        300,
+                        582
+                    ]
+                ]
+            },
+            {
+                "from": "tsolenka-pass",
+                "to": "amber-temple",
+                "via": [
+                    [
+                        358,
+                        646
+                    ],
+                    [
+                        402,
+                        659
+                    ],
+                    [
+                        485,
+                        665
+                    ],
+                    [
+                        536,
+                        648
+                    ],
+                    [
+                        496,
+                        638
+                    ]
+                ],
+                "kind": "trail"
+            },
+            {
+                "from": "vallaki",
+                "to": "bonegrinder",
+                "via": [
+                    [
+                        567,
+                        289
+                    ],
+                    [
+                        621,
+                        266
+                    ],
+                    [
+                        657,
+                        270
+                    ],
+                    [
+                        695,
+                        264
+                    ],
+                    [
+                        682,
+                        302
+                    ],
+                    [
+                        643,
+                        316
+                    ]
+                ]
+            },
+            {
+                "from": "bonegrinder",
+                "to": "west-gate",
+                "via": [
+                    [
+                        644,
+                        347
+                    ],
+                    [
+                        678,
+                        367
+                    ],
+                    [
+                        710,
+                        364
+                    ]
+                ]
+            },
+            {
+                "from": "west-gate",
+                "to": "ravenloft-gates",
+                "via": [
+                    [
+                        785,
+                        346
+                    ],
+                    [
+                        819,
+                        308
+                    ],
+                    [
+                        848,
+                        296
+                    ],
+                    [
+                        874,
+                        310
+                    ]
+                ]
+            },
+            {
+                "from": "ravenloft-gates",
+                "to": "ravenloft",
+                "via": [
+                    [
+                        911,
+                        325
+                    ],
+                    [
+                        925,
+                        301
+                    ],
+                    [
+                        946,
+                        307
+                    ]
+                ]
+            },
+            {
+                "from": "west-gate",
+                "to": "tser-falls",
+                "via": [
+                    [
+                        769,
+                        375
+                    ],
+                    [
+                        750,
+                        406
+                    ],
+                    [
+                        776,
+                        420
+                    ],
+                    [
+                        818,
+                        429
+                    ],
+                    [
+                        819,
+                        453
+                    ]
+                ]
+            },
+            {
+                "from": "tser-falls",
+                "to": "tser-pool",
+                "via": [
+                    [
+                        781,
+                        487
+                    ],
+                    [
+                        807,
+                        495
+                    ]
+                ],
+                "kind": "trail"
+            },
+            {
+                "from": "tser-falls",
+                "to": "ivlis-crossroads",
+                "via": [
+                    [
+                        744,
+                        489
+                    ],
+                    [
+                        699,
+                        523
+                    ],
+                    [
+                        691,
+                        554
+                    ],
+                    [
+                        724,
+                        562
+                    ],
+                    [
+                        775,
+                        545
+                    ],
+                    [
+                        807,
+                        531
+                    ],
+                    [
+                        846,
+                        551
+                    ],
+                    [
+                        865,
+                        590
+                    ],
+                    [
+                        896,
+                        595
+                    ]
+                ]
+            },
+            {
+                "from": "tser-pool",
+                "to": "ivlis-crossroads",
+                "via": [
+                    [
+                        842,
+                        524
+                    ],
+                    [
+                        876,
+                        538
+                    ],
+                    [
+                        889,
+                        565
+                    ]
+                ],
+                "kind": "trail"
+            },
+            {
+                "from": "ivlis-crossroads",
+                "to": "barovia",
+                "via": [
+                    [
+                        977,
+                        552
+                    ],
+                    [
+                        1008,
+                        521
+                    ],
+                    [
+                        1034,
+                        478
+                    ]
+                ]
+            },
+            {
+                "from": "barovia",
+                "to": "east-gate",
+                "via": [
+                    [
+                        1110,
+                        454
+                    ],
+                    [
+                        1126,
+                        421
+                    ],
+                    [
+                        1131,
+                        398
+                    ]
+                ]
+            }
+        ]
+    }
 }

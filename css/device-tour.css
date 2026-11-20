@@ -1,0 +1,89 @@
+.device-tour-help {
+  flex: none;
+  min-width: 32px;
+  height: 36px;
+  padding: 0 5px;
+  border: 1px solid var(--line-bright);
+  background: var(--bg);
+  color: var(--line-bright);
+  font: 700 1rem/1 var(--font-display);
+  cursor: pointer;
+}
+.header-actions .device-tour-help { height: 46px; }
+.device-tour-help:hover, .device-tour-help:focus-visible { outline: 2px solid var(--line-bright); outline-offset: 2px; }
+
+.device-tour {
+  --tour-accent: #86d798;
+  --tour-gap: 12px;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: transparent;
+  color: #f1efea;
+}
+.device-tour[data-profile='strahd'] { --tour-accent: #dcb52b; }
+.device-tour[data-profile='storybook'] { --tour-accent: #e6c282; }
+.device-tour::backdrop { background: transparent; }
+.device-tour-spotlight {
+  position: absolute;
+  border: 2px solid var(--tour-accent);
+  box-shadow: 0 0 0 200vmax #090909cf, inset 0 0 10px color-mix(in srgb, var(--tour-accent) 24%, transparent);
+  pointer-events: none;
+}
+.device-tour-card {
+  position: absolute;
+  width: min(360px, calc(100% - 2 * var(--tour-gap)));
+  max-height: calc(100% - 2 * var(--tour-gap));
+  overflow: auto;
+  padding: 15px;
+  border: 1px solid var(--tour-accent);
+  border-top: 3px solid var(--tour-accent);
+  background: #1b1b1b;
+  box-shadow: 0 5px 20px #0008;
+  font: .9rem/1.45 system-ui, sans-serif;
+}
+.device-tour-step {
+  color: var(--tour-accent);
+  font: .75rem 'VCROSD', monospace;
+  letter-spacing: .1em;
+}
+.device-tour-card h2 { margin: 7px 0 5px; font-size: 1.22rem; }
+.device-tour-card p { margin: 0 0 15px; }
+.device-tour-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.device-tour-actions button {
+  min-height: 34px;
+  padding: 4px 9px;
+  border: 1px solid #696666;
+  background: #282828;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.device-tour-actions button:disabled { opacity: .45; cursor: default; }
+.device-tour-actions button:focus-visible { outline: 2px solid var(--tour-accent); outline-offset: 2px; }
+#tourBack { margin-left: auto; }
+#tourNext { background: var(--tour-accent); color: #171717; border-color: var(--tour-accent); font-weight: 700; }
+
+/* The briefing owns the modal layer while the real panel is on display beneath it. */
+.rv-map-dialog[open]:not(:modal) {
+  position: fixed;
+  z-index: 1000;
+}
+#rvJournal[data-tour-pane] :is(#rvEntryMenu, #rvEntryEditor, #rvJournalBackup, #rvRestoreJournal, #rvDeleteEntry) {
+  display: none !important;
+}
+#rvJournal[data-tour-pane="register"] #rvEntryMenu,
+#rvJournal[data-tour-pane="editor"] #rvEntryEditor,
+#rvJournal[data-tour-pane="backup"] #rvJournalBackup {
+  display: block !important;
+}
+#rvJournal[data-tour-pane="backup"] #rvBackupActions {
+  display: flex !important;
+}

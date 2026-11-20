@@ -127,7 +127,7 @@
                             "updatedAt": "2026-11-07T03:42:01Z",
                             "complete": false,
                             "staged": false,
-                            "text": "Address the proletariat at trophy ceremony",
+                            "text": "Address the proletariat at the trophy ceremony",
                             "children": [
                                 {
                                     "complete": false,
@@ -195,7 +195,7 @@
                             "updatedAt": "2026-11-07T03:42:03Z",
                             "complete": false,
                             "staged": false,
-                            "text": "Address the people at trophy ceremony",
+                            "text": "Address the people at the trophy ceremony",
                             "children": [
                                 {
                                     "id": "ee1e9c0f-ea4e-4923-b262-94a5b944f81f",
@@ -212,7 +212,7 @@
                                     "updatedAt": "2026-11-07T03:42:08Z",
                                     "complete": true,
                                     "staged": false,
-                                    "text": "Remind the people of tournament's purpose"
+                                    "text": "Remind the people of the tournament's purpose"
                                 },
                                 {
                                     "id": "39fef015-131d-47c4-b7b0-aaa4f058915c",
@@ -220,7 +220,7 @@
                                     "updatedAt": "2026-11-07T03:41:35Z",
                                     "complete": false,
                                     "staged": false,
-                                    "text": "Reject temptation of merchandising",
+                                    "text": "Resist the temptation to merchandise",
                                     "failed": true
                                 },
                                 {
@@ -238,7 +238,7 @@
                                     "updatedAt": "2026-11-07T03:41:29Z",
                                     "complete": false,
                                     "staged": false,
-                                    "text": "Urge the people to return to old ways",
+                                    "text": "Urge the people to return to the old ways",
                                     "failed": true
                                 },
                                 {
@@ -435,7 +435,7 @@
                 },
                 {
                     "complete": true,
-                    "text": "Attend victory ceremony",
+                    "text": "Attend the victory ceremony",
                     "id": "obj-2c64a509ac3e",
                     "createdAt": "2026-06-01T06:31:12Z",
                     "updatedAt": "2026-11-07T03:43:16Z",
@@ -871,7 +871,7 @@
                             "children": [
                                 {
                                     "complete": true,
-                                    "text": "Visit market during the day",
+                                    "text": "Visit the market during the day",
                                     "failed": false,
                                     "id": "obj-2fd44d1fee12",
                                     "createdAt": "2026-06-01T06:31:12Z",
@@ -924,7 +924,7 @@
                                 {
                                     "complete": true,
                                     "staged": false,
-                                    "text": "Search Rough Scale ganger corpse",
+                                    "text": "Search the Rough Scale ganger's corpse",
                                     "id": "obj-5b88bd1563f6",
                                     "createdAt": "2026-06-01T06:31:12Z",
                                     "updatedAt": "2026-06-01T06:31:12Z"
@@ -940,7 +940,7 @@
                                 {
                                     "complete": true,
                                     "staged": false,
-                                    "text": "Follow Rough Scale gang directions through wetlands",
+                                    "text": "Follow the Rough Scale gang's directions through the wetlands",
                                     "children": [
                                         {
                                             "complete": true,
@@ -1288,7 +1288,7 @@
                                             "updatedAt": "2026-08-01T02:35:14Z",
                                             "complete": true,
                                             "staged": false,
-                                            "text": "Obtain paint for scamps"
+                                            "text": "Obtain paint for the scamps"
                                         }
                                     ],
                                     "flags": [
@@ -1317,7 +1317,7 @@
                                             "updatedAt": "2026-07-03T21:09:09Z",
                                             "complete": true,
                                             "staged": false,
-                                            "text": "Break into bar manager's house"
+                                            "text": "Break into the bar manager's house"
                                         },
                                         {
                                             "id": "344bdb4b-a641-4a7a-b016-4435cd7e2cae",
@@ -1393,7 +1393,7 @@
                                     "updatedAt": "2026-07-18T03:20:45Z",
                                     "complete": true,
                                     "staged": false,
-                                    "text": "Eavesdrop on meeting between Gill & Rough Scale"
+                                    "text": "Eavesdrop on the meeting between Gill and Rough Scale"
                                 }
                             ]
                         }
@@ -1749,7 +1749,7 @@
                     "children": [
                         {
                             "complete": false,
-                            "text": "Accept Marchant's offer for sponsorship",
+                            "text": "Accept Marchant's offer of sponsorship",
                             "failed": false,
                             "id": "obj-02e336631031",
                             "createdAt": "2026-06-01T06:31:12Z",
@@ -1886,7 +1886,7 @@
                         },
                         {
                             "complete": false,
-                            "text": "Attend victory ceremony as the Vengeful Rams' champion",
+                            "text": "Attend the victory ceremony as the Vengeful Rams' champion",
                             "failed": false,
                             "id": "obj-d855c14162c0",
                             "createdAt": "2026-06-01T06:31:12Z",
